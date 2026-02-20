@@ -6,7 +6,7 @@ spring:
     name: agri-farms-common-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5435/agrifarms
+    url: jdbc:postgresql://192.168.29.237:5435/agrifarms
     username: agrifarms
     password: password
     driver-class-name: org.postgresql.Driver
