@@ -31,4 +31,22 @@ public class UserService {
     public Optional<User> getUserByPhoneNumber(String phoneNumber) {
         return userRepository.findByPhoneNumber(phoneNumber);
     }
+
+    public User updateUser(String userId, User updatedData) {
+        return userRepository.findById(userId).map(existingUser -> {
+            if (updatedData.getFullName() != null) {
+                existingUser.setFullName(updatedData.getFullName());
+            }
+            if (updatedData.getVillage() != null) {
+                existingUser.setVillage(updatedData.getVillage());
+            }
+            if (updatedData.getDistrict() != null) {
+                existingUser.setDistrict(updatedData.getDistrict());
+            }
+            if (updatedData.getProfileImageUrl() != null) {
+                existingUser.setProfileImageUrl(updatedData.getProfileImageUrl());
+            }
+            return userRepository.save(existingUser);
+        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found with id: " + userId));
+    }
 }

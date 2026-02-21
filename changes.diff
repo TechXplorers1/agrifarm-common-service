@@ -1,0 +1,47 @@
+diff --git a/src/main/java/com/agrifarms/common/controller/UserController.java b/src/main/java/com/agrifarms/common/controller/UserController.java
+index 09807d8..00f5a02 100644
+--- a/src/main/java/com/agrifarms/common/controller/UserController.java
++++ b/src/main/java/com/agrifarms/common/controller/UserController.java
+@@ -43,4 +43,15 @@ public class UserController {
+                 .map(ResponseEntity::ok)
+                 .orElse(ResponseEntity.notFound().build());
+     }
++
++    @PutMapping("/{userId}")
++    public ResponseEntity<UserDTO> updateUser(@PathVariable String userId, @RequestBody UserDTO userDTO) {
++        User updatedUser = dtoMapper.toUserEntity(userDTO);
++        try {
++            User savedUser = userService.updateUser(userId, updatedUser);
++            return ResponseEntity.ok(dtoMapper.toUserDTO(savedUser));
++        } catch (org.springframework.web.server.ResponseStatusException e) {
++            return ResponseEntity.notFound().build();
++        }
++    }
+ }
+diff --git a/src/main/java/com/agrifarms/common/service/UserService.java b/src/main/java/com/agrifarms/common/service/UserService.java
+index ec6e3bc..a1ee1ae 100644
+--- a/src/main/java/com/agrifarms/common/service/UserService.java
++++ b/src/main/java/com/agrifarms/common/service/UserService.java
+@@ -31,4 +31,22 @@ public class UserService {
+     public Optional<User> getUserByPhoneNumber(String phoneNumber) {
+         return userRepository.findByPhoneNumber(phoneNumber);
+     }
++
++    public User updateUser(String userId, User updatedData) {
++        return userRepository.findById(userId).map(existingUser -> {
++            if (updatedData.getFullName() != null) {
++                existingUser.setFullName(updatedData.getFullName());
++            }
++            if (updatedData.getVillage() != null) {
++                existingUser.setVillage(updatedData.getVillage());
++            }
++            if (updatedData.getDistrict() != null) {
++                existingUser.setDistrict(updatedData.getDistrict());
++            }
++            if (updatedData.getProfileImageUrl() != null) {
++                existingUser.setProfileImageUrl(updatedData.getProfileImageUrl());
++            }
++            return userRepository.save(existingUser);
++        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found with id: " + userId));
++    }
+ }

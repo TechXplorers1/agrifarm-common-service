@@ -43,4 +43,15 @@ public class UserController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+
+    @PutMapping("/{userId}")
+    public ResponseEntity<UserDTO> updateUser(@PathVariable String userId, @RequestBody UserDTO userDTO) {
+        User updatedUser = dtoMapper.toUserEntity(userDTO);
+        try {
+            User savedUser = userService.updateUser(userId, updatedUser);
+            return ResponseEntity.ok(dtoMapper.toUserDTO(savedUser));
+        } catch (org.springframework.web.server.ResponseStatusException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
