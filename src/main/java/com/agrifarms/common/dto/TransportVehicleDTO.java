@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 public class TransportVehicleDTO {
     private String vehicleId;
     private String ownerId;
+    private String ownerName;
     private String vehicleType;
     private String vehicleNumber;
     private String loadCapacity;

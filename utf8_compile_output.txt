@@ -1,0 +1,683 @@
+﻿[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.agrifarms:agri-farms-common-service >---------------
+[INFO] Building agri-farms-common-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ agri-farms-common-service ---
+[INFO] Deleting D:\company-work\agrifarm project\agrifarm-common-service\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agri-farms-common-service ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ agri-farms-common-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 28 source files with javac [debug release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/controller/BookingController.java:[19,34] variable bookingService not initialized in the default constructor
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/controller/BookingController.java:[20,29] variable dtoMapper not initialized in the default constructor
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[18,16] cannot find symbol
+  symbol:   method setBookingDate(java.time.LocalDateTime)
+  location: variable booking of type com.agrifarms.common.entity.Booking
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[19,16] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable booking of type com.agrifarms.common.entity.Booking
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[34,16] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable booking of type com.agrifarms.common.entity.Booking
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[35,23] cannot find symbol
+  symbol:   method getProfileImageUrl()
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[34,23] cannot find symbol
+  symbol:   method getVillage()
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[33,23] cannot find symbol
+  symbol:   method getDistrict()
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[32,23] cannot find symbol
+  symbol:   method getRole()
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[31,23] cannot find symbol
+  symbol:   method getFullName()
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[30,23] cannot find symbol
+  symbol:   method getPhoneNumber()
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[29,23] cannot find symbol
+  symbol:   method getUserId()
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[42,15] cannot find symbol
+  symbol:   method setUserId(java.lang.String)
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[43,15] cannot find symbol
+  symbol:   method setPhoneNumber(java.lang.String)
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[44,15] cannot find symbol
+  symbol:   method setFullName(java.lang.String)
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[45,15] cannot find symbol
+  symbol:   method setRole(java.lang.String)
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[46,15] cannot find symbol
+  symbol:   method setDistrict(java.lang.String)
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[47,15] cannot find symbol
+  symbol:   method setVillage(java.lang.String)
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[48,15] cannot find symbol
+  symbol:   method setProfileImageUrl(java.lang.String)
+  location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[68,23] cannot find symbol
+  symbol:   method getImageUrl()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[67,23] cannot find symbol
+  symbol:   method getApprovalStatus()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[66,23] cannot find symbol
+  symbol:   method getRating()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[65,23] cannot find symbol
+  symbol:   method getIsAvailable()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[64,23] cannot find symbol
+  symbol:   method getLocation()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[63,23] cannot find symbol
+  symbol:   method getOperatorAvailable()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[62,23] cannot find symbol
+  symbol:   method getPricePerHour()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[61,23] cannot find symbol
+  symbol:   method getConditionStatus()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[60,23] cannot find symbol
+  symbol:   method getBrandModel()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[59,23] cannot find symbol
+  symbol:   method getCategory()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[58,23] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[57,23] cannot find symbol
+  symbol:   method getEquipmentId()
+  location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[75,34] cannot find symbol
+  symbol:   method getEquipmentId()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[76,30] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[77,31] cannot find symbol
+  symbol:   method getCategory()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[78,33] cannot find symbol
+  symbol:   method getBrandModel()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[79,38] cannot find symbol
+  symbol:   method getConditionStatus()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[80,35] cannot find symbol
+  symbol:   method getPricePerHour()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[81,40] cannot find symbol
+  symbol:   method getOperatorAvailable()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[82,31] cannot find symbol
+  symbol:   method getLocation()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[83,34] cannot find symbol
+  symbol:   method getIsAvailable()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[84,29] cannot find symbol
+  symbol:   method getRating()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[85,37] cannot find symbol
+  symbol:   method getApprovalStatus()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[86,31] cannot find symbol
+  symbol:   method getImageUrl()
+  location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[96,19] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[97,55] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[98,26] invalid method reference
+  cannot find symbol
+    symbol:   method getFullName()
+    location: class com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[116,23] cannot find symbol
+  symbol:   method getImageUrl()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[115,23] cannot find symbol
+  symbol:   method getApprovalStatus()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[114,23] cannot find symbol
+  symbol:   method getRating()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[113,23] cannot find symbol
+  symbol:   method getIsAvailable()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[112,23] cannot find symbol
+  symbol:   method getLocation()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[111,23] cannot find symbol
+  symbol:   method getServiceArea()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[110,23] cannot find symbol
+  symbol:   method getDriverIncluded()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[109,23] cannot find symbol
+  symbol:   method getPricePerKmOrTrip()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[108,23] cannot find symbol
+  symbol:   method getLoadCapacity()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[107,23] cannot find symbol
+  symbol:   method getVehicleNumber()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[106,23] cannot find symbol
+  symbol:   method getVehicleType()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[104,23] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[103,23] cannot find symbol
+  symbol:   method getVehicleId()
+  location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[123,32] cannot find symbol
+  symbol:   method getVehicleId()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[124,30] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[125,34] cannot find symbol
+  symbol:   method getVehicleType()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[126,36] cannot find symbol
+  symbol:   method getVehicleNumber()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[127,35] cannot find symbol
+  symbol:   method getLoadCapacity()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[128,39] cannot find symbol
+  symbol:   method getPricePerKmOrTrip()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[129,37] cannot find symbol
+  symbol:   method getDriverIncluded()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[130,34] cannot find symbol
+  symbol:   method getServiceArea()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[131,31] cannot find symbol
+  symbol:   method getLocation()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[132,34] cannot find symbol
+  symbol:   method getIsAvailable()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[133,29] cannot find symbol
+  symbol:   method getRating()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[134,37] cannot find symbol
+  symbol:   method getApprovalStatus()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[135,31] cannot find symbol
+  symbol:   method getImageUrl()
+  location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[156,23] cannot find symbol
+  symbol:   method getImageUrl()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[155,23] cannot find symbol
+  symbol:   method getApprovalStatus()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[154,23] cannot find symbol
+  symbol:   method getRating()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[153,23] cannot find symbol
+  symbol:   method getIsAvailable()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[152,23] cannot find symbol
+  symbol:   method getLocation()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[151,23] cannot find symbol
+  symbol:   method getOperatorIncluded()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[150,23] cannot find symbol
+  symbol:   method getPriceRate()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[149,23] cannot find symbol
+  symbol:   method getEquipmentUsed()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[148,23] cannot find symbol
+  symbol:   method getDescription()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[147,23] cannot find symbol
+  symbol:   method getBusinessName()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[146,23] cannot find symbol
+  symbol:   method getServiceType()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[145,23] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[144,23] cannot find symbol
+  symbol:   method getServiceId()
+  location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[163,32] cannot find symbol
+  symbol:   method getServiceId()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[164,30] cannot find symbol
+  symbol:   method getOwnerId()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[165,34] cannot find symbol
+  symbol:   method getServiceType()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[166,35] cannot find symbol
+  symbol:   method getBusinessName()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[167,34] cannot find symbol
+  symbol:   method getDescription()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[168,36] cannot find symbol
+  symbol:   method getEquipmentUsed()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[169,32] cannot find symbol
+  symbol:   method getPriceRate()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[170,39] cannot find symbol
+  symbol:   method getOperatorIncluded()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[171,31] cannot find symbol
+  symbol:   method getLocation()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[172,34] cannot find symbol
+  symbol:   method getIsAvailable()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[173,29] cannot find symbol
+  symbol:   method getRating()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[174,37] cannot find symbol
+  symbol:   method getApprovalStatus()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[175,31] cannot find symbol
+  symbol:   method getImageUrl()
+  location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[197,23] cannot find symbol
+  symbol:   method getNotes()
+  location: variable entity of type com.agrifarms.common.entity.Booking
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[196,23] cannot find symbol
+  symbol:   method getAddressText()
+  location: variable entity of type com.agrifarms.common.entity.Booking
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.707 s
+[INFO] Finished at: 2026-02-21T16:13:33+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project agri-farms-common-service: Compilation failure: Compilation failure: 
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/controller/BookingController.java:[19,34] variable bookingService not initialized in the default constructor
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/controller/BookingController.java:[20,29] variable dtoMapper not initialized in the default constructor
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[18,16] cannot find symbol
+[ERROR]   symbol:   method setBookingDate(java.time.LocalDateTime)
+[ERROR]   location: variable booking of type com.agrifarms.common.entity.Booking
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[19,16] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable booking of type com.agrifarms.common.entity.Booking
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[34,16] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable booking of type com.agrifarms.common.entity.Booking
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[35,23] cannot find symbol
+[ERROR]   symbol:   method getProfileImageUrl()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[34,23] cannot find symbol
+[ERROR]   symbol:   method getVillage()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[33,23] cannot find symbol
+[ERROR]   symbol:   method getDistrict()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[32,23] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[31,23] cannot find symbol
+[ERROR]   symbol:   method getFullName()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[30,23] cannot find symbol
+[ERROR]   symbol:   method getPhoneNumber()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[29,23] cannot find symbol
+[ERROR]   symbol:   method getUserId()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[42,15] cannot find symbol
+[ERROR]   symbol:   method setUserId(java.lang.String)
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[43,15] cannot find symbol
+[ERROR]   symbol:   method setPhoneNumber(java.lang.String)
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[44,15] cannot find symbol
+[ERROR]   symbol:   method setFullName(java.lang.String)
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[45,15] cannot find symbol
+[ERROR]   symbol:   method setRole(java.lang.String)
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[46,15] cannot find symbol
+[ERROR]   symbol:   method setDistrict(java.lang.String)
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[47,15] cannot find symbol
+[ERROR]   symbol:   method setVillage(java.lang.String)
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[48,15] cannot find symbol
+[ERROR]   symbol:   method setProfileImageUrl(java.lang.String)
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[68,23] cannot find symbol
+[ERROR]   symbol:   method getImageUrl()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[67,23] cannot find symbol
+[ERROR]   symbol:   method getApprovalStatus()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[66,23] cannot find symbol
+[ERROR]   symbol:   method getRating()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[65,23] cannot find symbol
+[ERROR]   symbol:   method getIsAvailable()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[64,23] cannot find symbol
+[ERROR]   symbol:   method getLocation()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[63,23] cannot find symbol
+[ERROR]   symbol:   method getOperatorAvailable()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[62,23] cannot find symbol
+[ERROR]   symbol:   method getPricePerHour()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[61,23] cannot find symbol
+[ERROR]   symbol:   method getConditionStatus()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[60,23] cannot find symbol
+[ERROR]   symbol:   method getBrandModel()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[59,23] cannot find symbol
+[ERROR]   symbol:   method getCategory()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[58,23] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[57,23] cannot find symbol
+[ERROR]   symbol:   method getEquipmentId()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Equipment
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[75,34] cannot find symbol
+[ERROR]   symbol:   method getEquipmentId()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[76,30] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[77,31] cannot find symbol
+[ERROR]   symbol:   method getCategory()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[78,33] cannot find symbol
+[ERROR]   symbol:   method getBrandModel()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[79,38] cannot find symbol
+[ERROR]   symbol:   method getConditionStatus()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[80,35] cannot find symbol
+[ERROR]   symbol:   method getPricePerHour()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[81,40] cannot find symbol
+[ERROR]   symbol:   method getOperatorAvailable()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[82,31] cannot find symbol
+[ERROR]   symbol:   method getLocation()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[83,34] cannot find symbol
+[ERROR]   symbol:   method getIsAvailable()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[84,29] cannot find symbol
+[ERROR]   symbol:   method getRating()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[85,37] cannot find symbol
+[ERROR]   symbol:   method getApprovalStatus()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[86,31] cannot find symbol
+[ERROR]   symbol:   method getImageUrl()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.EquipmentDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[96,19] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[97,55] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[98,26] invalid method reference
+[ERROR]   cannot find symbol
+[ERROR]     symbol:   method getFullName()
+[ERROR]     location: class com.agrifarms.common.entity.User
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[116,23] cannot find symbol
+[ERROR]   symbol:   method getImageUrl()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[115,23] cannot find symbol
+[ERROR]   symbol:   method getApprovalStatus()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[114,23] cannot find symbol
+[ERROR]   symbol:   method getRating()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[113,23] cannot find symbol
+[ERROR]   symbol:   method getIsAvailable()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[112,23] cannot find symbol
+[ERROR]   symbol:   method getLocation()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[111,23] cannot find symbol
+[ERROR]   symbol:   method getServiceArea()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[110,23] cannot find symbol
+[ERROR]   symbol:   method getDriverIncluded()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[109,23] cannot find symbol
+[ERROR]   symbol:   method getPricePerKmOrTrip()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[108,23] cannot find symbol
+[ERROR]   symbol:   method getLoadCapacity()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[107,23] cannot find symbol
+[ERROR]   symbol:   method getVehicleNumber()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[106,23] cannot find symbol
+[ERROR]   symbol:   method getVehicleType()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[104,23] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[103,23] cannot find symbol
+[ERROR]   symbol:   method getVehicleId()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.TransportVehicle
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[123,32] cannot find symbol
+[ERROR]   symbol:   method getVehicleId()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[124,30] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[125,34] cannot find symbol
+[ERROR]   symbol:   method getVehicleType()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[126,36] cannot find symbol
+[ERROR]   symbol:   method getVehicleNumber()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[127,35] cannot find symbol
+[ERROR]   symbol:   method getLoadCapacity()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[128,39] cannot find symbol
+[ERROR]   symbol:   method getPricePerKmOrTrip()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[129,37] cannot find symbol
+[ERROR]   symbol:   method getDriverIncluded()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[130,34] cannot find symbol
+[ERROR]   symbol:   method getServiceArea()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[131,31] cannot find symbol
+[ERROR]   symbol:   method getLocation()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[132,34] cannot find symbol
+[ERROR]   symbol:   method getIsAvailable()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[133,29] cannot find symbol
+[ERROR]   symbol:   method getRating()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[134,37] cannot find symbol
+[ERROR]   symbol:   method getApprovalStatus()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[135,31] cannot find symbol
+[ERROR]   symbol:   method getImageUrl()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.TransportVehicleDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[156,23] cannot find symbol
+[ERROR]   symbol:   method getImageUrl()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[155,23] cannot find symbol
+[ERROR]   symbol:   method getApprovalStatus()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[154,23] cannot find symbol
+[ERROR]   symbol:   method getRating()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[153,23] cannot find symbol
+[ERROR]   symbol:   method getIsAvailable()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[152,23] cannot find symbol
+[ERROR]   symbol:   method getLocation()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[151,23] cannot find symbol
+[ERROR]   symbol:   method getOperatorIncluded()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[150,23] cannot find symbol
+[ERROR]   symbol:   method getPriceRate()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[149,23] cannot find symbol
+[ERROR]   symbol:   method getEquipmentUsed()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[148,23] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[147,23] cannot find symbol
+[ERROR]   symbol:   method getBusinessName()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[146,23] cannot find symbol
+[ERROR]   symbol:   method getServiceType()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[145,23] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[144,23] cannot find symbol
+[ERROR]   symbol:   method getServiceId()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.ServiceOffering
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[163,32] cannot find symbol
+[ERROR]   symbol:   method getServiceId()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[164,30] cannot find symbol
+[ERROR]   symbol:   method getOwnerId()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[165,34] cannot find symbol
+[ERROR]   symbol:   method getServiceType()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[166,35] cannot find symbol
+[ERROR]   symbol:   method getBusinessName()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[167,34] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[168,36] cannot find symbol
+[ERROR]   symbol:   method getEquipmentUsed()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[169,32] cannot find symbol
+[ERROR]   symbol:   method getPriceRate()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[170,39] cannot find symbol
+[ERROR]   symbol:   method getOperatorIncluded()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[171,31] cannot find symbol
+[ERROR]   symbol:   method getLocation()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[172,34] cannot find symbol
+[ERROR]   symbol:   method getIsAvailable()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[173,29] cannot find symbol
+[ERROR]   symbol:   method getRating()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[174,37] cannot find symbol
+[ERROR]   symbol:   method getApprovalStatus()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[175,31] cannot find symbol
+[ERROR]   symbol:   method getImageUrl()
+[ERROR]   location: variable dto of type com.agrifarms.common.dto.ServiceOfferingDTO
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[197,23] cannot find symbol
+[ERROR]   symbol:   method getNotes()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Booking
+[ERROR] /D:/company-work/agrifarm project/agrifarm-common-service/src/main/java/com/agrifarms/common/dto/DtoMapper.java:[196,23] cannot find symbol
+[ERROR]   symbol:   method getAddressText()
+[ERROR]   location: variable entity of type com.agrifarms.common.entity.Booking
+[ERROR] -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project agri-farms-common-service: Compilation failure
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:333)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:104)
+    at java.lang.reflect.Method.invoke (Method.java:565)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+Caused by: org.apache.maven.plugin.compiler.CompilationFailureException: Compilation failure
+    at org.apache.maven.plugin.compiler.AbstractCompilerMojo.execute (AbstractCompilerMojo.java:1212)
+    at org.apache.maven.plugin.compiler.CompilerMojo.execute (CompilerMojo.java:193)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:104)
+    at java.lang.reflect.Method.invoke (Method.java:565)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+[ERROR] 
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -7,7 +7,9 @@ import com.agrifarms.common.entity.TransportVehicle;
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.entity.WorkerGroup;
 import com.agrifarms.common.entity.WorkerGroupRole;
+import com.agrifarms.common.repository.UserRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collections;
 import java.util.List;
@@ -15,6 +17,9 @@ import java.util.stream.Collectors;
 
 @Component
 public class DtoMapper {
+
+    @Autowired
+    private UserRepository userRepository;
 
     // User
     public UserDTO toUserDTO(User entity) {
@@ -86,9 +91,18 @@ public class DtoMapper {
     public TransportVehicleDTO toTransportVehicleDTO(TransportVehicle entity) {
         if (entity == null)
             return null;
+
+        String ownerName = "Unknown Owner";
+        if (entity.getOwnerId() != null) {
+            ownerName = userRepository.findById(entity.getOwnerId())
+                    .map(User::getFullName)
+                    .orElse("Unknown Owner");
+        }
+
         return new TransportVehicleDTO(
                 entity.getVehicleId(),
                 entity.getOwnerId(),
+                ownerName,
                 entity.getVehicleType(),
                 entity.getVehicleNumber(),
                 entity.getLoadCapacity(),
