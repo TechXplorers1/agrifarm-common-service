@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 public class ServiceOfferingDTO {
     private String serviceId;
     private String ownerId;
+    private String ownerName;
     private String serviceType;
     private String businessName;
     private String description;

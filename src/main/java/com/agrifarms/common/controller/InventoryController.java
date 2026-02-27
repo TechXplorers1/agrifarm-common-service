@@ -55,9 +55,24 @@ public class InventoryController {
 
     @PutMapping("/equipment/{id}")
     public EquipmentDTO updateEquipment(@PathVariable String id, @RequestBody EquipmentDTO equipmentDTO) {
-        Equipment equipment = dtoMapper.toEquipmentEntity(equipmentDTO);
-        equipment.setEquipmentId(id);
-        Equipment savedEquipment = inventoryService.saveEquipment(equipment);
+        Equipment existingEquipment = inventoryService.getAllEquipment().stream()
+                .filter(e -> e.getEquipmentId().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Equipment not found"));
+        
+        // Update fields from DTO
+        if (equipmentDTO.getCategory() != null) existingEquipment.setCategory(equipmentDTO.getCategory());
+        if (equipmentDTO.getBrandModel() != null) existingEquipment.setBrandModel(equipmentDTO.getBrandModel());
+        if (equipmentDTO.getConditionStatus() != null) existingEquipment.setConditionStatus(equipmentDTO.getConditionStatus());
+        if (equipmentDTO.getPricePerHour() != null) existingEquipment.setPricePerHour(equipmentDTO.getPricePerHour());
+        if (equipmentDTO.getOperatorAvailable() != null) existingEquipment.setOperatorAvailable(equipmentDTO.getOperatorAvailable());
+        if (equipmentDTO.getLocation() != null) existingEquipment.setLocation(equipmentDTO.getLocation());
+        if (equipmentDTO.getIsAvailable() != null) existingEquipment.setIsAvailable(equipmentDTO.getIsAvailable());
+        if (equipmentDTO.getRating() != null) existingEquipment.setRating(equipmentDTO.getRating());
+        if (equipmentDTO.getApprovalStatus() != null) existingEquipment.setApprovalStatus(equipmentDTO.getApprovalStatus());
+        if (equipmentDTO.getImageUrl() != null) existingEquipment.setImageUrl(equipmentDTO.getImageUrl());
+        
+        Equipment savedEquipment = inventoryService.saveEquipment(existingEquipment);
         return dtoMapper.toEquipmentDTO(savedEquipment);
     }
 
@@ -93,9 +108,24 @@ public class InventoryController {
 
     @PutMapping("/vehicles/{id}")
     public TransportVehicleDTO updateVehicle(@PathVariable String id, @RequestBody TransportVehicleDTO vehicleDTO) {
-        TransportVehicle vehicle = dtoMapper.toTransportVehicleEntity(vehicleDTO);
-        vehicle.setVehicleId(id);
-        TransportVehicle savedVehicle = inventoryService.saveVehicle(vehicle);
+        TransportVehicle existingVehicle = inventoryService.getAllVehicles().stream()
+                .filter(v -> v.getVehicleId().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Vehicle not found"));
+
+        if (vehicleDTO.getVehicleType() != null) existingVehicle.setVehicleType(vehicleDTO.getVehicleType());
+        if (vehicleDTO.getVehicleNumber() != null) existingVehicle.setVehicleNumber(vehicleDTO.getVehicleNumber());
+        if (vehicleDTO.getLoadCapacity() != null) existingVehicle.setLoadCapacity(vehicleDTO.getLoadCapacity());
+        if (vehicleDTO.getPricePerKmOrTrip() != null) existingVehicle.setPricePerKmOrTrip(vehicleDTO.getPricePerKmOrTrip());
+        if (vehicleDTO.getDriverIncluded() != null) existingVehicle.setDriverIncluded(vehicleDTO.getDriverIncluded());
+        if (vehicleDTO.getServiceArea() != null) existingVehicle.setServiceArea(vehicleDTO.getServiceArea());
+        if (vehicleDTO.getLocation() != null) existingVehicle.setLocation(vehicleDTO.getLocation());
+        if (vehicleDTO.getIsAvailable() != null) existingVehicle.setIsAvailable(vehicleDTO.getIsAvailable());
+        if (vehicleDTO.getRating() != null) existingVehicle.setRating(vehicleDTO.getRating());
+        if (vehicleDTO.getApprovalStatus() != null) existingVehicle.setApprovalStatus(vehicleDTO.getApprovalStatus());
+        if (vehicleDTO.getImageUrl() != null) existingVehicle.setImageUrl(vehicleDTO.getImageUrl());
+
+        TransportVehicle savedVehicle = inventoryService.saveVehicle(existingVehicle);
         return dtoMapper.toTransportVehicleDTO(savedVehicle);
     }
 
@@ -131,9 +161,24 @@ public class InventoryController {
 
     @PutMapping("/services/{id}")
     public ServiceOfferingDTO updateService(@PathVariable String id, @RequestBody ServiceOfferingDTO serviceDTO) {
-        ServiceOffering service = dtoMapper.toServiceOfferingEntity(serviceDTO);
-        service.setServiceId(id);
-        ServiceOffering savedService = inventoryService.saveService(service);
+        ServiceOffering existingService = inventoryService.getAllServices().stream()
+                .filter(s -> s.getServiceId().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Service not found"));
+
+        if (serviceDTO.getServiceType() != null) existingService.setServiceType(serviceDTO.getServiceType());
+        if (serviceDTO.getBusinessName() != null) existingService.setBusinessName(serviceDTO.getBusinessName());
+        if (serviceDTO.getDescription() != null) existingService.setDescription(serviceDTO.getDescription());
+        if (serviceDTO.getEquipmentUsed() != null) existingService.setEquipmentUsed(serviceDTO.getEquipmentUsed());
+        if (serviceDTO.getPriceRate() != null) existingService.setPriceRate(serviceDTO.getPriceRate());
+        if (serviceDTO.getOperatorIncluded() != null) existingService.setOperatorIncluded(serviceDTO.getOperatorIncluded());
+        if (serviceDTO.getLocation() != null) existingService.setLocation(serviceDTO.getLocation());
+        if (serviceDTO.getIsAvailable() != null) existingService.setIsAvailable(serviceDTO.getIsAvailable());
+        if (serviceDTO.getRating() != null) existingService.setRating(serviceDTO.getRating());
+        if (serviceDTO.getApprovalStatus() != null) existingService.setApprovalStatus(serviceDTO.getApprovalStatus());
+        if (serviceDTO.getImageUrl() != null) existingService.setImageUrl(serviceDTO.getImageUrl());
+
+        ServiceOffering savedService = inventoryService.saveService(existingService);
         return dtoMapper.toServiceOfferingDTO(savedService);
     }
 
@@ -169,9 +214,25 @@ public class InventoryController {
 
     @PutMapping("/worker-groups/{id}")
     public WorkerGroupDTO updateWorkerGroup(@PathVariable String id, @RequestBody WorkerGroupDTO groupDTO) {
-        WorkerGroup group = dtoMapper.toWorkerGroupEntity(groupDTO);
-        group.setGroupId(id);
-        WorkerGroup savedGroup = inventoryService.saveWorkerGroup(group);
+        WorkerGroup existingGroup = inventoryService.getAllWorkerGroups().stream()
+                .filter(g -> g.getGroupId().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Worker Group not found"));
+
+        if (groupDTO.getGroupName() != null) existingGroup.setGroupName(groupDTO.getGroupName());
+        if (groupDTO.getMaleCount() != null) existingGroup.setMaleCount(groupDTO.getMaleCount());
+        if (groupDTO.getFemaleCount() != null) existingGroup.setFemaleCount(groupDTO.getFemaleCount());
+        if (groupDTO.getPricePerMale() != null) existingGroup.setPricePerMale(groupDTO.getPricePerMale());
+        if (groupDTO.getPricePerFemale() != null) existingGroup.setPricePerFemale(groupDTO.getPricePerFemale());
+        if (groupDTO.getSkills() != null) existingGroup.setSkills(groupDTO.getSkills());
+        if (groupDTO.getLocation() != null) existingGroup.setLocation(groupDTO.getLocation());
+        if (groupDTO.getServiceRangeKm() != null) existingGroup.setServiceRangeKm(groupDTO.getServiceRangeKm());
+        if (groupDTO.getIsAvailable() != null) existingGroup.setIsAvailable(groupDTO.getIsAvailable());
+        if (groupDTO.getRating() != null) existingGroup.setRating(groupDTO.getRating());
+        if (groupDTO.getApprovalStatus() != null) existingGroup.setApprovalStatus(groupDTO.getApprovalStatus());
+        if (groupDTO.getImageUrl() != null) existingGroup.setImageUrl(groupDTO.getImageUrl());
+
+        WorkerGroup savedGroup = inventoryService.saveWorkerGroup(existingGroup);
         return dtoMapper.toWorkerGroupDTO(savedGroup);
     }
 

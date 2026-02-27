@@ -53,9 +53,18 @@ public class DtoMapper {
     public EquipmentDTO toEquipmentDTO(Equipment entity) {
         if (entity == null)
             return null;
+
+        String ownerName = "Unknown Owner";
+        if (entity.getOwnerId() != null) {
+            ownerName = userRepository.findById(entity.getOwnerId())
+                    .map(User::getFullName)
+                    .orElse("Unknown Owner");
+        }
+
         return new EquipmentDTO(
                 entity.getEquipmentId(),
                 entity.getOwnerId(),
+                ownerName,
                 entity.getCategory(),
                 entity.getBrandModel(),
                 entity.getConditionStatus(),
@@ -140,9 +149,18 @@ public class DtoMapper {
     public ServiceOfferingDTO toServiceOfferingDTO(ServiceOffering entity) {
         if (entity == null)
             return null;
+
+        String ownerName = "Unknown Owner";
+        if (entity.getOwnerId() != null) {
+            ownerName = userRepository.findById(entity.getOwnerId())
+                    .map(User::getFullName)
+                    .orElse("Unknown Owner");
+        }
+
         return new ServiceOfferingDTO(
                 entity.getServiceId(),
                 entity.getOwnerId(),
+                ownerName,
                 entity.getServiceType(),
                 entity.getBusinessName(),
                 entity.getDescription(),

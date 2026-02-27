@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 public class EquipmentDTO {
     private String equipmentId;
     private String ownerId;
+    private String ownerName;
     private String category;
     private String brandModel;
     private String conditionStatus;
