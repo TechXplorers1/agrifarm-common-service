@@ -11,4 +11,6 @@ public interface TransportVehicleRepository extends JpaRepository<TransportVehic
     List<TransportVehicle> findByIsAvailableTrue();
 
     List<TransportVehicle> findByVehicleType(String vehicleType);
+
+    List<TransportVehicle> findByOwnerId(String ownerId);
 }

@@ -58,4 +58,8 @@ public class Equipment {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
+
+    public void setEquipmentId(String equipmentId) {
+        this.equipmentId = equipmentId;
+    }
 }

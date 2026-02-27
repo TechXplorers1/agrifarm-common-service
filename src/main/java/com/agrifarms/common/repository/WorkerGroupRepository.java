@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface WorkerGroupRepository extends JpaRepository<WorkerGroup, String> {
     List<WorkerGroup> findByLocationContainingIgnoreCase(String location);
+
+    List<WorkerGroup> findByOwnerId(String ownerId);
 }

@@ -11,4 +11,6 @@ public interface ServiceOfferingRepository extends JpaRepository<ServiceOffering
     List<ServiceOffering> findByIsAvailableTrue();
 
     List<ServiceOffering> findByServiceType(String serviceType);
+
+    List<ServiceOffering> findByOwnerId(String ownerId);
 }

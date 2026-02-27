@@ -11,4 +11,6 @@ public interface EquipmentRepository extends JpaRepository<Equipment, String> {
     List<Equipment> findByIsAvailableTrue();
 
     List<Equipment> findByCategory(String category);
+
+    List<Equipment> findByOwnerId(String ownerId);
 }
