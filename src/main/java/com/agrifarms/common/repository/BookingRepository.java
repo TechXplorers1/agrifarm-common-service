@@ -11,4 +11,6 @@ public interface BookingRepository extends JpaRepository<Booking, String> {
     List<Booking> findByFarmerId(String farmerId);
 
     List<Booking> findByProviderId(String providerId);
+
+    List<Booking> findByAssetId(String assetId);
 }

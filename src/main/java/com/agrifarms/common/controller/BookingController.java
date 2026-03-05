@@ -40,6 +40,13 @@ public class BookingController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("/asset/{assetId}")
+    public List<BookingDTO> getAssetBookings(@PathVariable String assetId) {
+        return bookingService.getBookingsByAsset(assetId).stream()
+                .map(dtoMapper::toBookingDTO)
+                .collect(Collectors.toList());
+    }
+
     @PutMapping("/{bookingId}/status")
     public BookingDTO updateStatus(@PathVariable String bookingId, @RequestParam String status) {
         Booking updatedBooking = bookingService.updateBookingStatus(bookingId, status);

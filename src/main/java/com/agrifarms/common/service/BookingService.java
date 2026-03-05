@@ -28,6 +28,10 @@ public class BookingService {
         return bookingRepository.findByProviderId(providerId);
     }
 
+    public List<Booking> getBookingsByAsset(String assetId) {
+        return bookingRepository.findByAssetId(assetId);
+    }
+
     public Booking updateBookingStatus(String bookingId, String status) {
         Booking booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new RuntimeException("Booking not found"));
