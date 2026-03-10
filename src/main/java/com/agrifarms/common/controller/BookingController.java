@@ -26,6 +26,13 @@ public class BookingController {
         return dtoMapper.toBookingDTO(createdBooking);
     }
 
+    @GetMapping("/all")
+    public List<BookingDTO> getAllBookings() {
+        return bookingService.getAllBookings().stream()
+                .map(dtoMapper::toBookingDTO)
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/farmer/{farmerId}")
     public List<BookingDTO> getFarmerBookings(@PathVariable String farmerId) {
         return bookingService.getBookingsByFarmer(farmerId).stream()

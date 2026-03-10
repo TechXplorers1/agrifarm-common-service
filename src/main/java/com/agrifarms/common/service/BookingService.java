@@ -20,6 +20,10 @@ public class BookingService {
         return bookingRepository.save(booking);
     }
 
+    public List<Booking> getAllBookings() {
+        return bookingRepository.findAll();
+    }
+
     public List<Booking> getBookingsByFarmer(String farmerId) {
         return bookingRepository.findByFarmerId(farmerId);
     }

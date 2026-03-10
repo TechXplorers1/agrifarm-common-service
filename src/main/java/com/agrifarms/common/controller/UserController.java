@@ -8,6 +8,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
@@ -26,6 +29,13 @@ public class UserController {
         // If we want to force a specific ID for testing, we can set it.
         User createdUser = userService.createUser(user);
         return dtoMapper.toUserDTO(createdUser);
+    }
+
+    @GetMapping("/all")
+    public List<UserDTO> getAllUsers() {
+        return userService.getAllUsers().stream()
+                .map(dtoMapper::toUserDTO)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{userId}")
