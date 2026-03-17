@@ -32,7 +32,8 @@ public class DtoMapper {
                 entity.getRole(),
                 entity.getDistrict(),
                 entity.getVillage(),
-                entity.getProfileImageUrl());
+                entity.getProfileImageUrl(),
+                entity.getFcmToken()); // Added fcmToken
     }
 
     public User toUserEntity(UserDTO dto) {

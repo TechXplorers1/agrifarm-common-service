@@ -15,4 +15,5 @@ public class UserDTO {
     private String district;
     private String village;
     private String profileImageUrl;
+    private String fcmToken;
 }

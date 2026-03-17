@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<UserDTO> getUser(@PathVariable String userId) {
+    public ResponseEntity<UserDTO> getUser(@PathVariable("userId") String userId) {
         return userService.getUserById(userId)
                 .map(dtoMapper::toUserDTO)
                 .map(ResponseEntity::ok)
@@ -47,7 +47,7 @@ public class UserController {
     }
 
     @GetMapping("/phone/{phoneNumber}")
-    public ResponseEntity<UserDTO> getUserByPhone(@PathVariable String phoneNumber) {
+    public ResponseEntity<UserDTO> getUserByPhone(@PathVariable("phoneNumber") String phoneNumber) {
         return userService.getUserByPhoneNumber(phoneNumber)
                 .map(dtoMapper::toUserDTO)
                 .map(ResponseEntity::ok)
@@ -55,7 +55,7 @@ public class UserController {
     }
 
     @PutMapping("/{userId}")
-    public ResponseEntity<UserDTO> updateUser(@PathVariable String userId, @RequestBody UserDTO userDTO) {
+    public ResponseEntity<UserDTO> updateUser(@PathVariable("userId") String userId, @RequestBody UserDTO userDTO) {
         User updatedUser = dtoMapper.toUserEntity(userDTO);
         try {
             User savedUser = userService.updateUser(userId, updatedUser);
@@ -63,5 +63,15 @@ public class UserController {
         } catch (org.springframework.web.server.ResponseStatusException e) {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PutMapping("/{userId}/fcm-token")
+    public ResponseEntity<Void> updateFcmToken(@PathVariable("userId") String userId, @RequestBody java.util.Map<String, String> body) {
+        String token = body.get("fcmToken");
+        if (token != null) {
+            userService.updateFcmToken(userId, token);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.badRequest().build();
     }
 }

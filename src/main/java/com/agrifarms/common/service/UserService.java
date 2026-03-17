@@ -50,7 +50,17 @@ public class UserService {
             if (updatedData.getProfileImageUrl() != null) {
                 existingUser.setProfileImageUrl(updatedData.getProfileImageUrl());
             }
+            if (updatedData.getFcmToken() != null) {
+                existingUser.setFcmToken(updatedData.getFcmToken());
+            }
             return userRepository.save(existingUser);
         }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found with id: " + userId));
+    }
+
+    public void updateFcmToken(String userId, String fcmToken) {
+        userRepository.findById(userId).ifPresent(user -> {
+            user.setFcmToken(fcmToken);
+            userRepository.save(user);
+        });
     }
 }

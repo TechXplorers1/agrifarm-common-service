@@ -39,6 +39,9 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @Column(name = "fcm_token")
+    private String fcmToken;
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

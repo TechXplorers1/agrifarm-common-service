@@ -34,28 +34,28 @@ public class BookingController {
     }
 
     @GetMapping("/farmer/{farmerId}")
-    public List<BookingDTO> getFarmerBookings(@PathVariable String farmerId) {
+    public List<BookingDTO> getFarmerBookings(@PathVariable("farmerId") String farmerId) {
         return bookingService.getBookingsByFarmer(farmerId).stream()
                 .map(dtoMapper::toBookingDTO)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/provider/{providerId}")
-    public List<BookingDTO> getProviderBookings(@PathVariable String providerId) {
+    public List<BookingDTO> getProviderBookings(@PathVariable("providerId") String providerId) {
         return bookingService.getBookingsByProvider(providerId).stream()
                 .map(dtoMapper::toBookingDTO)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/asset/{assetId}")
-    public List<BookingDTO> getAssetBookings(@PathVariable String assetId) {
+    public List<BookingDTO> getAssetBookings(@PathVariable("assetId") String assetId) {
         return bookingService.getBookingsByAsset(assetId).stream()
                 .map(dtoMapper::toBookingDTO)
                 .collect(Collectors.toList());
     }
 
     @PutMapping("/{bookingId}/status")
-    public BookingDTO updateStatus(@PathVariable String bookingId, @RequestParam String status) {
+    public BookingDTO updateStatus(@PathVariable("bookingId") String bookingId, @RequestParam String status) {
         Booking updatedBooking = bookingService.updateBookingStatus(bookingId, status);
         return dtoMapper.toBookingDTO(updatedBooking);
     }

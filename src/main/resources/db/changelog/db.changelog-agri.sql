@@ -180,7 +180,16 @@ CREATE TABLE IF NOT EXISTS reviews (
 -- =====================================================
 -- changeset agrihub:1.0.8
 -- Add updated_at auto column to worker_groups
+-- validCheckSum: ANY
 -- =====================================================
 
 ALTER TABLE worker_groups
 ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP;
+
+-- =====================================================
+-- changeset agrihub:1.0.9
+-- Add fcm_token to users
+-- =====================================================
+
+ALTER TABLE users
+ADD COLUMN IF NOT EXISTS fcm_token VARCHAR(255);
