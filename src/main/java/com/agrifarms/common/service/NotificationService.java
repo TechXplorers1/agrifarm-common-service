@@ -1,7 +1,6 @@
 package com.agrifarms.common.service;
 
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.messaging.FirebaseMessagingException;
 import com.google.firebase.messaging.Message;
 import com.google.firebase.messaging.Notification;
 import org.springframework.stereotype.Service;
@@ -35,7 +34,7 @@ public class NotificationService {
         try {
             String response = FirebaseMessaging.getInstance().send(message);
             System.out.println("Successfully sent message: " + response);
-        } catch (FirebaseMessagingException e) {
+        } catch (Exception e) {
             System.err.println("Error sending FCM message: " + e.getMessage());
             e.printStackTrace();
         }
@@ -60,7 +59,7 @@ public class NotificationService {
         try {
             String response = FirebaseMessaging.getInstance().send(message);
             System.out.println("Successfully sent message to topic " + topic + ": " + response);
-        } catch (FirebaseMessagingException e) {
+        } catch (Exception e) {
             System.err.println("Error sending FCM message to topic: " + e.getMessage());
             e.printStackTrace();
         }

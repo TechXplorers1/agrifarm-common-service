@@ -30,3 +30,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Firebase Credentials
+agrifarms-firebase-service-account.json
