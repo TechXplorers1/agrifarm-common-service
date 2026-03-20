@@ -1,14 +1,63 @@
 package com.agrifarms.common.service;
 
+import com.agrifarms.common.entity.UserNotification;
+import com.agrifarms.common.repository.UserNotificationRepository;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.Message;
 import com.google.firebase.messaging.Notification;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class NotificationService {
+
+    private final UserNotificationRepository userNotificationRepository;
+
+    public void saveAndSendNotification(String userId, String fcmToken, String title, String body, String type, String relatedId, Map<String, String> data) {
+        // 1. Save to database
+        UserNotification userNotification = UserNotification.builder()
+                .userId(userId)
+                .title(title)
+                .message(body)
+                .type(type)
+                .relatedId(relatedId)
+                .isRead(false)
+                .createdAt(LocalDateTime.now())
+                .build();
+        userNotificationRepository.save(userNotification);
+
+        // 2. Send Push Notification if FCM token exists
+        if (fcmToken != null && !fcmToken.isEmpty()) {
+            sendPushNotification(fcmToken, title, body, data);
+        }
+    }
+
+    public List<UserNotification> getNotificationsByUserId(String userId) {
+        return userNotificationRepository.findByUserIdOrderByCreatedAtDesc(userId);
+    }
+
+    public void markAsRead(String notificationId) {
+        Optional<UserNotification> opt = userNotificationRepository.findById(notificationId);
+        if (opt.isPresent()) {
+            UserNotification notification = opt.get();
+            notification.setRead(true);
+            userNotificationRepository.save(notification);
+        }
+    }
+
+    public void markAllAsRead(String userId) {
+        List<UserNotification> unreadNotifications = userNotificationRepository.findByUserIdAndIsReadFalse(userId);
+        for (UserNotification notification : unreadNotifications) {
+            notification.setRead(true);
+        }
+        userNotificationRepository.saveAll(unreadNotifications);
+    }
 
     public void sendPushNotification(String fcmToken, String title, String body, Map<String, String> data) {
         if (fcmToken == null || fcmToken.isEmpty()) {

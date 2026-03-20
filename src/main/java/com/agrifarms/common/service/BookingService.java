@@ -3,6 +3,10 @@ package com.agrifarms.common.service;
 import com.agrifarms.common.entity.Booking;
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.repository.BookingRepository;
+import com.agrifarms.common.repository.EquipmentRepository;
+import com.agrifarms.common.repository.ServiceOfferingRepository;
+import com.agrifarms.common.repository.TransportVehicleRepository;
+import com.agrifarms.common.repository.WorkerGroupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +23,41 @@ public class BookingService {
     private final BookingRepository bookingRepository;
     private final NotificationService notificationService;
     private final UserService userService;
+    private final EquipmentRepository equipmentRepository;
+    private final ServiceOfferingRepository serviceRepository;
+    private final TransportVehicleRepository transportRepository;
+    private final WorkerGroupRepository workerRepository;
+
+    private String getAssetName(String assetType, String assetId) {
+        if (assetType == null || assetId == null) return "asset";
+        
+        try {
+            switch (assetType.toLowerCase()) {
+                case "equipment":
+                    return equipmentRepository.findById(assetId)
+                            .map(e -> e.getBrandModel() != null ? e.getBrandModel() : e.getCategory())
+                            .orElse("equipment");
+                case "service":
+                    return serviceRepository.findById(assetId)
+                            .map(s -> s.getBusinessName() != null ? s.getBusinessName() : s.getServiceType())
+                            .orElse("service");
+                case "transport":
+                    return transportRepository.findById(assetId)
+                            .map(t -> t.getVehicleType())
+                            .orElse("transport vehicle");
+                case "worker_group":
+                case "farm_workers":
+                case "worker":
+                    return workerRepository.findById(assetId)
+                            .map(w -> w.getGroupName() != null ? w.getGroupName() : "farm workers")
+                            .orElse("worker group");
+                default:
+                    return assetType;
+            }
+        } catch (Exception e) {
+            return assetType;
+        }
+    }
 
     public Booking createBooking(Booking booking) {
         booking.setBookingDate(LocalDateTime.now());
@@ -27,17 +66,20 @@ public class BookingService {
 
         // Notify the Provider (Asset Owner) about the new booking request
         Optional<User> providerOpt = userService.getUserById(booking.getProviderId());
-        if (providerOpt.isPresent() && providerOpt.get().getFcmToken() != null) {
+        Optional<User> requesterOpt = userService.getUserById(booking.getFarmerId());
+        if (providerOpt.isPresent()) {
             String fcmToken = providerOpt.get().getFcmToken();
+            String assetName = getAssetName(booking.getAssetType(), booking.getAssetId());
+            String requesterName = requesterOpt.map(User::getFullName).orElse("Someone");
+            
             String title = "New Booking Request";
-            String body = "You have a new request for your " + 
-                          (booking.getAssetType() != null ? booking.getAssetType() : "asset") + ".";
+            String body = requesterName + " requested to book your " + assetName + "!";
             
             Map<String, String> data = new HashMap<>();
             data.put("bookingId", savedBooking.getBookingId());
             data.put("type", "booking_request");
 
-            notificationService.sendPushNotification(fcmToken, title, body, data);
+            notificationService.saveAndSendNotification(booking.getProviderId(), fcmToken, title, body, "booking_request", savedBooking.getBookingId(), data);
         }
 
         return savedBooking;
@@ -67,19 +109,21 @@ public class BookingService {
 
         // Notify the Farmer (Requester) about the status change
         Optional<User> farmerOpt = userService.getUserById(booking.getFarmerId());
-        if (farmerOpt.isPresent() && farmerOpt.get().getFcmToken() != null) {
+        Optional<User> providerOpt = userService.getUserById(booking.getProviderId());
+        if (farmerOpt.isPresent()) {
             String fcmToken = farmerOpt.get().getFcmToken();
-            String title = "Booking Update";
-            String body = "Your booking request for " + 
-                          (booking.getAssetType() != null ? booking.getAssetType() : "an asset") + 
-                          " has been " + status + ".";
+            String assetName = getAssetName(booking.getAssetType(), booking.getAssetId());
+            String providerName = providerOpt.map(User::getFullName).orElse("The provider");
+            
+            String title = "Booking " + status;
+            String body = providerName + " has " + status.toLowerCase() + " your request for " + assetName + ".";
             
             Map<String, String> data = new HashMap<>();
             data.put("bookingId", updatedBooking.getBookingId());
             data.put("status", status);
             data.put("type", "booking_status_update");
 
-            notificationService.sendPushNotification(fcmToken, title, body, data);
+            notificationService.saveAndSendNotification(booking.getFarmerId(), fcmToken, title, body, "booking_status_update", updatedBooking.getBookingId(), data);
         }
 
         return updatedBooking;

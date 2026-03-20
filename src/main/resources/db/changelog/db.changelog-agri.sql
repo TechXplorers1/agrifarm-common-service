@@ -189,7 +189,26 @@ ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP;
 -- =====================================================
 -- changeset agrihub:1.0.9
 -- Add fcm_token to users
+-- validCheckSum: ANY
 -- =====================================================
 
 ALTER TABLE users
 ADD COLUMN IF NOT EXISTS fcm_token VARCHAR(255);
+
+-- =====================================================
+-- changeset agrihub:1.0.10
+-- Create USER_NOTIFICATIONS
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS user_notifications (
+    id VARCHAR(50) PRIMARY KEY,
+    user_id VARCHAR(50) NOT NULL,
+    title VARCHAR(255),
+    message TEXT,
+    type VARCHAR(100),
+    related_id VARCHAR(50),
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_user_notifications_user
+        FOREIGN KEY (user_id) REFERENCES users(user_id)
+);

@@ -54,10 +54,12 @@ public class InventoryController {
         Equipment equipment = dtoMapper.toEquipmentEntity(equipmentDTO);
         Equipment savedEquipment = inventoryService.saveEquipment(equipment);
         
+        String equipName = savedEquipment.getBrandModel() != null ? savedEquipment.getBrandModel() : 
+                           (savedEquipment.getCategory() != null ? savedEquipment.getCategory() : "equipment");
         notificationService.sendTopicNotification(
                 "all_assets",
                 "New Equipment Available!",
-                "A new " + (savedEquipment.getCategory() != null ? savedEquipment.getCategory() : "equipment") + " was just added to the platform.",
+                "A new " + equipName + " was just added to the platform.",
                 null
         );
         
@@ -115,10 +117,11 @@ public class InventoryController {
         TransportVehicle vehicle = dtoMapper.toTransportVehicleEntity(vehicleDTO);
         TransportVehicle savedVehicle = inventoryService.saveVehicle(vehicle);
         
+        String vehName = savedVehicle.getVehicleType() != null ? savedVehicle.getVehicleType() : "vehicle";
         notificationService.sendTopicNotification(
                 "all_assets",
                 "New Transport Vehicle Available!",
-                "A new " + (savedVehicle.getVehicleType() != null ? savedVehicle.getVehicleType() : "vehicle") + " for transport was just added.",
+                "A new transport vehicle (" + vehName + ") was just added to the platform.",
                 null
         );
         
@@ -176,10 +179,12 @@ public class InventoryController {
         ServiceOffering service = dtoMapper.toServiceOfferingEntity(serviceDTO);
         ServiceOffering savedService = inventoryService.saveService(service);
         
+        String servName = savedService.getBusinessName() != null ? savedService.getBusinessName() : 
+                          (savedService.getServiceType() != null ? savedService.getServiceType() : "service");
         notificationService.sendTopicNotification(
                 "all_assets",
                 "New Service Offering Available!",
-                "A new service: " + (savedService.getServiceType() != null ? savedService.getServiceType() : "Agricultural service") + " was just added.",
+                "A new service offered by " + servName + " was just added to the platform.",
                 null
         );
         
@@ -237,10 +242,11 @@ public class InventoryController {
         WorkerGroup group = dtoMapper.toWorkerGroupEntity(groupDTO);
         WorkerGroup savedGroup = inventoryService.saveWorkerGroup(group);
         
+        String grpName = savedGroup.getGroupName() != null ? savedGroup.getGroupName() : "farm workers group";
         notificationService.sendTopicNotification(
                 "all_assets",
                 "New Farm Workers Group Available!",
-                "A new group of " + (savedGroup.getGroupName() != null ? savedGroup.getGroupName() : "farm workers") + " was just added.",
+                "A new group of workers (" + grpName + ") was just added to the platform.",
                 null
         );
         
