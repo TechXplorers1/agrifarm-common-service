@@ -13,6 +13,7 @@ import java.util.List;
 public class WorkerGroupDTO {
     private String groupId;
     private String ownerId;
+    private String ownerName;
     private String groupName;
     private Integer maleCount;
     private Integer femaleCount;

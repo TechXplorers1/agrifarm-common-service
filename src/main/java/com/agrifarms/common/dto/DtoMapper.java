@@ -50,17 +50,25 @@ public class DtoMapper {
         return entity;
     }
 
+    private String getOwnerNameSafely(String ownerId) {
+        if (ownerId == null || ownerId.trim().isEmpty()) {
+            return "Unknown Owner";
+        }
+        try {
+            return userRepository.findById(ownerId)
+                    .map(user -> user.getFullName() != null && !user.getFullName().trim().isEmpty() ? user.getFullName() : "Unknown Owner")
+                    .orElse("Unknown Owner");
+        } catch (Exception e) {
+            return "Unknown Owner";
+        }
+    }
+
     // Equipment
     public EquipmentDTO toEquipmentDTO(Equipment entity) {
         if (entity == null)
             return null;
 
-        String ownerName = "Unknown Owner";
-        if (entity.getOwnerId() != null) {
-            ownerName = userRepository.findById(entity.getOwnerId())
-                    .map(User::getFullName)
-                    .orElse("Unknown Owner");
-        }
+        String ownerName = getOwnerNameSafely(entity.getOwnerId());
 
         return new EquipmentDTO(
                 entity.getEquipmentId(),
@@ -102,12 +110,7 @@ public class DtoMapper {
         if (entity == null)
             return null;
 
-        String ownerName = "Unknown Owner";
-        if (entity.getOwnerId() != null) {
-            ownerName = userRepository.findById(entity.getOwnerId())
-                    .map(User::getFullName)
-                    .orElse("Unknown Owner");
-        }
+        String ownerName = getOwnerNameSafely(entity.getOwnerId());
 
         return new TransportVehicleDTO(
                 entity.getVehicleId(),
@@ -151,12 +154,7 @@ public class DtoMapper {
         if (entity == null)
             return null;
 
-        String ownerName = "Unknown Owner";
-        if (entity.getOwnerId() != null) {
-            ownerName = userRepository.findById(entity.getOwnerId())
-                    .map(User::getFullName)
-                    .orElse("Unknown Owner");
-        }
+        String ownerName = getOwnerNameSafely(entity.getOwnerId());
 
         return new ServiceOfferingDTO(
                 entity.getServiceId(),
@@ -244,6 +242,7 @@ public class DtoMapper {
         WorkerGroupDTO dto = new WorkerGroupDTO(
                 entity.getGroupId(),
                 entity.getOwnerId(),
+                getOwnerNameSafely(entity.getOwnerId()),
                 entity.getGroupName(),
                 entity.getMaleCount(),
                 entity.getFemaleCount(),
