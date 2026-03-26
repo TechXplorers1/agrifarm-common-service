@@ -2,8 +2,8 @@ package com.agrifarms.common.service;
 
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -11,10 +11,28 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    @Cacheable(value = "users", key = "#userId")
+    public Optional<User> getUserById(String userId) {
+        return userRepository.findById(userId);
+    }
+
+    @Cacheable(value = "ownerNames", key = "#ownerId")
+    public String getOwnerNameWithCache(String ownerId) {
+        if (ownerId == null || ownerId.trim().isEmpty()) {
+            return "Unknown Owner";
+        }
+        return userRepository.findById(ownerId)
+                .map(user -> user.getFullName() != null && !user.getFullName().trim().isEmpty() ? user.getFullName() : "Unknown Owner")
+                .orElse("Unknown Owner");
+    }
 
     public User createUser(User user) {
         if (userRepository.existsByPhoneNumber(user.getPhoneNumber())) {
@@ -26,10 +44,6 @@ public class UserService {
 
     public java.util.List<User> getAllUsers() {
         return userRepository.findAll();
-    }
-
-    public Optional<User> getUserById(String userId) {
-        return userRepository.findById(userId);
     }
 
     public Optional<User> getUserByPhoneNumber(String phoneNumber) {
