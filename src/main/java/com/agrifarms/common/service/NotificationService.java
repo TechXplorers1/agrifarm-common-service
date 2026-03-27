@@ -5,7 +5,6 @@ import com.agrifarms.common.repository.UserNotificationRepository;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.Message;
 import com.google.firebase.messaging.Notification;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -14,10 +13,14 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class NotificationService {
 
     private final UserNotificationRepository userNotificationRepository;
+
+    public NotificationService(UserNotificationRepository userNotificationRepository) {
+        this.userNotificationRepository = userNotificationRepository;
+    }
+
 
     public void saveAndSendNotification(String userId, String fcmToken, String title, String body, String type, String relatedId, Map<String, String> data) {
         // 1. Save to database
@@ -85,7 +88,6 @@ public class NotificationService {
             System.out.println("Successfully sent message: " + response);
         } catch (Exception e) {
             System.err.println("Error sending FCM message: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -110,7 +112,6 @@ public class NotificationService {
             System.out.println("Successfully sent message to topic " + topic + ": " + response);
         } catch (Exception e) {
             System.err.println("Error sending FCM message to topic: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 }

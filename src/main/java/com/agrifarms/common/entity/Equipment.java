@@ -1,9 +1,6 @@
 package com.agrifarms.common.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
@@ -11,11 +8,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "equipment")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Equipment {
-
     @Id
     @Column(name = "equipment_id")
     @UuidGenerator
@@ -54,12 +47,66 @@ public class Equipment {
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
+    public Equipment() {}
+
+    public Equipment(String equipmentId, String ownerId, String category, String brandModel, String conditionStatus,
+                     BigDecimal pricePerHour, Boolean operatorAvailable, String location, Boolean isAvailable,
+                     BigDecimal rating, String approvalStatus, String imageUrl) {
+        this.equipmentId = equipmentId;
+        this.ownerId = ownerId;
+        this.category = category;
+        this.brandModel = brandModel;
+        this.conditionStatus = conditionStatus;
+        this.pricePerHour = pricePerHour;
+        this.operatorAvailable = operatorAvailable;
+        this.location = location;
+        this.isAvailable = isAvailable;
+        this.rating = rating;
+        this.approvalStatus = approvalStatus;
+        this.imageUrl = imageUrl;
+    }
+
+    public String getEquipmentId() { return equipmentId; }
+    public void setEquipmentId(String equipmentId) { this.equipmentId = equipmentId; }
+
+    public String getOwnerId() { return ownerId; }
+    public void setOwnerId(String ownerId) { this.ownerId = ownerId; }
+
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
+
+    public String getBrandModel() { return brandModel; }
+    public void setBrandModel(String brandModel) { this.brandModel = brandModel; }
+
+    public String getConditionStatus() { return conditionStatus; }
+    public void setConditionStatus(String conditionStatus) { this.conditionStatus = conditionStatus; }
+
+    public BigDecimal getPricePerHour() { return pricePerHour; }
+    public void setPricePerHour(BigDecimal pricePerHour) { this.pricePerHour = pricePerHour; }
+
+    public Boolean getOperatorAvailable() { return operatorAvailable; }
+    public void setOperatorAvailable(Boolean operatorAvailable) { this.operatorAvailable = operatorAvailable; }
+
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
+
+    public Boolean getIsAvailable() { return isAvailable; }
+    public void setIsAvailable(Boolean isAvailable) { this.isAvailable = isAvailable; }
+
+    public BigDecimal getRating() { return rating; }
+    public void setRating(BigDecimal rating) { this.rating = rating; }
+
+    public String getApprovalStatus() { return approvalStatus; }
+    public void setApprovalStatus(String approvalStatus) { this.approvalStatus = approvalStatus; }
+
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
-    }
-
-    public void setEquipmentId(String equipmentId) {
-        this.equipmentId = equipmentId;
     }
 }

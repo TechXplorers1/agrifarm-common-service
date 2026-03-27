@@ -4,7 +4,6 @@ import com.agrifarms.common.dto.DtoMapper;
 import com.agrifarms.common.dto.UserDTO;
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +12,16 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/users")
-@RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class UserController {
 
     private final UserService userService;
     private final DtoMapper dtoMapper;
+
+    public UserController(UserService userService, DtoMapper dtoMapper) {
+        this.userService = userService;
+        this.dtoMapper = dtoMapper;
+    }
 
     @PostMapping
     public UserDTO createUser(@RequestBody UserDTO userDTO) {
@@ -61,7 +64,9 @@ public class UserController {
             User savedUser = userService.updateUser(userId, updatedUser);
             return ResponseEntity.ok(dtoMapper.toUserDTO(savedUser));
         } catch (org.springframework.web.server.ResponseStatusException e) {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.status(e.getStatusCode()).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(500).header("X-Error-Message", e.getMessage()).build();
         }
     }
 

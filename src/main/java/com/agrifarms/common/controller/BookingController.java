@@ -4,7 +4,6 @@ import com.agrifarms.common.dto.BookingDTO;
 import com.agrifarms.common.dto.DtoMapper;
 import com.agrifarms.common.entity.Booking;
 import com.agrifarms.common.service.BookingService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,12 +11,16 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/bookings")
-@RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class BookingController {
 
     private final BookingService bookingService;
     private final DtoMapper dtoMapper;
+
+    public BookingController(BookingService bookingService, DtoMapper dtoMapper) {
+        this.bookingService = bookingService;
+        this.dtoMapper = dtoMapper;
+    }
 
     @PostMapping
     public BookingDTO createBooking(@RequestBody BookingDTO bookingDTO) {

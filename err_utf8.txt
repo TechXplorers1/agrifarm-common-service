@@ -1,0 +1,3532 @@
+﻿
+> compile_output.txt:1
+:[INFO] Error 
+stacktraces are 
+turned on.
+  compile_output.txt:2
+:[INFO] Scanning for 
+projects...
+  compile_output.txt:3
+:[INFO] 
+  compile_output.txt:4
+:[INFO] 
+--------------< com.ag
+rifarms:agri-farms-com
+mon-service 
+>---------------
+  compile_output.txt:1
+7:[INFO] Changes 
+detected - 
+recompiling the 
+module! :source
+  compile_output.txt:1
+8:[INFO] Compiling 28 
+source files with 
+javac [debug release 
+17] to target\classes
+  compile_output.txt:1
+9:[INFO] -------------
+----------------------
+----------------------
+----
+> compile_output.txt:2
+0:[ERROR] COMPILATION 
+ERROR : 
+  compile_output.txt:2
+1:[INFO] -------------
+----------------------
+----------------------
+----
+> compile_output.txt:2
+2:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/control
+ler/BookingController.
+java:[19,34] variable 
+bookingService not 
+initialized in the 
+default constructor
+> compile_output.txt:2
+3:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/control
+ler/BookingController.
+java:[20,29] variable 
+dtoMapper not 
+initialized in the 
+default constructor
+> compile_output.txt:2
+4:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/service
+/BookingService.java:[
+18,16] cannot find 
+symbol
+  compile_output.txt:2
+5:  symbol:   method s
+etBookingDate(java.tim
+e.LocalDateTime)
+  compile_output.txt:2
+6:  location: 
+variable booking of 
+type com.agrifarms.com
+mon.entity.Booking
+> compile_output.txt:2
+7:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/service
+/BookingService.java:[
+19,16] cannot find 
+symbol
+  compile_output.txt:2
+8:  symbol:   method s
+etStatus(java.lang.Str
+ing)
+  compile_output.txt:2
+9:  location: 
+variable booking of 
+type com.agrifarms.com
+mon.entity.Booking
+> compile_output.txt:3
+0:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/service
+/BookingService.java:[
+34,16] cannot find 
+symbol
+  compile_output.txt:3
+1:  symbol:   method s
+etStatus(java.lang.Str
+ing)
+  compile_output.txt:3
+2:  location: 
+variable booking of 
+type com.agrifarms.com
+mon.entity.Booking
+> compile_output.txt:3
+3:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[35,23] 
+cannot find symbol
+  compile_output.txt:3
+4:  symbol:   method 
+getProfileImageUrl()
+  compile_output.txt:3
+5:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:3
+6:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[34,23] 
+cannot find symbol
+  compile_output.txt:3
+7:  symbol:   method 
+getVillage()
+  compile_output.txt:3
+8:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:3
+9:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[33,23] 
+cannot find symbol
+  compile_output.txt:4
+0:  symbol:   method 
+getDistrict()
+  compile_output.txt:4
+1:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:4
+2:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[32,23] 
+cannot find symbol
+  compile_output.txt:4
+3:  symbol:   method 
+getRole()
+  compile_output.txt:4
+4:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:4
+5:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[31,23] 
+cannot find symbol
+  compile_output.txt:4
+6:  symbol:   method 
+getFullName()
+  compile_output.txt:4
+7:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:4
+8:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[30,23] 
+cannot find symbol
+  compile_output.txt:4
+9:  symbol:   method 
+getPhoneNumber()
+  compile_output.txt:5
+0:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:5
+1:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[29,23] 
+cannot find symbol
+  compile_output.txt:5
+2:  symbol:   method 
+getUserId()
+  compile_output.txt:5
+3:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:5
+4:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[42,15] 
+cannot find symbol
+  compile_output.txt:5
+5:  symbol:   method s
+etUserId(java.lang.Str
+ing)
+  compile_output.txt:5
+6:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:5
+7:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[43,15] 
+cannot find symbol
+  compile_output.txt:5
+8:  symbol:   method s
+etPhoneNumber(java.lan
+g.String)
+  compile_output.txt:5
+9:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:6
+0:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[44,15] 
+cannot find symbol
+  compile_output.txt:6
+1:  symbol:   method s
+etFullName(java.lang.S
+tring)
+  compile_output.txt:6
+2:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:6
+3:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[45,15] 
+cannot find symbol
+  compile_output.txt:6
+4:  symbol:   method s
+etRole(java.lang.Strin
+g)
+  compile_output.txt:6
+5:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:6
+6:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[46,15] 
+cannot find symbol
+  compile_output.txt:6
+7:  symbol:   method s
+etDistrict(java.lang.S
+tring)
+  compile_output.txt:6
+8:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:6
+9:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[47,15] 
+cannot find symbol
+  compile_output.txt:7
+0:  symbol:   method s
+etVillage(java.lang.St
+ring)
+  compile_output.txt:7
+1:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:7
+2:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[48,15] 
+cannot find symbol
+  compile_output.txt:7
+3:  symbol:   method s
+etProfileImageUrl(java
+.lang.String)
+  compile_output.txt:7
+4:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.User
+> compile_output.txt:7
+5:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[68,23] 
+cannot find symbol
+  compile_output.txt:7
+6:  symbol:   method 
+getImageUrl()
+  compile_output.txt:7
+7:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:7
+8:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[67,23] 
+cannot find symbol
+  compile_output.txt:7
+9:  symbol:   method 
+getApprovalStatus()
+  compile_output.txt:8
+0:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:8
+1:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[66,23] 
+cannot find symbol
+  compile_output.txt:8
+2:  symbol:   method 
+getRating()
+  compile_output.txt:8
+3:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:8
+4:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[65,23] 
+cannot find symbol
+  compile_output.txt:8
+5:  symbol:   method 
+getIsAvailable()
+  compile_output.txt:8
+6:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:8
+7:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[64,23] 
+cannot find symbol
+  compile_output.txt:8
+8:  symbol:   method 
+getLocation()
+  compile_output.txt:8
+9:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:9
+0:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[63,23] 
+cannot find symbol
+  compile_output.txt:9
+1:  symbol:   method 
+getOperatorAvailable()
+  compile_output.txt:9
+2:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:9
+3:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[62,23] 
+cannot find symbol
+  compile_output.txt:9
+4:  symbol:   method 
+getPricePerHour()
+  compile_output.txt:9
+5:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:9
+6:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[61,23] 
+cannot find symbol
+  compile_output.txt:9
+7:  symbol:   method 
+getConditionStatus()
+  compile_output.txt:9
+8:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:9
+9:[ERROR] /D:/company-
+work/agrifarm project/
+agrifarm-common-servic
+e/src/main/java/com/ag
+rifarms/common/dto/Dto
+Mapper.java:[60,23] 
+cannot find symbol
+  compile_output.txt:1
+00:  symbol:   method 
+getBrandModel()
+  compile_output.txt:1
+01:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:1
+02:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[59,23] 
+cannot find symbol
+  compile_output.txt:1
+03:  symbol:   method 
+getCategory()
+  compile_output.txt:1
+04:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:1
+05:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[58,23] 
+cannot find symbol
+  compile_output.txt:1
+06:  symbol:   method 
+getOwnerId()
+  compile_output.txt:1
+07:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:1
+08:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[57,23] 
+cannot find symbol
+  compile_output.txt:1
+09:  symbol:   method 
+getEquipmentId()
+  compile_output.txt:1
+10:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Equipment
+> compile_output.txt:1
+11:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[75,34] 
+cannot find symbol
+  compile_output.txt:1
+12:  symbol:   method 
+getEquipmentId()
+  compile_output.txt:1
+13:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+14:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[76,30] 
+cannot find symbol
+  compile_output.txt:1
+15:  symbol:   method 
+getOwnerId()
+  compile_output.txt:1
+16:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+17:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[77,31] 
+cannot find symbol
+  compile_output.txt:1
+18:  symbol:   method 
+getCategory()
+  compile_output.txt:1
+19:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+20:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[78,33] 
+cannot find symbol
+  compile_output.txt:1
+21:  symbol:   method 
+getBrandModel()
+  compile_output.txt:1
+22:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+23:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[79,38] 
+cannot find symbol
+  compile_output.txt:1
+24:  symbol:   method 
+getConditionStatus()
+  compile_output.txt:1
+25:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+26:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[80,35] 
+cannot find symbol
+  compile_output.txt:1
+27:  symbol:   method 
+getPricePerHour()
+  compile_output.txt:1
+28:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+29:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[81,40] 
+cannot find symbol
+  compile_output.txt:1
+30:  symbol:   method 
+getOperatorAvailable()
+  compile_output.txt:1
+31:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+32:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[82,31] 
+cannot find symbol
+  compile_output.txt:1
+33:  symbol:   method 
+getLocation()
+  compile_output.txt:1
+34:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+35:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[83,34] 
+cannot find symbol
+  compile_output.txt:1
+36:  symbol:   method 
+getIsAvailable()
+  compile_output.txt:1
+37:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+38:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[84,29] 
+cannot find symbol
+  compile_output.txt:1
+39:  symbol:   method 
+getRating()
+  compile_output.txt:1
+40:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+41:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[85,37] 
+cannot find symbol
+  compile_output.txt:1
+42:  symbol:   method 
+getApprovalStatus()
+  compile_output.txt:1
+43:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+44:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[86,31] 
+cannot find symbol
+  compile_output.txt:1
+45:  symbol:   method 
+getImageUrl()
+  compile_output.txt:1
+46:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.EquipmentDTO
+> compile_output.txt:1
+47:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[96,19] 
+cannot find symbol
+  compile_output.txt:1
+48:  symbol:   method 
+getOwnerId()
+  compile_output.txt:1
+49:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+50:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[97,55] 
+cannot find symbol
+  compile_output.txt:1
+51:  symbol:   method 
+getOwnerId()
+  compile_output.txt:1
+52:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+53:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[98,26] 
+invalid method 
+reference
+  compile_output.txt:1
+54:  cannot find 
+symbol
+  compile_output.txt:1
+55:    symbol:   
+method getFullName()
+  compile_output.txt:1
+56:    location: 
+class com.agrifarms.co
+mmon.entity.User
+> compile_output.txt:1
+57:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[116,23] 
+cannot find symbol
+  compile_output.txt:1
+58:  symbol:   method 
+getImageUrl()
+  compile_output.txt:1
+59:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+60:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[115,23] 
+cannot find symbol
+  compile_output.txt:1
+61:  symbol:   method 
+getApprovalStatus()
+  compile_output.txt:1
+62:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+63:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[114,23] 
+cannot find symbol
+  compile_output.txt:1
+64:  symbol:   method 
+getRating()
+  compile_output.txt:1
+65:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+66:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[113,23] 
+cannot find symbol
+  compile_output.txt:1
+67:  symbol:   method 
+getIsAvailable()
+  compile_output.txt:1
+68:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+69:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[112,23] 
+cannot find symbol
+  compile_output.txt:1
+70:  symbol:   method 
+getLocation()
+  compile_output.txt:1
+71:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+72:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[111,23] 
+cannot find symbol
+  compile_output.txt:1
+73:  symbol:   method 
+getServiceArea()
+  compile_output.txt:1
+74:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+75:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[110,23] 
+cannot find symbol
+  compile_output.txt:1
+76:  symbol:   method 
+getDriverIncluded()
+  compile_output.txt:1
+77:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+78:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[109,23] 
+cannot find symbol
+  compile_output.txt:1
+79:  symbol:   method 
+getPricePerKmOrTrip()
+  compile_output.txt:1
+80:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+81:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[108,23] 
+cannot find symbol
+  compile_output.txt:1
+82:  symbol:   method 
+getLoadCapacity()
+  compile_output.txt:1
+83:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+84:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[107,23] 
+cannot find symbol
+  compile_output.txt:1
+85:  symbol:   method 
+getVehicleNumber()
+  compile_output.txt:1
+86:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+87:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[106,23] 
+cannot find symbol
+  compile_output.txt:1
+88:  symbol:   method 
+getVehicleType()
+  compile_output.txt:1
+89:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+90:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[104,23] 
+cannot find symbol
+  compile_output.txt:1
+91:  symbol:   method 
+getOwnerId()
+  compile_output.txt:1
+92:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+93:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[103,23] 
+cannot find symbol
+  compile_output.txt:1
+94:  symbol:   method 
+getVehicleId()
+  compile_output.txt:1
+95:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.TransportVe
+hicle
+> compile_output.txt:1
+96:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[123,32] 
+cannot find symbol
+  compile_output.txt:1
+97:  symbol:   method 
+getVehicleId()
+  compile_output.txt:1
+98:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:1
+99:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[124,30] 
+cannot find symbol
+  compile_output.txt:2
+00:  symbol:   method 
+getOwnerId()
+  compile_output.txt:2
+01:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+02:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[125,34] 
+cannot find symbol
+  compile_output.txt:2
+03:  symbol:   method 
+getVehicleType()
+  compile_output.txt:2
+04:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+05:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[126,36] 
+cannot find symbol
+  compile_output.txt:2
+06:  symbol:   method 
+getVehicleNumber()
+  compile_output.txt:2
+07:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+08:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[127,35] 
+cannot find symbol
+  compile_output.txt:2
+09:  symbol:   method 
+getLoadCapacity()
+  compile_output.txt:2
+10:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+11:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[128,39] 
+cannot find symbol
+  compile_output.txt:2
+12:  symbol:   method 
+getPricePerKmOrTrip()
+  compile_output.txt:2
+13:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+14:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[129,37] 
+cannot find symbol
+  compile_output.txt:2
+15:  symbol:   method 
+getDriverIncluded()
+  compile_output.txt:2
+16:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+17:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[130,34] 
+cannot find symbol
+  compile_output.txt:2
+18:  symbol:   method 
+getServiceArea()
+  compile_output.txt:2
+19:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+20:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[131,31] 
+cannot find symbol
+  compile_output.txt:2
+21:  symbol:   method 
+getLocation()
+  compile_output.txt:2
+22:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+23:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[132,34] 
+cannot find symbol
+  compile_output.txt:2
+24:  symbol:   method 
+getIsAvailable()
+  compile_output.txt:2
+25:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+26:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[133,29] 
+cannot find symbol
+  compile_output.txt:2
+27:  symbol:   method 
+getRating()
+  compile_output.txt:2
+28:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+29:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[134,37] 
+cannot find symbol
+  compile_output.txt:2
+30:  symbol:   method 
+getApprovalStatus()
+  compile_output.txt:2
+31:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+32:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[135,31] 
+cannot find symbol
+  compile_output.txt:2
+33:  symbol:   method 
+getImageUrl()
+  compile_output.txt:2
+34:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.TransportVehicleDTO
+> compile_output.txt:2
+35:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[156,23] 
+cannot find symbol
+  compile_output.txt:2
+36:  symbol:   method 
+getImageUrl()
+  compile_output.txt:2
+37:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+38:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[155,23] 
+cannot find symbol
+  compile_output.txt:2
+39:  symbol:   method 
+getApprovalStatus()
+  compile_output.txt:2
+40:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+41:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[154,23] 
+cannot find symbol
+  compile_output.txt:2
+42:  symbol:   method 
+getRating()
+  compile_output.txt:2
+43:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+44:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[153,23] 
+cannot find symbol
+  compile_output.txt:2
+45:  symbol:   method 
+getIsAvailable()
+  compile_output.txt:2
+46:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+47:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[152,23] 
+cannot find symbol
+  compile_output.txt:2
+48:  symbol:   method 
+getLocation()
+  compile_output.txt:2
+49:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+50:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[151,23] 
+cannot find symbol
+  compile_output.txt:2
+51:  symbol:   method 
+getOperatorIncluded()
+  compile_output.txt:2
+52:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+53:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[150,23] 
+cannot find symbol
+  compile_output.txt:2
+54:  symbol:   method 
+getPriceRate()
+  compile_output.txt:2
+55:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+56:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[149,23] 
+cannot find symbol
+  compile_output.txt:2
+57:  symbol:   method 
+getEquipmentUsed()
+  compile_output.txt:2
+58:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+59:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[148,23] 
+cannot find symbol
+  compile_output.txt:2
+60:  symbol:   method 
+getDescription()
+  compile_output.txt:2
+61:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+62:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[147,23] 
+cannot find symbol
+  compile_output.txt:2
+63:  symbol:   method 
+getBusinessName()
+  compile_output.txt:2
+64:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+65:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[146,23] 
+cannot find symbol
+  compile_output.txt:2
+66:  symbol:   method 
+getServiceType()
+  compile_output.txt:2
+67:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+68:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[145,23] 
+cannot find symbol
+  compile_output.txt:2
+69:  symbol:   method 
+getOwnerId()
+  compile_output.txt:2
+70:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+71:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[144,23] 
+cannot find symbol
+  compile_output.txt:2
+72:  symbol:   method 
+getServiceId()
+  compile_output.txt:2
+73:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.ServiceOffe
+ring
+> compile_output.txt:2
+74:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[163,32] 
+cannot find symbol
+  compile_output.txt:2
+75:  symbol:   method 
+getServiceId()
+  compile_output.txt:2
+76:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:2
+77:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[164,30] 
+cannot find symbol
+  compile_output.txt:2
+78:  symbol:   method 
+getOwnerId()
+  compile_output.txt:2
+79:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:2
+80:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[165,34] 
+cannot find symbol
+  compile_output.txt:2
+81:  symbol:   method 
+getServiceType()
+  compile_output.txt:2
+82:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:2
+83:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[166,35] 
+cannot find symbol
+  compile_output.txt:2
+84:  symbol:   method 
+getBusinessName()
+  compile_output.txt:2
+85:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:2
+86:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[167,34] 
+cannot find symbol
+  compile_output.txt:2
+87:  symbol:   method 
+getDescription()
+  compile_output.txt:2
+88:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:2
+89:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[168,36] 
+cannot find symbol
+  compile_output.txt:2
+90:  symbol:   method 
+getEquipmentUsed()
+  compile_output.txt:2
+91:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:2
+92:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[169,32] 
+cannot find symbol
+  compile_output.txt:2
+93:  symbol:   method 
+getPriceRate()
+  compile_output.txt:2
+94:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:2
+95:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[170,39] 
+cannot find symbol
+  compile_output.txt:2
+96:  symbol:   method 
+getOperatorIncluded()
+  compile_output.txt:2
+97:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:2
+98:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[171,31] 
+cannot find symbol
+  compile_output.txt:2
+99:  symbol:   method 
+getLocation()
+  compile_output.txt:3
+00:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:3
+01:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[172,34] 
+cannot find symbol
+  compile_output.txt:3
+02:  symbol:   method 
+getIsAvailable()
+  compile_output.txt:3
+03:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:3
+04:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[173,29] 
+cannot find symbol
+  compile_output.txt:3
+05:  symbol:   method 
+getRating()
+  compile_output.txt:3
+06:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:3
+07:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[174,37] 
+cannot find symbol
+  compile_output.txt:3
+08:  symbol:   method 
+getApprovalStatus()
+  compile_output.txt:3
+09:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:3
+10:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[175,31] 
+cannot find symbol
+  compile_output.txt:3
+11:  symbol:   method 
+getImageUrl()
+  compile_output.txt:3
+12:  location: 
+variable dto of type c
+om.agrifarms.common.dt
+o.ServiceOfferingDTO
+> compile_output.txt:3
+13:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[197,23] 
+cannot find symbol
+  compile_output.txt:3
+14:  symbol:   method 
+getNotes()
+  compile_output.txt:3
+15:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Booking
+> compile_output.txt:3
+16:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[196,23] 
+cannot find symbol
+  compile_output.txt:3
+17:  symbol:   method 
+getAddressText()
+  compile_output.txt:3
+18:  location: 
+variable entity of 
+type com.agrifarms.com
+mon.entity.Booking
+> compile_output.txt:3
+19:[INFO] 100 errors 
+  compile_output.txt:3
+20:[INFO] ------------
+----------------------
+----------------------
+-----
+  compile_output.txt:3
+21:[INFO] ------------
+----------------------
+----------------------
+----------------
+  compile_output.txt:3
+22:[INFO] BUILD 
+FAILURE
+  compile_output.txt:3
+24:[INFO] Total time: 
+ 2.707 s
+  compile_output.txt:3
+25:[INFO] Finished 
+at: 2026-02-21T16:13:3
+3+05:30
+  compile_output.txt:3
+26:[INFO] ------------
+----------------------
+----------------------
+----------------
+> compile_output.txt:3
+27:[ERROR] Failed to 
+execute goal org.apach
+e.maven.plugins:maven-
+compiler-plugin:3.11.0
+:compile 
+(default-compile) on 
+project agri-farms-com
+mon-service: 
+Compilation failure: 
+Compilation failure: 
+> compile_output.txt:3
+28:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/contro
+ller/BookingController
+.java:[19,34] 
+variable 
+bookingService not 
+initialized in the 
+default constructor
+> compile_output.txt:3
+29:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/contro
+ller/BookingController
+.java:[20,29] 
+variable dtoMapper 
+not initialized in 
+the default 
+constructor
+> compile_output.txt:3
+30:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/servic
+e/BookingService.java:
+[18,16] cannot find 
+symbol
+> compile_output.txt:3
+31:[ERROR]   symbol:  
+ method setBookingDate
+(java.time.LocalDateTi
+me)
+> compile_output.txt:3
+32:[ERROR]   
+location: variable 
+booking of type com.ag
+rifarms.common.entity.
+Booking
+> compile_output.txt:3
+33:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/servic
+e/BookingService.java:
+[19,16] cannot find 
+symbol
+> compile_output.txt:3
+34:[ERROR]   symbol:  
+ method setStatus(java
+.lang.String)
+> compile_output.txt:3
+35:[ERROR]   
+location: variable 
+booking of type com.ag
+rifarms.common.entity.
+Booking
+> compile_output.txt:3
+36:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/servic
+e/BookingService.java:
+[34,16] cannot find 
+symbol
+> compile_output.txt:3
+37:[ERROR]   symbol:  
+ method setStatus(java
+.lang.String)
+> compile_output.txt:3
+38:[ERROR]   
+location: variable 
+booking of type com.ag
+rifarms.common.entity.
+Booking
+> compile_output.txt:3
+39:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[35,23] 
+cannot find symbol
+> compile_output.txt:3
+40:[ERROR]   symbol:  
+ method 
+getProfileImageUrl()
+> compile_output.txt:3
+41:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+42:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[34,23] 
+cannot find symbol
+> compile_output.txt:3
+43:[ERROR]   symbol:  
+ method getVillage()
+> compile_output.txt:3
+44:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+45:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[33,23] 
+cannot find symbol
+> compile_output.txt:3
+46:[ERROR]   symbol:  
+ method getDistrict()
+> compile_output.txt:3
+47:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+48:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[32,23] 
+cannot find symbol
+> compile_output.txt:3
+49:[ERROR]   symbol:  
+ method getRole()
+> compile_output.txt:3
+50:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+51:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[31,23] 
+cannot find symbol
+> compile_output.txt:3
+52:[ERROR]   symbol:  
+ method getFullName()
+> compile_output.txt:3
+53:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+54:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[30,23] 
+cannot find symbol
+> compile_output.txt:3
+55:[ERROR]   symbol:  
+ method 
+getPhoneNumber()
+> compile_output.txt:3
+56:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+57:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[29,23] 
+cannot find symbol
+> compile_output.txt:3
+58:[ERROR]   symbol:  
+ method getUserId()
+> compile_output.txt:3
+59:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+60:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[42,15] 
+cannot find symbol
+> compile_output.txt:3
+61:[ERROR]   symbol:  
+ method setUserId(java
+.lang.String)
+> compile_output.txt:3
+62:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+63:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[43,15] 
+cannot find symbol
+> compile_output.txt:3
+64:[ERROR]   symbol:  
+ method setPhoneNumber
+(java.lang.String)
+> compile_output.txt:3
+65:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+66:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[44,15] 
+cannot find symbol
+> compile_output.txt:3
+67:[ERROR]   symbol:  
+ method setFullName(ja
+va.lang.String)
+> compile_output.txt:3
+68:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+69:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[45,15] 
+cannot find symbol
+> compile_output.txt:3
+70:[ERROR]   symbol:  
+ method setRole(java.l
+ang.String)
+> compile_output.txt:3
+71:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+72:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[46,15] 
+cannot find symbol
+> compile_output.txt:3
+73:[ERROR]   symbol:  
+ method setDistrict(ja
+va.lang.String)
+> compile_output.txt:3
+74:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+75:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[47,15] 
+cannot find symbol
+> compile_output.txt:3
+76:[ERROR]   symbol:  
+ method setVillage(jav
+a.lang.String)
+> compile_output.txt:3
+77:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+78:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[48,15] 
+cannot find symbol
+> compile_output.txt:3
+79:[ERROR]   symbol:  
+ method setProfileImag
+eUrl(java.lang.String)
+> compile_output.txt:3
+80:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.U
+ser
+> compile_output.txt:3
+81:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[68,23] 
+cannot find symbol
+> compile_output.txt:3
+82:[ERROR]   symbol:  
+ method getImageUrl()
+> compile_output.txt:3
+83:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:3
+84:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[67,23] 
+cannot find symbol
+> compile_output.txt:3
+85:[ERROR]   symbol:  
+ method 
+getApprovalStatus()
+> compile_output.txt:3
+86:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:3
+87:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[66,23] 
+cannot find symbol
+> compile_output.txt:3
+88:[ERROR]   symbol:  
+ method getRating()
+> compile_output.txt:3
+89:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:3
+90:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[65,23] 
+cannot find symbol
+> compile_output.txt:3
+91:[ERROR]   symbol:  
+ method 
+getIsAvailable()
+> compile_output.txt:3
+92:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:3
+93:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[64,23] 
+cannot find symbol
+> compile_output.txt:3
+94:[ERROR]   symbol:  
+ method getLocation()
+> compile_output.txt:3
+95:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:3
+96:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[63,23] 
+cannot find symbol
+> compile_output.txt:3
+97:[ERROR]   symbol:  
+ method 
+getOperatorAvailable()
+> compile_output.txt:3
+98:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:3
+99:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[62,23] 
+cannot find symbol
+> compile_output.txt:4
+00:[ERROR]   symbol:  
+ method 
+getPricePerHour()
+> compile_output.txt:4
+01:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:4
+02:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[61,23] 
+cannot find symbol
+> compile_output.txt:4
+03:[ERROR]   symbol:  
+ method 
+getConditionStatus()
+> compile_output.txt:4
+04:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:4
+05:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[60,23] 
+cannot find symbol
+> compile_output.txt:4
+06:[ERROR]   symbol:  
+ method 
+getBrandModel()
+> compile_output.txt:4
+07:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:4
+08:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[59,23] 
+cannot find symbol
+> compile_output.txt:4
+09:[ERROR]   symbol:  
+ method getCategory()
+> compile_output.txt:4
+10:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:4
+11:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[58,23] 
+cannot find symbol
+> compile_output.txt:4
+12:[ERROR]   symbol:  
+ method getOwnerId()
+> compile_output.txt:4
+13:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:4
+14:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[57,23] 
+cannot find symbol
+> compile_output.txt:4
+15:[ERROR]   symbol:  
+ method 
+getEquipmentId()
+> compile_output.txt:4
+16:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.E
+quipment
+> compile_output.txt:4
+17:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[75,34] 
+cannot find symbol
+> compile_output.txt:4
+18:[ERROR]   symbol:  
+ method 
+getEquipmentId()
+> compile_output.txt:4
+19:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+20:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[76,30] 
+cannot find symbol
+> compile_output.txt:4
+21:[ERROR]   symbol:  
+ method getOwnerId()
+> compile_output.txt:4
+22:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+23:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[77,31] 
+cannot find symbol
+> compile_output.txt:4
+24:[ERROR]   symbol:  
+ method getCategory()
+> compile_output.txt:4
+25:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+26:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[78,33] 
+cannot find symbol
+> compile_output.txt:4
+27:[ERROR]   symbol:  
+ method 
+getBrandModel()
+> compile_output.txt:4
+28:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+29:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[79,38] 
+cannot find symbol
+> compile_output.txt:4
+30:[ERROR]   symbol:  
+ method 
+getConditionStatus()
+> compile_output.txt:4
+31:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+32:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[80,35] 
+cannot find symbol
+> compile_output.txt:4
+33:[ERROR]   symbol:  
+ method 
+getPricePerHour()
+> compile_output.txt:4
+34:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+35:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[81,40] 
+cannot find symbol
+> compile_output.txt:4
+36:[ERROR]   symbol:  
+ method 
+getOperatorAvailable()
+> compile_output.txt:4
+37:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+38:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[82,31] 
+cannot find symbol
+> compile_output.txt:4
+39:[ERROR]   symbol:  
+ method getLocation()
+> compile_output.txt:4
+40:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+41:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[83,34] 
+cannot find symbol
+> compile_output.txt:4
+42:[ERROR]   symbol:  
+ method 
+getIsAvailable()
+> compile_output.txt:4
+43:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+44:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[84,29] 
+cannot find symbol
+> compile_output.txt:4
+45:[ERROR]   symbol:  
+ method getRating()
+> compile_output.txt:4
+46:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+47:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[85,37] 
+cannot find symbol
+> compile_output.txt:4
+48:[ERROR]   symbol:  
+ method 
+getApprovalStatus()
+> compile_output.txt:4
+49:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+50:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[86,31] 
+cannot find symbol
+> compile_output.txt:4
+51:[ERROR]   symbol:  
+ method getImageUrl()
+> compile_output.txt:4
+52:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Equipme
+ntDTO
+> compile_output.txt:4
+53:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[96,19] 
+cannot find symbol
+> compile_output.txt:4
+54:[ERROR]   symbol:  
+ method getOwnerId()
+> compile_output.txt:4
+55:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+56:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[97,55] 
+cannot find symbol
+> compile_output.txt:4
+57:[ERROR]   symbol:  
+ method getOwnerId()
+> compile_output.txt:4
+58:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+59:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[98,26] 
+invalid method 
+reference
+> compile_output.txt:4
+60:[ERROR]   cannot 
+find symbol
+> compile_output.txt:4
+61:[ERROR]     
+symbol:   method 
+getFullName()
+> compile_output.txt:4
+62:[ERROR]     
+location: class com.ag
+rifarms.common.entity.
+User
+> compile_output.txt:4
+63:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[116,23] 
+cannot find symbol
+> compile_output.txt:4
+64:[ERROR]   symbol:  
+ method getImageUrl()
+> compile_output.txt:4
+65:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+66:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[115,23] 
+cannot find symbol
+> compile_output.txt:4
+67:[ERROR]   symbol:  
+ method 
+getApprovalStatus()
+> compile_output.txt:4
+68:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+69:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[114,23] 
+cannot find symbol
+> compile_output.txt:4
+70:[ERROR]   symbol:  
+ method getRating()
+> compile_output.txt:4
+71:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+72:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[113,23] 
+cannot find symbol
+> compile_output.txt:4
+73:[ERROR]   symbol:  
+ method 
+getIsAvailable()
+> compile_output.txt:4
+74:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+75:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[112,23] 
+cannot find symbol
+> compile_output.txt:4
+76:[ERROR]   symbol:  
+ method getLocation()
+> compile_output.txt:4
+77:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+78:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[111,23] 
+cannot find symbol
+> compile_output.txt:4
+79:[ERROR]   symbol:  
+ method 
+getServiceArea()
+> compile_output.txt:4
+80:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+81:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[110,23] 
+cannot find symbol
+> compile_output.txt:4
+82:[ERROR]   symbol:  
+ method 
+getDriverIncluded()
+> compile_output.txt:4
+83:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+84:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[109,23] 
+cannot find symbol
+> compile_output.txt:4
+85:[ERROR]   symbol:  
+ method 
+getPricePerKmOrTrip()
+> compile_output.txt:4
+86:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+87:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[108,23] 
+cannot find symbol
+> compile_output.txt:4
+88:[ERROR]   symbol:  
+ method 
+getLoadCapacity()
+> compile_output.txt:4
+89:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+90:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[107,23] 
+cannot find symbol
+> compile_output.txt:4
+91:[ERROR]   symbol:  
+ method 
+getVehicleNumber()
+> compile_output.txt:4
+92:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+93:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[106,23] 
+cannot find symbol
+> compile_output.txt:4
+94:[ERROR]   symbol:  
+ method 
+getVehicleType()
+> compile_output.txt:4
+95:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+96:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[104,23] 
+cannot find symbol
+> compile_output.txt:4
+97:[ERROR]   symbol:  
+ method getOwnerId()
+> compile_output.txt:4
+98:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:4
+99:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[103,23] 
+cannot find symbol
+> compile_output.txt:5
+00:[ERROR]   symbol:  
+ method getVehicleId()
+> compile_output.txt:5
+01:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.T
+ransportVehicle
+> compile_output.txt:5
+02:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[123,32] 
+cannot find symbol
+> compile_output.txt:5
+03:[ERROR]   symbol:  
+ method getVehicleId()
+> compile_output.txt:5
+04:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+05:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[124,30] 
+cannot find symbol
+> compile_output.txt:5
+06:[ERROR]   symbol:  
+ method getOwnerId()
+> compile_output.txt:5
+07:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+08:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[125,34] 
+cannot find symbol
+> compile_output.txt:5
+09:[ERROR]   symbol:  
+ method 
+getVehicleType()
+> compile_output.txt:5
+10:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+11:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[126,36] 
+cannot find symbol
+> compile_output.txt:5
+12:[ERROR]   symbol:  
+ method 
+getVehicleNumber()
+> compile_output.txt:5
+13:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+14:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[127,35] 
+cannot find symbol
+> compile_output.txt:5
+15:[ERROR]   symbol:  
+ method 
+getLoadCapacity()
+> compile_output.txt:5
+16:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+17:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[128,39] 
+cannot find symbol
+> compile_output.txt:5
+18:[ERROR]   symbol:  
+ method 
+getPricePerKmOrTrip()
+> compile_output.txt:5
+19:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+20:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[129,37] 
+cannot find symbol
+> compile_output.txt:5
+21:[ERROR]   symbol:  
+ method 
+getDriverIncluded()
+> compile_output.txt:5
+22:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+23:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[130,34] 
+cannot find symbol
+> compile_output.txt:5
+24:[ERROR]   symbol:  
+ method 
+getServiceArea()
+> compile_output.txt:5
+25:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+26:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[131,31] 
+cannot find symbol
+> compile_output.txt:5
+27:[ERROR]   symbol:  
+ method getLocation()
+> compile_output.txt:5
+28:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+29:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[132,34] 
+cannot find symbol
+> compile_output.txt:5
+30:[ERROR]   symbol:  
+ method 
+getIsAvailable()
+> compile_output.txt:5
+31:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+32:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[133,29] 
+cannot find symbol
+> compile_output.txt:5
+33:[ERROR]   symbol:  
+ method getRating()
+> compile_output.txt:5
+34:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+35:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[134,37] 
+cannot find symbol
+> compile_output.txt:5
+36:[ERROR]   symbol:  
+ method 
+getApprovalStatus()
+> compile_output.txt:5
+37:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+38:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[135,31] 
+cannot find symbol
+> compile_output.txt:5
+39:[ERROR]   symbol:  
+ method getImageUrl()
+> compile_output.txt:5
+40:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Transpo
+rtVehicleDTO
+> compile_output.txt:5
+41:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[156,23] 
+cannot find symbol
+> compile_output.txt:5
+42:[ERROR]   symbol:  
+ method getImageUrl()
+> compile_output.txt:5
+43:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+44:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[155,23] 
+cannot find symbol
+> compile_output.txt:5
+45:[ERROR]   symbol:  
+ method 
+getApprovalStatus()
+> compile_output.txt:5
+46:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+47:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[154,23] 
+cannot find symbol
+> compile_output.txt:5
+48:[ERROR]   symbol:  
+ method getRating()
+> compile_output.txt:5
+49:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+50:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[153,23] 
+cannot find symbol
+> compile_output.txt:5
+51:[ERROR]   symbol:  
+ method 
+getIsAvailable()
+> compile_output.txt:5
+52:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+53:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[152,23] 
+cannot find symbol
+> compile_output.txt:5
+54:[ERROR]   symbol:  
+ method getLocation()
+> compile_output.txt:5
+55:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+56:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[151,23] 
+cannot find symbol
+> compile_output.txt:5
+57:[ERROR]   symbol:  
+ method 
+getOperatorIncluded()
+> compile_output.txt:5
+58:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+59:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[150,23] 
+cannot find symbol
+> compile_output.txt:5
+60:[ERROR]   symbol:  
+ method getPriceRate()
+> compile_output.txt:5
+61:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+62:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[149,23] 
+cannot find symbol
+> compile_output.txt:5
+63:[ERROR]   symbol:  
+ method 
+getEquipmentUsed()
+> compile_output.txt:5
+64:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+65:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[148,23] 
+cannot find symbol
+> compile_output.txt:5
+66:[ERROR]   symbol:  
+ method 
+getDescription()
+> compile_output.txt:5
+67:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+68:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[147,23] 
+cannot find symbol
+> compile_output.txt:5
+69:[ERROR]   symbol:  
+ method 
+getBusinessName()
+> compile_output.txt:5
+70:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+71:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[146,23] 
+cannot find symbol
+> compile_output.txt:5
+72:[ERROR]   symbol:  
+ method 
+getServiceType()
+> compile_output.txt:5
+73:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+74:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[145,23] 
+cannot find symbol
+> compile_output.txt:5
+75:[ERROR]   symbol:  
+ method getOwnerId()
+> compile_output.txt:5
+76:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+77:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[144,23] 
+cannot find symbol
+> compile_output.txt:5
+78:[ERROR]   symbol:  
+ method getServiceId()
+> compile_output.txt:5
+79:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.S
+erviceOffering
+> compile_output.txt:5
+80:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[163,32] 
+cannot find symbol
+> compile_output.txt:5
+81:[ERROR]   symbol:  
+ method getServiceId()
+> compile_output.txt:5
+82:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:5
+83:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[164,30] 
+cannot find symbol
+> compile_output.txt:5
+84:[ERROR]   symbol:  
+ method getOwnerId()
+> compile_output.txt:5
+85:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:5
+86:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[165,34] 
+cannot find symbol
+> compile_output.txt:5
+87:[ERROR]   symbol:  
+ method 
+getServiceType()
+> compile_output.txt:5
+88:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:5
+89:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[166,35] 
+cannot find symbol
+> compile_output.txt:5
+90:[ERROR]   symbol:  
+ method 
+getBusinessName()
+> compile_output.txt:5
+91:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:5
+92:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[167,34] 
+cannot find symbol
+> compile_output.txt:5
+93:[ERROR]   symbol:  
+ method 
+getDescription()
+> compile_output.txt:5
+94:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:5
+95:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[168,36] 
+cannot find symbol
+> compile_output.txt:5
+96:[ERROR]   symbol:  
+ method 
+getEquipmentUsed()
+> compile_output.txt:5
+97:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:5
+98:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[169,32] 
+cannot find symbol
+> compile_output.txt:5
+99:[ERROR]   symbol:  
+ method getPriceRate()
+> compile_output.txt:6
+00:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:6
+01:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[170,39] 
+cannot find symbol
+> compile_output.txt:6
+02:[ERROR]   symbol:  
+ method 
+getOperatorIncluded()
+> compile_output.txt:6
+03:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:6
+04:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[171,31] 
+cannot find symbol
+> compile_output.txt:6
+05:[ERROR]   symbol:  
+ method getLocation()
+> compile_output.txt:6
+06:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:6
+07:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[172,34] 
+cannot find symbol
+> compile_output.txt:6
+08:[ERROR]   symbol:  
+ method 
+getIsAvailable()
+> compile_output.txt:6
+09:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:6
+10:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[173,29] 
+cannot find symbol
+> compile_output.txt:6
+11:[ERROR]   symbol:  
+ method getRating()
+> compile_output.txt:6
+12:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:6
+13:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[174,37] 
+cannot find symbol
+> compile_output.txt:6
+14:[ERROR]   symbol:  
+ method 
+getApprovalStatus()
+> compile_output.txt:6
+15:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:6
+16:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[175,31] 
+cannot find symbol
+> compile_output.txt:6
+17:[ERROR]   symbol:  
+ method getImageUrl()
+> compile_output.txt:6
+18:[ERROR]   
+location: variable 
+dto of type com.agrifa
+rms.common.dto.Service
+OfferingDTO
+> compile_output.txt:6
+19:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[197,23] 
+cannot find symbol
+> compile_output.txt:6
+20:[ERROR]   symbol:  
+ method getNotes()
+> compile_output.txt:6
+21:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.B
+ooking
+> compile_output.txt:6
+22:[ERROR] /D:/company
+-work/agrifarm project
+/agrifarm-common-servi
+ce/src/main/java/com/a
+grifarms/common/dto/Dt
+oMapper.java:[196,23] 
+cannot find symbol
+> compile_output.txt:6
+23:[ERROR]   symbol:  
+ method 
+getAddressText()
+> compile_output.txt:6
+24:[ERROR]   
+location: variable 
+entity of type com.agr
+ifarms.common.entity.B
+ooking
+> compile_output.txt:6
+25:[ERROR] -> [Help 1]
+  compile_output.txt:6
+26:org.apache.maven.li
+fecycle.LifecycleExecu
+tionException: Failed 
+to execute goal org.ap
+ache.maven.plugins:mav
+en-compiler-plugin:3.1
+1.0:compile 
+(default-compile) on 
+project agri-farms-com
+mon-service: 
+Compilation failure
+  compile_output.txt:6
+27:    at org.apache.m
+aven.lifecycle.interna
+l.MojoExecutor.doExecu
+te2 (MojoExecutor.java
+:333)
+  compile_output.txt:6
+28:    at org.apache.m
+aven.lifecycle.interna
+l.MojoExecutor.doExecu
+te (MojoExecutor.java:
+316)
+  compile_output.txt:6
+76:    at org.codehaus
+.plexus.classworlds.la
+uncher.Launcher.launch
+ (Launcher.java:201)
+  compile_output.txt:6
+77:    at org.codehaus
+.plexus.classworlds.la
+uncher.Launcher.mainWi
+thExitCode 
+(Launcher.java:361)
+  compile_output.txt:6
+78:    at org.codehaus
+.plexus.classworlds.la
+uncher.Launcher.main 
+(Launcher.java:314)
+> compile_output.txt:6
+79:[ERROR] 
+> compile_output.txt:6
+80:[ERROR] Re-run 
+Maven using the -X 
+switch to enable full 
+debug logging.
+> compile_output.txt:6
+81:[ERROR] 
+> compile_output.txt:6
+82:[ERROR] For more 
+information about the 
+errors and possible 
+solutions, please 
+read the following 
+articles:
+> compile_output.txt:6
+83:[ERROR] [Help 1] ht
+tp://cwiki.apache.org/
+confluence/display/MAV
+EN/MojoFailureExceptio
+n
+
+

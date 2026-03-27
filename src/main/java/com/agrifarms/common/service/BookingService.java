@@ -7,17 +7,15 @@ import com.agrifarms.common.repository.EquipmentRepository;
 import com.agrifarms.common.repository.ServiceOfferingRepository;
 import com.agrifarms.common.repository.TransportVehicleRepository;
 import com.agrifarms.common.repository.WorkerGroupRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class BookingService {
 
     private final BookingRepository bookingRepository;
@@ -27,6 +25,19 @@ public class BookingService {
     private final ServiceOfferingRepository serviceRepository;
     private final TransportVehicleRepository transportRepository;
     private final WorkerGroupRepository workerRepository;
+
+    public BookingService(BookingRepository bookingRepository, NotificationService notificationService, UserService userService, 
+                          EquipmentRepository equipmentRepository, ServiceOfferingRepository serviceRepository, 
+                          TransportVehicleRepository transportRepository, WorkerGroupRepository workerRepository) {
+        this.bookingRepository = bookingRepository;
+        this.notificationService = notificationService;
+        this.userService = userService;
+        this.equipmentRepository = equipmentRepository;
+        this.serviceRepository = serviceRepository;
+        this.transportRepository = transportRepository;
+        this.workerRepository = workerRepository;
+    }
+
 
     private String getAssetName(String assetType, String assetId) {
         if (assetType == null || assetId == null) return "asset";

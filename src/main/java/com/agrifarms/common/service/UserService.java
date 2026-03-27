@@ -4,6 +4,8 @@ import com.agrifarms.common.entity.User;
 import com.agrifarms.common.repository.UserRepository;
 
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -34,6 +36,16 @@ public class UserService {
                 .orElse("Unknown Owner");
     }
 
+    @Cacheable(value = "profileImages", key = "#ownerId")
+    public String getOwnerProfileImageWithCache(String ownerId) {
+        if (ownerId == null || ownerId.trim().isEmpty()) {
+            return null;
+        }
+        return userRepository.findById(ownerId)
+                .map(User::getProfileImageUrl)
+                .orElse(null);
+    }
+
     public User createUser(User user) {
         if (userRepository.existsByPhoneNumber(user.getPhoneNumber())) {
             // You can create a custom PhoneAlreadyExistsException for better API responses
@@ -50,6 +62,11 @@ public class UserService {
         return userRepository.findByPhoneNumber(phoneNumber);
     }
 
+    @Caching(evict = {
+        @CacheEvict(value = "users", key = "#userId"),
+        @CacheEvict(value = "ownerNames", key = "#userId"),
+        @CacheEvict(value = "profileImages", key = "#userId")
+    })
     public User updateUser(String userId, User updatedData) {
         return userRepository.findById(userId).map(existingUser -> {
             if (updatedData.getFullName() != null) {

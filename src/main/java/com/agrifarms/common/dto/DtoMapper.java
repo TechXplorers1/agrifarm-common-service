@@ -11,7 +11,6 @@ import com.agrifarms.common.service.UserService;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -60,6 +59,7 @@ public class DtoMapper {
             return null;
 
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
+        String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
         return new EquipmentDTO(
                 entity.getEquipmentId(),
@@ -74,7 +74,8 @@ public class DtoMapper {
                 entity.getIsAvailable(),
                 entity.getRating(),
                 entity.getApprovalStatus(),
-                entity.getImageUrl());
+                entity.getImageUrl(),
+                ownerProfileImageUrl);
     }
 
     public Equipment toEquipmentEntity(EquipmentDTO dto) {
@@ -102,6 +103,7 @@ public class DtoMapper {
             return null;
 
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
+        String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
         return new TransportVehicleDTO(
                 entity.getVehicleId(),
@@ -117,7 +119,8 @@ public class DtoMapper {
                 entity.getIsAvailable(),
                 entity.getRating(),
                 entity.getApprovalStatus(),
-                entity.getImageUrl());
+                entity.getImageUrl(),
+                ownerProfileImageUrl);
     }
 
     public TransportVehicle toTransportVehicleEntity(TransportVehicleDTO dto) {
@@ -146,6 +149,7 @@ public class DtoMapper {
             return null;
 
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
+        String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
         return new ServiceOfferingDTO(
                 entity.getServiceId(),
@@ -161,7 +165,8 @@ public class DtoMapper {
                 entity.getIsAvailable(),
                 entity.getRating(),
                 entity.getApprovalStatus(),
-                entity.getImageUrl());
+                entity.getImageUrl(),
+                ownerProfileImageUrl);
     }
 
     public ServiceOffering toServiceOfferingEntity(ServiceOfferingDTO dto) {
@@ -230,6 +235,7 @@ public class DtoMapper {
     public WorkerGroupDTO toWorkerGroupDTO(WorkerGroup entity) {
         if (entity == null)
             return null;
+        String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
         WorkerGroupDTO dto = new WorkerGroupDTO(
                 entity.getGroupId(),
                 entity.getOwnerId(),
@@ -246,6 +252,7 @@ public class DtoMapper {
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
+                ownerProfileImageUrl,
                 null);
         if (entity.getRoles() != null) {
             dto.setRoles(entity.getRoles().stream()
