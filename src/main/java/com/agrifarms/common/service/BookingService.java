@@ -46,15 +46,33 @@ public class BookingService {
             switch (assetType.toLowerCase()) {
                 case "equipment":
                     return equipmentRepository.findById(assetId)
-                            .map(e -> e.getBrandModel() != null ? e.getBrandModel() : e.getCategory())
+                            .map(e -> {
+                                String type = e.getCategory() != null ? e.getCategory() : "Equipment";
+                                if (e.getBrandModel() != null && !e.getBrandModel().trim().isEmpty()) {
+                                    return type + " - " + e.getBrandModel();
+                                }
+                                return type;
+                            })
                             .orElse("equipment");
                 case "service":
                     return serviceRepository.findById(assetId)
-                            .map(s -> s.getBusinessName() != null ? s.getBusinessName() : s.getServiceType())
+                            .map(s -> {
+                                String sType = s.getServiceType() != null ? s.getServiceType() : "Service";
+                                if (s.getBusinessName() != null && !s.getBusinessName().trim().isEmpty()) {
+                                    return sType + " - " + s.getBusinessName();
+                                }
+                                return sType;
+                            })
                             .orElse("service");
                 case "transport":
                     return transportRepository.findById(assetId)
-                            .map(t -> t.getVehicleType())
+                            .map(t -> {
+                                String vType = t.getVehicleType() != null ? t.getVehicleType() : "Transport";
+                                if (t.getVehicleNumber() != null && !t.getVehicleNumber().trim().isEmpty()) {
+                                    return vType + " (" + t.getVehicleNumber() + ")";
+                                }
+                                return vType;
+                            })
                             .orElse("transport vehicle");
                 case "worker_group":
                 case "farm_workers":
