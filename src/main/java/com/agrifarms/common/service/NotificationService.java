@@ -5,6 +5,7 @@ import com.agrifarms.common.repository.UserNotificationRepository;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.Message;
 import com.google.firebase.messaging.Notification;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -22,6 +23,7 @@ public class NotificationService {
     }
 
 
+    @Async
     public void saveAndSendNotification(String userId, String fcmToken, String title, String body, String type, String relatedId, Map<String, String> data) {
         // 1. Save to database
         UserNotification userNotification = UserNotification.builder()
@@ -62,6 +64,7 @@ public class NotificationService {
         userNotificationRepository.saveAll(unreadNotifications);
     }
 
+    @Async
     public void sendPushNotification(String fcmToken, String title, String body, Map<String, String> data) {
         if (fcmToken == null || fcmToken.isEmpty()) {
             System.err.println("Cannot send notification: FCM token is missing.");
@@ -91,6 +94,7 @@ public class NotificationService {
         }
     }
 
+    @Async
     public void sendTopicNotification(String topic, String title, String body, Map<String, String> data) {
         Notification notification = Notification.builder()
                 .setTitle(title)
