@@ -13,6 +13,8 @@ public class WorkerGroupDTO {
     private Integer femaleCount;
     private BigDecimal pricePerMale;
     private BigDecimal pricePerFemale;
+    private BigDecimal pricePerMaleHourly;
+    private BigDecimal pricePerFemaleHourly;
     private String skills;
     private String location;
     private Integer serviceRangeKm;
@@ -26,7 +28,7 @@ public class WorkerGroupDTO {
     public WorkerGroupDTO() {}
 
     public WorkerGroupDTO(String groupId, String ownerId, String ownerName, String groupName, Integer maleCount,
-                          Integer femaleCount, BigDecimal pricePerMale, BigDecimal pricePerFemale, String skills,
+                          Integer femaleCount, BigDecimal pricePerMale, BigDecimal pricePerFemale, BigDecimal pricePerMaleHourly, BigDecimal pricePerFemaleHourly, String skills,
                           String location, Integer serviceRangeKm, Boolean isAvailable, BigDecimal rating,
                           String approvalStatus, String imageUrl, String ownerProfileImageUrl, List<WorkerGroupRoleDTO> roles) {
         this.groupId = groupId;
@@ -37,6 +39,8 @@ public class WorkerGroupDTO {
         this.femaleCount = femaleCount;
         this.pricePerMale = pricePerMale;
         this.pricePerFemale = pricePerFemale;
+        this.pricePerMaleHourly = pricePerMaleHourly;
+        this.pricePerFemaleHourly = pricePerFemaleHourly;
         this.skills = skills;
         this.location = location;
         this.serviceRangeKm = serviceRangeKm;
@@ -71,6 +75,12 @@ public class WorkerGroupDTO {
 
     public BigDecimal getPricePerFemale() { return pricePerFemale; }
     public void setPricePerFemale(BigDecimal pricePerFemale) { this.pricePerFemale = pricePerFemale; }
+
+    public BigDecimal getPricePerMaleHourly() { return pricePerMaleHourly; }
+    public void setPricePerMaleHourly(BigDecimal pricePerMaleHourly) { this.pricePerMaleHourly = pricePerMaleHourly; }
+
+    public BigDecimal getPricePerFemaleHourly() { return pricePerFemaleHourly; }
+    public void setPricePerFemaleHourly(BigDecimal pricePerFemaleHourly) { this.pricePerFemaleHourly = pricePerFemaleHourly; }
 
     public String getSkills() { return skills; }
     public void setSkills(String skills) { this.skills = skills; }

@@ -265,6 +265,8 @@ public class InventoryController {
         if (groupDTO.getFemaleCount() != null) existingGroup.setFemaleCount(groupDTO.getFemaleCount());
         if (groupDTO.getPricePerMale() != null) existingGroup.setPricePerMale(groupDTO.getPricePerMale());
         if (groupDTO.getPricePerFemale() != null) existingGroup.setPricePerFemale(groupDTO.getPricePerFemale());
+        if (groupDTO.getPricePerMaleHourly() != null) existingGroup.setPricePerMaleHourly(groupDTO.getPricePerMaleHourly());
+        if (groupDTO.getPricePerFemaleHourly() != null) existingGroup.setPricePerFemaleHourly(groupDTO.getPricePerFemaleHourly());
         if (groupDTO.getSkills() != null) existingGroup.setSkills(groupDTO.getSkills());
         if (groupDTO.getLocation() != null) existingGroup.setLocation(groupDTO.getLocation());
         if (groupDTO.getServiceRangeKm() != null) existingGroup.setServiceRangeKm(groupDTO.getServiceRangeKm());

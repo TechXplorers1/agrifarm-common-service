@@ -245,6 +245,8 @@ public class DtoMapper {
                 entity.getFemaleCount(),
                 entity.getPricePerMale(),
                 entity.getPricePerFemale(),
+                entity.getPricePerMaleHourly(),
+                entity.getPricePerFemaleHourly(),
                 entity.getSkills(),
                 entity.getLocation(),
                 entity.getServiceRangeKm(),
@@ -273,6 +275,8 @@ public class DtoMapper {
         entity.setFemaleCount(dto.getFemaleCount());
         entity.setPricePerMale(dto.getPricePerMale());
         entity.setPricePerFemale(dto.getPricePerFemale());
+        entity.setPricePerMaleHourly(dto.getPricePerMaleHourly());
+        entity.setPricePerFemaleHourly(dto.getPricePerFemaleHourly());
         entity.setSkills(dto.getSkills());
         entity.setLocation(dto.getLocation());
         entity.setServiceRangeKm(dto.getServiceRangeKm());

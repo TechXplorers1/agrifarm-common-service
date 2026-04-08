@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: db/changelog/db.changelog-agri.sql
+  - include:
+      file: db/changelog/db.changelog-add-hourly-pricing.sql
