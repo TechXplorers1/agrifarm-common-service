@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS user_notifications (
 );
 
 -- =====================================================
--- changeset agrihub:1.1.11
+-- changeset agrihub:1.1.11 validCheckSum:9:8ba2debb3bdf17568db2727d5241cbb2
 -- Rename services to service_offerings
 -- =====================================================
 ALTER TABLE services RENAME TO service_offerings;
