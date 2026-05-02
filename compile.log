@@ -1,0 +1,161 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.agrifarms:agri-farms-common-service >---------------
+[INFO] Building agri-farms-common-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agri-farms-common-service ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ agri-farms-common-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 35 source files with javac [debug release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[8,2] cannot find symbol
+  symbol: class Service
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[18,131] cannot find symbol
+  symbol:   class Map
+  location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[37,12] cannot find symbol
+  symbol:   class List
+  location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[58,82] cannot find symbol
+  symbol:   class Map
+  location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[88,80] cannot find symbol
+  symbol:   class Map
+  location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[10,2] cannot find symbol
+  symbol: class Service
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[91,12] cannot find symbol
+  symbol:   class List
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[95,12] cannot find symbol
+  symbol:   class List
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[99,12] cannot find symbol
+  symbol:   class List
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[103,12] cannot find symbol
+  symbol:   class List
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[27,28] cannot find symbol
+  symbol:   variable LocalDateTime
+  location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[42,9] cannot find symbol
+  symbol:   class Optional
+  location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[51,9] cannot find symbol
+  symbol:   class List
+  location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[66,32] cannot find symbol
+  symbol:   variable LocalDateTime
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[71,9] cannot find symbol
+  symbol:   class Optional
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[72,9] cannot find symbol
+  symbol:   class Optional
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[81,13] cannot find symbol
+  symbol:   class Map
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[81,44] cannot find symbol
+  symbol:   class HashMap
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[114,9] cannot find symbol
+  symbol:   class Optional
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[115,9] cannot find symbol
+  symbol:   class Optional
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[124,13] cannot find symbol
+  symbol:   class Map
+  location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[124,44] cannot find symbol
+  symbol:   class HashMap
+  location: class com.agrifarms.common.service.BookingService
+[INFO] 22 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.401 s
+[INFO] Finished at: 2026-03-27T13:51:34+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project agri-farms-common-service: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[8,2] cannot find symbol
+[ERROR]   symbol: class Service
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[18,131] cannot find symbol
+[ERROR]   symbol:   class Map
+[ERROR]   location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[37,12] cannot find symbol
+[ERROR]   symbol:   class List
+[ERROR]   location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[58,82] cannot find symbol
+[ERROR]   symbol:   class Map
+[ERROR]   location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[88,80] cannot find symbol
+[ERROR]   symbol:   class Map
+[ERROR]   location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[10,2] cannot find symbol
+[ERROR]   symbol: class Service
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[91,12] cannot find symbol
+[ERROR]   symbol:   class List
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[95,12] cannot find symbol
+[ERROR]   symbol:   class List
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[99,12] cannot find symbol
+[ERROR]   symbol:   class List
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[103,12] cannot find symbol
+[ERROR]   symbol:   class List
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[27,28] cannot find symbol
+[ERROR]   symbol:   variable LocalDateTime
+[ERROR]   location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[42,9] cannot find symbol
+[ERROR]   symbol:   class Optional
+[ERROR]   location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/NotificationService.java:[51,9] cannot find symbol
+[ERROR]   symbol:   class List
+[ERROR]   location: class com.agrifarms.common.service.NotificationService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[66,32] cannot find symbol
+[ERROR]   symbol:   variable LocalDateTime
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[71,9] cannot find symbol
+[ERROR]   symbol:   class Optional
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[72,9] cannot find symbol
+[ERROR]   symbol:   class Optional
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[81,13] cannot find symbol
+[ERROR]   symbol:   class Map
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[81,44] cannot find symbol
+[ERROR]   symbol:   class HashMap
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[114,9] cannot find symbol
+[ERROR]   symbol:   class Optional
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[115,9] cannot find symbol
+[ERROR]   symbol:   class Optional
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[124,13] cannot find symbol
+[ERROR]   symbol:   class Map
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] /C:/Users/humer/Desktop/TX Projects/AgriFarms/agrifarm-common-service/src/main/java/com/agrifarms/common/service/BookingService.java:[124,44] cannot find symbol
+[ERROR]   symbol:   class HashMap
+[ERROR]   location: class com.agrifarms.common.service.BookingService
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,512 @@
+﻿
+[ERROR] COMPILATION 
+ERROR : 
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[8,2] cannot 
+find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[18,131] 
+cannot find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[37,12] cannot 
+find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[58,82] cannot 
+find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[88,80] cannot 
+find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[10,2] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[91,12] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[95,12] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[99,12] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[103,12] cannot 
+find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[27,28] cannot 
+find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[42,9] cannot 
+find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[51,9] cannot 
+find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[66,32] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[71,9] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[72,9] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[81,13] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[81,44] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[114,9] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[115,9] cannot find 
+symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[124,13] cannot 
+find symbol
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[124,44] cannot 
+find symbol
+[ERROR] Failed to 
+execute goal org.apache
+.maven.plugins:maven-co
+mpiler-plugin:3.11.0:co
+mpile 
+(default-compile) on 
+project agri-farms-comm
+on-service: 
+Compilation failure: 
+Compilation failure: 
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[8,2] cannot 
+find symbol
+[ERROR]   symbol: 
+class Service
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[18,131] 
+cannot find symbol
+[ERROR]   symbol:   
+class Map
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.Notificatio
+nService
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[37,12] cannot 
+find symbol
+[ERROR]   symbol:   
+class List
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.Notificatio
+nService
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[58,82] cannot 
+find symbol
+[ERROR]   symbol:   
+class Map
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.Notificatio
+nService
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[88,80] cannot 
+find symbol
+[ERROR]   symbol:   
+class Map
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.Notificatio
+nService
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[10,2] cannot find 
+symbol
+[ERROR]   symbol: 
+class Service
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[91,12] cannot find 
+symbol
+[ERROR]   symbol:   
+class List
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[95,12] cannot find 
+symbol
+[ERROR]   symbol:   
+class List
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[99,12] cannot find 
+symbol
+[ERROR]   symbol:   
+class List
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[103,12] cannot 
+find symbol
+[ERROR]   symbol:   
+class List
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[27,28] cannot 
+find symbol
+[ERROR]   symbol:   
+variable LocalDateTime
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.Notificatio
+nService
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[42,9] cannot 
+find symbol
+[ERROR]   symbol:   
+class Optional
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.Notificatio
+nService
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/NotificationServi
+ce.java:[51,9] cannot 
+find symbol
+[ERROR]   symbol:   
+class List
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.Notificatio
+nService
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[66,32] cannot find 
+symbol
+[ERROR]   symbol:   
+variable LocalDateTime
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[71,9] cannot find 
+symbol
+[ERROR]   symbol:   
+class Optional
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[72,9] cannot find 
+symbol
+[ERROR]   symbol:   
+class Optional
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[81,13] cannot find 
+symbol
+[ERROR]   symbol:   
+class Map
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[81,44] cannot find 
+symbol
+[ERROR]   symbol:   
+class HashMap
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[114,9] cannot find 
+symbol
+[ERROR]   symbol:   
+class Optional
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[115,9] cannot find 
+symbol
+[ERROR]   symbol:   
+class Optional
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[124,13] cannot 
+find symbol
+[ERROR]   symbol:   
+class Map
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] /C:/Users/humer
+/Desktop/TX Projects/Ag
+riFarms/agrifarm-common
+-service/src/main/java/
+com/agrifarms/common/se
+rvice/BookingService.ja
+va:[124,44] cannot 
+find symbol
+[ERROR]   symbol:   
+class HashMap
+[ERROR]   location: 
+class com.agrifarms.com
+mon.service.BookingServ
+ice
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the 
+full stack trace of 
+the errors, re-run 
+Maven with the -e 
+switch.
+[ERROR] Re-run Maven 
+using the -X switch to 
+enable full debug 
+logging.
+[ERROR] 
+[ERROR] For more 
+information about the 
+errors and possible 
+solutions, please read 
+the following articles:
+[ERROR] [Help 1] http:/
+/cwiki.apache.org/confl
+uence/display/MAVEN/Moj
+oFailureException
+
+

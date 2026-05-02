@@ -1,0 +1,81 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.agrifarms:agri-farms-common-service >---------------
+[INFO] Building agri-farms-common-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.3:run (default-cli) > test-compile @ agri-farms-common-service >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agri-farms-common-service ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ agri-farms-common-service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ agri-farms-common-service ---
+[INFO] skip non existing resourceDirectory C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ agri-farms-common-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.3:run (default-cli) < test-compile @ agri-farms-common-service <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.3:run (default-cli) @ agri-farms-common-service ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-04-02T13:25:50.298+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 18700 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-04-02T13:25:50.305+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-04-02T13:25:50.345+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-02T13:25:50.345+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-02T13:25:50.842+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-02T13:25:50.905+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 7 JPA repository interfaces.
+2026-04-02T13:25:51.394+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-04-02T13:25:51.402+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-02T13:25:51.402+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-04-02T13:25:51.450+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-02T13:25:51.450+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1104 ms
+2026-04-02T13:25:51.543+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-02T13:25:51.895+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2d70e98e
+2026-04-02T13:25:51.897+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-02T13:25:52.675+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-04-02T13:25:53.261+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+2026-04-02T13:25:53.765+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2026-04-02T13:25:53.771+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Using deploymentId: 5116553771
+2026-04-02T13:25:53.781+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Running Changeset: db/changelog/db.changelog-agri.sql::1.1.12b::agrihub
+2026-04-02T13:25:53.937+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-04-02T13:25:53.946+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-agri.sql::1.1.12b::agrihub ran successfully in 98ms
+2026-04-02T13:25:53.986+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-04-02T13:25:53.986+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          1
+2026-04-02T13:25:53.986+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-04-02T13:25:53.986+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-04-02T13:25:53.986+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-04-02T13:25:53.986+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           13
+2026-04-02T13:25:53.986+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-04-02T13:25:53.987+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Update command completed successfully.
+Liquibase: Update has been successful. Rows affected: 1
+2026-04-02T13:25:54.036+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-04-02T13:25:54.226+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-04-02T13:25:54.363+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-02T13:25:54.447+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-04-02T13:25:54.498+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-02T13:25:54.755+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-02T13:25:54.826+05:30  WARN 18700 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-02T13:25:55.788+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-02T13:25:56.002+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-04-02T13:25:56.478+05:30  WARN 18700 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-02T13:25:56.776+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-02T13:25:56.807+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-04-02T13:25:56.815+05:30  INFO 18700 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 6.818 seconds (process running for 7.185)

@@ -1,0 +1,826 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.agrifarms:agri-farms-common-service >---------------
+[INFO] Building agri-farms-common-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.3:run (default-cli) > test-compile @ agri-farms-common-service >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agri-farms-common-service ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ agri-farms-common-service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ agri-farms-common-service ---
+[INFO] skip non existing resourceDirectory C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ agri-farms-common-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.3:run (default-cli) < test-compile @ agri-farms-common-service <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.3:run (default-cli) @ agri-farms-common-service ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T15:27:17.523+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T15:27:17.524+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T15:27:17.567+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-27T15:27:17.567+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-27T15:27:18.210+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T15:27:18.273+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 7 JPA repository interfaces.
+2026-03-27T15:27:18.740+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T15:27:18.749+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T15:27:18.749+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T15:27:18.786+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T15:27:18.787+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1219 ms
+2026-03-27T15:27:18.887+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-27T15:27:19.085+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47f98f94
+2026-03-27T15:27:19.087+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-27T15:27:19.285+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T15:27:19.467+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T15:27:19.626+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+2026-03-27T15:27:19.686+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T15:27:19.686+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T15:27:19.686+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T15:27:19.686+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T15:27:19.686+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T15:27:19.686+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T15:27:19.686+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T15:27:19.761+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T15:27:19.769+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T15:27:19.849+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T15:27:19.891+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-27T15:27:19.912+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T15:27:20.061+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T15:27:20.091+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T15:27:20.854+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T15:27:21.066+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T15:27:21.496+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T15:27:21.775+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T15:27:21.798+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T15:27:21.805+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 4.556 seconds (process running for 4.884)
+2026-03-27T15:35:20.343+05:30  INFO 404 --- [agri-farms-common-service] [nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-27T15:35:20.343+05:30  INFO 404 --- [agri-farms-common-service] [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-27T15:35:20.343+05:30  INFO 404 --- [agri-farms-common-service] [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-03-27T15:59:04.184+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 1 deletion, 1 modification)
+2026-03-27T15:59:04.199+05:30  INFO 404 --- [agri-farms-common-service] [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T15:59:04.204+05:30  INFO 404 --- [agri-farms-common-service] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-27T15:59:04.206+05:30  INFO 404 --- [agri-farms-common-service] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T15:59:04.288+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T15:59:04.289+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T15:59:04.405+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T15:59:04.423+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 7 JPA repository interfaces.
+2026-03-27T15:59:04.534+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T15:59:04.534+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T15:59:04.536+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T15:59:04.556+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T15:59:04.556+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 266 ms
+2026-03-27T15:59:04.593+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-03-27T15:59:04.723+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@12da75cb
+2026-03-27T15:59:04.724+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-03-27T15:59:04.808+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T15:59:04.931+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T15:59:05.041+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T15:59:05.041+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T15:59:05.041+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T15:59:05.041+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T15:59:05.041+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T15:59:05.041+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T15:59:05.041+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T15:59:05.092+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T15:59:05.101+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T15:59:05.130+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T15:59:05.132+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T15:59:05.135+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T15:59:05.136+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T15:59:05.251+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T15:59:05.384+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T15:59:05.577+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T15:59:05.709+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T15:59:05.718+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T15:59:05.721+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.455 seconds (process running for 1908.801)
+2026-03-27T15:59:05.723+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T15:59:07.156+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 36 class path changes (1 addition, 0 deletions, 35 modifications)
+2026-03-27T15:59:07.166+05:30  INFO 404 --- [agri-farms-common-service] [       Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T15:59:07.168+05:30  INFO 404 --- [agri-farms-common-service] [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-03-27T15:59:07.170+05:30  INFO 404 --- [agri-farms-common-service] [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T15:59:07.227+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T15:59:07.227+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T15:59:07.332+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T15:59:07.347+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 7 JPA repository interfaces.
+2026-03-27T15:59:07.408+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T15:59:07.409+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T15:59:07.409+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T15:59:07.421+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T15:59:07.423+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 195 ms
+2026-03-27T15:59:07.448+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-03-27T15:59:07.541+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@6f9db2c6
+2026-03-27T15:59:07.541+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-03-27T15:59:07.631+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T15:59:07.720+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T15:59:07.841+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T15:59:07.841+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T15:59:07.841+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T15:59:07.841+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T15:59:07.841+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T15:59:07.841+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T15:59:07.841+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T15:59:07.891+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T15:59:07.899+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T15:59:07.922+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T15:59:07.923+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T15:59:07.926+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T15:59:07.927+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T15:59:08.027+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T15:59:08.170+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T15:59:08.346+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T15:59:08.427+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T15:59:08.433+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T15:59:08.434+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.22 seconds (process running for 1911.514)
+2026-03-27T15:59:08.435+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T15:59:14.988+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-03-27T15:59:14.994+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T15:59:14.995+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-03-27T15:59:14.997+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T15:59:15.078+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T15:59:15.078+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T15:59:15.213+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T15:59:15.246+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 7 JPA repository interfaces.
+2026-03-27T15:59:15.336+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T15:59:15.337+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T15:59:15.337+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T15:59:15.353+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T15:59:15.353+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 273 ms
+2026-03-27T15:59:15.378+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-03-27T15:59:15.492+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@46d20f67
+2026-03-27T15:59:15.492+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-03-27T15:59:15.578+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T15:59:15.666+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T15:59:15.787+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T15:59:15.788+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T15:59:15.788+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T15:59:15.788+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T15:59:15.788+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T15:59:15.788+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T15:59:15.788+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T15:59:15.835+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T15:59:15.847+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T15:59:15.868+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T15:59:15.870+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T15:59:15.872+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T15:59:15.873+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T15:59:15.958+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T15:59:16.201+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T15:59:16.401+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T15:59:16.495+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T15:59:16.501+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T15:59:16.504+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.444 seconds (process running for 1919.583)
+2026-03-27T15:59:16.504+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T15:59:17.928+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-03-27T15:59:17.938+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T15:59:17.939+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-03-27T15:59:17.941+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T15:59:17.995+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T15:59:17.996+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T15:59:18.083+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T15:59:18.096+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 7 JPA repository interfaces.
+2026-03-27T15:59:18.152+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T15:59:18.152+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T15:59:18.152+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T15:59:18.165+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T15:59:18.165+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 169 ms
+2026-03-27T15:59:18.183+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-03-27T15:59:18.279+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@352bbb9e
+2026-03-27T15:59:18.280+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-03-27T15:59:18.344+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T15:59:18.410+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T15:59:18.531+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T15:59:18.531+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T15:59:18.531+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T15:59:18.531+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T15:59:18.531+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T15:59:18.531+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T15:59:18.531+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T15:59:18.572+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T15:59:18.588+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T15:59:18.609+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T15:59:18.610+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T15:59:18.613+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T15:59:18.613+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T15:59:18.710+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T15:59:18.828+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T15:59:18.998+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T15:59:19.110+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T15:59:19.119+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T15:59:19.120+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.14 seconds (process running for 1922.2)
+2026-03-27T15:59:19.121+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T15:59:26.707+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-03-27T15:59:26.712+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T15:59:26.713+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2026-03-27T15:59:26.714+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T15:59:26.774+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T15:59:26.774+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T15:59:26.872+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T15:59:26.885+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 7 JPA repository interfaces.
+2026-03-27T15:59:26.957+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T15:59:26.958+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T15:59:26.958+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T15:59:26.974+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T15:59:26.974+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 199 ms
+2026-03-27T15:59:27.005+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2026-03-27T15:59:27.130+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@64f68f87
+2026-03-27T15:59:27.130+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2026-03-27T15:59:27.221+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T15:59:27.315+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T15:59:27.441+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T15:59:27.441+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T15:59:27.441+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T15:59:27.441+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T15:59:27.441+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T15:59:27.441+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T15:59:27.441+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T15:59:27.497+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T15:59:27.505+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T15:59:27.534+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T15:59:27.537+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T15:59:27.542+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T15:59:27.543+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T15:59:27.644+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T15:59:27.816+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T15:59:28.007+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T15:59:28.092+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T15:59:28.098+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T15:59:28.099+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.342 seconds (process running for 1931.179)
+2026-03-27T15:59:28.099+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T15:59:29.518+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-03-27T15:59:29.524+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T15:59:29.524+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2026-03-27T15:59:29.526+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T15:59:29.579+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T15:59:29.579+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T15:59:29.726+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T15:59:29.754+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 7 JPA repository interfaces.
+2026-03-27T15:59:29.854+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T15:59:29.855+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T15:59:29.855+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T15:59:29.874+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T15:59:29.874+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 294 ms
+2026-03-27T15:59:29.901+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2026-03-27T15:59:29.986+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@25a996d0
+2026-03-27T15:59:29.986+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2026-03-27T15:59:30.059+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T15:59:30.165+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T15:59:30.306+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T15:59:30.307+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T15:59:30.307+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T15:59:30.307+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T15:59:30.307+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T15:59:30.307+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T15:59:30.307+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T15:59:30.361+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T15:59:30.377+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T15:59:30.406+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T15:59:30.410+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T15:59:30.416+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T15:59:30.416+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T15:59:30.592+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T15:59:30.702+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T15:59:31.237+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T15:59:31.379+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T15:59:31.386+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T15:59:31.387+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.82 seconds (process running for 1934.467)
+2026-03-27T15:59:31.388+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T15:59:32.836+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-03-27T15:59:32.845+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T15:59:32.845+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2026-03-27T15:59:32.846+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T15:59:32.911+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T15:59:32.911+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T15:59:33.053+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T15:59:33.079+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 7 JPA repository interfaces.
+2026-03-27T15:59:33.148+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T15:59:33.148+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T15:59:33.148+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T15:59:33.163+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T15:59:33.163+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 251 ms
+2026-03-27T15:59:33.183+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2026-03-27T15:59:33.278+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@5ede2893
+2026-03-27T15:59:33.278+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2026-03-27T15:59:33.395+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T15:59:33.463+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T15:59:33.606+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T15:59:33.606+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T15:59:33.606+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T15:59:33.606+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T15:59:33.606+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T15:59:33.606+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T15:59:33.606+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T15:59:33.658+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T15:59:33.668+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T15:59:33.689+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T15:59:33.690+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T15:59:33.691+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T15:59:33.693+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T15:59:33.774+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T15:59:33.906+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T15:59:34.075+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T15:59:34.149+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T15:59:34.155+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T15:59:34.156+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.263 seconds (process running for 1937.236)
+2026-03-27T15:59:34.157+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T15:59:57.136+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-03-27T15:59:57.146+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T15:59:57.146+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2026-03-27T15:59:57.147+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T15:59:57.201+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T15:59:57.201+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T15:59:57.289+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T15:59:57.302+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 7 JPA repository interfaces.
+2026-03-27T15:59:57.355+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T15:59:57.355+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T15:59:57.356+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T15:59:57.368+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T15:59:57.368+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 166 ms
+2026-03-27T15:59:57.388+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2026-03-27T15:59:57.738+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection org.postgresql.jdbc.PgConnection@1fe26f26
+2026-03-27T15:59:57.738+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2026-03-27T15:59:57.835+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T15:59:57.910+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T15:59:58.189+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T15:59:58.189+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T15:59:58.189+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T15:59:58.189+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T15:59:58.189+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T15:59:58.189+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T15:59:58.189+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T15:59:58.235+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T15:59:58.245+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T15:59:58.265+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T15:59:58.266+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T15:59:58.268+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T15:59:58.268+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T15:59:58.342+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T15:59:58.489+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T15:59:58.637+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T15:59:58.709+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T15:59:58.713+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T15:59:58.716+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.525 seconds (process running for 1961.795)
+2026-03-27T15:59:58.716+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T16:00:04.232+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-03-27T16:00:04.237+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T16:00:04.237+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2026-03-27T16:00:04.238+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T16:00:04.287+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T16:00:04.287+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T16:00:04.380+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T16:00:04.393+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 7 JPA repository interfaces.
+2026-03-27T16:00:04.446+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T16:00:04.446+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T16:00:04.446+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T16:00:04.480+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T16:00:04.480+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 192 ms
+2026-03-27T16:00:04.510+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2026-03-27T16:00:04.684+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection org.postgresql.jdbc.PgConnection@34a19ebb
+2026-03-27T16:00:04.684+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2026-03-27T16:00:04.817+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T16:00:04.900+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T16:00:05.109+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T16:00:05.109+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T16:00:05.109+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T16:00:05.109+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T16:00:05.109+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T16:00:05.109+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T16:00:05.109+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T16:00:05.156+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T16:00:05.293+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T16:00:05.581+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T16:00:05.584+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T16:00:05.588+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T16:00:05.589+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T16:00:05.737+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T16:00:05.882+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T16:00:06.067+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T16:00:06.181+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T16:00:06.192+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T16:00:06.195+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.92 seconds (process running for 1969.275)
+2026-03-27T16:00:06.197+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T16:00:07.593+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-03-27T16:00:07.601+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-39] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T16:00:07.604+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2026-03-27T16:00:07.607+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T16:00:07.666+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T16:00:07.668+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T16:00:07.765+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T16:00:07.779+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 7 JPA repository interfaces.
+2026-03-27T16:00:07.835+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T16:00:07.836+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T16:00:07.836+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T16:00:07.850+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T16:00:07.850+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 181 ms
+2026-03-27T16:00:07.871+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2026-03-27T16:00:07.977+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Added connection org.postgresql.jdbc.PgConnection@2be13845
+2026-03-27T16:00:07.977+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2026-03-27T16:00:08.075+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T16:00:08.157+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T16:00:08.279+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T16:00:08.279+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T16:00:08.279+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T16:00:08.279+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T16:00:08.279+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T16:00:08.279+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T16:00:08.279+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T16:00:08.333+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T16:00:08.339+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T16:00:08.359+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T16:00:08.361+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T16:00:08.363+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T16:00:08.363+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T16:00:08.457+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T16:00:08.575+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T16:00:08.754+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T16:00:08.851+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T16:00:08.859+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T16:00:08.862+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.209 seconds (process running for 1971.941)
+2026-03-27T16:00:08.862+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T16:00:21.537+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 37 class path changes (0 additions, 36 deletions, 1 modification)
+2026-03-27T16:00:21.545+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-43] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T16:00:21.545+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2026-03-27T16:00:21.546+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T16:00:21.634+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T16:00:21.635+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T16:00:21.822+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T16:00:21.822+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2026-03-27T16:00:21.944+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T16:00:21.944+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T16:00:21.944+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T16:00:21.971+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T16:00:21.971+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 334 ms
+2026-03-27T16:00:22.014+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2026-03-27T16:00:22.116+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Added connection org.postgresql.jdbc.PgConnection@162b54bb
+2026-03-27T16:00:22.116+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2026-03-27T16:00:22.188+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T16:00:22.255+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T16:00:22.345+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T16:00:22.345+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T16:00:22.345+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T16:00:22.345+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T16:00:22.345+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T16:00:22.345+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T16:00:22.345+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T16:00:22.390+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T16:00:22.399+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T16:00:22.437+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T16:00:22.439+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T16:00:22.445+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T16:00:22.446+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T16:00:22.563+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T16:00:22.705+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T16:00:22.730+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T16:00:22.942+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T16:00:22.956+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T16:00:22.958+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.353 seconds (process running for 1986.038)
+2026-03-27T16:00:22.960+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T16:00:24.383+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 36 class path changes (36 additions, 0 deletions, 0 modifications)
+2026-03-27T16:00:24.388+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-47] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T16:00:24.388+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2026-03-27T16:00:24.390+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T16:00:24.465+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T16:00:24.465+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T16:00:24.651+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T16:00:24.679+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 7 JPA repository interfaces.
+2026-03-27T16:00:24.759+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T16:00:24.760+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T16:00:24.760+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T16:00:24.786+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T16:00:24.786+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 319 ms
+2026-03-27T16:00:24.814+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2026-03-27T16:00:24.936+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Added connection org.postgresql.jdbc.PgConnection@1f533472
+2026-03-27T16:00:24.936+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2026-03-27T16:00:24.996+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T16:00:25.063+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T16:00:25.155+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T16:00:25.155+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T16:00:25.155+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T16:00:25.155+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T16:00:25.155+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T16:00:25.155+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T16:00:25.155+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T16:00:25.208+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T16:00:25.216+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T16:00:25.236+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T16:00:25.238+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T16:00:25.242+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T16:00:25.243+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T16:00:25.352+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T16:00:25.505+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T16:00:25.729+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T16:00:25.910+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T16:00:25.925+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T16:00:25.928+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.482 seconds (process running for 1989.008)
+2026-03-27T16:00:25.930+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T16:15:46.454+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-03-27T16:15:46.461+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-51] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T16:15:46.462+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2026-03-27T16:15:46.463+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T16:15:46.528+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T16:15:46.528+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T16:15:46.646+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T16:15:46.661+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 7 JPA repository interfaces.
+2026-03-27T16:15:46.723+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T16:15:46.724+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T16:15:46.725+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T16:15:46.738+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T16:15:46.738+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 208 ms
+2026-03-27T16:15:46.758+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Starting...
+2026-03-27T16:15:46.858+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-14 - Added connection org.postgresql.jdbc.PgConnection@51958516
+2026-03-27T16:15:46.859+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
+2026-03-27T16:15:46.928+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T16:15:46.999+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T16:15:47.098+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T16:15:47.098+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T16:15:47.098+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T16:15:47.098+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T16:15:47.098+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T16:15:47.098+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T16:15:47.098+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T16:15:47.166+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T16:15:47.173+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T16:15:47.196+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T16:15:47.198+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T16:15:47.200+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T16:15:47.201+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T16:15:47.293+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T16:15:47.521+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T16:15:47.682+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T16:15:47.764+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T16:15:47.771+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T16:15:47.773+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.257 seconds (process running for 2910.852)
+2026-03-27T16:15:47.774+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T16:15:55.810+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-03-27T16:15:55.815+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-55] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T16:15:55.816+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-55] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown initiated...
+2026-03-27T16:15:55.817+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-55] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T16:15:55.876+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T16:15:55.876+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T16:15:55.964+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T16:15:55.982+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 7 JPA repository interfaces.
+2026-03-27T16:15:56.036+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T16:15:56.036+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T16:15:56.036+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T16:15:56.051+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T16:15:56.051+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 174 ms
+2026-03-27T16:15:56.099+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2026-03-27T16:15:56.260+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-15 - Added connection org.postgresql.jdbc.PgConnection@5592e2e
+2026-03-27T16:15:56.260+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2026-03-27T16:15:56.520+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T16:15:56.646+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T16:15:56.852+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T16:15:56.852+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T16:15:56.852+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T16:15:56.852+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T16:15:56.852+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T16:15:56.852+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T16:15:56.852+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T16:15:56.915+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T16:15:56.924+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T16:15:56.944+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T16:15:56.946+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T16:15:56.947+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T16:15:56.948+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T16:15:57.025+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T16:15:57.134+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T16:15:57.354+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T16:15:57.444+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T16:15:57.451+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T16:15:57.453+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.592 seconds (process running for 2920.532)
+2026-03-27T16:15:57.453+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T16:16:10.158+05:30  INFO 404 --- [agri-farms-common-service] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-03-27T16:16:10.165+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-59] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T16:16:10.165+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2026-03-27T16:16:10.166+05:30  INFO 404 --- [agri-farms-common-service] [      Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-27T16:16:10.227+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Starting AgriFarmsCommonServiceApplication using Java 21.0.6 with PID 404 (C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service\target\classes started by humer in C:\Users\humer\Desktop\TX Projects\AgriFarms\agrifarm-common-service)
+2026-03-27T16:16:10.227+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-27T16:16:10.366+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27T16:16:10.389+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 7 JPA repository interfaces.
+2026-03-27T16:16:10.470+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-03-27T16:16:10.470+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-27T16:16:10.470+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-27T16:16:10.505+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-27T16:16:10.505+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 276 ms
+2026-03-27T16:16:10.553+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Starting...
+2026-03-27T16:16:10.681+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-16 - Added connection org.postgresql.jdbc.PgConnection@4b616866
+2026-03-27T16:16:10.681+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Start completed.
+2026-03-27T16:16:10.827+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.database                       : Set default schema name to public
+2026-03-27T16:16:10.899+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+Database is up to date, no changesets to execute
+2026-03-27T16:16:11.046+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-03-27T16:16:11.046+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Run:                          0
+2026-03-27T16:16:11.046+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Previously run:              12
+2026-03-27T16:16:11.046+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Filtered out:                 0
+2026-03-27T16:16:11.046+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : -------------------------------
+2026-03-27T16:16:11.046+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Total change sets:           12
+2026-03-27T16:16:11.046+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.util                           : Update summary generated
+2026-03-27T16:16:11.199+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-03-27T16:16:11.211+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] liquibase.command                        : Command execution complete
+2026-03-27T16:16:11.236+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-27T16:16:11.238+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-27T16:16:11.239+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27T16:16:11.240+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-27T16:16:11.324+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27T16:16:11.454+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.
+2026-03-27T16:16:11.616+05:30  WARN 404 --- [agri-farms-common-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27T16:16:11.691+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-27T16:16:11.696+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-03-27T16:16:11.696+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] c.a.c.AgriFarmsCommonServiceApplication  : Started AgriFarmsCommonServiceApplication in 1.485 seconds (process running for 2934.777)
+2026-03-27T16:16:11.699+05:30  INFO 404 --- [agri-farms-common-service] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-03-27T16:19:56.721+05:30  INFO 404 --- [agri-farms-common-service] [nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-27T16:19:56.721+05:30  INFO 404 --- [agri-farms-common-service] [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-27T16:19:56.723+05:30  INFO 404 --- [agri-farms-common-service] [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-27T16:28:42.875+05:30  INFO 404 --- [agri-farms-common-service] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27T16:28:42.875+05:30  INFO 404 --- [agri-farms-common-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown initiated...
+2026-03-27T16:28:42.877+05:30  INFO 404 --- [agri-farms-common-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown completed.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:01 h
+[INFO] Finished at: 2026-03-27T16:28:43+05:30
+[INFO] ------------------------------------------------------------------------
+Terminate batch job (Y/N)? 
+^C

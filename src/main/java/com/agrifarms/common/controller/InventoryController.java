@@ -10,6 +10,7 @@ import com.agrifarms.common.entity.ServiceOffering;
 import com.agrifarms.common.entity.TransportVehicle;
 import com.agrifarms.common.entity.WorkerGroup;
 import com.agrifarms.common.service.InventoryService;
+import com.agrifarms.common.service.NotificationService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,10 +23,12 @@ public class InventoryController {
 
     private final InventoryService inventoryService;
     private final DtoMapper dtoMapper;
+    private final NotificationService notificationService;
 
-    public InventoryController(InventoryService inventoryService, DtoMapper dtoMapper) {
+    public InventoryController(InventoryService inventoryService, DtoMapper dtoMapper, NotificationService notificationService) {
         this.inventoryService = inventoryService;
         this.dtoMapper = dtoMapper;
+        this.notificationService = notificationService;
     }
 
     // Equipment
@@ -50,11 +53,21 @@ public class InventoryController {
     public EquipmentDTO addEquipment(@RequestBody EquipmentDTO equipmentDTO) {
         Equipment equipment = dtoMapper.toEquipmentEntity(equipmentDTO);
         Equipment savedEquipment = inventoryService.saveEquipment(equipment);
+        
+        String equipName = savedEquipment.getBrandModel() != null ? savedEquipment.getBrandModel() : 
+                           (savedEquipment.getCategory() != null ? savedEquipment.getCategory() : "equipment");
+        notificationService.sendTopicNotification(
+                "all_assets",
+                "New Equipment Available!",
+                "A new " + equipName + " was just added to the platform.",
+                null
+        );
+        
         return dtoMapper.toEquipmentDTO(savedEquipment);
     }
 
     @PutMapping("/equipment/{id}")
-    public EquipmentDTO updateEquipment(@PathVariable String id, @RequestBody EquipmentDTO equipmentDTO) {
+    public EquipmentDTO updateEquipment(@PathVariable("id") String id, @RequestBody EquipmentDTO equipmentDTO) {
         Equipment existingEquipment = inventoryService.getAllEquipment().stream()
                 .filter(e -> e.getEquipmentId().equals(id))
                 .findFirst()
@@ -86,7 +99,7 @@ public class InventoryController {
     }
 
     @DeleteMapping("/equipment/{id}")
-    public void deleteEquipment(@PathVariable String id) {
+    public void deleteEquipment(@PathVariable("id") String id) {
         inventoryService.deleteEquipment(id);
     }
 
@@ -112,11 +125,20 @@ public class InventoryController {
     public TransportVehicleDTO addVehicle(@RequestBody TransportVehicleDTO vehicleDTO) {
         TransportVehicle vehicle = dtoMapper.toTransportVehicleEntity(vehicleDTO);
         TransportVehicle savedVehicle = inventoryService.saveVehicle(vehicle);
+        
+        String vehName = savedVehicle.getVehicleType() != null ? savedVehicle.getVehicleType() : "vehicle";
+        notificationService.sendTopicNotification(
+                "all_assets",
+                "New Transport Vehicle Available!",
+                "A new transport vehicle (" + vehName + ") was just added to the platform.",
+                null
+        );
+        
         return dtoMapper.toTransportVehicleDTO(savedVehicle);
     }
 
     @PutMapping("/vehicles/{id}")
-    public TransportVehicleDTO updateVehicle(@PathVariable String id, @RequestBody TransportVehicleDTO vehicleDTO) {
+    public TransportVehicleDTO updateVehicle(@PathVariable("id") String id, @RequestBody TransportVehicleDTO vehicleDTO) {
         TransportVehicle existingVehicle = inventoryService.getAllVehicles().stream()
                 .filter(v -> v.getVehicleId().equals(id))
                 .findFirst()
@@ -148,7 +170,7 @@ public class InventoryController {
     }
 
     @DeleteMapping("/vehicles/{id}")
-    public void deleteVehicle(@PathVariable String id) {
+    public void deleteVehicle(@PathVariable("id") String id) {
         inventoryService.deleteVehicle(id);
     }
 
@@ -174,11 +196,21 @@ public class InventoryController {
     public ServiceOfferingDTO addService(@RequestBody ServiceOfferingDTO serviceDTO) {
         ServiceOffering service = dtoMapper.toServiceOfferingEntity(serviceDTO);
         ServiceOffering savedService = inventoryService.saveService(service);
+        
+        String servName = savedService.getBusinessName() != null ? savedService.getBusinessName() : 
+                          (savedService.getServiceType() != null ? savedService.getServiceType() : "service");
+        notificationService.sendTopicNotification(
+                "all_assets",
+                "New Service Offering Available!",
+                "A new service offered by " + servName + " was just added to the platform.",
+                null
+        );
+        
         return dtoMapper.toServiceOfferingDTO(savedService);
     }
 
     @PutMapping("/services/{id}")
-    public ServiceOfferingDTO updateService(@PathVariable String id, @RequestBody ServiceOfferingDTO serviceDTO) {
+    public ServiceOfferingDTO updateService(@PathVariable("id") String id, @RequestBody ServiceOfferingDTO serviceDTO) {
         ServiceOffering existingService = inventoryService.getAllServices().stream()
                 .filter(s -> s.getServiceId().equals(id))
                 .findFirst()
@@ -210,7 +242,7 @@ public class InventoryController {
     }
 
     @DeleteMapping("/services/{id}")
-    public void deleteService(@PathVariable String id) {
+    public void deleteService(@PathVariable("id") String id) {
         inventoryService.deleteService(id);
     }
 
@@ -236,11 +268,20 @@ public class InventoryController {
     public WorkerGroupDTO addWorkerGroup(@RequestBody WorkerGroupDTO groupDTO) {
         WorkerGroup group = dtoMapper.toWorkerGroupEntity(groupDTO);
         WorkerGroup savedGroup = inventoryService.saveWorkerGroup(group);
+        
+        String grpName = savedGroup.getGroupName() != null ? savedGroup.getGroupName() : "farm workers group";
+        notificationService.sendTopicNotification(
+                "all_assets",
+                "New Farm Workers Group Available!",
+                "A new group of workers (" + grpName + ") was just added to the platform.",
+                null
+        );
+        
         return dtoMapper.toWorkerGroupDTO(savedGroup);
     }
 
     @PutMapping("/worker-groups/{id}")
-    public WorkerGroupDTO updateWorkerGroup(@PathVariable String id, @RequestBody WorkerGroupDTO groupDTO) {
+    public WorkerGroupDTO updateWorkerGroup(@PathVariable("id") String id, @RequestBody WorkerGroupDTO groupDTO) {
         WorkerGroup existingGroup = inventoryService.getAllWorkerGroups().stream()
                 .filter(g -> g.getGroupId().equals(id))
                 .findFirst()
@@ -251,6 +292,8 @@ public class InventoryController {
         if (groupDTO.getFemaleCount() != null) existingGroup.setFemaleCount(groupDTO.getFemaleCount());
         if (groupDTO.getPricePerMale() != null) existingGroup.setPricePerMale(groupDTO.getPricePerMale());
         if (groupDTO.getPricePerFemale() != null) existingGroup.setPricePerFemale(groupDTO.getPricePerFemale());
+        if (groupDTO.getPricePerMaleHourly() != null) existingGroup.setPricePerMaleHourly(groupDTO.getPricePerMaleHourly());
+        if (groupDTO.getPricePerFemaleHourly() != null) existingGroup.setPricePerFemaleHourly(groupDTO.getPricePerFemaleHourly());
         if (groupDTO.getSkills() != null) existingGroup.setSkills(groupDTO.getSkills());
         if (groupDTO.getLocation() != null) existingGroup.setLocation(groupDTO.getLocation());
         if (groupDTO.getServiceRangeKm() != null) existingGroup.setServiceRangeKm(groupDTO.getServiceRangeKm());
@@ -273,7 +316,7 @@ public class InventoryController {
     }
 
     @DeleteMapping("/worker-groups/{id}")
-    public void deleteWorkerGroup(@PathVariable String id) {
+    public void deleteWorkerGroup(@PathVariable("id") String id) {
         inventoryService.deleteWorkerGroup(id);
     }
 }

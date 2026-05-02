@@ -5,18 +5,24 @@ import com.agrifarms.common.dto.UserDTO;
 import com.agrifarms.common.dto.UserStatsDTO;
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/api/users")
-@RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class UserController {
 
     private final UserService userService;
     private final DtoMapper dtoMapper;
+
+    public UserController(UserService userService, DtoMapper dtoMapper) {
+        this.userService = userService;
+        this.dtoMapper = dtoMapper;
+    }
 
     @PostMapping
     public UserDTO createUser(@RequestBody UserDTO userDTO) {
@@ -29,8 +35,15 @@ public class UserController {
         return dtoMapper.toUserDTO(createdUser);
     }
 
+    @GetMapping("/all")
+    public List<UserDTO> getAllUsers() {
+        return userService.getAllUsers().stream()
+                .map(dtoMapper::toUserDTO)
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/{userId}")
-    public ResponseEntity<UserDTO> getUser(@PathVariable String userId) {
+    public ResponseEntity<UserDTO> getUser(@PathVariable("userId") String userId) {
         return userService.getUserById(userId)
                 .map(dtoMapper::toUserDTO)
                 .map(ResponseEntity::ok)
@@ -38,7 +51,7 @@ public class UserController {
     }
 
     @GetMapping("/phone/{phoneNumber}")
-    public ResponseEntity<UserDTO> getUserByPhone(@PathVariable String phoneNumber) {
+    public ResponseEntity<UserDTO> getUserByPhone(@PathVariable("phoneNumber") String phoneNumber) {
         return userService.getUserByPhoneNumber(phoneNumber)
                 .map(dtoMapper::toUserDTO)
                 .map(ResponseEntity::ok)
@@ -46,18 +59,31 @@ public class UserController {
     }
 
     @PutMapping("/{userId}")
-    public ResponseEntity<UserDTO> updateUser(@PathVariable String userId, @RequestBody UserDTO userDTO) {
+    public ResponseEntity<UserDTO> updateUser(@PathVariable("userId") String userId, @RequestBody UserDTO userDTO) {
         User updatedUser = dtoMapper.toUserEntity(userDTO);
         try {
             User savedUser = userService.updateUser(userId, updatedUser);
             return ResponseEntity.ok(dtoMapper.toUserDTO(savedUser));
         } catch (org.springframework.web.server.ResponseStatusException e) {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.status(e.getStatusCode()).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(500).header("X-Error-Message", e.getMessage()).build();
         }
     }
 
+<<<<<<< HEAD
     @GetMapping("/{userId}/stats")
     public ResponseEntity<UserStatsDTO> getUserStats(@PathVariable String userId) {
         return ResponseEntity.ok(userService.getUserStats(userId));
+=======
+    @PutMapping("/{userId}/fcm-token")
+    public ResponseEntity<Void> updateFcmToken(@PathVariable("userId") String userId, @RequestBody java.util.Map<String, String> body) {
+        String token = body.get("fcmToken");
+        if (token != null) {
+            userService.updateFcmToken(userId, token);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.badRequest().build();
+>>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
     }
 }

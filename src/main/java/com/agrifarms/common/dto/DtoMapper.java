@@ -7,11 +7,10 @@ import com.agrifarms.common.entity.TransportVehicle;
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.entity.WorkerGroup;
 import com.agrifarms.common.entity.WorkerGroupRole;
-import com.agrifarms.common.repository.UserRepository;
+import com.agrifarms.common.service.UserService;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +18,7 @@ import java.util.stream.Collectors;
 public class DtoMapper {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     // User
     public UserDTO toUserDTO(User entity) {
@@ -32,6 +31,7 @@ public class DtoMapper {
                 entity.getRole(),
                 entity.getDistrict(),
                 entity.getVillage(),
+<<<<<<< HEAD
                 entity.getHouseNo(),
                 entity.getStreet(),
                 entity.getState(),
@@ -40,6 +40,10 @@ public class DtoMapper {
                 entity.getProfileImageUrl(),
                 entity.getLatitude(),
                 entity.getLongitude());
+=======
+                entity.getProfileImageUrl(),
+                entity.getFcmToken()); // Added fcmToken
+>>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
     }
 
     public User toUserEntity(UserDTO dto) {
@@ -63,17 +67,17 @@ public class DtoMapper {
         return entity;
     }
 
+    private String getOwnerNameSafely(String ownerId) {
+        return userService.getOwnerNameWithCache(ownerId);
+    }
+
     // Equipment
     public EquipmentDTO toEquipmentDTO(Equipment entity) {
         if (entity == null)
             return null;
 
-        String ownerName = "Unknown Owner";
-        if (entity.getOwnerId() != null) {
-            ownerName = userRepository.findById(entity.getOwnerId())
-                    .map(User::getFullName)
-                    .orElse("Unknown Owner");
-        }
+        String ownerName = getOwnerNameSafely(entity.getOwnerId());
+        String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
         return new EquipmentDTO(
                 entity.getEquipmentId(),
@@ -96,8 +100,12 @@ public class DtoMapper {
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
+<<<<<<< HEAD
                 entity.getLatitude(),
                 entity.getLongitude());
+=======
+                ownerProfileImageUrl);
+>>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
     }
 
     public Equipment toEquipmentEntity(EquipmentDTO dto) {
@@ -142,12 +150,8 @@ public class DtoMapper {
         if (entity == null)
             return null;
 
-        String ownerName = "Unknown Owner";
-        if (entity.getOwnerId() != null) {
-            ownerName = userRepository.findById(entity.getOwnerId())
-                    .map(User::getFullName)
-                    .orElse("Unknown Owner");
-        }
+        String ownerName = getOwnerNameSafely(entity.getOwnerId());
+        String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
         return new TransportVehicleDTO(
                 entity.getVehicleId(),
@@ -171,8 +175,12 @@ public class DtoMapper {
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
+<<<<<<< HEAD
                 entity.getLatitude(),
                 entity.getLongitude());
+=======
+                ownerProfileImageUrl);
+>>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
     }
 
     public TransportVehicle toTransportVehicleEntity(TransportVehicleDTO dto) {
@@ -218,12 +226,8 @@ public class DtoMapper {
         if (entity == null)
             return null;
 
-        String ownerName = "Unknown Owner";
-        if (entity.getOwnerId() != null) {
-            ownerName = userRepository.findById(entity.getOwnerId())
-                    .map(User::getFullName)
-                    .orElse("Unknown Owner");
-        }
+        String ownerName = getOwnerNameSafely(entity.getOwnerId());
+        String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
         return new ServiceOfferingDTO(
                 entity.getServiceId(),
@@ -247,8 +251,12 @@ public class DtoMapper {
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
+<<<<<<< HEAD
                 entity.getLatitude(),
                 entity.getLongitude());
+=======
+                ownerProfileImageUrl);
+>>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
     }
 
     public ServiceOffering toServiceOfferingEntity(ServiceOfferingDTO dto) {
@@ -335,14 +343,18 @@ public class DtoMapper {
     public WorkerGroupDTO toWorkerGroupDTO(WorkerGroup entity) {
         if (entity == null)
             return null;
+        String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
         WorkerGroupDTO dto = new WorkerGroupDTO(
                 entity.getGroupId(),
                 entity.getOwnerId(),
+                getOwnerNameSafely(entity.getOwnerId()),
                 entity.getGroupName(),
                 entity.getMaleCount(),
                 entity.getFemaleCount(),
                 entity.getPricePerMale(),
                 entity.getPricePerFemale(),
+                entity.getPricePerMaleHourly(),
+                entity.getPricePerFemaleHourly(),
                 entity.getSkills(),
                 entity.getLocation(),
                 entity.getHouseNo(),
@@ -357,9 +369,14 @@ public class DtoMapper {
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
+<<<<<<< HEAD
                 null,
                 entity.getLatitude(),
                 entity.getLongitude());
+=======
+                ownerProfileImageUrl,
+                null);
+>>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
         if (entity.getRoles() != null) {
             dto.setRoles(entity.getRoles().stream()
                     .map(this::toWorkerGroupRoleDTO)
@@ -379,6 +396,8 @@ public class DtoMapper {
         entity.setFemaleCount(dto.getFemaleCount());
         entity.setPricePerMale(dto.getPricePerMale());
         entity.setPricePerFemale(dto.getPricePerFemale());
+        entity.setPricePerMaleHourly(dto.getPricePerMaleHourly());
+        entity.setPricePerFemaleHourly(dto.getPricePerFemaleHourly());
         entity.setSkills(dto.getSkills());
         entity.setLocation(dto.getLocation());
         entity.setServiceRangeKm(dto.getServiceRangeKm());
