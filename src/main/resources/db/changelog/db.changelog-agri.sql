@@ -179,8 +179,42 @@ CREATE TABLE IF NOT EXISTS reviews (
 
 -- =====================================================
 -- changeset agrihub:1.0.8
+-- validCheckSum: 9:72b79ece6e81490f7b7c5874a725b440
+-- validCheckSum: 9:4a2c7604549c2b539d9c7fabdb10ac0c
 -- Add updated_at auto column to worker_groups
 -- =====================================================
 
 ALTER TABLE worker_groups
-ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP;
+ADD COLUMN updated_at TIMESTAMP;
+-- changeset agrihub:1.0.13
+ALTER TABLE equipment ADD COLUMN IF NOT EXISTS house_no VARCHAR(255);
+ALTER TABLE equipment ADD COLUMN IF NOT EXISTS street VARCHAR(255);
+ALTER TABLE equipment ADD COLUMN IF NOT EXISTS village VARCHAR(255);
+ALTER TABLE equipment ADD COLUMN IF NOT EXISTS district VARCHAR(255);
+ALTER TABLE equipment ADD COLUMN IF NOT EXISTS state VARCHAR(255);
+ALTER TABLE equipment ADD COLUMN IF NOT EXISTS country VARCHAR(255) DEFAULT 'India';
+ALTER TABLE equipment ADD COLUMN IF NOT EXISTS pincode VARCHAR(20);
+
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS house_no VARCHAR(255);
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS street VARCHAR(255);
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS village VARCHAR(255);
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS district VARCHAR(255);
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS state VARCHAR(255);
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS country VARCHAR(255) DEFAULT 'India';
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS pincode VARCHAR(20);
+
+ALTER TABLE service_offerings ADD COLUMN IF NOT EXISTS house_no VARCHAR(255);
+ALTER TABLE service_offerings ADD COLUMN IF NOT EXISTS street VARCHAR(255);
+ALTER TABLE service_offerings ADD COLUMN IF NOT EXISTS village VARCHAR(255);
+ALTER TABLE service_offerings ADD COLUMN IF NOT EXISTS district VARCHAR(255);
+ALTER TABLE service_offerings ADD COLUMN IF NOT EXISTS state VARCHAR(255);
+ALTER TABLE service_offerings ADD COLUMN IF NOT EXISTS country VARCHAR(255) DEFAULT 'India';
+ALTER TABLE service_offerings ADD COLUMN IF NOT EXISTS pincode VARCHAR(20);
+
+ALTER TABLE worker_groups ADD COLUMN IF NOT EXISTS house_no VARCHAR(255);
+ALTER TABLE worker_groups ADD COLUMN IF NOT EXISTS street VARCHAR(255);
+ALTER TABLE worker_groups ADD COLUMN IF NOT EXISTS village VARCHAR(255);
+ALTER TABLE worker_groups ADD COLUMN IF NOT EXISTS district VARCHAR(255);
+ALTER TABLE worker_groups ADD COLUMN IF NOT EXISTS state VARCHAR(255);
+ALTER TABLE worker_groups ADD COLUMN IF NOT EXISTS country VARCHAR(255) DEFAULT 'India';
+ALTER TABLE worker_groups ADD COLUMN IF NOT EXISTS pincode VARCHAR(20);

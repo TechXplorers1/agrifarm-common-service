@@ -1,6 +1,7 @@
 package com.agrifarms.common.entity;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,6 +31,21 @@ public class User {
     private String district;
     private String village;
 
+    @Column(name = "house_no")
+    private String houseNo;
+
+    @Column(name = "street")
+    private String street;
+
+    @Column(name = "state")
+    private String state;
+
+    @Column(name = "country")
+    private String country;
+
+    @Column(name = "pincode")
+    private String pincode;
+
     @Column(name = "profile_image_url")
     private String profileImageUrl;
 
@@ -48,4 +64,6 @@ public class User {
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
+    private BigDecimal latitude;
+    private BigDecimal longitude;
 }

@@ -71,6 +71,15 @@ public class InventoryController {
         if (equipmentDTO.getRating() != null) existingEquipment.setRating(equipmentDTO.getRating());
         if (equipmentDTO.getApprovalStatus() != null) existingEquipment.setApprovalStatus(equipmentDTO.getApprovalStatus());
         if (equipmentDTO.getImageUrl() != null) existingEquipment.setImageUrl(equipmentDTO.getImageUrl());
+        if (equipmentDTO.getHouseNo() != null) existingEquipment.setHouseNo(equipmentDTO.getHouseNo());
+        if (equipmentDTO.getStreet() != null) existingEquipment.setStreet(equipmentDTO.getStreet());
+        if (equipmentDTO.getVillage() != null) existingEquipment.setVillage(equipmentDTO.getVillage());
+        if (equipmentDTO.getDistrict() != null) existingEquipment.setDistrict(equipmentDTO.getDistrict());
+        if (equipmentDTO.getState() != null) existingEquipment.setState(equipmentDTO.getState());
+        if (equipmentDTO.getCountry() != null) existingEquipment.setCountry(equipmentDTO.getCountry());
+        if (equipmentDTO.getPincode() != null) existingEquipment.setPincode(equipmentDTO.getPincode());
+        if (equipmentDTO.getLatitude() != null) existingEquipment.setLatitude(equipmentDTO.getLatitude());
+        if (equipmentDTO.getLongitude() != null) existingEquipment.setLongitude(equipmentDTO.getLongitude());
         
         Equipment savedEquipment = inventoryService.saveEquipment(existingEquipment);
         return dtoMapper.toEquipmentDTO(savedEquipment);
@@ -124,6 +133,15 @@ public class InventoryController {
         if (vehicleDTO.getRating() != null) existingVehicle.setRating(vehicleDTO.getRating());
         if (vehicleDTO.getApprovalStatus() != null) existingVehicle.setApprovalStatus(vehicleDTO.getApprovalStatus());
         if (vehicleDTO.getImageUrl() != null) existingVehicle.setImageUrl(vehicleDTO.getImageUrl());
+        if (vehicleDTO.getHouseNo() != null) existingVehicle.setHouseNo(vehicleDTO.getHouseNo());
+        if (vehicleDTO.getStreet() != null) existingVehicle.setStreet(vehicleDTO.getStreet());
+        if (vehicleDTO.getVillage() != null) existingVehicle.setVillage(vehicleDTO.getVillage());
+        if (vehicleDTO.getDistrict() != null) existingVehicle.setDistrict(vehicleDTO.getDistrict());
+        if (vehicleDTO.getState() != null) existingVehicle.setState(vehicleDTO.getState());
+        if (vehicleDTO.getCountry() != null) existingVehicle.setCountry(vehicleDTO.getCountry());
+        if (vehicleDTO.getPincode() != null) existingVehicle.setPincode(vehicleDTO.getPincode());
+        if (vehicleDTO.getLatitude() != null) existingVehicle.setLatitude(vehicleDTO.getLatitude());
+        if (vehicleDTO.getLongitude() != null) existingVehicle.setLongitude(vehicleDTO.getLongitude());
 
         TransportVehicle savedVehicle = inventoryService.saveVehicle(existingVehicle);
         return dtoMapper.toTransportVehicleDTO(savedVehicle);
@@ -177,6 +195,15 @@ public class InventoryController {
         if (serviceDTO.getRating() != null) existingService.setRating(serviceDTO.getRating());
         if (serviceDTO.getApprovalStatus() != null) existingService.setApprovalStatus(serviceDTO.getApprovalStatus());
         if (serviceDTO.getImageUrl() != null) existingService.setImageUrl(serviceDTO.getImageUrl());
+        if (serviceDTO.getHouseNo() != null) existingService.setHouseNo(serviceDTO.getHouseNo());
+        if (serviceDTO.getStreet() != null) existingService.setStreet(serviceDTO.getStreet());
+        if (serviceDTO.getVillage() != null) existingService.setVillage(serviceDTO.getVillage());
+        if (serviceDTO.getDistrict() != null) existingService.setDistrict(serviceDTO.getDistrict());
+        if (serviceDTO.getState() != null) existingService.setState(serviceDTO.getState());
+        if (serviceDTO.getCountry() != null) existingService.setCountry(serviceDTO.getCountry());
+        if (serviceDTO.getPincode() != null) existingService.setPincode(serviceDTO.getPincode());
+        if (serviceDTO.getLatitude() != null) existingService.setLatitude(serviceDTO.getLatitude());
+        if (serviceDTO.getLongitude() != null) existingService.setLongitude(serviceDTO.getLongitude());
 
         ServiceOffering savedService = inventoryService.saveService(existingService);
         return dtoMapper.toServiceOfferingDTO(savedService);
@@ -231,6 +258,15 @@ public class InventoryController {
         if (groupDTO.getRating() != null) existingGroup.setRating(groupDTO.getRating());
         if (groupDTO.getApprovalStatus() != null) existingGroup.setApprovalStatus(groupDTO.getApprovalStatus());
         if (groupDTO.getImageUrl() != null) existingGroup.setImageUrl(groupDTO.getImageUrl());
+        if (groupDTO.getHouseNo() != null) existingGroup.setHouseNo(groupDTO.getHouseNo());
+        if (groupDTO.getStreet() != null) existingGroup.setStreet(groupDTO.getStreet());
+        if (groupDTO.getVillage() != null) existingGroup.setVillage(groupDTO.getVillage());
+        if (groupDTO.getDistrict() != null) existingGroup.setDistrict(groupDTO.getDistrict());
+        if (groupDTO.getState() != null) existingGroup.setState(groupDTO.getState());
+        if (groupDTO.getCountry() != null) existingGroup.setCountry(groupDTO.getCountry());
+        if (groupDTO.getPincode() != null) existingGroup.setPincode(groupDTO.getPincode());
+        if (groupDTO.getLatitude() != null) existingGroup.setLatitude(groupDTO.getLatitude());
+        if (groupDTO.getLongitude() != null) existingGroup.setLongitude(groupDTO.getLongitude());
 
         WorkerGroup savedGroup = inventoryService.saveWorkerGroup(existingGroup);
         return dtoMapper.toWorkerGroupDTO(savedGroup);

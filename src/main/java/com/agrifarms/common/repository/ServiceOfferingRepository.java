@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public interface ServiceOfferingRepository extends JpaRepository<ServiceOffering, String> {
+    long countByOwnerId(String ownerId);
     List<ServiceOffering> findByIsAvailableTrue();
 
     List<ServiceOffering> findByServiceType(String serviceType);

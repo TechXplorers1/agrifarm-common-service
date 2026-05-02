@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public interface TransportVehicleRepository extends JpaRepository<TransportVehicle, String> {
+    long countByOwnerId(String ownerId);
     List<TransportVehicle> findByIsAvailableTrue();
 
     List<TransportVehicle> findByVehicleType(String vehicleType);

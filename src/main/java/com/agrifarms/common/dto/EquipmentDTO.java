@@ -19,8 +19,17 @@ public class EquipmentDTO {
     private BigDecimal pricePerHour;
     private Boolean operatorAvailable;
     private String location;
+    private String houseNo;
+    private String street;
+    private String village;
+    private String district;
+    private String state;
+    private String country;
+    private String pincode;
     private Boolean isAvailable;
     private BigDecimal rating;
     private String approvalStatus;
     private String imageUrl;
+    private BigDecimal latitude;
+    private BigDecimal longitude;
 }

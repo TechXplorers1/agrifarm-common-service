@@ -2,6 +2,7 @@ package com.agrifarms.common.controller;
 
 import com.agrifarms.common.dto.DtoMapper;
 import com.agrifarms.common.dto.UserDTO;
+import com.agrifarms.common.dto.UserStatsDTO;
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -53,5 +54,10 @@ public class UserController {
         } catch (org.springframework.web.server.ResponseStatusException e) {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/{userId}/stats")
+    public ResponseEntity<UserStatsDTO> getUserStats(@PathVariable String userId) {
+        return ResponseEntity.ok(userService.getUserStats(userId));
     }
 }

@@ -32,7 +32,14 @@ public class DtoMapper {
                 entity.getRole(),
                 entity.getDistrict(),
                 entity.getVillage(),
-                entity.getProfileImageUrl());
+                entity.getHouseNo(),
+                entity.getStreet(),
+                entity.getState(),
+                entity.getCountry(),
+                entity.getPincode(),
+                entity.getProfileImageUrl(),
+                entity.getLatitude(),
+                entity.getLongitude());
     }
 
     public User toUserEntity(UserDTO dto) {
@@ -45,7 +52,14 @@ public class DtoMapper {
         entity.setRole(dto.getRole());
         entity.setDistrict(dto.getDistrict());
         entity.setVillage(dto.getVillage());
+        entity.setHouseNo(dto.getHouseNo());
+        entity.setStreet(dto.getStreet());
+        entity.setState(dto.getState());
+        entity.setCountry(dto.getCountry());
+        entity.setPincode(dto.getPincode());
         entity.setProfileImageUrl(dto.getProfileImageUrl());
+        entity.setLatitude(dto.getLatitude());
+        entity.setLongitude(dto.getLongitude());
         return entity;
     }
 
@@ -71,10 +85,19 @@ public class DtoMapper {
                 entity.getPricePerHour(),
                 entity.getOperatorAvailable(),
                 entity.getLocation(),
+                entity.getHouseNo(),
+                entity.getStreet(),
+                entity.getVillage(),
+                entity.getDistrict(),
+                entity.getState(),
+                entity.getCountry(),
+                entity.getPincode(),
                 entity.getIsAvailable(),
                 entity.getRating(),
                 entity.getApprovalStatus(),
-                entity.getImageUrl());
+                entity.getImageUrl(),
+                entity.getLatitude(),
+                entity.getLongitude());
     }
 
     public Equipment toEquipmentEntity(EquipmentDTO dto) {
@@ -93,6 +116,24 @@ public class DtoMapper {
         entity.setRating(dto.getRating());
         entity.setApprovalStatus(dto.getApprovalStatus());
         entity.setImageUrl(dto.getImageUrl());
+        entity.setHouseNo(dto.getHouseNo());
+        entity.setStreet(dto.getStreet());
+        entity.setVillage(dto.getVillage());
+        entity.setDistrict(dto.getDistrict());
+        entity.setState(dto.getState());
+        entity.setCountry(dto.getCountry());
+        entity.setPincode(dto.getPincode());
+        entity.setLatitude(dto.getLatitude());
+        entity.setLongitude(dto.getLongitude());
+        entity.setHouseNo(dto.getHouseNo());
+        entity.setStreet(dto.getStreet());
+        entity.setVillage(dto.getVillage());
+        entity.setDistrict(dto.getDistrict());
+        entity.setState(dto.getState());
+        entity.setCountry(dto.getCountry());
+        entity.setPincode(dto.getPincode());
+        entity.setLatitude(dto.getLatitude());
+        entity.setLongitude(dto.getLongitude());
         return entity;
     }
 
@@ -119,10 +160,19 @@ public class DtoMapper {
                 entity.getDriverIncluded(),
                 entity.getServiceArea(),
                 entity.getLocation(),
+                entity.getHouseNo(),
+                entity.getStreet(),
+                entity.getVillage(),
+                entity.getDistrict(),
+                entity.getState(),
+                entity.getCountry(),
+                entity.getPincode(),
                 entity.getIsAvailable(),
                 entity.getRating(),
                 entity.getApprovalStatus(),
-                entity.getImageUrl());
+                entity.getImageUrl(),
+                entity.getLatitude(),
+                entity.getLongitude());
     }
 
     public TransportVehicle toTransportVehicleEntity(TransportVehicleDTO dto) {
@@ -142,6 +192,24 @@ public class DtoMapper {
         entity.setRating(dto.getRating());
         entity.setApprovalStatus(dto.getApprovalStatus());
         entity.setImageUrl(dto.getImageUrl());
+        entity.setHouseNo(dto.getHouseNo());
+        entity.setStreet(dto.getStreet());
+        entity.setVillage(dto.getVillage());
+        entity.setDistrict(dto.getDistrict());
+        entity.setState(dto.getState());
+        entity.setCountry(dto.getCountry());
+        entity.setPincode(dto.getPincode());
+        entity.setLatitude(dto.getLatitude());
+        entity.setLongitude(dto.getLongitude());
+        entity.setHouseNo(dto.getHouseNo());
+        entity.setStreet(dto.getStreet());
+        entity.setVillage(dto.getVillage());
+        entity.setDistrict(dto.getDistrict());
+        entity.setState(dto.getState());
+        entity.setCountry(dto.getCountry());
+        entity.setPincode(dto.getPincode());
+        entity.setLatitude(dto.getLatitude());
+        entity.setLongitude(dto.getLongitude());
         return entity;
     }
 
@@ -168,10 +236,19 @@ public class DtoMapper {
                 entity.getPriceRate(),
                 entity.getOperatorIncluded(),
                 entity.getLocation(),
+                entity.getHouseNo(),
+                entity.getStreet(),
+                entity.getVillage(),
+                entity.getDistrict(),
+                entity.getState(),
+                entity.getCountry(),
+                entity.getPincode(),
                 entity.getIsAvailable(),
                 entity.getRating(),
                 entity.getApprovalStatus(),
-                entity.getImageUrl());
+                entity.getImageUrl(),
+                entity.getLatitude(),
+                entity.getLongitude());
     }
 
     public ServiceOffering toServiceOfferingEntity(ServiceOfferingDTO dto) {
@@ -191,6 +268,24 @@ public class DtoMapper {
         entity.setRating(dto.getRating());
         entity.setApprovalStatus(dto.getApprovalStatus());
         entity.setImageUrl(dto.getImageUrl());
+        entity.setHouseNo(dto.getHouseNo());
+        entity.setStreet(dto.getStreet());
+        entity.setVillage(dto.getVillage());
+        entity.setDistrict(dto.getDistrict());
+        entity.setState(dto.getState());
+        entity.setCountry(dto.getCountry());
+        entity.setPincode(dto.getPincode());
+        entity.setLatitude(dto.getLatitude());
+        entity.setLongitude(dto.getLongitude());
+        entity.setHouseNo(dto.getHouseNo());
+        entity.setStreet(dto.getStreet());
+        entity.setVillage(dto.getVillage());
+        entity.setDistrict(dto.getDistrict());
+        entity.setState(dto.getState());
+        entity.setCountry(dto.getCountry());
+        entity.setPincode(dto.getPincode());
+        entity.setLatitude(dto.getLatitude());
+        entity.setLongitude(dto.getLongitude());
         return entity;
     }
 
@@ -250,12 +345,21 @@ public class DtoMapper {
                 entity.getPricePerFemale(),
                 entity.getSkills(),
                 entity.getLocation(),
+                entity.getHouseNo(),
+                entity.getStreet(),
+                entity.getVillage(),
+                entity.getDistrict(),
+                entity.getState(),
+                entity.getCountry(),
+                entity.getPincode(),
                 entity.getServiceRangeKm(),
                 entity.getIsAvailable(),
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
-                null);
+                null,
+                entity.getLatitude(),
+                entity.getLongitude());
         if (entity.getRoles() != null) {
             dto.setRoles(entity.getRoles().stream()
                     .map(this::toWorkerGroupRoleDTO)
@@ -282,6 +386,15 @@ public class DtoMapper {
         entity.setRating(dto.getRating());
         entity.setApprovalStatus(dto.getApprovalStatus());
         entity.setImageUrl(dto.getImageUrl());
+        entity.setHouseNo(dto.getHouseNo());
+        entity.setStreet(dto.getStreet());
+        entity.setVillage(dto.getVillage());
+        entity.setDistrict(dto.getDistrict());
+        entity.setState(dto.getState());
+        entity.setCountry(dto.getCountry());
+        entity.setPincode(dto.getPincode());
+        entity.setLatitude(dto.getLatitude());
+        entity.setLongitude(dto.getLongitude());
 
         if (dto.getRoles() != null) {
             List<WorkerGroupRole> roles = dto.getRoles().stream()

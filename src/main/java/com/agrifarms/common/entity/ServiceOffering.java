@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "services")
+@Table(name = "service_offerings")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -43,6 +43,27 @@ public class ServiceOffering {
 
     private String location;
 
+    @Column(name = "house_no")
+    private String houseNo;
+
+    @Column(name = "street")
+    private String street;
+
+    @Column(name = "village")
+    private String village;
+
+    @Column(name = "district")
+    private String district;
+
+    @Column(name = "state")
+    private String state;
+
+    @Column(name = "country")
+    private String country;
+
+    @Column(name = "pincode")
+    private String pincode;
+
     @Column(name = "is_available")
     private Boolean isAvailable;
 
@@ -61,4 +82,6 @@ public class ServiceOffering {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
+    private BigDecimal latitude;
+    private BigDecimal longitude;
 }

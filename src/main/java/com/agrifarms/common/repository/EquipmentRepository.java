@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public interface EquipmentRepository extends JpaRepository<Equipment, String> {
+    long countByOwnerId(String ownerId);
     List<Equipment> findByIsAvailableTrue();
 
     List<Equipment> findByCategory(String category);

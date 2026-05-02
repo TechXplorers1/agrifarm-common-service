@@ -6,17 +6,17 @@ spring:
     name: agri-farms-common-service
 
   datasource:
-    url: jdbc:postgresql://192.168.29.237:5435/agrifarms
+    url: jdbc:postgresql://localhost:5435/agrifarms
     username: agrifarms
     password: password
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+# dialect: org.hibernate.dialect.PostgreSQLDialect
 
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml

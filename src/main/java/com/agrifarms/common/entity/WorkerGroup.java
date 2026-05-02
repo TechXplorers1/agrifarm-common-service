@@ -43,6 +43,27 @@ public class WorkerGroup {
     private String skills;
     private String location;
 
+    @Column(name = "house_no")
+    private String houseNo;
+
+    @Column(name = "street")
+    private String street;
+
+    @Column(name = "village")
+    private String village;
+
+    @Column(name = "district")
+    private String district;
+
+    @Column(name = "state")
+    private String state;
+
+    @Column(name = "country")
+    private String country;
+
+    @Column(name = "pincode")
+    private String pincode;
+
     @Column(name = "service_range_km")
     private Integer serviceRangeKm;
 
@@ -75,4 +96,6 @@ public class WorkerGroup {
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
+    private BigDecimal latitude;
+    private BigDecimal longitude;
 }

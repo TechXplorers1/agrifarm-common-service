@@ -1,7 +1,8 @@
 package com.agrifarms.common.service;
 
+import com.agrifarms.common.dto.UserStatsDTO;
 import com.agrifarms.common.entity.User;
-import com.agrifarms.common.repository.UserRepository;
+import com.agrifarms.common.repository.*;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,27 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final BookingRepository bookingRepository;
+    private final EquipmentRepository equipmentRepository;
+    private final TransportVehicleRepository transportVehicleRepository;
+    private final ServiceOfferingRepository serviceOfferingRepository;
+    private final WorkerGroupRepository workerGroupRepository;
+
+    public UserStatsDTO getUserStats(String userId) {
+        // Orders: Only PENDING or CONFIRMED bookings for this provider
+        java.util.List<String> activeStatuses = java.util.Arrays.asList("PENDING", "CONFIRMED");
+        long orders = bookingRepository.countByProviderIdAndStatusIn(userId, activeStatuses);
+        
+        // Rentals: Count of Equipment + Transport Vehicles owned by user
+        long rentals = equipmentRepository.countByOwnerId(userId) +
+                      transportVehicleRepository.countByOwnerId(userId);
+
+        // Services: Count of Services + Worker Groups owned by user
+        long services = serviceOfferingRepository.countByOwnerId(userId) +
+                       workerGroupRepository.countByOwnerId(userId);
+
+        return new UserStatsDTO(orders, rentals, services);
+    }
 
     public User createUser(User user) {
         if (userRepository.existsByPhoneNumber(user.getPhoneNumber())) {
@@ -42,6 +64,27 @@ public class UserService {
             }
             if (updatedData.getDistrict() != null) {
                 existingUser.setDistrict(updatedData.getDistrict());
+            }
+            if (updatedData.getHouseNo() != null) {
+                existingUser.setHouseNo(updatedData.getHouseNo());
+            }
+            if (updatedData.getStreet() != null) {
+                existingUser.setStreet(updatedData.getStreet());
+            }
+            if (updatedData.getState() != null) {
+                existingUser.setState(updatedData.getState());
+            }
+            if (updatedData.getCountry() != null) {
+                existingUser.setCountry(updatedData.getCountry());
+            }
+            if (updatedData.getPincode() != null) {
+                existingUser.setPincode(updatedData.getPincode());
+            }
+            if (updatedData.getLatitude() != null) {
+                existingUser.setLatitude(updatedData.getLatitude());
+            }
+            if (updatedData.getLongitude() != null) {
+                existingUser.setLongitude(updatedData.getLongitude());
             }
             if (updatedData.getProfileImageUrl() != null) {
                 existingUser.setProfileImageUrl(updatedData.getProfileImageUrl());

@@ -1,0 +1,15 @@
+﻿-- changeset agrihub:1.0.11
+ALTER TABLE users ADD COLUMN IF NOT EXISTS latitude DECIMAL(10, 7);
+ALTER TABLE users ADD COLUMN IF NOT EXISTS longitude DECIMAL(10, 7);
+
+ALTER TABLE equipment ADD COLUMN IF NOT EXISTS latitude DECIMAL(10, 7);
+ALTER TABLE equipment ADD COLUMN IF NOT EXISTS longitude DECIMAL(10, 7);
+
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS latitude DECIMAL(10, 7);
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS longitude DECIMAL(10, 7);
+
+ALTER TABLE service_offerings ADD COLUMN IF NOT EXISTS latitude DECIMAL(10, 7);
+ALTER TABLE service_offerings ADD COLUMN IF NOT EXISTS longitude DECIMAL(10, 7);
+
+ALTER TABLE worker_groups ADD COLUMN IF NOT EXISTS latitude DECIMAL(10, 7);
+ALTER TABLE worker_groups ADD COLUMN IF NOT EXISTS longitude DECIMAL(10, 7);
