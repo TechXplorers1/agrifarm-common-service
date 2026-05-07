@@ -9,7 +9,9 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
     Optional<User> findByPhoneNumber(String phoneNumber);
+    Optional<User> findByEmail(String email);
 
     // Add this to check for duplicates efficiently
     boolean existsByPhoneNumber(String phoneNumber);
+    boolean existsByEmail(String email);
 }

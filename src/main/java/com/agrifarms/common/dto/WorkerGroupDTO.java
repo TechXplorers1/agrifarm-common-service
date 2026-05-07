@@ -1,10 +1,10 @@
 package com.agrifarms.common.dto;
 
-
 import java.math.BigDecimal;
 import java.util.List;
 
 public class WorkerGroupDTO {
+
     private String groupId;
     private String ownerId;
     private String ownerName;
@@ -31,17 +31,16 @@ public class WorkerGroupDTO {
     private String imageUrl;
     private String ownerProfileImageUrl;
     private List<WorkerGroupRoleDTO> roles;
-<<<<<<< HEAD
     private BigDecimal latitude;
     private BigDecimal longitude;
-=======
 
-    public WorkerGroupDTO() {}
+    public WorkerGroupDTO() {
+    }
 
     public WorkerGroupDTO(String groupId, String ownerId, String ownerName, String groupName, Integer maleCount,
-                          Integer femaleCount, BigDecimal pricePerMale, BigDecimal pricePerFemale, BigDecimal pricePerMaleHourly, BigDecimal pricePerFemaleHourly, String skills,
-                          String location, Integer serviceRangeKm, Boolean isAvailable, BigDecimal rating,
-                          String approvalStatus, String imageUrl, String ownerProfileImageUrl, List<WorkerGroupRoleDTO> roles) {
+            Integer femaleCount, BigDecimal pricePerMale, BigDecimal pricePerFemale, BigDecimal pricePerMaleHourly, BigDecimal pricePerFemaleHourly, String skills,
+            String location, String houseNo, String street, String village, String district, String state, String country, String pincode, Integer serviceRangeKm, Boolean isAvailable, BigDecimal rating,
+            String approvalStatus, String imageUrl, String ownerProfileImageUrl, List<WorkerGroupRoleDTO> roles, BigDecimal latitude, BigDecimal longitude) {
         this.groupId = groupId;
         this.ownerId = ownerId;
         this.ownerName = ownerName;
@@ -54,6 +53,13 @@ public class WorkerGroupDTO {
         this.pricePerFemaleHourly = pricePerFemaleHourly;
         this.skills = skills;
         this.location = location;
+        this.houseNo = houseNo;
+        this.street = street;
+        this.village = village;
+        this.district = district;
+        this.state = state;
+        this.country = country;
+        this.pincode = pincode;
         this.serviceRangeKm = serviceRangeKm;
         this.isAvailable = isAvailable;
         this.rating = rating;
@@ -61,6 +67,8 @@ public class WorkerGroupDTO {
         this.imageUrl = imageUrl;
         this.ownerProfileImageUrl = ownerProfileImageUrl;
         this.roles = roles;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getGroupId() { return groupId; }
@@ -99,6 +107,27 @@ public class WorkerGroupDTO {
     public String getLocation() { return location; }
     public void setLocation(String location) { this.location = location; }
 
+    public String getHouseNo() { return houseNo; }
+    public void setHouseNo(String houseNo) { this.houseNo = houseNo; }
+
+    public String getStreet() { return street; }
+    public void setStreet(String street) { this.street = street; }
+
+    public String getVillage() { return village; }
+    public void setVillage(String village) { this.village = village; }
+
+    public String getDistrict() { return district; }
+    public void setDistrict(String district) { this.district = district; }
+
+    public String getState() { return state; }
+    public void setState(String state) { this.state = state; }
+
+    public String getCountry() { return country; }
+    public void setCountry(String country) { this.country = country; }
+
+    public String getPincode() { return pincode; }
+    public void setPincode(String pincode) { this.pincode = pincode; }
+
     public Integer getServiceRangeKm() { return serviceRangeKm; }
     public void setServiceRangeKm(Integer serviceRangeKm) { this.serviceRangeKm = serviceRangeKm; }
 
@@ -119,5 +148,10 @@ public class WorkerGroupDTO {
 
     public List<WorkerGroupRoleDTO> getRoles() { return roles; }
     public void setRoles(List<WorkerGroupRoleDTO> roles) { this.roles = roles; }
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
+
+    public BigDecimal getLatitude() { return latitude; }
+    public void setLatitude(BigDecimal latitude) { this.latitude = latitude; }
+
+    public BigDecimal getLongitude() { return longitude; }
+    public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
 }

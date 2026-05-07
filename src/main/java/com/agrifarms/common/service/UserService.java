@@ -2,12 +2,9 @@ package com.agrifarms.common.service;
 
 import com.agrifarms.common.dto.UserStatsDTO;
 import com.agrifarms.common.entity.User;
-<<<<<<< HEAD
 import com.agrifarms.common.repository.*;
 import lombok.RequiredArgsConstructor;
-=======
 import com.agrifarms.common.repository.UserRepository;
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.CacheEvict;
@@ -19,6 +16,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
@@ -32,21 +30,18 @@ public class UserService {
         // Orders: Only PENDING or CONFIRMED bookings for this provider
         java.util.List<String> activeStatuses = java.util.Arrays.asList("PENDING", "CONFIRMED");
         long orders = bookingRepository.countByProviderIdAndStatusIn(userId, activeStatuses);
-        
+
         // Rentals: Count of Equipment + Transport Vehicles owned by user
-        long rentals = equipmentRepository.countByOwnerId(userId) +
-                      transportVehicleRepository.countByOwnerId(userId);
+        long rentals = equipmentRepository.countByOwnerId(userId)
+                + transportVehicleRepository.countByOwnerId(userId);
 
         // Services: Count of Services + Worker Groups owned by user
-        long services = serviceOfferingRepository.countByOwnerId(userId) +
-                       workerGroupRepository.countByOwnerId(userId);
+        long services = serviceOfferingRepository.countByOwnerId(userId)
+                + workerGroupRepository.countByOwnerId(userId);
 
         return new UserStatsDTO(orders, rentals, services);
     }
 
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Cacheable(value = "users", key = "#userId")
     public Optional<User> getUserById(String userId) {
@@ -74,9 +69,11 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        if (userRepository.existsByPhoneNumber(user.getPhoneNumber())) {
-            // You can create a custom PhoneAlreadyExistsException for better API responses
+        if (user.getPhoneNumber() != null && userRepository.existsByPhoneNumber(user.getPhoneNumber())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Phone number already registered");
+        }
+        if (user.getEmail() != null && userRepository.existsByEmail(user.getEmail())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already registered");
         }
         return userRepository.save(user);
     }
@@ -89,6 +86,10 @@ public class UserService {
         return userRepository.findByPhoneNumber(phoneNumber);
     }
 
+    public Optional<User> getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
     @Caching(evict = {
         @CacheEvict(value = "users", key = "#userId"),
         @CacheEvict(value = "ownerNames", key = "#userId"),
@@ -98,6 +99,9 @@ public class UserService {
         return userRepository.findById(userId).map(existingUser -> {
             if (updatedData.getFullName() != null) {
                 existingUser.setFullName(updatedData.getFullName());
+            }
+            if (updatedData.getEmail() != null) {
+                existingUser.setEmail(updatedData.getEmail());
             }
             if (updatedData.getVillage() != null) {
                 existingUser.setVillage(updatedData.getVillage());

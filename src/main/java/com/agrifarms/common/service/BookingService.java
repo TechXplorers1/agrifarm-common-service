@@ -1,5 +1,13 @@
 package com.agrifarms.common.service;
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
 import com.agrifarms.common.entity.Booking;
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.repository.BookingRepository;
@@ -7,13 +15,6 @@ import com.agrifarms.common.repository.EquipmentRepository;
 import com.agrifarms.common.repository.ServiceOfferingRepository;
 import com.agrifarms.common.repository.TransportVehicleRepository;
 import com.agrifarms.common.repository.WorkerGroupRepository;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 @Service
 public class BookingService {
@@ -26,9 +27,9 @@ public class BookingService {
     private final TransportVehicleRepository transportRepository;
     private final WorkerGroupRepository workerRepository;
 
-    public BookingService(BookingRepository bookingRepository, NotificationService notificationService, UserService userService, 
-                          EquipmentRepository equipmentRepository, ServiceOfferingRepository serviceRepository, 
-                          TransportVehicleRepository transportRepository, WorkerGroupRepository workerRepository) {
+    public BookingService(BookingRepository bookingRepository, NotificationService notificationService, UserService userService,
+            EquipmentRepository equipmentRepository, ServiceOfferingRepository serviceRepository,
+            TransportVehicleRepository transportRepository, WorkerGroupRepository workerRepository) {
         this.bookingRepository = bookingRepository;
         this.notificationService = notificationService;
         this.userService = userService;
@@ -38,10 +39,11 @@ public class BookingService {
         this.workerRepository = workerRepository;
     }
 
-
     private String getAssetName(String assetType, String assetId) {
-        if (assetType == null || assetId == null) return "asset";
-        
+        if (assetType == null || assetId == null) {
+            return "asset";
+        }
+
         try {
             switch (assetType.toLowerCase()) {
                 case "equipment":
@@ -100,10 +102,10 @@ public class BookingService {
             String fcmToken = providerOpt.get().getFcmToken();
             String assetName = getAssetName(booking.getAssetType(), booking.getAssetId());
             String requesterName = requesterOpt.map(User::getFullName).orElse("Someone");
-            
+
             String title = "New Booking Request";
             String body = requesterName + " requested to book your " + assetName + "!";
-            
+
             Map<String, String> data = new HashMap<>();
             data.put("bookingId", savedBooking.getBookingId());
             data.put("type", "booking_request");
@@ -143,10 +145,10 @@ public class BookingService {
             String fcmToken = farmerOpt.get().getFcmToken();
             String assetName = getAssetName(booking.getAssetType(), booking.getAssetId());
             String providerName = providerOpt.map(User::getFullName).orElse("The provider");
-            
+
             String title = "Booking " + status;
             String body = providerName + " has " + status.toLowerCase() + " your request for " + assetName + ".";
-            
+
             Map<String, String> data = new HashMap<>();
             data.put("bookingId", updatedBooking.getBookingId());
             data.put("status", status);

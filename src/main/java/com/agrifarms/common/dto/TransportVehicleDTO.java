@@ -25,17 +25,15 @@ public class TransportVehicleDTO {
     private BigDecimal rating;
     private String approvalStatus;
     private String imageUrl;
-<<<<<<< HEAD
     private BigDecimal latitude;
     private BigDecimal longitude;
-=======
     private String ownerProfileImageUrl;
 
     public TransportVehicleDTO() {}
 
     public TransportVehicleDTO(String vehicleId, String ownerId, String ownerName, String vehicleType, String vehicleNumber,
                                String loadCapacity, BigDecimal pricePerKmOrTrip, Boolean driverIncluded, String serviceArea,
-                               String location, Boolean isAvailable, BigDecimal rating, String approvalStatus, String imageUrl, String ownerProfileImageUrl) {
+                               String location, String houseNo, String street, String village, String district, String state, String country, String pincode, Boolean isAvailable, BigDecimal rating, String approvalStatus, String imageUrl, BigDecimal latitude, BigDecimal longitude, String ownerProfileImageUrl) {
         this.vehicleId = vehicleId;
         this.ownerId = ownerId;
         this.ownerName = ownerName;
@@ -46,10 +44,19 @@ public class TransportVehicleDTO {
         this.driverIncluded = driverIncluded;
         this.serviceArea = serviceArea;
         this.location = location;
+        this.houseNo = houseNo;
+        this.street = street;
+        this.village = village;
+        this.district = district;
+        this.state = state;
+        this.country = country;
+        this.pincode = pincode;
         this.isAvailable = isAvailable;
         this.rating = rating;
         this.approvalStatus = approvalStatus;
         this.imageUrl = imageUrl;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.ownerProfileImageUrl = ownerProfileImageUrl;
     }
 
@@ -83,6 +90,27 @@ public class TransportVehicleDTO {
     public String getLocation() { return location; }
     public void setLocation(String location) { this.location = location; }
 
+    public String getHouseNo() { return houseNo; }
+    public void setHouseNo(String houseNo) { this.houseNo = houseNo; }
+
+    public String getStreet() { return street; }
+    public void setStreet(String street) { this.street = street; }
+
+    public String getVillage() { return village; }
+    public void setVillage(String village) { this.village = village; }
+
+    public String getDistrict() { return district; }
+    public void setDistrict(String district) { this.district = district; }
+
+    public String getState() { return state; }
+    public void setState(String state) { this.state = state; }
+
+    public String getCountry() { return country; }
+    public void setCountry(String country) { this.country = country; }
+
+    public String getPincode() { return pincode; }
+    public void setPincode(String pincode) { this.pincode = pincode; }
+
     public Boolean getIsAvailable() { return isAvailable; }
     public void setIsAvailable(Boolean isAvailable) { this.isAvailable = isAvailable; }
 
@@ -95,7 +123,12 @@ public class TransportVehicleDTO {
     public String getImageUrl() { return imageUrl; }
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 
+    public BigDecimal getLatitude() { return latitude; }
+    public void setLatitude(BigDecimal latitude) { this.latitude = latitude; }
+
+    public BigDecimal getLongitude() { return longitude; }
+    public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
+
     public String getOwnerProfileImageUrl() { return ownerProfileImageUrl; }
     public void setOwnerProfileImageUrl(String ownerProfileImageUrl) { this.ownerProfileImageUrl = ownerProfileImageUrl; }
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
 }

@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "equipment")
 public class Equipment {
+
     @Id
     @Column(name = "equipment_id")
     @UuidGenerator
@@ -68,11 +69,12 @@ public class Equipment {
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
-    public Equipment() {}
+    public Equipment() {
+    }
 
     public Equipment(String equipmentId, String ownerId, String category, String brandModel, String conditionStatus,
-                     BigDecimal pricePerHour, Boolean operatorAvailable, String location, Boolean isAvailable,
-                     BigDecimal rating, String approvalStatus, String imageUrl) {
+            BigDecimal pricePerHour, Boolean operatorAvailable, String location, Boolean isAvailable,
+            BigDecimal rating, String approvalStatus, String imageUrl) {
         this.equipmentId = equipmentId;
         this.ownerId = ownerId;
         this.category = category;
@@ -87,56 +89,143 @@ public class Equipment {
         this.imageUrl = imageUrl;
     }
 
-    public String getEquipmentId() { return equipmentId; }
-    public void setEquipmentId(String equipmentId) { this.equipmentId = equipmentId; }
+    public String getEquipmentId() {
+        return equipmentId;
+    }
 
-    public String getOwnerId() { return ownerId; }
-    public void setOwnerId(String ownerId) { this.ownerId = ownerId; }
+    public void setEquipmentId(String equipmentId) {
+        this.equipmentId = equipmentId;
+    }
 
-    public String getCategory() { return category; }
-    public void setCategory(String category) { this.category = category; }
+    public String getOwnerId() {
+        return ownerId;
+    }
 
-    public String getBrandModel() { return brandModel; }
-    public void setBrandModel(String brandModel) { this.brandModel = brandModel; }
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
 
-    public String getConditionStatus() { return conditionStatus; }
-    public void setConditionStatus(String conditionStatus) { this.conditionStatus = conditionStatus; }
+    public String getCategory() {
+        return category;
+    }
 
-    public BigDecimal getPricePerHour() { return pricePerHour; }
-    public void setPricePerHour(BigDecimal pricePerHour) { this.pricePerHour = pricePerHour; }
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-    public Boolean getOperatorAvailable() { return operatorAvailable; }
-    public void setOperatorAvailable(Boolean operatorAvailable) { this.operatorAvailable = operatorAvailable; }
+    public String getBrandModel() {
+        return brandModel;
+    }
 
-    public String getLocation() { return location; }
-    public void setLocation(String location) { this.location = location; }
+    public void setBrandModel(String brandModel) {
+        this.brandModel = brandModel;
+    }
 
-    public Boolean getIsAvailable() { return isAvailable; }
-    public void setIsAvailable(Boolean isAvailable) { this.isAvailable = isAvailable; }
+    public String getConditionStatus() {
+        return conditionStatus;
+    }
 
-    public BigDecimal getRating() { return rating; }
-    public void setRating(BigDecimal rating) { this.rating = rating; }
+    public void setConditionStatus(String conditionStatus) {
+        this.conditionStatus = conditionStatus;
+    }
 
-    public String getApprovalStatus() { return approvalStatus; }
-    public void setApprovalStatus(String approvalStatus) { this.approvalStatus = approvalStatus; }
+    public BigDecimal getPricePerHour() {
+        return pricePerHour;
+    }
 
-    public String getImageUrl() { return imageUrl; }
-    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public void setPricePerHour(BigDecimal pricePerHour) {
+        this.pricePerHour = pricePerHour;
+    }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public Boolean getOperatorAvailable() {
+        return operatorAvailable;
+    }
+
+    public void setOperatorAvailable(Boolean operatorAvailable) {
+        this.operatorAvailable = operatorAvailable;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public Boolean getIsAvailable() {
+        return isAvailable;
+    }
+
+    public void setIsAvailable(Boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
+
+    public BigDecimal getRating() {
+        return rating;
+    }
+
+    public void setRating(BigDecimal rating) {
+        this.rating = rating;
+    }
+
+    public String getApprovalStatus() {
+        return approvalStatus;
+    }
+
+    public void setApprovalStatus(String approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
-<<<<<<< HEAD
 
-    public void setEquipmentId(String equipmentId) {
-        this.equipmentId = equipmentId;
-    }
     private BigDecimal latitude;
     private BigDecimal longitude;
-=======
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
+
+    public String getHouseNo() { return houseNo; }
+    public void setHouseNo(String houseNo) { this.houseNo = houseNo; }
+
+    public String getStreet() { return street; }
+    public void setStreet(String street) { this.street = street; }
+
+    public String getVillage() { return village; }
+    public void setVillage(String village) { this.village = village; }
+
+    public String getDistrict() { return district; }
+    public void setDistrict(String district) { this.district = district; }
+
+    public String getState() { return state; }
+    public void setState(String state) { this.state = state; }
+
+    public String getCountry() { return country; }
+    public void setCountry(String country) { this.country = country; }
+
+    public String getPincode() { return pincode; }
+    public void setPincode(String pincode) { this.pincode = pincode; }
+
+    public BigDecimal getLatitude() { return latitude; }
+    public void setLatitude(BigDecimal latitude) { this.latitude = latitude; }
+
+    public BigDecimal getLongitude() { return longitude; }
+    public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
+
 }

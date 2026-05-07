@@ -22,16 +22,17 @@ public class DtoMapper {
 
     // User
     public UserDTO toUserDTO(User entity) {
-        if (entity == null)
+        if (entity == null) {
             return null;
+        }
         return new UserDTO(
                 entity.getUserId(),
                 entity.getPhoneNumber(),
+                entity.getEmail(),
                 entity.getFullName(),
                 entity.getRole(),
                 entity.getDistrict(),
                 entity.getVillage(),
-<<<<<<< HEAD
                 entity.getHouseNo(),
                 entity.getStreet(),
                 entity.getState(),
@@ -39,19 +40,19 @@ public class DtoMapper {
                 entity.getPincode(),
                 entity.getProfileImageUrl(),
                 entity.getLatitude(),
-                entity.getLongitude());
-=======
-                entity.getProfileImageUrl(),
-                entity.getFcmToken()); // Added fcmToken
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
+                entity.getLongitude(),
+                entity.getFcmToken()
+        );
     }
 
     public User toUserEntity(UserDTO dto) {
-        if (dto == null)
+        if (dto == null) {
             return null;
+        }
         User entity = new User();
         entity.setUserId(dto.getUserId());
         entity.setPhoneNumber(dto.getPhoneNumber());
+        entity.setEmail(dto.getEmail());
         entity.setFullName(dto.getFullName());
         entity.setRole(dto.getRole());
         entity.setDistrict(dto.getDistrict());
@@ -64,6 +65,7 @@ public class DtoMapper {
         entity.setProfileImageUrl(dto.getProfileImageUrl());
         entity.setLatitude(dto.getLatitude());
         entity.setLongitude(dto.getLongitude());
+        entity.setFcmToken(dto.getFcmToken());
         return entity;
     }
 
@@ -73,8 +75,9 @@ public class DtoMapper {
 
     // Equipment
     public EquipmentDTO toEquipmentDTO(Equipment entity) {
-        if (entity == null)
+        if (entity == null) {
             return null;
+        }
 
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
         String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
@@ -100,17 +103,16 @@ public class DtoMapper {
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
-<<<<<<< HEAD
                 entity.getLatitude(),
-                entity.getLongitude());
-=======
-                ownerProfileImageUrl);
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
+                entity.getLongitude(),
+                ownerProfileImageUrl
+        );
     }
 
     public Equipment toEquipmentEntity(EquipmentDTO dto) {
-        if (dto == null)
+        if (dto == null) {
             return null;
+        }
         Equipment entity = new Equipment();
         entity.setEquipmentId(dto.getEquipmentId());
         entity.setOwnerId(dto.getOwnerId());
@@ -133,22 +135,14 @@ public class DtoMapper {
         entity.setPincode(dto.getPincode());
         entity.setLatitude(dto.getLatitude());
         entity.setLongitude(dto.getLongitude());
-        entity.setHouseNo(dto.getHouseNo());
-        entity.setStreet(dto.getStreet());
-        entity.setVillage(dto.getVillage());
-        entity.setDistrict(dto.getDistrict());
-        entity.setState(dto.getState());
-        entity.setCountry(dto.getCountry());
-        entity.setPincode(dto.getPincode());
-        entity.setLatitude(dto.getLatitude());
-        entity.setLongitude(dto.getLongitude());
         return entity;
     }
 
     // TransportVehicle
     public TransportVehicleDTO toTransportVehicleDTO(TransportVehicle entity) {
-        if (entity == null)
+        if (entity == null) {
             return null;
+        }
 
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
         String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
@@ -175,17 +169,16 @@ public class DtoMapper {
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
-<<<<<<< HEAD
                 entity.getLatitude(),
-                entity.getLongitude());
-=======
-                ownerProfileImageUrl);
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
+                entity.getLongitude(),
+                ownerProfileImageUrl
+        );
     }
 
     public TransportVehicle toTransportVehicleEntity(TransportVehicleDTO dto) {
-        if (dto == null)
+        if (dto == null) {
             return null;
+        }
         TransportVehicle entity = new TransportVehicle();
         entity.setVehicleId(dto.getVehicleId());
         entity.setOwnerId(dto.getOwnerId());
@@ -209,22 +202,14 @@ public class DtoMapper {
         entity.setPincode(dto.getPincode());
         entity.setLatitude(dto.getLatitude());
         entity.setLongitude(dto.getLongitude());
-        entity.setHouseNo(dto.getHouseNo());
-        entity.setStreet(dto.getStreet());
-        entity.setVillage(dto.getVillage());
-        entity.setDistrict(dto.getDistrict());
-        entity.setState(dto.getState());
-        entity.setCountry(dto.getCountry());
-        entity.setPincode(dto.getPincode());
-        entity.setLatitude(dto.getLatitude());
-        entity.setLongitude(dto.getLongitude());
         return entity;
     }
 
     // ServiceOffering
     public ServiceOfferingDTO toServiceOfferingDTO(ServiceOffering entity) {
-        if (entity == null)
+        if (entity == null) {
             return null;
+        }
 
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
         String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
@@ -251,17 +236,16 @@ public class DtoMapper {
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
-<<<<<<< HEAD
                 entity.getLatitude(),
-                entity.getLongitude());
-=======
-                ownerProfileImageUrl);
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
+                entity.getLongitude(),
+                ownerProfileImageUrl
+        );
     }
 
     public ServiceOffering toServiceOfferingEntity(ServiceOfferingDTO dto) {
-        if (dto == null)
+        if (dto == null) {
             return null;
+        }
         ServiceOffering entity = new ServiceOffering();
         entity.setServiceId(dto.getServiceId());
         entity.setOwnerId(dto.getOwnerId());
@@ -285,22 +269,14 @@ public class DtoMapper {
         entity.setPincode(dto.getPincode());
         entity.setLatitude(dto.getLatitude());
         entity.setLongitude(dto.getLongitude());
-        entity.setHouseNo(dto.getHouseNo());
-        entity.setStreet(dto.getStreet());
-        entity.setVillage(dto.getVillage());
-        entity.setDistrict(dto.getDistrict());
-        entity.setState(dto.getState());
-        entity.setCountry(dto.getCountry());
-        entity.setPincode(dto.getPincode());
-        entity.setLatitude(dto.getLatitude());
-        entity.setLongitude(dto.getLongitude());
         return entity;
     }
 
     // Booking
     public BookingDTO toBookingDTO(Booking entity) {
-        if (entity == null)
+        if (entity == null) {
             return null;
+        }
         return new BookingDTO(
                 entity.getBookingId(),
                 entity.getFarmerId(),
@@ -319,8 +295,9 @@ public class DtoMapper {
     }
 
     public Booking toBookingEntity(BookingDTO dto) {
-        if (dto == null)
+        if (dto == null) {
             return null;
+        }
         Booking entity = new Booking();
         entity.setBookingId(dto.getBookingId());
         entity.setFarmerId(dto.getFarmerId());
@@ -341,8 +318,9 @@ public class DtoMapper {
 
     // WorkerGroup
     public WorkerGroupDTO toWorkerGroupDTO(WorkerGroup entity) {
-        if (entity == null)
+        if (entity == null) {
             return null;
+        }
         String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
         WorkerGroupDTO dto = new WorkerGroupDTO(
                 entity.getGroupId(),
@@ -369,14 +347,11 @@ public class DtoMapper {
                 entity.getRating(),
                 entity.getApprovalStatus(),
                 entity.getImageUrl(),
-<<<<<<< HEAD
+                ownerProfileImageUrl,
                 null,
                 entity.getLatitude(),
-                entity.getLongitude());
-=======
-                ownerProfileImageUrl,
-                null);
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
+                entity.getLongitude()
+        );
         if (entity.getRoles() != null) {
             dto.setRoles(entity.getRoles().stream()
                     .map(this::toWorkerGroupRoleDTO)
@@ -386,8 +361,9 @@ public class DtoMapper {
     }
 
     public WorkerGroup toWorkerGroupEntity(WorkerGroupDTO dto) {
-        if (dto == null)
+        if (dto == null) {
             return null;
+        }
         WorkerGroup entity = new WorkerGroup();
         entity.setGroupId(dto.getGroupId());
         entity.setOwnerId(dto.getOwnerId());
@@ -426,8 +402,9 @@ public class DtoMapper {
     }
 
     public WorkerGroupRoleDTO toWorkerGroupRoleDTO(WorkerGroupRole entity) {
-        if (entity == null)
+        if (entity == null) {
             return null;
+        }
         return new WorkerGroupRoleDTO(
                 entity.getRoleId(),
                 entity.getGender(),
@@ -436,8 +413,9 @@ public class DtoMapper {
     }
 
     public WorkerGroupRole toWorkerGroupRoleEntity(WorkerGroupRoleDTO dto) {
-        if (dto == null)
+        if (dto == null) {
             return null;
+        }
         WorkerGroupRole entity = new WorkerGroupRole();
         entity.setRoleId(dto.getRoleId());
         entity.setGender(dto.getGender());

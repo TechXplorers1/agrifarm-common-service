@@ -58,6 +58,14 @@ public class UserController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/email/{email}")
+    public ResponseEntity<UserDTO> getUserByEmail(@PathVariable("email") String email) {
+        return userService.getUserByEmail(email)
+                .map(dtoMapper::toUserDTO)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @PutMapping("/{userId}")
     public ResponseEntity<UserDTO> updateUser(@PathVariable("userId") String userId, @RequestBody UserDTO userDTO) {
         User updatedUser = dtoMapper.toUserEntity(userDTO);
@@ -71,19 +79,18 @@ public class UserController {
         }
     }
 
-<<<<<<< HEAD
     @GetMapping("/{userId}/stats")
     public ResponseEntity<UserStatsDTO> getUserStats(@PathVariable String userId) {
         return ResponseEntity.ok(userService.getUserStats(userId));
-=======
+    }
+
     @PutMapping("/{userId}/fcm-token")
     public ResponseEntity<Void> updateFcmToken(@PathVariable("userId") String userId, @RequestBody java.util.Map<String, String> body) {
         String token = body.get("fcmToken");
-        if (token != null) {
-            userService.updateFcmToken(userId, token);
-            return ResponseEntity.ok().build();
+            if (token != null) {
+                userService.updateFcmToken(userId, token);
+                return ResponseEntity.ok().build();
+            }
+            return ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.badRequest().build();
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
     }
-}

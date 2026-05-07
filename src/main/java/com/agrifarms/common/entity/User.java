@@ -1,13 +1,7 @@
 package com.agrifarms.common.entity;
 
 import jakarta.persistence.*;
-<<<<<<< HEAD
 import java.math.BigDecimal;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-=======
->>>>>>> 6a3fc0c1aeaf20611009613722e2f788ea1da2fb
 import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
@@ -23,6 +17,9 @@ public class User {
 
     @Column(name = "phone_number", unique = true, nullable = false)
     private String phoneNumber;
+
+    @Column(name = "email", unique = true)
+    private String email;
 
     @Column(name = "full_name")
     private String fullName;
@@ -58,11 +55,13 @@ public class User {
     @Column(name = "fcm_token")
     private String fcmToken;
 
-    public User() {}
+    public User() {
+    }
 
-    public User(String userId, String phoneNumber, String fullName, String role, String district, String village, String profileImageUrl, String fcmToken) {
+    public User(String userId, String phoneNumber, String email, String fullName, String role, String district, String village, String profileImageUrl, String fcmToken) {
         this.userId = userId;
         this.phoneNumber = phoneNumber;
+        this.email = email;
         this.fullName = fullName;
         this.role = role;
         this.district = district;
@@ -71,35 +70,93 @@ public class User {
         this.fcmToken = fcmToken;
     }
 
-    public String getUserId() { return userId; }
-    public void setUserId(String userId) { this.userId = userId; }
+    public String getUserId() {
+        return userId;
+    }
 
-    public String getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
-    public String getFullName() { return fullName; }
-    public void setFullName(String fullName) { this.fullName = fullName; }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-    public String getRole() { return role; }
-    public void setRole(String role) { this.role = role; }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-    public String getDistrict() { return district; }
-    public void setDistrict(String district) { this.district = district; }
+    public String getEmail() {
+        return email;
+    }
 
-    public String getVillage() { return village; }
-    public void setVillage(String village) { this.village = village; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public String getProfileImageUrl() { return profileImageUrl; }
-    public void setProfileImageUrl(String profileImageUrl) { this.profileImageUrl = profileImageUrl; }
+    public String getFullName() {
+        return fullName;
+    }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-    public LocalDateTime getUpdatedAt() { return updatedAt; }
-    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+    public String getRole() {
+        return role;
+    }
 
-    public String getFcmToken() { return fcmToken; }
-    public void setFcmToken(String fcmToken) { this.fcmToken = fcmToken; }
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getVillage() {
+        return village;
+    }
+
+    public void setVillage(String village) {
+        this.village = village;
+    }
+
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getFcmToken() {
+        return fcmToken;
+    }
+
+    public void setFcmToken(String fcmToken) {
+        this.fcmToken = fcmToken;
+    }
 
     @PrePersist
     protected void onCreate() {
@@ -110,6 +167,28 @@ public class User {
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
+
     private BigDecimal latitude;
     private BigDecimal longitude;
+
+    public String getHouseNo() { return houseNo; }
+    public void setHouseNo(String houseNo) { this.houseNo = houseNo; }
+
+    public String getStreet() { return street; }
+    public void setStreet(String street) { this.street = street; }
+
+    public String getState() { return state; }
+    public void setState(String state) { this.state = state; }
+
+    public String getCountry() { return country; }
+    public void setCountry(String country) { this.country = country; }
+
+    public String getPincode() { return pincode; }
+    public void setPincode(String pincode) { this.pincode = pincode; }
+
+    public BigDecimal getLatitude() { return latitude; }
+    public void setLatitude(BigDecimal latitude) { this.latitude = latitude; }
+
+    public BigDecimal getLongitude() { return longitude; }
+    public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
 }
