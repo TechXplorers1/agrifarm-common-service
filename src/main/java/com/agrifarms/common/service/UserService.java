@@ -25,6 +25,7 @@ public class UserService {
     private final TransportVehicleRepository transportVehicleRepository;
     private final ServiceOfferingRepository serviceOfferingRepository;
     private final WorkerGroupRepository workerGroupRepository;
+    private final NotificationService notificationService;
 
     public UserStatsDTO getUserStats(String userId) {
         // Orders: Only PENDING or CONFIRMED bookings for this provider
@@ -75,7 +76,9 @@ public class UserService {
         if (user.getEmail() != null && userRepository.existsByEmail(user.getEmail())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already registered");
         }
-        return userRepository.save(user);
+        User savedUser = userRepository.save(user);
+        notificationService.notifyAdmin("New user registered", savedUser.getFullName() + " joined as a " + savedUser.getRole(), "success", savedUser.getUserId());
+        return savedUser;
     }
 
     public java.util.List<User> getAllUsers() {
@@ -145,5 +148,41 @@ public class UserService {
             user.setFcmToken(fcmToken);
             userRepository.save(user);
         });
+    }
+
+    @Caching(evict = {
+        @CacheEvict(value = "users", key = "#userId")
+    })
+    public User updateUserStatus(String userId, String status) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        if ("Banned".equalsIgnoreCase(user.getStatus())) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Cannot modify a banned user");
+        }
+
+        user.setStatus(status);
+        user = userRepository.save(user);
+
+        if ("Suspended".equalsIgnoreCase(status) || "Banned".equalsIgnoreCase(status)) {
+            // Deactivate all services
+            equipmentRepository.findByOwnerId(userId).forEach(e -> {
+                e.setIsAvailable(false);
+                equipmentRepository.save(e);
+            });
+            serviceOfferingRepository.findByOwnerId(userId).forEach(s -> {
+                s.setIsAvailable(false);
+                serviceOfferingRepository.save(s);
+            });
+            transportVehicleRepository.findByOwnerId(userId).forEach(v -> {
+                v.setIsAvailable(false);
+                transportVehicleRepository.save(v);
+            });
+            workerGroupRepository.findByOwnerId(userId).forEach(w -> {
+                w.setIsAvailable(false);
+                workerGroupRepository.save(w);
+            });
+        }
+        return user;
     }
 }

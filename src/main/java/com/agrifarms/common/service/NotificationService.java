@@ -43,6 +43,20 @@ public class NotificationService {
         }
     }
 
+    @Async
+    public void notifyAdmin(String title, String message, String type, String relatedId) {
+        UserNotification adminNotification = UserNotification.builder()
+                .userId("admin")
+                .title(title)
+                .message(message)
+                .type(type)
+                .relatedId(relatedId)
+                .isRead(false)
+                .createdAt(LocalDateTime.now())
+                .build();
+        userNotificationRepository.save(adminNotification);
+    }
+
     public List<UserNotification> getNotificationsByUserId(String userId) {
         return userNotificationRepository.findByUserIdOrderByCreatedAtDesc(userId);
     }

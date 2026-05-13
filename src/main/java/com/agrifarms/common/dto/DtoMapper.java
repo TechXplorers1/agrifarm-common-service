@@ -41,7 +41,8 @@ public class DtoMapper {
                 entity.getProfileImageUrl(),
                 entity.getLatitude(),
                 entity.getLongitude(),
-                entity.getFcmToken()
+                entity.getFcmToken(),
+                entity.getStatus()
         );
     }
 
@@ -66,6 +67,9 @@ public class DtoMapper {
         entity.setLatitude(dto.getLatitude());
         entity.setLongitude(dto.getLongitude());
         entity.setFcmToken(dto.getFcmToken());
+        if (dto.getStatus() != null) {
+            entity.setStatus(dto.getStatus());
+        }
         return entity;
     }
 

@@ -55,6 +55,9 @@ public class User {
     @Column(name = "fcm_token")
     private String fcmToken;
 
+    @Column(name = "status")
+    private String status = "Active";
+
     public User() {
     }
 
@@ -157,6 +160,9 @@ public class User {
     public void setFcmToken(String fcmToken) {
         this.fcmToken = fcmToken;
     }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 
     @PrePersist
     protected void onCreate() {

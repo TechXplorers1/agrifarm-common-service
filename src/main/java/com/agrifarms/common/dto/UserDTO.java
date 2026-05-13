@@ -25,11 +25,12 @@ public class UserDTO {
     private BigDecimal longitude;
 
     private String fcmToken;
+    private String status;
 
     public UserDTO() {
     }
 
-    public UserDTO(String userId, String phoneNumber, String email, String fullName, String role, String district, String village, String houseNo, String street, String state, String country, String pincode, String profileImageUrl, BigDecimal latitude, BigDecimal longitude, String fcmToken) {
+    public UserDTO(String userId, String phoneNumber, String email, String fullName, String role, String district, String village, String houseNo, String street, String state, String country, String pincode, String profileImageUrl, BigDecimal latitude, BigDecimal longitude, String fcmToken, String status) {
         this.userId = userId;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -46,6 +47,7 @@ public class UserDTO {
         this.latitude = latitude;
         this.longitude = longitude;
         this.fcmToken = fcmToken;
+        this.status = status;
     }
 
     public String getUserId() { return userId; }
@@ -95,4 +97,7 @@ public class UserDTO {
 
     public String getFcmToken() { return fcmToken; }
     public void setFcmToken(String fcmToken) { this.fcmToken = fcmToken; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }

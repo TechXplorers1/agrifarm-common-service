@@ -92,5 +92,21 @@ public class UserController {
                 return ResponseEntity.ok().build();
             }
             return ResponseEntity.badRequest().build();
-        }
     }
+
+    @PutMapping("/{userId}/status")
+    public ResponseEntity<UserDTO> updateUserStatus(@PathVariable("userId") String userId, @RequestBody java.util.Map<String, String> body) {
+        String status = body.get("status");
+        if (status != null) {
+            try {
+                User updatedUser = userService.updateUserStatus(userId, status);
+                return ResponseEntity.ok(dtoMapper.toUserDTO(updatedUser));
+            } catch (org.springframework.web.server.ResponseStatusException e) {
+                return ResponseEntity.status(e.getStatusCode()).build();
+            } catch (Exception e) {
+                return ResponseEntity.status(500).build();
+            }
+        }
+        return ResponseEntity.badRequest().build();
+    }
+}

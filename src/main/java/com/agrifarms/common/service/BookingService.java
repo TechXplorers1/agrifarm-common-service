@@ -113,6 +113,8 @@ public class BookingService {
             notificationService.saveAndSendNotification(booking.getProviderId(), fcmToken, title, body, "booking_request", savedBooking.getBookingId(), data);
         }
 
+        notificationService.notifyAdmin("New booking submitted", "Booking " + savedBooking.getBookingId() + " has been created", "warning", savedBooking.getBookingId());
+
         return savedBooking;
     }
 
@@ -155,6 +157,11 @@ public class BookingService {
             data.put("type", "booking_status_update");
 
             notificationService.saveAndSendNotification(booking.getFarmerId(), fcmToken, title, body, "booking_status_update", updatedBooking.getBookingId(), data);
+        }
+
+        if ("COMPLETED".equalsIgnoreCase(status) || "CONFIRMED".equalsIgnoreCase(status) || "REJECTED".equalsIgnoreCase(status)) {
+            String type = "COMPLETED".equalsIgnoreCase(status) || "CONFIRMED".equalsIgnoreCase(status) ? "success" : "destructive";
+            notificationService.notifyAdmin("Booking " + status.toLowerCase(), "Booking " + updatedBooking.getBookingId() + " is now " + status.toLowerCase(), type, updatedBooking.getBookingId());
         }
 
         return updatedBooking;

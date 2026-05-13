@@ -5,3 +5,5 @@ databaseChangeLog:
       file: db/changelog/db.changelog-add-hourly-pricing.sql
   - include:
       file: db/changelog/db.changelog-update-users.sql
+  - include:
+      file: db/changelog/db.changelog-admin-setup.sql

@@ -20,15 +20,18 @@ public class InventoryService {
     private final TransportVehicleRepository transportVehicleRepository;
     private final ServiceOfferingRepository serviceOfferingRepository;
     private final WorkerGroupRepository workerGroupRepository;
+    private final NotificationService notificationService;
 
     public InventoryService(EquipmentRepository equipmentRepository,
                             TransportVehicleRepository transportVehicleRepository,
                             ServiceOfferingRepository serviceOfferingRepository,
-                            WorkerGroupRepository workerGroupRepository) {
+                            WorkerGroupRepository workerGroupRepository,
+                            NotificationService notificationService) {
         this.equipmentRepository = equipmentRepository;
         this.transportVehicleRepository = transportVehicleRepository;
         this.serviceOfferingRepository = serviceOfferingRepository;
         this.workerGroupRepository = workerGroupRepository;
+        this.notificationService = notificationService;
     }
 
     public List<Equipment> getAllEquipment() {
@@ -48,7 +51,12 @@ public class InventoryService {
     }
 
     public Equipment saveEquipment(Equipment equipment) {
-        return equipmentRepository.save(equipment);
+        boolean isNew = equipment.getEquipmentId() == null;
+        Equipment saved = equipmentRepository.save(equipment);
+        if (isNew) {
+            notificationService.notifyAdmin("New asset submitted", saved.getBrandModel() + " awaiting approval", "warning", saved.getEquipmentId());
+        }
+        return saved;
     }
 
     public void deleteEquipment(String equipmentId) {
@@ -72,7 +80,12 @@ public class InventoryService {
     }
 
     public TransportVehicle saveVehicle(TransportVehicle vehicle) {
-        return transportVehicleRepository.save(vehicle);
+        boolean isNew = vehicle.getVehicleId() == null;
+        TransportVehicle saved = transportVehicleRepository.save(vehicle);
+        if (isNew) {
+            notificationService.notifyAdmin("New asset submitted", saved.getVehicleType() + " awaiting approval", "warning", saved.getVehicleId());
+        }
+        return saved;
     }
 
     public void deleteVehicle(String vehicleId) {
@@ -96,7 +109,12 @@ public class InventoryService {
     }
 
     public ServiceOffering saveService(ServiceOffering service) {
-        return serviceOfferingRepository.save(service);
+        boolean isNew = service.getServiceId() == null;
+        ServiceOffering saved = serviceOfferingRepository.save(service);
+        if (isNew) {
+            notificationService.notifyAdmin("New service submitted", saved.getServiceType() + " awaiting approval", "warning", saved.getServiceId());
+        }
+        return saved;
     }
 
     public void deleteService(String serviceId) {
@@ -116,7 +134,12 @@ public class InventoryService {
     }
 
     public WorkerGroup saveWorkerGroup(WorkerGroup workerGroup) {
-        return workerGroupRepository.save(workerGroup);
+        boolean isNew = workerGroup.getGroupId() == null;
+        WorkerGroup saved = workerGroupRepository.save(workerGroup);
+        if (isNew) {
+            notificationService.notifyAdmin("New worker group submitted", saved.getGroupName() + " awaiting approval", "warning", saved.getGroupId());
+        }
+        return saved;
     }
 
     public void deleteWorkerGroup(String groupId) {
