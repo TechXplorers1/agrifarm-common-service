@@ -32,6 +32,9 @@ public class Equipment {
     @Column(name = "operator_available")
     private Boolean operatorAvailable;
 
+    @Column(name = "operator_price")
+    private BigDecimal operatorPrice;
+
     private String location;
 
     @Column(name = "house_no")
@@ -143,6 +146,14 @@ public class Equipment {
 
     public void setOperatorAvailable(Boolean operatorAvailable) {
         this.operatorAvailable = operatorAvailable;
+    }
+
+    public BigDecimal getOperatorPrice() {
+        return operatorPrice;
+    }
+
+    public void setOperatorPrice(BigDecimal operatorPrice) {
+        this.operatorPrice = operatorPrice;
     }
 
     public String getLocation() {

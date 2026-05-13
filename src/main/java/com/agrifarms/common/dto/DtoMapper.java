@@ -91,6 +91,7 @@ public class DtoMapper {
                 entity.getConditionStatus(),
                 entity.getPricePerHour(),
                 entity.getOperatorAvailable(),
+                entity.getOperatorPrice(),
                 entity.getLocation(),
                 entity.getHouseNo(),
                 entity.getStreet(),
@@ -121,6 +122,7 @@ public class DtoMapper {
         entity.setConditionStatus(dto.getConditionStatus());
         entity.setPricePerHour(dto.getPricePerHour());
         entity.setOperatorAvailable(dto.getOperatorAvailable());
+        entity.setOperatorPrice(dto.getOperatorPrice());
         entity.setLocation(dto.getLocation());
         entity.setIsAvailable(dto.getIsAvailable());
         entity.setRating(dto.getRating());

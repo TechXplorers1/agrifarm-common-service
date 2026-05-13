@@ -11,6 +11,7 @@ public class EquipmentDTO {
     private String conditionStatus;
     private BigDecimal pricePerHour;
     private Boolean operatorAvailable;
+    private BigDecimal operatorPrice;
     private String location;
     private String houseNo;
     private String street;
@@ -30,7 +31,7 @@ public class EquipmentDTO {
     public EquipmentDTO() {}
 
     public EquipmentDTO(String equipmentId, String ownerId, String ownerName, String category, String brandModel,
-                        String conditionStatus, BigDecimal pricePerHour, Boolean operatorAvailable, String location,
+                        String conditionStatus, BigDecimal pricePerHour, Boolean operatorAvailable, BigDecimal operatorPrice, String location,
                         String houseNo, String street, String village, String district, String state, String country, String pincode,
                         Boolean isAvailable, BigDecimal rating, String approvalStatus, String imageUrl, BigDecimal latitude, BigDecimal longitude, String ownerProfileImageUrl) {
         this.equipmentId = equipmentId;
@@ -41,6 +42,7 @@ public class EquipmentDTO {
         this.conditionStatus = conditionStatus;
         this.pricePerHour = pricePerHour;
         this.operatorAvailable = operatorAvailable;
+        this.operatorPrice = operatorPrice;
         this.location = location;
         this.houseNo = houseNo;
         this.street = street;
@@ -81,6 +83,9 @@ public class EquipmentDTO {
 
     public Boolean getOperatorAvailable() { return operatorAvailable; }
     public void setOperatorAvailable(Boolean operatorAvailable) { this.operatorAvailable = operatorAvailable; }
+
+    public BigDecimal getOperatorPrice() { return operatorPrice; }
+    public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
 
     public String getLocation() { return location; }
     public void setLocation(String location) { this.location = location; }
