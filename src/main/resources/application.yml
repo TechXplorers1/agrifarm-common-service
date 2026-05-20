@@ -6,7 +6,7 @@ spring:
     name: agri-farms-common-service
 
   datasource:
-    url: jdbc:postgresql://192.168.29.237:5435/agrifarms
+    url: jdbc:postgresql://localhost:5435/agrifarms
     username: agrifarms
     password: password
     driver-class-name: org.postgresql.Driver
@@ -25,3 +25,18 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+
+  mail:
+    host: smtp.zoho.in
+    port: 587
+    username: bharath@techxplorers.in
+    password: ${SMTP_PASSWORD:SfmUcd5WK2p0}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            protocols: TLSv1.2

@@ -1,15 +1,23 @@
 package com.agrifarms.common.controller;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.agrifarms.common.dto.DtoMapper;
 import com.agrifarms.common.dto.UserDTO;
 import com.agrifarms.common.dto.UserStatsDTO;
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.service.UserService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/users")
@@ -87,11 +95,11 @@ public class UserController {
     @PutMapping("/{userId}/fcm-token")
     public ResponseEntity<Void> updateFcmToken(@PathVariable("userId") String userId, @RequestBody java.util.Map<String, String> body) {
         String token = body.get("fcmToken");
-            if (token != null) {
-                userService.updateFcmToken(userId, token);
-                return ResponseEntity.ok().build();
-            }
-            return ResponseEntity.badRequest().build();
+        if (token != null) {
+            userService.updateFcmToken(userId, token);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.badRequest().build();
     }
 
     @PutMapping("/{userId}/status")

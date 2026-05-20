@@ -15,7 +15,7 @@ public class User {
     @UuidGenerator
     private String userId;
 
-    @Column(name = "phone_number", unique = true, nullable = false)
+    @Column(name = "phone_number", unique = true, nullable = true)
     private String phoneNumber;
 
     @Column(name = "email", unique = true)
@@ -23,6 +23,9 @@ public class User {
 
     @Column(name = "full_name")
     private String fullName;
+
+    @Column(name = "password")
+    private String password;
 
     private String role; // Farmer, Provider, etc.
     private String district;
@@ -111,6 +114,14 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getDistrict() {

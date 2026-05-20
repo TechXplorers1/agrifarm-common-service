@@ -11,6 +11,7 @@ public class UserDTO {
     private String phoneNumber;
     private String email;
     private String fullName;
+    private String password;
     private String role;
     private String district;
     private String village;
@@ -64,6 +65,9 @@ public class UserDTO {
 
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 
     public String getDistrict() { return district; }
     public void setDistrict(String district) { this.district = district; }

@@ -67,6 +67,7 @@ public class DtoMapper {
         entity.setLatitude(dto.getLatitude());
         entity.setLongitude(dto.getLongitude());
         entity.setFcmToken(dto.getFcmToken());
+        entity.setPassword(dto.getPassword());
         if (dto.getStatus() != null) {
             entity.setStatus(dto.getStatus());
         }
