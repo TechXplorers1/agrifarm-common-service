@@ -70,8 +70,15 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        if (user.getPhoneNumber() != null && userRepository.existsByPhoneNumber(user.getPhoneNumber())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Phone number already registered");
+        if (user.getPhoneNumber() != null) {
+            String cleanedPhone = user.getPhoneNumber().replaceAll("\\D", "");
+            if (cleanedPhone.length() != 10) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Phone number must be exactly 10 digits");
+            }
+            user.setPhoneNumber(cleanedPhone);
+            if (userRepository.existsByPhoneNumber(cleanedPhone)) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "Phone number already registered");
+            }
         }
         if (user.getEmail() != null && userRepository.existsByEmail(user.getEmail())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already registered");
@@ -102,6 +109,17 @@ public class UserService {
         return userRepository.findById(userId).map(existingUser -> {
             if (updatedData.getFullName() != null) {
                 existingUser.setFullName(updatedData.getFullName());
+            }
+            if (updatedData.getPhoneNumber() != null) {
+                String cleanedPhone = updatedData.getPhoneNumber().replaceAll("\\D", "");
+                if (cleanedPhone.length() != 10) {
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Phone number must be exactly 10 digits");
+                }
+                Optional<User> userWithPhone = userRepository.findByPhoneNumber(cleanedPhone);
+                if (userWithPhone.isPresent() && !userWithPhone.get().getUserId().equals(userId)) {
+                    throw new ResponseStatusException(HttpStatus.CONFLICT, "Phone number already registered");
+                }
+                existingUser.setPhoneNumber(cleanedPhone);
             }
             if (updatedData.getEmail() != null) {
                 existingUser.setEmail(updatedData.getEmail());
