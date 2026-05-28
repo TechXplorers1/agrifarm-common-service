@@ -9,4 +9,6 @@ databaseChangeLog:
       file: db/changelog/db.changelog-admin-setup.sql
   - include:
       file: db/changelog/db.changelog-otp.sql
+  - include:
+      file: db/changelog/db.changelog-notification-preferences.sql
 

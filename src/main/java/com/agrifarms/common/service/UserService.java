@@ -161,6 +161,11 @@ public class UserService {
             if (updatedData.getFcmToken() != null) {
                 existingUser.setFcmToken(updatedData.getFcmToken());
             }
+            existingUser.setNotificationOrderUpdates(updatedData.isNotificationOrderUpdates());
+            existingUser.setNotificationBookingUpdates(updatedData.isNotificationBookingUpdates());
+            existingUser.setNotificationPaymentUpdates(updatedData.isNotificationPaymentUpdates());
+            existingUser.setNotificationCommunityActivity(updatedData.isNotificationCommunityActivity());
+            existingUser.setNotificationPromotionalOffers(updatedData.isNotificationPromotionalOffers());
             return userRepository.save(existingUser);
         }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found with id: " + userId));
     }

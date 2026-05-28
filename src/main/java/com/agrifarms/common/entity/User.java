@@ -208,4 +208,34 @@ public class User {
 
     public BigDecimal getLongitude() { return longitude; }
     public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
+
+    @Column(name = "notification_order_updates")
+    private Boolean notificationOrderUpdates = true;
+
+    @Column(name = "notification_booking_updates")
+    private Boolean notificationBookingUpdates = true;
+
+    @Column(name = "notification_payment_updates")
+    private Boolean notificationPaymentUpdates = true;
+
+    @Column(name = "notification_community_activity")
+    private Boolean notificationCommunityActivity = false;
+
+    @Column(name = "notification_promotional_offers")
+    private Boolean notificationPromotionalOffers = false;
+
+    public boolean isNotificationOrderUpdates() { return notificationOrderUpdates != null ? notificationOrderUpdates : true; }
+    public void setNotificationOrderUpdates(Boolean notificationOrderUpdates) { this.notificationOrderUpdates = notificationOrderUpdates; }
+
+    public boolean isNotificationBookingUpdates() { return notificationBookingUpdates != null ? notificationBookingUpdates : true; }
+    public void setNotificationBookingUpdates(Boolean notificationBookingUpdates) { this.notificationBookingUpdates = notificationBookingUpdates; }
+
+    public boolean isNotificationPaymentUpdates() { return notificationPaymentUpdates != null ? notificationPaymentUpdates : true; }
+    public void setNotificationPaymentUpdates(Boolean notificationPaymentUpdates) { this.notificationPaymentUpdates = notificationPaymentUpdates; }
+
+    public boolean isNotificationCommunityActivity() { return notificationCommunityActivity != null ? notificationCommunityActivity : false; }
+    public void setNotificationCommunityActivity(Boolean notificationCommunityActivity) { this.notificationCommunityActivity = notificationCommunityActivity; }
+
+    public boolean isNotificationPromotionalOffers() { return notificationPromotionalOffers != null ? notificationPromotionalOffers : false; }
+    public void setNotificationPromotionalOffers(Boolean notificationPromotionalOffers) { this.notificationPromotionalOffers = notificationPromotionalOffers; }
 }

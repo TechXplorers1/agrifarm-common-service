@@ -35,4 +35,15 @@ public class NotificationController {
         notificationService.markAllAsRead(userId);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/trigger-demo")
+    public ResponseEntity<UserNotification> triggerDemo(@RequestBody java.util.Map<String, String> body) {
+        String userId = body.get("userId");
+        String title = body.get("title");
+        String message = body.get("message");
+        String type = body.get("type");
+        String relatedId = body.get("relatedId");
+        UserNotification notification = notificationService.triggerDemo(userId, title, message, type, relatedId);
+        return ResponseEntity.ok(notification);
+    }
 }

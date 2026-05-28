@@ -42,7 +42,12 @@ public class DtoMapper {
                 entity.getLatitude(),
                 entity.getLongitude(),
                 entity.getFcmToken(),
-                entity.getStatus()
+                entity.getStatus(),
+                entity.isNotificationOrderUpdates(),
+                entity.isNotificationBookingUpdates(),
+                entity.isNotificationPaymentUpdates(),
+                entity.isNotificationCommunityActivity(),
+                entity.isNotificationPromotionalOffers()
         );
     }
 
@@ -68,6 +73,11 @@ public class DtoMapper {
         entity.setLongitude(dto.getLongitude());
         entity.setFcmToken(dto.getFcmToken());
         entity.setPassword(dto.getPassword());
+        entity.setNotificationOrderUpdates(dto.isNotificationOrderUpdates());
+        entity.setNotificationBookingUpdates(dto.isNotificationBookingUpdates());
+        entity.setNotificationPaymentUpdates(dto.isNotificationPaymentUpdates());
+        entity.setNotificationCommunityActivity(dto.isNotificationCommunityActivity());
+        entity.setNotificationPromotionalOffers(dto.isNotificationPromotionalOffers());
         if (dto.getStatus() != null) {
             entity.setStatus(dto.getStatus());
         }

@@ -28,10 +28,16 @@ public class UserDTO {
     private String fcmToken;
     private String status;
 
+    private boolean notificationOrderUpdates = true;
+    private boolean notificationBookingUpdates = true;
+    private boolean notificationPaymentUpdates = true;
+    private boolean notificationCommunityActivity = false;
+    private boolean notificationPromotionalOffers = false;
+
     public UserDTO() {
     }
 
-    public UserDTO(String userId, String phoneNumber, String email, String fullName, String role, String district, String village, String houseNo, String street, String state, String country, String pincode, String profileImageUrl, BigDecimal latitude, BigDecimal longitude, String fcmToken, String status) {
+    public UserDTO(String userId, String phoneNumber, String email, String fullName, String role, String district, String village, String houseNo, String street, String state, String country, String pincode, String profileImageUrl, BigDecimal latitude, BigDecimal longitude, String fcmToken, String status, boolean notificationOrderUpdates, boolean notificationBookingUpdates, boolean notificationPaymentUpdates, boolean notificationCommunityActivity, boolean notificationPromotionalOffers) {
         this.userId = userId;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -49,6 +55,11 @@ public class UserDTO {
         this.longitude = longitude;
         this.fcmToken = fcmToken;
         this.status = status;
+        this.notificationOrderUpdates = notificationOrderUpdates;
+        this.notificationBookingUpdates = notificationBookingUpdates;
+        this.notificationPaymentUpdates = notificationPaymentUpdates;
+        this.notificationCommunityActivity = notificationCommunityActivity;
+        this.notificationPromotionalOffers = notificationPromotionalOffers;
     }
 
     public String getUserId() {
@@ -194,4 +205,19 @@ public class UserDTO {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public boolean isNotificationOrderUpdates() { return notificationOrderUpdates; }
+    public void setNotificationOrderUpdates(boolean notificationOrderUpdates) { this.notificationOrderUpdates = notificationOrderUpdates; }
+
+    public boolean isNotificationBookingUpdates() { return notificationBookingUpdates; }
+    public void setNotificationBookingUpdates(boolean notificationBookingUpdates) { this.notificationBookingUpdates = notificationBookingUpdates; }
+
+    public boolean isNotificationPaymentUpdates() { return notificationPaymentUpdates; }
+    public void setNotificationPaymentUpdates(boolean notificationPaymentUpdates) { this.notificationPaymentUpdates = notificationPaymentUpdates; }
+
+    public boolean isNotificationCommunityActivity() { return notificationCommunityActivity; }
+    public void setNotificationCommunityActivity(boolean notificationCommunityActivity) { this.notificationCommunityActivity = notificationCommunityActivity; }
+
+    public boolean isNotificationPromotionalOffers() { return notificationPromotionalOffers; }
+    public void setNotificationPromotionalOffers(boolean notificationPromotionalOffers) { this.notificationPromotionalOffers = notificationPromotionalOffers; }
 }

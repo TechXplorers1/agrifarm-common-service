@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.List;
 
-@Repository
+        @Repository
 public interface OtpRepository extends JpaRepository<Otp, Long> {
     
     // Finds the latest active, unused OTP for an email that has not expired yet

@@ -132,4 +132,17 @@ public class NotificationService {
             System.err.println("Error sending FCM message to topic: " + e.getMessage());
         }
     }
+
+    public UserNotification triggerDemo(String userId, String title, String body, String type, String relatedId) {
+        UserNotification userNotification = UserNotification.builder()
+                .userId(userId)
+                .title(title)
+                .message(body)
+                .type(type)
+                .relatedId(relatedId)
+                .isRead(false)
+                .createdAt(LocalDateTime.now())
+                .build();
+        return userNotificationRepository.save(userNotification);
+    }
 }
