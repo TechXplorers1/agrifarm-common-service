@@ -57,12 +57,13 @@ public class Booking {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    public Booking() {}
+    public Booking() {
+    }
 
     public Booking(String bookingId, String farmerId, String providerId, String assetId, String assetType,
-                   LocalDateTime bookingDate, LocalDateTime scheduledStartTime, LocalDateTime scheduledEndTime,
-                   String status, BigDecimal totalAmount, BigDecimal locationLat, BigDecimal locationLng,
-                   String addressText, String notes) {
+            LocalDateTime bookingDate, LocalDateTime scheduledStartTime, LocalDateTime scheduledEndTime,
+            String status, BigDecimal totalAmount, BigDecimal locationLat, BigDecimal locationLng,
+            String addressText, String notes) {
         this.bookingId = bookingId;
         this.farmerId = farmerId;
         this.providerId = providerId;
@@ -79,53 +80,133 @@ public class Booking {
         this.notes = notes;
     }
 
-    public String getBookingId() { return bookingId; }
-    public void setBookingId(String bookingId) { this.bookingId = bookingId; }
+    public String getBookingId() {
+        return bookingId;
+    }
 
-    public String getFarmerId() { return farmerId; }
-    public void setFarmerId(String farmerId) { this.farmerId = farmerId; }
+    public void setBookingId(String bookingId) {
+        this.bookingId = bookingId;
+    }
 
-    public String getProviderId() { return providerId; }
-    public void setProviderId(String providerId) { this.providerId = providerId; }
+    public String getFarmerId() {
+        return farmerId;
+    }
 
-    public String getAssetId() { return assetId; }
-    public void setAssetId(String assetId) { this.assetId = assetId; }
+    public void setFarmerId(String farmerId) {
+        this.farmerId = farmerId;
+    }
 
-    public String getAssetType() { return assetType; }
-    public void setAssetType(String assetType) { this.assetType = assetType; }
+    public String getProviderId() {
+        return providerId;
+    }
 
-    public LocalDateTime getBookingDate() { return bookingDate; }
-    public void setBookingDate(LocalDateTime bookingDate) { this.bookingDate = bookingDate; }
+    public void setProviderId(String providerId) {
+        this.providerId = providerId;
+    }
 
-    public LocalDateTime getScheduledStartTime() { return scheduledStartTime; }
-    public void setScheduledStartTime(LocalDateTime scheduledStartTime) { this.scheduledStartTime = scheduledStartTime; }
+    public String getAssetId() {
+        return assetId;
+    }
 
-    public LocalDateTime getScheduledEndTime() { return scheduledEndTime; }
-    public void setScheduledEndTime(LocalDateTime scheduledEndTime) { this.scheduledEndTime = scheduledEndTime; }
+    public void setAssetId(String assetId) {
+        this.assetId = assetId;
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public String getAssetType() {
+        return assetType;
+    }
 
-    public BigDecimal getTotalAmount() { return totalAmount; }
-    public void setTotalAmount(BigDecimal totalAmount) { this.totalAmount = totalAmount; }
+    public void setAssetType(String assetType) {
+        this.assetType = assetType;
+    }
 
-    public BigDecimal getLocationLat() { return locationLat; }
-    public void setLocationLat(BigDecimal locationLat) { this.locationLat = locationLat; }
+    public LocalDateTime getBookingDate() {
+        return bookingDate;
+    }
 
-    public BigDecimal getLocationLng() { return locationLng; }
-    public void setLocationLng(BigDecimal locationLng) { this.locationLng = locationLng; }
+    public void setBookingDate(LocalDateTime bookingDate) {
+        this.bookingDate = bookingDate;
+    }
 
-    public String getAddressText() { return addressText; }
-    public void setAddressText(String addressText) { this.addressText = addressText; }
+    public LocalDateTime getScheduledStartTime() {
+        return scheduledStartTime;
+    }
 
-    public String getNotes() { return notes; }
-    public void setNotes(String notes) { this.notes = notes; }
+    public void setScheduledStartTime(LocalDateTime scheduledStartTime) {
+        this.scheduledStartTime = scheduledStartTime;
+    }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public LocalDateTime getScheduledEndTime() {
+        return scheduledEndTime;
+    }
 
-    public LocalDateTime getUpdatedAt() { return updatedAt; }
-    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+    public void setScheduledEndTime(LocalDateTime scheduledEndTime) {
+        this.scheduledEndTime = scheduledEndTime;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public BigDecimal getLocationLat() {
+        return locationLat;
+    }
+
+    public void setLocationLat(BigDecimal locationLat) {
+        this.locationLat = locationLat;
+    }
+
+    public BigDecimal getLocationLng() {
+        return locationLng;
+    }
+
+    public void setLocationLng(BigDecimal locationLng) {
+        this.locationLng = locationLng;
+    }
+
+    public String getAddressText() {
+        return addressText;
+    }
+
+    public void setAddressText(String addressText) {
+        this.addressText = addressText;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
     @PrePersist
     protected void onCreate() {

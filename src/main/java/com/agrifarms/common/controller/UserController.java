@@ -75,15 +75,15 @@ public class UserController {
     }
 
     @PutMapping("/{userId}")
-    public ResponseEntity<UserDTO> updateUser(@PathVariable("userId") String userId, @RequestBody UserDTO userDTO) {
+    public ResponseEntity<?> updateUser(@PathVariable("userId") String userId, @RequestBody UserDTO userDTO) {
         User updatedUser = dtoMapper.toUserEntity(userDTO);
         try {
             User savedUser = userService.updateUser(userId, updatedUser);
             return ResponseEntity.ok(dtoMapper.toUserDTO(savedUser));
         } catch (org.springframework.web.server.ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).build();
+            return ResponseEntity.status(e.getStatusCode()).body(java.util.Map.of("message", e.getReason() != null ? e.getReason() : e.getMessage()));
         } catch (Exception e) {
-            return ResponseEntity.status(500).header("X-Error-Message", e.getMessage()).build();
+            return ResponseEntity.status(500).body(java.util.Map.of("message", e.getMessage()));
         }
     }
 

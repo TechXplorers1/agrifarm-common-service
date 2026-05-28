@@ -112,14 +112,18 @@ public class UserService {
             }
             if (updatedData.getPhoneNumber() != null) {
                 String cleanedPhone = updatedData.getPhoneNumber().replaceAll("\\D", "");
-                if (cleanedPhone.length() != 10) {
-                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Phone number must be exactly 10 digits");
+                if (cleanedPhone.trim().isEmpty()) {
+                    existingUser.setPhoneNumber(null);
+                } else {
+                    if (cleanedPhone.length() != 10) {
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Phone number must be exactly 10 digits");
+                    }
+                    Optional<User> userWithPhone = userRepository.findByPhoneNumber(cleanedPhone);
+                    if (userWithPhone.isPresent() && !userWithPhone.get().getUserId().equals(userId)) {
+                        throw new ResponseStatusException(HttpStatus.CONFLICT, "Phone number already registered");
+                    }
+                    existingUser.setPhoneNumber(cleanedPhone);
                 }
-                Optional<User> userWithPhone = userRepository.findByPhoneNumber(cleanedPhone);
-                if (userWithPhone.isPresent() && !userWithPhone.get().getUserId().equals(userId)) {
-                    throw new ResponseStatusException(HttpStatus.CONFLICT, "Phone number already registered");
-                }
-                existingUser.setPhoneNumber(cleanedPhone);
             }
             if (updatedData.getEmail() != null) {
                 existingUser.setEmail(updatedData.getEmail());

@@ -80,7 +80,7 @@ public class AuthController {
 
         Optional<User> userOpt = userService.getUserByEmail(email);
         if (userOpt.isEmpty()) {
-            return ResponseEntity.status(401).body(Map.of("message", "Invalid email or password"));
+            return ResponseEntity.status(401).body(Map.of("message", "Please sign up before logging in."));
         }
 
         User user = userOpt.get();
