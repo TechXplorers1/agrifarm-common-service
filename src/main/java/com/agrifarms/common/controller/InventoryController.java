@@ -53,16 +53,16 @@ public class InventoryController {
     public EquipmentDTO addEquipment(@RequestBody EquipmentDTO equipmentDTO) {
         Equipment equipment = dtoMapper.toEquipmentEntity(equipmentDTO);
         Equipment savedEquipment = inventoryService.saveEquipment(equipment);
-        
-        String equipName = savedEquipment.getBrandModel() != null ? savedEquipment.getBrandModel() : 
-                           (savedEquipment.getCategory() != null ? savedEquipment.getCategory() : "equipment");
+
+        String equipName = savedEquipment.getBrandModel() != null ? savedEquipment.getBrandModel()
+                : (savedEquipment.getCategory() != null ? savedEquipment.getCategory() : "equipment");
         notificationService.sendTopicNotification(
                 "all_assets",
                 "New Equipment Available!",
                 "A new " + equipName + " was just added to the platform.",
                 null
         );
-        
+
         return dtoMapper.toEquipmentDTO(savedEquipment);
     }
 
@@ -72,7 +72,7 @@ public class InventoryController {
                 .filter(e -> e.getEquipmentId().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Equipment not found"));
-        
+
         // Update fields from DTO
         if (equipmentDTO.getCategory() != null) existingEquipment.setCategory(equipmentDTO.getCategory());
         if (equipmentDTO.getBrandModel() != null) existingEquipment.setBrandModel(equipmentDTO.getBrandModel());
@@ -95,6 +95,65 @@ public class InventoryController {
         if (equipmentDTO.getLatitude() != null) existingEquipment.setLatitude(equipmentDTO.getLatitude());
         if (equipmentDTO.getLongitude() != null) existingEquipment.setLongitude(equipmentDTO.getLongitude());
         
+        if (equipmentDTO.getCategory() != null) {
+            existingEquipment.setCategory(equipmentDTO.getCategory());
+        }
+        if (equipmentDTO.getBrandModel() != null) {
+            existingEquipment.setBrandModel(equipmentDTO.getBrandModel());
+        }
+        if (equipmentDTO.getConditionStatus() != null) {
+            existingEquipment.setConditionStatus(equipmentDTO.getConditionStatus());
+        }
+        if (equipmentDTO.getPricePerHour() != null) {
+            existingEquipment.setPricePerHour(equipmentDTO.getPricePerHour());
+        }
+        if (equipmentDTO.getOperatorAvailable() != null) {
+            existingEquipment.setOperatorAvailable(equipmentDTO.getOperatorAvailable());
+        }
+        if (equipmentDTO.getLocation() != null) {
+            existingEquipment.setLocation(equipmentDTO.getLocation());
+        }
+        if (equipmentDTO.getIsAvailable() != null) {
+            existingEquipment.setIsAvailable(equipmentDTO.getIsAvailable());
+        }
+        if (equipmentDTO.getRating() != null) {
+            existingEquipment.setRating(equipmentDTO.getRating());
+        }
+        if (equipmentDTO.getApprovalStatus() != null) {
+            existingEquipment.setApprovalStatus(equipmentDTO.getApprovalStatus());
+        }
+        if (equipmentDTO.getImageUrl() != null) {
+            existingEquipment.setImageUrl(equipmentDTO.getImageUrl());
+        }
+        if (equipmentDTO.getHouseNo() != null) {
+            existingEquipment.setHouseNo(equipmentDTO.getHouseNo());
+        }
+        if (equipmentDTO.getStreet() != null) {
+            existingEquipment.setStreet(equipmentDTO.getStreet());
+        }
+        if (equipmentDTO.getVillage() != null) {
+            existingEquipment.setVillage(equipmentDTO.getVillage());
+        }
+        if (equipmentDTO.getDistrict() != null) {
+            existingEquipment.setDistrict(equipmentDTO.getDistrict());
+        }
+        if (equipmentDTO.getState() != null) {
+            existingEquipment.setState(equipmentDTO.getState());
+        }
+        if (equipmentDTO.getCountry() != null) {
+            existingEquipment.setCountry(equipmentDTO.getCountry());
+        }
+        if (equipmentDTO.getPincode() != null) {
+            existingEquipment.setPincode(equipmentDTO.getPincode());
+        }
+        if (equipmentDTO.getLatitude() != null) {
+            existingEquipment.setLatitude(equipmentDTO.getLatitude());
+        }
+        if (equipmentDTO.getLongitude() != null) {
+            existingEquipment.setLongitude(equipmentDTO.getLongitude());
+        }
+
+
         Equipment savedEquipment = inventoryService.saveEquipment(existingEquipment);
         return dtoMapper.toEquipmentDTO(savedEquipment);
     }
@@ -126,7 +185,7 @@ public class InventoryController {
     public TransportVehicleDTO addVehicle(@RequestBody TransportVehicleDTO vehicleDTO) {
         TransportVehicle vehicle = dtoMapper.toTransportVehicleEntity(vehicleDTO);
         TransportVehicle savedVehicle = inventoryService.saveVehicle(vehicle);
-        
+
         String vehName = savedVehicle.getVehicleType() != null ? savedVehicle.getVehicleType() : "vehicle";
         notificationService.sendTopicNotification(
                 "all_assets",
@@ -134,7 +193,7 @@ public class InventoryController {
                 "A new transport vehicle (" + vehName + ") was just added to the platform.",
                 null
         );
-        
+
         return dtoMapper.toTransportVehicleDTO(savedVehicle);
     }
 
@@ -145,26 +204,66 @@ public class InventoryController {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Vehicle not found"));
 
-        if (vehicleDTO.getVehicleType() != null) existingVehicle.setVehicleType(vehicleDTO.getVehicleType());
-        if (vehicleDTO.getVehicleNumber() != null) existingVehicle.setVehicleNumber(vehicleDTO.getVehicleNumber());
-        if (vehicleDTO.getLoadCapacity() != null) existingVehicle.setLoadCapacity(vehicleDTO.getLoadCapacity());
-        if (vehicleDTO.getPricePerKmOrTrip() != null) existingVehicle.setPricePerKmOrTrip(vehicleDTO.getPricePerKmOrTrip());
-        if (vehicleDTO.getDriverIncluded() != null) existingVehicle.setDriverIncluded(vehicleDTO.getDriverIncluded());
-        if (vehicleDTO.getServiceArea() != null) existingVehicle.setServiceArea(vehicleDTO.getServiceArea());
-        if (vehicleDTO.getLocation() != null) existingVehicle.setLocation(vehicleDTO.getLocation());
-        if (vehicleDTO.getIsAvailable() != null) existingVehicle.setIsAvailable(vehicleDTO.getIsAvailable());
-        if (vehicleDTO.getRating() != null) existingVehicle.setRating(vehicleDTO.getRating());
-        if (vehicleDTO.getApprovalStatus() != null) existingVehicle.setApprovalStatus(vehicleDTO.getApprovalStatus());
-        if (vehicleDTO.getImageUrl() != null) existingVehicle.setImageUrl(vehicleDTO.getImageUrl());
-        if (vehicleDTO.getHouseNo() != null) existingVehicle.setHouseNo(vehicleDTO.getHouseNo());
-        if (vehicleDTO.getStreet() != null) existingVehicle.setStreet(vehicleDTO.getStreet());
-        if (vehicleDTO.getVillage() != null) existingVehicle.setVillage(vehicleDTO.getVillage());
-        if (vehicleDTO.getDistrict() != null) existingVehicle.setDistrict(vehicleDTO.getDistrict());
-        if (vehicleDTO.getState() != null) existingVehicle.setState(vehicleDTO.getState());
-        if (vehicleDTO.getCountry() != null) existingVehicle.setCountry(vehicleDTO.getCountry());
-        if (vehicleDTO.getPincode() != null) existingVehicle.setPincode(vehicleDTO.getPincode());
-        if (vehicleDTO.getLatitude() != null) existingVehicle.setLatitude(vehicleDTO.getLatitude());
-        if (vehicleDTO.getLongitude() != null) existingVehicle.setLongitude(vehicleDTO.getLongitude());
+        if (vehicleDTO.getVehicleType() != null) {
+            existingVehicle.setVehicleType(vehicleDTO.getVehicleType());
+        }
+        if (vehicleDTO.getVehicleNumber() != null) {
+            existingVehicle.setVehicleNumber(vehicleDTO.getVehicleNumber());
+        }
+        if (vehicleDTO.getLoadCapacity() != null) {
+            existingVehicle.setLoadCapacity(vehicleDTO.getLoadCapacity());
+        }
+        if (vehicleDTO.getPricePerKmOrTrip() != null) {
+            existingVehicle.setPricePerKmOrTrip(vehicleDTO.getPricePerKmOrTrip());
+        }
+        if (vehicleDTO.getDriverIncluded() != null) {
+            existingVehicle.setDriverIncluded(vehicleDTO.getDriverIncluded());
+        }
+        if (vehicleDTO.getServiceArea() != null) {
+            existingVehicle.setServiceArea(vehicleDTO.getServiceArea());
+        }
+        if (vehicleDTO.getLocation() != null) {
+            existingVehicle.setLocation(vehicleDTO.getLocation());
+        }
+        if (vehicleDTO.getIsAvailable() != null) {
+            existingVehicle.setIsAvailable(vehicleDTO.getIsAvailable());
+        }
+        if (vehicleDTO.getRating() != null) {
+            existingVehicle.setRating(vehicleDTO.getRating());
+        }
+        if (vehicleDTO.getApprovalStatus() != null) {
+            existingVehicle.setApprovalStatus(vehicleDTO.getApprovalStatus());
+        }
+        if (vehicleDTO.getImageUrl() != null) {
+            existingVehicle.setImageUrl(vehicleDTO.getImageUrl());
+        }
+        if (vehicleDTO.getHouseNo() != null) {
+            existingVehicle.setHouseNo(vehicleDTO.getHouseNo());
+        }
+        if (vehicleDTO.getStreet() != null) {
+            existingVehicle.setStreet(vehicleDTO.getStreet());
+        }
+        if (vehicleDTO.getVillage() != null) {
+            existingVehicle.setVillage(vehicleDTO.getVillage());
+        }
+        if (vehicleDTO.getDistrict() != null) {
+            existingVehicle.setDistrict(vehicleDTO.getDistrict());
+        }
+        if (vehicleDTO.getState() != null) {
+            existingVehicle.setState(vehicleDTO.getState());
+        }
+        if (vehicleDTO.getCountry() != null) {
+            existingVehicle.setCountry(vehicleDTO.getCountry());
+        }
+        if (vehicleDTO.getPincode() != null) {
+            existingVehicle.setPincode(vehicleDTO.getPincode());
+        }
+        if (vehicleDTO.getLatitude() != null) {
+            existingVehicle.setLatitude(vehicleDTO.getLatitude());
+        }
+        if (vehicleDTO.getLongitude() != null) {
+            existingVehicle.setLongitude(vehicleDTO.getLongitude());
+        }
 
         TransportVehicle savedVehicle = inventoryService.saveVehicle(existingVehicle);
         return dtoMapper.toTransportVehicleDTO(savedVehicle);
@@ -197,16 +296,16 @@ public class InventoryController {
     public ServiceOfferingDTO addService(@RequestBody ServiceOfferingDTO serviceDTO) {
         ServiceOffering service = dtoMapper.toServiceOfferingEntity(serviceDTO);
         ServiceOffering savedService = inventoryService.saveService(service);
-        
-        String servName = savedService.getBusinessName() != null ? savedService.getBusinessName() : 
-                          (savedService.getServiceType() != null ? savedService.getServiceType() : "service");
+
+        String servName = savedService.getBusinessName() != null ? savedService.getBusinessName()
+                : (savedService.getServiceType() != null ? savedService.getServiceType() : "service");
         notificationService.sendTopicNotification(
                 "all_assets",
                 "New Service Offering Available!",
                 "A new service offered by " + servName + " was just added to the platform.",
                 null
         );
-        
+
         return dtoMapper.toServiceOfferingDTO(savedService);
     }
 
@@ -217,26 +316,66 @@ public class InventoryController {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Service not found"));
 
-        if (serviceDTO.getServiceType() != null) existingService.setServiceType(serviceDTO.getServiceType());
-        if (serviceDTO.getBusinessName() != null) existingService.setBusinessName(serviceDTO.getBusinessName());
-        if (serviceDTO.getDescription() != null) existingService.setDescription(serviceDTO.getDescription());
-        if (serviceDTO.getEquipmentUsed() != null) existingService.setEquipmentUsed(serviceDTO.getEquipmentUsed());
-        if (serviceDTO.getPriceRate() != null) existingService.setPriceRate(serviceDTO.getPriceRate());
-        if (serviceDTO.getOperatorIncluded() != null) existingService.setOperatorIncluded(serviceDTO.getOperatorIncluded());
-        if (serviceDTO.getLocation() != null) existingService.setLocation(serviceDTO.getLocation());
-        if (serviceDTO.getIsAvailable() != null) existingService.setIsAvailable(serviceDTO.getIsAvailable());
-        if (serviceDTO.getRating() != null) existingService.setRating(serviceDTO.getRating());
-        if (serviceDTO.getApprovalStatus() != null) existingService.setApprovalStatus(serviceDTO.getApprovalStatus());
-        if (serviceDTO.getImageUrl() != null) existingService.setImageUrl(serviceDTO.getImageUrl());
-        if (serviceDTO.getHouseNo() != null) existingService.setHouseNo(serviceDTO.getHouseNo());
-        if (serviceDTO.getStreet() != null) existingService.setStreet(serviceDTO.getStreet());
-        if (serviceDTO.getVillage() != null) existingService.setVillage(serviceDTO.getVillage());
-        if (serviceDTO.getDistrict() != null) existingService.setDistrict(serviceDTO.getDistrict());
-        if (serviceDTO.getState() != null) existingService.setState(serviceDTO.getState());
-        if (serviceDTO.getCountry() != null) existingService.setCountry(serviceDTO.getCountry());
-        if (serviceDTO.getPincode() != null) existingService.setPincode(serviceDTO.getPincode());
-        if (serviceDTO.getLatitude() != null) existingService.setLatitude(serviceDTO.getLatitude());
-        if (serviceDTO.getLongitude() != null) existingService.setLongitude(serviceDTO.getLongitude());
+        if (serviceDTO.getServiceType() != null) {
+            existingService.setServiceType(serviceDTO.getServiceType());
+        }
+        if (serviceDTO.getBusinessName() != null) {
+            existingService.setBusinessName(serviceDTO.getBusinessName());
+        }
+        if (serviceDTO.getDescription() != null) {
+            existingService.setDescription(serviceDTO.getDescription());
+        }
+        if (serviceDTO.getEquipmentUsed() != null) {
+            existingService.setEquipmentUsed(serviceDTO.getEquipmentUsed());
+        }
+        if (serviceDTO.getPriceRate() != null) {
+            existingService.setPriceRate(serviceDTO.getPriceRate());
+        }
+        if (serviceDTO.getOperatorIncluded() != null) {
+            existingService.setOperatorIncluded(serviceDTO.getOperatorIncluded());
+        }
+        if (serviceDTO.getLocation() != null) {
+            existingService.setLocation(serviceDTO.getLocation());
+        }
+        if (serviceDTO.getIsAvailable() != null) {
+            existingService.setIsAvailable(serviceDTO.getIsAvailable());
+        }
+        if (serviceDTO.getRating() != null) {
+            existingService.setRating(serviceDTO.getRating());
+        }
+        if (serviceDTO.getApprovalStatus() != null) {
+            existingService.setApprovalStatus(serviceDTO.getApprovalStatus());
+        }
+        if (serviceDTO.getImageUrl() != null) {
+            existingService.setImageUrl(serviceDTO.getImageUrl());
+        }
+        if (serviceDTO.getHouseNo() != null) {
+            existingService.setHouseNo(serviceDTO.getHouseNo());
+        }
+        if (serviceDTO.getStreet() != null) {
+            existingService.setStreet(serviceDTO.getStreet());
+        }
+        if (serviceDTO.getVillage() != null) {
+            existingService.setVillage(serviceDTO.getVillage());
+        }
+        if (serviceDTO.getDistrict() != null) {
+            existingService.setDistrict(serviceDTO.getDistrict());
+        }
+        if (serviceDTO.getState() != null) {
+            existingService.setState(serviceDTO.getState());
+        }
+        if (serviceDTO.getCountry() != null) {
+            existingService.setCountry(serviceDTO.getCountry());
+        }
+        if (serviceDTO.getPincode() != null) {
+            existingService.setPincode(serviceDTO.getPincode());
+        }
+        if (serviceDTO.getLatitude() != null) {
+            existingService.setLatitude(serviceDTO.getLatitude());
+        }
+        if (serviceDTO.getLongitude() != null) {
+            existingService.setLongitude(serviceDTO.getLongitude());
+        }
 
         ServiceOffering savedService = inventoryService.saveService(existingService);
         return dtoMapper.toServiceOfferingDTO(savedService);
@@ -269,7 +408,7 @@ public class InventoryController {
     public WorkerGroupDTO addWorkerGroup(@RequestBody WorkerGroupDTO groupDTO) {
         WorkerGroup group = dtoMapper.toWorkerGroupEntity(groupDTO);
         WorkerGroup savedGroup = inventoryService.saveWorkerGroup(group);
-        
+
         String grpName = savedGroup.getGroupName() != null ? savedGroup.getGroupName() : "farm workers group";
         notificationService.sendTopicNotification(
                 "all_assets",
@@ -277,7 +416,7 @@ public class InventoryController {
                 "A new group of workers (" + grpName + ") was just added to the platform.",
                 null
         );
-        
+
         return dtoMapper.toWorkerGroupDTO(savedGroup);
     }
 
@@ -288,29 +427,75 @@ public class InventoryController {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Worker Group not found"));
 
-        if (groupDTO.getGroupName() != null) existingGroup.setGroupName(groupDTO.getGroupName());
-        if (groupDTO.getMaleCount() != null) existingGroup.setMaleCount(groupDTO.getMaleCount());
-        if (groupDTO.getFemaleCount() != null) existingGroup.setFemaleCount(groupDTO.getFemaleCount());
-        if (groupDTO.getPricePerMale() != null) existingGroup.setPricePerMale(groupDTO.getPricePerMale());
-        if (groupDTO.getPricePerFemale() != null) existingGroup.setPricePerFemale(groupDTO.getPricePerFemale());
-        if (groupDTO.getPricePerMaleHourly() != null) existingGroup.setPricePerMaleHourly(groupDTO.getPricePerMaleHourly());
-        if (groupDTO.getPricePerFemaleHourly() != null) existingGroup.setPricePerFemaleHourly(groupDTO.getPricePerFemaleHourly());
-        if (groupDTO.getSkills() != null) existingGroup.setSkills(groupDTO.getSkills());
-        if (groupDTO.getLocation() != null) existingGroup.setLocation(groupDTO.getLocation());
-        if (groupDTO.getServiceRangeKm() != null) existingGroup.setServiceRangeKm(groupDTO.getServiceRangeKm());
-        if (groupDTO.getIsAvailable() != null) existingGroup.setIsAvailable(groupDTO.getIsAvailable());
-        if (groupDTO.getRating() != null) existingGroup.setRating(groupDTO.getRating());
-        if (groupDTO.getApprovalStatus() != null) existingGroup.setApprovalStatus(groupDTO.getApprovalStatus());
-        if (groupDTO.getImageUrl() != null) existingGroup.setImageUrl(groupDTO.getImageUrl());
-        if (groupDTO.getHouseNo() != null) existingGroup.setHouseNo(groupDTO.getHouseNo());
-        if (groupDTO.getStreet() != null) existingGroup.setStreet(groupDTO.getStreet());
-        if (groupDTO.getVillage() != null) existingGroup.setVillage(groupDTO.getVillage());
-        if (groupDTO.getDistrict() != null) existingGroup.setDistrict(groupDTO.getDistrict());
-        if (groupDTO.getState() != null) existingGroup.setState(groupDTO.getState());
-        if (groupDTO.getCountry() != null) existingGroup.setCountry(groupDTO.getCountry());
-        if (groupDTO.getPincode() != null) existingGroup.setPincode(groupDTO.getPincode());
-        if (groupDTO.getLatitude() != null) existingGroup.setLatitude(groupDTO.getLatitude());
-        if (groupDTO.getLongitude() != null) existingGroup.setLongitude(groupDTO.getLongitude());
+        if (groupDTO.getGroupName() != null) {
+            existingGroup.setGroupName(groupDTO.getGroupName());
+        }
+        if (groupDTO.getMaleCount() != null) {
+            existingGroup.setMaleCount(groupDTO.getMaleCount());
+        }
+        if (groupDTO.getFemaleCount() != null) {
+            existingGroup.setFemaleCount(groupDTO.getFemaleCount());
+        }
+        if (groupDTO.getPricePerMale() != null) {
+            existingGroup.setPricePerMale(groupDTO.getPricePerMale());
+        }
+        if (groupDTO.getPricePerFemale() != null) {
+            existingGroup.setPricePerFemale(groupDTO.getPricePerFemale());
+        }
+        if (groupDTO.getPricePerMaleHourly() != null) {
+            existingGroup.setPricePerMaleHourly(groupDTO.getPricePerMaleHourly());
+        }
+        if (groupDTO.getPricePerFemaleHourly() != null) {
+            existingGroup.setPricePerFemaleHourly(groupDTO.getPricePerFemaleHourly());
+        }
+        if (groupDTO.getSkills() != null) {
+            existingGroup.setSkills(groupDTO.getSkills());
+        }
+        if (groupDTO.getLocation() != null) {
+            existingGroup.setLocation(groupDTO.getLocation());
+        }
+        if (groupDTO.getServiceRangeKm() != null) {
+            existingGroup.setServiceRangeKm(groupDTO.getServiceRangeKm());
+        }
+        if (groupDTO.getIsAvailable() != null) {
+            existingGroup.setIsAvailable(groupDTO.getIsAvailable());
+        }
+        if (groupDTO.getRating() != null) {
+            existingGroup.setRating(groupDTO.getRating());
+        }
+        if (groupDTO.getApprovalStatus() != null) {
+            existingGroup.setApprovalStatus(groupDTO.getApprovalStatus());
+        }
+        if (groupDTO.getImageUrl() != null) {
+            existingGroup.setImageUrl(groupDTO.getImageUrl());
+        }
+        if (groupDTO.getHouseNo() != null) {
+            existingGroup.setHouseNo(groupDTO.getHouseNo());
+        }
+        if (groupDTO.getStreet() != null) {
+            existingGroup.setStreet(groupDTO.getStreet());
+        }
+        if (groupDTO.getVillage() != null) {
+            existingGroup.setVillage(groupDTO.getVillage());
+        }
+        if (groupDTO.getDistrict() != null) {
+            existingGroup.setDistrict(groupDTO.getDistrict());
+        }
+        if (groupDTO.getState() != null) {
+            existingGroup.setState(groupDTO.getState());
+        }
+        if (groupDTO.getCountry() != null) {
+            existingGroup.setCountry(groupDTO.getCountry());
+        }
+        if (groupDTO.getPincode() != null) {
+            existingGroup.setPincode(groupDTO.getPincode());
+        }
+        if (groupDTO.getLatitude() != null) {
+            existingGroup.setLatitude(groupDTO.getLatitude());
+        }
+        if (groupDTO.getLongitude() != null) {
+            existingGroup.setLongitude(groupDTO.getLongitude());
+        }
 
         WorkerGroup savedGroup = inventoryService.saveWorkerGroup(existingGroup);
         return dtoMapper.toWorkerGroupDTO(savedGroup);
