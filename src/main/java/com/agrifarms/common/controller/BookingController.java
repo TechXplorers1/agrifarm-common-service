@@ -58,8 +58,12 @@ public class BookingController {
     }
 
     @PutMapping("/{bookingId}/status")
-    public BookingDTO updateStatus(@PathVariable("bookingId") String bookingId, @RequestParam String status) {
-        Booking updatedBooking = bookingService.updateBookingStatus(bookingId, status);
+    public BookingDTO updateStatus(
+            @PathVariable("bookingId") String bookingId,
+            @RequestParam String status,
+            @RequestParam(required = false) String cancelledBy,
+            @RequestParam(required = false) String cancellationReason) {
+        Booking updatedBooking = bookingService.updateBookingStatus(bookingId, status, cancelledBy, cancellationReason);
         return dtoMapper.toBookingDTO(updatedBooking);
     }
 }

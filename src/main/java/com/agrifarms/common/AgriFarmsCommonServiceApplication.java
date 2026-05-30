@@ -93,6 +93,7 @@ public class AgriFarmsCommonServiceApplication {
             e.printStackTrace();
         }
     }
+    
 
     private static boolean isPortInUse(String host, int port) {
         try (Socket socket = new Socket()) {

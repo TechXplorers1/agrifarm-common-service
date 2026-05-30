@@ -11,4 +11,7 @@ databaseChangeLog:
       file: db/changelog/db.changelog-otp.sql
   - include:
       file: db/changelog/db.changelog-notification-preferences.sql
+  - include:
+      file: db/changelog/db.changelog-increase-task-length.sql
+
 

@@ -135,33 +135,66 @@ public class BookingService {
     }
 
     public Booking updateBookingStatus(String bookingId, String status) {
+        return updateBookingStatus(bookingId, status, null, null);
+    }
+
+    public Booking updateBookingStatus(String bookingId, String status, String cancelledBy, String cancellationReason) {
         Booking booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new RuntimeException("Booking not found"));
         booking.setStatus(status);
+        if (cancelledBy != null) {
+            booking.setCancelledBy(cancelledBy);
+        }
+        if (cancellationReason != null) {
+            booking.setCancellationReason(cancellationReason);
+        }
         Booking updatedBooking = bookingRepository.save(booking);
 
-        // Notify the Farmer (Requester) about the status change
+        // Notify appropriate party
         Optional<User> farmerOpt = userService.getUserById(booking.getFarmerId());
         Optional<User> providerOpt = userService.getUserById(booking.getProviderId());
-        if (farmerOpt.isPresent()) {
-            String fcmToken = farmerOpt.get().getFcmToken();
-            String assetName = getAssetName(booking.getAssetType(), booking.getAssetId());
-            String providerName = providerOpt.map(User::getFullName).orElse("The provider");
 
-            String title = "Booking " + status;
-            String body = providerName + " has " + status.toLowerCase() + " your request for " + assetName + ".";
+        if ("CANCELLED".equalsIgnoreCase(status)) {
+            // If cancelled, notify the provider (since it was initiated by the farmer)
+            if (providerOpt.isPresent()) {
+                String fcmToken = providerOpt.get().getFcmToken();
+                String assetName = getAssetName(booking.getAssetType(), booking.getAssetId());
+                String farmerName = farmerOpt.map(User::getFullName).orElse("A farmer");
 
-            Map<String, String> data = new HashMap<>();
-            data.put("bookingId", updatedBooking.getBookingId());
-            data.put("status", status);
-            data.put("type", "booking_status_update");
+                String title = "Booking Cancelled";
+                String body = farmerName + " has cancelled their booking for " + assetName + 
+                        (cancellationReason != null && !cancellationReason.trim().isEmpty() ? " due to: " + cancellationReason : ".");
 
-            notificationService.saveAndSendNotification(booking.getFarmerId(), fcmToken, title, body, "booking_status_update", updatedBooking.getBookingId(), data);
-        }
+                Map<String, String> data = new HashMap<>();
+                data.put("bookingId", updatedBooking.getBookingId());
+                data.put("status", status);
+                data.put("type", "booking_cancelled");
 
-        if ("COMPLETED".equalsIgnoreCase(status) || "CONFIRMED".equalsIgnoreCase(status) || "REJECTED".equalsIgnoreCase(status)) {
-            String type = "COMPLETED".equalsIgnoreCase(status) || "CONFIRMED".equalsIgnoreCase(status) ? "success" : "destructive";
-            notificationService.notifyAdmin("Booking " + status.toLowerCase(), "Booking " + updatedBooking.getBookingId() + " is now " + status.toLowerCase(), type, updatedBooking.getBookingId());
+                notificationService.saveAndSendNotification(booking.getProviderId(), fcmToken, title, body, "booking_cancelled", updatedBooking.getBookingId(), data);
+            }
+            notificationService.notifyAdmin("Booking cancelled", "Booking " + updatedBooking.getBookingId() + " was cancelled by " + (cancelledBy != null ? cancelledBy : "user"), "destructive", updatedBooking.getBookingId());
+        } else {
+            // Notify the Farmer (Requester) about the status change
+            if (farmerOpt.isPresent()) {
+                String fcmToken = farmerOpt.get().getFcmToken();
+                String assetName = getAssetName(booking.getAssetType(), booking.getAssetId());
+                String providerName = providerOpt.map(User::getFullName).orElse("The provider");
+
+                String title = "Booking " + status;
+                String body = providerName + " has " + status.toLowerCase() + " your request for " + assetName + ".";
+
+                Map<String, String> data = new HashMap<>();
+                data.put("bookingId", updatedBooking.getBookingId());
+                data.put("status", status);
+                data.put("type", "booking_status_update");
+
+                notificationService.saveAndSendNotification(booking.getFarmerId(), fcmToken, title, body, "booking_status_update", updatedBooking.getBookingId(), data);
+            }
+
+            if ("COMPLETED".equalsIgnoreCase(status) || "CONFIRMED".equalsIgnoreCase(status) || "REJECTED".equalsIgnoreCase(status)) {
+                String type = "COMPLETED".equalsIgnoreCase(status) || "CONFIRMED".equalsIgnoreCase(status) ? "success" : "destructive";
+                notificationService.notifyAdmin("Booking " + status.toLowerCase(), "Booking " + updatedBooking.getBookingId() + " is now " + status.toLowerCase(), type, updatedBooking.getBookingId());
+            }
         }
 
         return updatedBooking;

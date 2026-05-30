@@ -294,7 +294,7 @@ public class DtoMapper {
         if (entity == null) {
             return null;
         }
-        return new BookingDTO(
+        BookingDTO dto = new BookingDTO(
                 entity.getBookingId(),
                 entity.getFarmerId(),
                 entity.getProviderId(),
@@ -309,6 +309,9 @@ public class DtoMapper {
                 entity.getLocationLng(),
                 entity.getAddressText(),
                 entity.getNotes());
+        dto.setCancelledBy(entity.getCancelledBy());
+        dto.setCancellationReason(entity.getCancellationReason());
+        return dto;
     }
 
     public Booking toBookingEntity(BookingDTO dto) {
@@ -330,6 +333,8 @@ public class DtoMapper {
         entity.setLocationLng(dto.getLocationLng());
         entity.setAddressText(dto.getAddressText());
         entity.setNotes(dto.getNotes());
+        entity.setCancelledBy(dto.getCancelledBy());
+        entity.setCancellationReason(dto.getCancellationReason());
         return entity;
     }
 

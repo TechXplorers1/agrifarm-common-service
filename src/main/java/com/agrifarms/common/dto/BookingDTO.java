@@ -18,6 +18,8 @@ public class BookingDTO {
     private BigDecimal locationLng;
     private String addressText;
     private String notes;
+    private String cancelledBy;
+    private String cancellationReason;
 
     public BookingDTO() {}
 
@@ -82,4 +84,10 @@ public class BookingDTO {
 
     public String getNotes() { return notes; }
     public void setNotes(String notes) { this.notes = notes; }
+
+    public String getCancelledBy() { return cancelledBy; }
+    public void setCancelledBy(String cancelledBy) { this.cancelledBy = cancelledBy; }
+
+    public String getCancellationReason() { return cancellationReason; }
+    public void setCancellationReason(String cancellationReason) { this.cancellationReason = cancellationReason; }
 }
