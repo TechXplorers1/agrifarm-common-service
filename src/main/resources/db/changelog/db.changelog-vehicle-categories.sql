@@ -16,3 +16,12 @@ INSERT INTO vehicle_categories (name) VALUES ('Pickup Truck') ON CONFLICT (name)
 
 -- changeset agrifarms:add-operator-price-to-vehicles
 ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS operator_price DOUBLE PRECISION;
+
+-- changeset agrifarms:add-new-fields-to-transport-vehicles
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS owner_business_name VARCHAR(255);
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS brand VARCHAR(150);
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS model VARCHAR(150);
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS year_of_manufacture INTEGER;
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS price_per_km DOUBLE PRECISION;
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS price_per_hour DOUBLE PRECISION;
+ALTER TABLE transport_vehicles ADD COLUMN IF NOT EXISTS vehicle_condition VARCHAR(50);

@@ -97,7 +97,7 @@ public class DtoMapper {
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
         String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
-        return new EquipmentDTO(
+        EquipmentDTO dto = new EquipmentDTO(
                 entity.getEquipmentId(),
                 entity.getOwnerId(),
                 ownerName,
@@ -123,6 +123,11 @@ public class DtoMapper {
                 entity.getLongitude(),
                 ownerProfileImageUrl
         );
+        dto.setOwnerBusinessName(entity.getOwnerBusinessName());
+        dto.setBrand(entity.getBrand());
+        dto.setModel(entity.getModel());
+        dto.setDescription(entity.getDescription());
+        return dto;
     }
 
     public Equipment toEquipmentEntity(EquipmentDTO dto) {
@@ -133,7 +138,6 @@ public class DtoMapper {
         entity.setEquipmentId(dto.getEquipmentId());
         entity.setOwnerId(dto.getOwnerId());
         entity.setCategory(dto.getCategory());
-        entity.setBrandModel(dto.getBrandModel());
         entity.setConditionStatus(dto.getConditionStatus());
         entity.setPricePerHour(dto.getPricePerHour());
         entity.setOperatorAvailable(dto.getOperatorAvailable());
@@ -152,6 +156,15 @@ public class DtoMapper {
         entity.setPincode(dto.getPincode());
         entity.setLatitude(dto.getLatitude());
         entity.setLongitude(dto.getLongitude());
+        entity.setOwnerBusinessName(dto.getOwnerBusinessName());
+        entity.setBrand(dto.getBrand());
+        entity.setModel(dto.getModel());
+        entity.setDescription(dto.getDescription());
+        if (dto.getBrand() != null && dto.getModel() != null) {
+            entity.setBrandModel(dto.getBrand() + " " + dto.getModel());
+        } else if (dto.getBrandModel() != null) {
+            entity.setBrandModel(dto.getBrandModel());
+        }
         return entity;
     }
 
@@ -164,7 +177,7 @@ public class DtoMapper {
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
         String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
-        return new TransportVehicleDTO(
+        TransportVehicleDTO dto = new TransportVehicleDTO(
                 entity.getVehicleId(),
                 entity.getOwnerId(),
                 ownerName,
@@ -191,6 +204,14 @@ public class DtoMapper {
                 ownerProfileImageUrl,
                 entity.getOperatorPrice()
         );
+        dto.setOwnerBusinessName(entity.getOwnerBusinessName());
+        dto.setBrand(entity.getBrand());
+        dto.setModel(entity.getModel());
+        dto.setYearOfManufacture(entity.getYearOfManufacture());
+        dto.setPricePerKm(entity.getPricePerKm());
+        dto.setPricePerHour(entity.getPricePerHour());
+        dto.setVehicleCondition(entity.getVehicleCondition());
+        return dto;
     }
 
     public TransportVehicle toTransportVehicleEntity(TransportVehicleDTO dto) {
@@ -221,6 +242,13 @@ public class DtoMapper {
         entity.setLatitude(dto.getLatitude());
         entity.setLongitude(dto.getLongitude());
         entity.setOperatorPrice(dto.getOperatorPrice());
+        entity.setOwnerBusinessName(dto.getOwnerBusinessName());
+        entity.setBrand(dto.getBrand());
+        entity.setModel(dto.getModel());
+        entity.setYearOfManufacture(dto.getYearOfManufacture());
+        entity.setPricePerKm(dto.getPricePerKm());
+        entity.setPricePerHour(dto.getPricePerHour());
+        entity.setVehicleCondition(dto.getVehicleCondition());
         return entity;
     }
 

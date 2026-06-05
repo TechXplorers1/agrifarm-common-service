@@ -23,6 +23,16 @@ public class Equipment {
     @Column(name = "brand_model")
     private String brandModel;
 
+    @Column(name = "owner_business_name")
+    private String ownerBusinessName;
+
+    private String brand;
+
+    private String model;
+
+    @Column(name = "description", length = 1000)
+    private String description;
+
     @Column(name = "condition_status")
     private String conditionStatus;
 
@@ -238,5 +248,17 @@ public class Equipment {
 
     public BigDecimal getLongitude() { return longitude; }
     public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
+
+    public String getOwnerBusinessName() { return ownerBusinessName; }
+    public void setOwnerBusinessName(String ownerBusinessName) { this.ownerBusinessName = ownerBusinessName; }
+
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
+
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
 }

@@ -88,7 +88,17 @@ public class InventoryController {
 
         // Update fields from DTO
         if (equipmentDTO.getCategory() != null) existingEquipment.setCategory(equipmentDTO.getCategory());
-        if (equipmentDTO.getBrandModel() != null) existingEquipment.setBrandModel(equipmentDTO.getBrandModel());
+        if (equipmentDTO.getBrand() != null) existingEquipment.setBrand(equipmentDTO.getBrand());
+        if (equipmentDTO.getModel() != null) existingEquipment.setModel(equipmentDTO.getModel());
+        if (equipmentDTO.getDescription() != null) existingEquipment.setDescription(equipmentDTO.getDescription());
+        if (equipmentDTO.getOwnerBusinessName() != null) existingEquipment.setOwnerBusinessName(equipmentDTO.getOwnerBusinessName());
+        
+        if (equipmentDTO.getBrand() != null && equipmentDTO.getModel() != null) {
+            existingEquipment.setBrandModel(equipmentDTO.getBrand() + " " + equipmentDTO.getModel());
+        } else if (equipmentDTO.getBrandModel() != null) {
+            existingEquipment.setBrandModel(equipmentDTO.getBrandModel());
+        }
+
         if (equipmentDTO.getConditionStatus() != null) existingEquipment.setConditionStatus(equipmentDTO.getConditionStatus());
         if (equipmentDTO.getPricePerHour() != null) existingEquipment.setPricePerHour(equipmentDTO.getPricePerHour());
         if (equipmentDTO.getOperatorAvailable() != null) existingEquipment.setOperatorAvailable(equipmentDTO.getOperatorAvailable());
@@ -107,64 +117,6 @@ public class InventoryController {
         if (equipmentDTO.getPincode() != null) existingEquipment.setPincode(equipmentDTO.getPincode());
         if (equipmentDTO.getLatitude() != null) existingEquipment.setLatitude(equipmentDTO.getLatitude());
         if (equipmentDTO.getLongitude() != null) existingEquipment.setLongitude(equipmentDTO.getLongitude());
-        
-        if (equipmentDTO.getCategory() != null) {
-            existingEquipment.setCategory(equipmentDTO.getCategory());
-        }
-        if (equipmentDTO.getBrandModel() != null) {
-            existingEquipment.setBrandModel(equipmentDTO.getBrandModel());
-        }
-        if (equipmentDTO.getConditionStatus() != null) {
-            existingEquipment.setConditionStatus(equipmentDTO.getConditionStatus());
-        }
-        if (equipmentDTO.getPricePerHour() != null) {
-            existingEquipment.setPricePerHour(equipmentDTO.getPricePerHour());
-        }
-        if (equipmentDTO.getOperatorAvailable() != null) {
-            existingEquipment.setOperatorAvailable(equipmentDTO.getOperatorAvailable());
-        }
-        if (equipmentDTO.getLocation() != null) {
-            existingEquipment.setLocation(equipmentDTO.getLocation());
-        }
-        if (equipmentDTO.getIsAvailable() != null) {
-            existingEquipment.setIsAvailable(equipmentDTO.getIsAvailable());
-        }
-        if (equipmentDTO.getRating() != null) {
-            existingEquipment.setRating(equipmentDTO.getRating());
-        }
-        if (equipmentDTO.getApprovalStatus() != null) {
-            existingEquipment.setApprovalStatus(equipmentDTO.getApprovalStatus());
-        }
-        if (equipmentDTO.getImageUrl() != null) {
-            existingEquipment.setImageUrl(equipmentDTO.getImageUrl());
-        }
-        if (equipmentDTO.getHouseNo() != null) {
-            existingEquipment.setHouseNo(equipmentDTO.getHouseNo());
-        }
-        if (equipmentDTO.getStreet() != null) {
-            existingEquipment.setStreet(equipmentDTO.getStreet());
-        }
-        if (equipmentDTO.getVillage() != null) {
-            existingEquipment.setVillage(equipmentDTO.getVillage());
-        }
-        if (equipmentDTO.getDistrict() != null) {
-            existingEquipment.setDistrict(equipmentDTO.getDistrict());
-        }
-        if (equipmentDTO.getState() != null) {
-            existingEquipment.setState(equipmentDTO.getState());
-        }
-        if (equipmentDTO.getCountry() != null) {
-            existingEquipment.setCountry(equipmentDTO.getCountry());
-        }
-        if (equipmentDTO.getPincode() != null) {
-            existingEquipment.setPincode(equipmentDTO.getPincode());
-        }
-        if (equipmentDTO.getLatitude() != null) {
-            existingEquipment.setLatitude(equipmentDTO.getLatitude());
-        }
-        if (equipmentDTO.getLongitude() != null) {
-            existingEquipment.setLongitude(equipmentDTO.getLongitude());
-        }
 
 
         Equipment savedEquipment = inventoryService.saveEquipment(existingEquipment);
@@ -282,6 +234,27 @@ public class InventoryController {
         }
         if (vehicleDTO.getLongitude() != null) {
             existingVehicle.setLongitude(vehicleDTO.getLongitude());
+        }
+        if (vehicleDTO.getOwnerBusinessName() != null) {
+            existingVehicle.setOwnerBusinessName(vehicleDTO.getOwnerBusinessName());
+        }
+        if (vehicleDTO.getBrand() != null) {
+            existingVehicle.setBrand(vehicleDTO.getBrand());
+        }
+        if (vehicleDTO.getModel() != null) {
+            existingVehicle.setModel(vehicleDTO.getModel());
+        }
+        if (vehicleDTO.getYearOfManufacture() != null) {
+            existingVehicle.setYearOfManufacture(vehicleDTO.getYearOfManufacture());
+        }
+        if (vehicleDTO.getPricePerKm() != null) {
+            existingVehicle.setPricePerKm(vehicleDTO.getPricePerKm());
+        }
+        if (vehicleDTO.getPricePerHour() != null) {
+            existingVehicle.setPricePerHour(vehicleDTO.getPricePerHour());
+        }
+        if (vehicleDTO.getVehicleCondition() != null) {
+            existingVehicle.setVehicleCondition(vehicleDTO.getVehicleCondition());
         }
 
         TransportVehicle savedVehicle = inventoryService.saveVehicle(existingVehicle);

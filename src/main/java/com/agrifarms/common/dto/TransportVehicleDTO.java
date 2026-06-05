@@ -29,6 +29,13 @@ public class TransportVehicleDTO {
     private BigDecimal longitude;
     private String ownerProfileImageUrl;
     private BigDecimal operatorPrice;
+    private String ownerBusinessName;
+    private String brand;
+    private String model;
+    private Integer yearOfManufacture;
+    private BigDecimal pricePerKm;
+    private BigDecimal pricePerHour;
+    private String vehicleCondition;
 
     public TransportVehicleDTO() {}
 
@@ -136,4 +143,25 @@ public class TransportVehicleDTO {
 
     public BigDecimal getOperatorPrice() { return operatorPrice; }
     public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
+
+    public String getOwnerBusinessName() { return ownerBusinessName; }
+    public void setOwnerBusinessName(String ownerBusinessName) { this.ownerBusinessName = ownerBusinessName; }
+
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
+
+    public Integer getYearOfManufacture() { return yearOfManufacture; }
+    public void setYearOfManufacture(Integer yearOfManufacture) { this.yearOfManufacture = yearOfManufacture; }
+
+    public BigDecimal getPricePerKm() { return pricePerKm; }
+    public void setPricePerKm(BigDecimal pricePerKm) { this.pricePerKm = pricePerKm; }
+
+    public BigDecimal getPricePerHour() { return pricePerHour; }
+    public void setPricePerHour(BigDecimal pricePerHour) { this.pricePerHour = pricePerHour; }
+
+    public String getVehicleCondition() { return vehicleCondition; }
+    public void setVehicleCondition(String vehicleCondition) { this.vehicleCondition = vehicleCondition; }
 }

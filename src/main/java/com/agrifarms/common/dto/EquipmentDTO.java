@@ -27,6 +27,10 @@ public class EquipmentDTO {
     private BigDecimal latitude;
     private BigDecimal longitude;
     private String ownerProfileImageUrl;
+    private String ownerBusinessName;
+    private String brand;
+    private String model;
+    private String description;
 
     public EquipmentDTO() {}
 
@@ -131,4 +135,16 @@ public class EquipmentDTO {
 
     public String getOwnerProfileImageUrl() { return ownerProfileImageUrl; }
     public void setOwnerProfileImageUrl(String ownerProfileImageUrl) { this.ownerProfileImageUrl = ownerProfileImageUrl; }
+
+    public String getOwnerBusinessName() { return ownerBusinessName; }
+    public void setOwnerBusinessName(String ownerBusinessName) { this.ownerBusinessName = ownerBusinessName; }
+
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
+
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 }

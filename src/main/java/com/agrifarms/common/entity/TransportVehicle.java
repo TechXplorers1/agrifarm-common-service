@@ -147,6 +147,24 @@ public class TransportVehicle {
     @Column(name = "operator_price")
     private BigDecimal operatorPrice;
 
+    @Column(name = "owner_business_name")
+    private String ownerBusinessName;
+
+    private String brand;
+    private String model;
+
+    @Column(name = "year_of_manufacture")
+    private Integer yearOfManufacture;
+
+    @Column(name = "price_per_km")
+    private BigDecimal pricePerKm;
+
+    @Column(name = "price_per_hour")
+    private BigDecimal pricePerHour;
+
+    @Column(name = "vehicle_condition")
+    private String vehicleCondition;
+
     public BigDecimal getOperatorPrice() { return operatorPrice; }
     public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
 
@@ -176,4 +194,25 @@ public class TransportVehicle {
 
     public BigDecimal getLongitude() { return longitude; }
     public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
+
+    public String getOwnerBusinessName() { return ownerBusinessName; }
+    public void setOwnerBusinessName(String ownerBusinessName) { this.ownerBusinessName = ownerBusinessName; }
+
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
+
+    public Integer getYearOfManufacture() { return yearOfManufacture; }
+    public void setYearOfManufacture(Integer yearOfManufacture) { this.yearOfManufacture = yearOfManufacture; }
+
+    public BigDecimal getPricePerKm() { return pricePerKm; }
+    public void setPricePerKm(BigDecimal pricePerKm) { this.pricePerKm = pricePerKm; }
+
+    public BigDecimal getPricePerHour() { return pricePerHour; }
+    public void setPricePerHour(BigDecimal pricePerHour) { this.pricePerHour = pricePerHour; }
+
+    public String getVehicleCondition() { return vehicleCondition; }
+    public void setVehicleCondition(String vehicleCondition) { this.vehicleCondition = vehicleCondition; }
 }
