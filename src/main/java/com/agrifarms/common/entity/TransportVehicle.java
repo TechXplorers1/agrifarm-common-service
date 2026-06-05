@@ -144,6 +144,12 @@ public class TransportVehicle {
     private BigDecimal latitude;
     private BigDecimal longitude;
 
+    @Column(name = "operator_price")
+    private BigDecimal operatorPrice;
+
+    public BigDecimal getOperatorPrice() { return operatorPrice; }
+    public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
+
     public String getHouseNo() { return houseNo; }
     public void setHouseNo(String houseNo) { this.houseNo = houseNo; }
 

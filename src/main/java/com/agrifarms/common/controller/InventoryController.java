@@ -11,6 +11,11 @@ import com.agrifarms.common.entity.TransportVehicle;
 import com.agrifarms.common.entity.WorkerGroup;
 import com.agrifarms.common.service.InventoryService;
 import com.agrifarms.common.service.NotificationService;
+import com.agrifarms.common.service.UserService;
+import com.agrifarms.common.entity.Skill;
+import com.agrifarms.common.repository.SkillRepository;
+import com.agrifarms.common.entity.VehicleCategory;
+import com.agrifarms.common.repository.VehicleCategoryRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,11 +29,17 @@ public class InventoryController {
     private final InventoryService inventoryService;
     private final DtoMapper dtoMapper;
     private final NotificationService notificationService;
+    private final SkillRepository skillRepository;
+    private final VehicleCategoryRepository vehicleCategoryRepository;
+    private final UserService userService;
 
-    public InventoryController(InventoryService inventoryService, DtoMapper dtoMapper, NotificationService notificationService) {
+    public InventoryController(InventoryService inventoryService, DtoMapper dtoMapper, NotificationService notificationService, SkillRepository skillRepository, VehicleCategoryRepository vehicleCategoryRepository, UserService userService) {
         this.inventoryService = inventoryService;
         this.dtoMapper = dtoMapper;
         this.notificationService = notificationService;
+        this.skillRepository = skillRepository;
+        this.vehicleCategoryRepository = vehicleCategoryRepository;
+        this.userService = userService;
     }
 
     // Equipment
@@ -72,6 +83,8 @@ public class InventoryController {
                 .filter(e -> e.getEquipmentId().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Equipment not found"));
+
+        String oldStatus = existingEquipment.getApprovalStatus();
 
         // Update fields from DTO
         if (equipmentDTO.getCategory() != null) existingEquipment.setCategory(equipmentDTO.getCategory());
@@ -155,6 +168,7 @@ public class InventoryController {
 
 
         Equipment savedEquipment = inventoryService.saveEquipment(existingEquipment);
+        checkAndNotifyApprovalStatus(savedEquipment.getOwnerId(), oldStatus, savedEquipment.getApprovalStatus(), savedEquipment.getBrandModel(), savedEquipment.getEquipmentId(), "Equipment");
         return dtoMapper.toEquipmentDTO(savedEquipment);
     }
 
@@ -204,6 +218,8 @@ public class InventoryController {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Vehicle not found"));
 
+        String oldStatus = existingVehicle.getApprovalStatus();
+
         if (vehicleDTO.getVehicleType() != null) {
             existingVehicle.setVehicleType(vehicleDTO.getVehicleType());
         }
@@ -218,6 +234,9 @@ public class InventoryController {
         }
         if (vehicleDTO.getDriverIncluded() != null) {
             existingVehicle.setDriverIncluded(vehicleDTO.getDriverIncluded());
+        }
+        if (vehicleDTO.getOperatorPrice() != null) {
+            existingVehicle.setOperatorPrice(vehicleDTO.getOperatorPrice());
         }
         if (vehicleDTO.getServiceArea() != null) {
             existingVehicle.setServiceArea(vehicleDTO.getServiceArea());
@@ -266,6 +285,7 @@ public class InventoryController {
         }
 
         TransportVehicle savedVehicle = inventoryService.saveVehicle(existingVehicle);
+        checkAndNotifyApprovalStatus(savedVehicle.getOwnerId(), oldStatus, savedVehicle.getApprovalStatus(), savedVehicle.getVehicleType(), savedVehicle.getVehicleId(), "Transport Vehicle");
         return dtoMapper.toTransportVehicleDTO(savedVehicle);
     }
 
@@ -315,6 +335,8 @@ public class InventoryController {
                 .filter(s -> s.getServiceId().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Service not found"));
+
+        String oldStatus = existingService.getApprovalStatus();
 
         if (serviceDTO.getServiceType() != null) {
             existingService.setServiceType(serviceDTO.getServiceType());
@@ -378,6 +400,7 @@ public class InventoryController {
         }
 
         ServiceOffering savedService = inventoryService.saveService(existingService);
+        checkAndNotifyApprovalStatus(savedService.getOwnerId(), oldStatus, savedService.getApprovalStatus(), savedService.getBusinessName(), savedService.getServiceId(), "Service Offering");
         return dtoMapper.toServiceOfferingDTO(savedService);
     }
 
@@ -426,6 +449,8 @@ public class InventoryController {
                 .filter(g -> g.getGroupId().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Worker Group not found"));
+
+        String oldStatus = existingGroup.getApprovalStatus();
 
         if (groupDTO.getGroupName() != null) {
             existingGroup.setGroupName(groupDTO.getGroupName());
@@ -497,12 +522,79 @@ public class InventoryController {
             existingGroup.setLongitude(groupDTO.getLongitude());
         }
 
+        if (groupDTO.getRoles() != null) {
+            if (existingGroup.getRoles() == null) {
+                existingGroup.setRoles(new java.util.ArrayList<>());
+            } else {
+                existingGroup.getRoles().clear();
+            }
+            List<com.agrifarms.common.entity.WorkerGroupRole> newRoles = groupDTO.getRoles().stream()
+                    .map(dtoMapper::toWorkerGroupRoleEntity)
+                    .collect(Collectors.toList());
+            for (com.agrifarms.common.entity.WorkerGroupRole role : newRoles) {
+                role.setWorkerGroup(existingGroup);
+                existingGroup.getRoles().add(role);
+            }
+        }
+
         WorkerGroup savedGroup = inventoryService.saveWorkerGroup(existingGroup);
+        checkAndNotifyApprovalStatus(savedGroup.getOwnerId(), oldStatus, savedGroup.getApprovalStatus(), savedGroup.getGroupName(), savedGroup.getGroupId(), "Worker Group");
         return dtoMapper.toWorkerGroupDTO(savedGroup);
     }
 
     @DeleteMapping("/worker-groups/{id}")
     public void deleteWorkerGroup(@PathVariable("id") String id) {
         inventoryService.deleteWorkerGroup(id);
+    }
+
+    // Skills Endpoints
+    @GetMapping("/skills")
+    public List<Skill> getSkills() {
+        return skillRepository.findAll();
+    }
+
+    @PostMapping("/skills")
+    public Skill addSkill(@RequestBody Skill skill) {
+        return skillRepository.findByName(skill.getName())
+                .orElseGet(() -> skillRepository.save(skill));
+    }
+
+    // Vehicle Categories Endpoints
+    @GetMapping("/vehicle-categories")
+    public List<VehicleCategory> getVehicleCategories() {
+        return vehicleCategoryRepository.findAll();
+    }
+
+    @PostMapping("/vehicle-categories")
+    public VehicleCategory addVehicleCategory(@RequestBody VehicleCategory vehicleCategory) {
+        return vehicleCategoryRepository.findByName(vehicleCategory.getName())
+                .orElseGet(() -> vehicleCategoryRepository.save(vehicleCategory));
+    }
+
+    private void checkAndNotifyApprovalStatus(String ownerId, String oldStatus, String newStatus, String assetName, String assetId, String assetType) {
+        if (newStatus != null && !newStatus.equals(oldStatus)) {
+            String title = "";
+            String body = "";
+            if ("Approved".equalsIgnoreCase(newStatus)) {
+                title = "Listing Approved!";
+                body = "Your " + assetType + " listing \"" + assetName + "\" has been approved by the admin and is now live.";
+            } else if ("Rejected".equalsIgnoreCase(newStatus)) {
+                title = "Listing Rejected";
+                body = "Your " + assetType + " listing \"" + assetName + "\" was not approved by the admin.";
+            }
+
+            if (!title.isEmpty()) {
+                String fcmToken = null;
+                try {
+                    com.agrifarms.common.entity.User owner = userService.getUserById(ownerId).orElse(null);
+                    if (owner != null) {
+                        fcmToken = owner.getFcmToken();
+                    }
+                } catch (Exception e) {
+                    System.err.println("Error fetching owner for notification: " + e.getMessage());
+                }
+                notificationService.saveAndSendNotification(ownerId, fcmToken, title, body, "asset_approval", assetId, null);
+            }
+        }
     }
 }

@@ -28,12 +28,13 @@ public class TransportVehicleDTO {
     private BigDecimal latitude;
     private BigDecimal longitude;
     private String ownerProfileImageUrl;
+    private BigDecimal operatorPrice;
 
     public TransportVehicleDTO() {}
 
     public TransportVehicleDTO(String vehicleId, String ownerId, String ownerName, String vehicleType, String vehicleNumber,
                                String loadCapacity, BigDecimal pricePerKmOrTrip, Boolean driverIncluded, String serviceArea,
-                               String location, String houseNo, String street, String village, String district, String state, String country, String pincode, Boolean isAvailable, BigDecimal rating, String approvalStatus, String imageUrl, BigDecimal latitude, BigDecimal longitude, String ownerProfileImageUrl) {
+                               String location, String houseNo, String street, String village, String district, String state, String country, String pincode, Boolean isAvailable, BigDecimal rating, String approvalStatus, String imageUrl, BigDecimal latitude, BigDecimal longitude, String ownerProfileImageUrl, BigDecimal operatorPrice) {
         this.vehicleId = vehicleId;
         this.ownerId = ownerId;
         this.ownerName = ownerName;
@@ -58,6 +59,7 @@ public class TransportVehicleDTO {
         this.latitude = latitude;
         this.longitude = longitude;
         this.ownerProfileImageUrl = ownerProfileImageUrl;
+        this.operatorPrice = operatorPrice;
     }
 
     public String getVehicleId() { return vehicleId; }
@@ -131,4 +133,7 @@ public class TransportVehicleDTO {
 
     public String getOwnerProfileImageUrl() { return ownerProfileImageUrl; }
     public void setOwnerProfileImageUrl(String ownerProfileImageUrl) { this.ownerProfileImageUrl = ownerProfileImageUrl; }
+
+    public BigDecimal getOperatorPrice() { return operatorPrice; }
+    public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
 }

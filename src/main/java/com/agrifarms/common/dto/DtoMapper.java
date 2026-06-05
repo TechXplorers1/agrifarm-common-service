@@ -188,7 +188,8 @@ public class DtoMapper {
                 entity.getImageUrl(),
                 entity.getLatitude(),
                 entity.getLongitude(),
-                ownerProfileImageUrl
+                ownerProfileImageUrl,
+                entity.getOperatorPrice()
         );
     }
 
@@ -219,6 +220,7 @@ public class DtoMapper {
         entity.setPincode(dto.getPincode());
         entity.setLatitude(dto.getLatitude());
         entity.setLongitude(dto.getLongitude());
+        entity.setOperatorPrice(dto.getOperatorPrice());
         return entity;
     }
 
