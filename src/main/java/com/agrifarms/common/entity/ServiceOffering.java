@@ -12,12 +12,15 @@ import java.time.LocalDateTime;
 public class ServiceOffering {
 
     @Id
-    @Column(name = "service_id")
+    @Column(name = "id")
     @UuidGenerator
     private String serviceId;
 
-    @Column(name = "owner_id", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private String ownerId;
+
+    @Column(name = "service_name", nullable = false)
+    private String serviceName;
 
     @Column(name = "service_type")
     private String serviceType; // Ploughing, Harvesting, etc.
@@ -82,6 +85,7 @@ public class ServiceOffering {
         this.serviceId = serviceId;
         this.ownerId = ownerId;
         this.serviceType = serviceType;
+        this.serviceName = serviceType != null ? serviceType : businessName;
         this.businessName = businessName;
         this.description = description;
         this.equipmentUsed = equipmentUsed;
@@ -240,4 +244,7 @@ public class ServiceOffering {
 
     public BigDecimal getLongitude() { return longitude; }
     public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
+
+    public String getServiceName() { return serviceName; }
+    public void setServiceName(String serviceName) { this.serviceName = serviceName; }
 }

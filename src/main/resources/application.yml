@@ -2,21 +2,20 @@ server:
   port: 8083
 
 spring:
+  profiles:
+    active: prod
   application:
     name: agri-farms-common-service
 
   datasource:
-    url: jdbc:postgresql://192.168.29.237:5435/agrifarms
-    username: agrifarms
-    password: password
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://agri-prod-database.cr262csoswwh.ap-south-2.rds.amazonaws.com:5432/agri?currentSchema=%22agri-common%22}
+    username: ${SPRING_DATASOURCE_USERNAME:agri_db_admin_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:zethon123$}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        # dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: none
 
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
@@ -26,6 +25,9 @@ spring:
       max-file-size: 10MB
       max-request-size: 10MB
 
+  sql:
+    init:
+      mode: always
   mail:
     host: smtp.zoho.in
     port: 587

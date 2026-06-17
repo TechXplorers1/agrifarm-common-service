@@ -165,6 +165,11 @@ public class DtoMapper {
         } else if (dto.getBrandModel() != null) {
             entity.setBrandModel(dto.getBrandModel());
         }
+        if (entity.getBrandModel() != null) {
+            entity.setName(entity.getBrandModel());
+        } else {
+            entity.setName(entity.getCategory() != null ? entity.getCategory() : "Equipment");
+        }
         return entity;
     }
 
@@ -297,6 +302,7 @@ public class DtoMapper {
         entity.setServiceId(dto.getServiceId());
         entity.setOwnerId(dto.getOwnerId());
         entity.setServiceType(dto.getServiceType());
+        entity.setServiceName(dto.getServiceType() != null ? dto.getServiceType() : (dto.getBusinessName() != null ? dto.getBusinessName() : "Service"));
         entity.setBusinessName(dto.getBusinessName());
         entity.setDescription(dto.getDescription());
         entity.setEquipmentUsed(dto.getEquipmentUsed());
