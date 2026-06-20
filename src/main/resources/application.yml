@@ -6,6 +6,12 @@ spring:
     active: prod
   application:
     name: agri-farms-common-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:https://auth-prod.agrifarms.in/realms/agrifarms}
+          jwk-set-uri: ${KEYCLOAK_JWK_SET_URI:https://auth-prod.agrifarms.in/realms/agrifarms/protocol/openid-connect/certs}
 
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://agri-prod-database.cr262csoswwh.ap-south-2.rds.amazonaws.com:5432/agri?currentSchema=%22agri-common%22}
@@ -42,3 +48,15 @@ spring:
             required: true
           ssl:
             protocols: TLSv1.2
+
+# Custom Keycloak Admin API & Direct Grant configuration
+keycloak:
+  auth-server-url: ${KEYCLOAK_AUTH_SERVER_URL:https://auth-prod.agrifarms.in}
+  realm: ${KEYCLOAK_REALM:agrifarms}
+  client-id: ${KEYCLOAK_CLIENT_ID:agrifarms-mobile-client}
+  admin-realm: ${KEYCLOAK_ADMIN_REALM:agrifarms}
+  admin-client-id: ${KEYCLOAK_ADMIN_CLIENT_ID:admin-cli}
+  admin-client-secret: ${KEYCLOAK_ADMIN_CLIENT_SECRET:}
+  admin-username: ${KEYCLOAK_ADMIN_USERNAME:admin}
+  admin-password: ${KEYCLOAK_ADMIN_PASSWORD:zethon123$}
+

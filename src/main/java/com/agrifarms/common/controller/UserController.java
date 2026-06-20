@@ -50,6 +50,21 @@ public class UserController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("/sync")
+    public ResponseEntity<UserDTO> syncUser() {
+        org.springframework.security.core.Authentication authentication = 
+            org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
+        
+        if (authentication instanceof org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken jwtToken) {
+            String keycloakId = jwtToken.getToken().getSubject();
+            return userService.getUserByKeycloakId(keycloakId)
+                    .map(dtoMapper::toUserDTO)
+                    .map(ResponseEntity::ok)
+                    .orElse(ResponseEntity.notFound().build());
+        }
+        return ResponseEntity.status(401).build();
+    }
+
     @GetMapping("/{userId}")
     public ResponseEntity<UserDTO> getUser(@PathVariable("userId") String userId) {
         return userService.getUserById(userId)

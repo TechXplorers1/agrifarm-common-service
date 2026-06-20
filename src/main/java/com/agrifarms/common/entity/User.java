@@ -61,6 +61,9 @@ public class User {
     @Column(name = "status")
     private String status = "Active";
 
+    @Column(name = "keycloak_id", unique = true)
+    private String keycloakId;
+
     public User() {
     }
 
@@ -174,6 +177,9 @@ public class User {
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
+    public String getKeycloakId() { return keycloakId; }
+    public void setKeycloakId(String keycloakId) { this.keycloakId = keycloakId; }
 
     @PrePersist
     protected void onCreate() {
