@@ -3,6 +3,11 @@ variable "region" {
   default = "ap-south-2"
 }
 
+variable "state_bucket_name" {
+  description = "S3 bucket name for Terraform state storage"
+  type        = string
+}
+
 variable "service_name" {
   type = string
   description = "Name of the service; used for naming resources"
