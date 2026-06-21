@@ -6,8 +6,8 @@ provider "aws" {
 data "terraform_remote_state" "infra" {
   backend = "s3"
   config = {
-    bucket = "agri-prod-terraform-s3-state"
-    key    = "infra/common-server/terraform.tfstate"
+    bucket = "${var.state_bucket_name}"
+    key    = "infra/terraform.tfstate"
     region = var.region
   }
 }
