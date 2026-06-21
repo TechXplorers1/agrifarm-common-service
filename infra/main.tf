@@ -211,11 +211,12 @@ resource "aws_appautoscaling_policy" "cpu_policy" {
   }
 }
 
-// Outputs
-output "service_name" {
-  value = aws_ecs_service.svc.name
+// Data: look up ALB to get DNS name
+data "aws_lb" "alb" {
+  arn = data.terraform_remote_state.infra.outputs.alb_arn
 }
 
+// Outputs
 output "service_url_path" {
-  value = "https://${data.terraform_remote_state.infra.outputs.alb_arn.split(":")[5]}/${var.service_name}/"
+  value = "https://${data.aws_lb.alb.dns_name}/${var.service_name}/"
 }
