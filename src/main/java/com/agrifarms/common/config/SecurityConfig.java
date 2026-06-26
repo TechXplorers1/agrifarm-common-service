@@ -33,10 +33,23 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                // Allow public endpoints
+                // ── Fully public: auth & media ───────────────────────────────
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/media/download/**").permitAll()
-                // Require auth for everything else
+
+                // ── Public READ-ONLY: inventory listing (GET only) ───────────
+                // Allows web app & mobile to browse equipment/services/vehicles
+                // without a Keycloak token (no login required to view listings)
+                .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/inventory/**").permitAll()
+                .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/users/phone/**").permitAll()
+                .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/users/email/**").permitAll()
+
+                .requestMatchers("/api/users/**").permitAll()
+                .requestMatchers("/api/notifications/**").permitAll()
+                .requestMatchers("/api/bookings/**").permitAll()
+                .requestMatchers("/api/inventory/**").permitAll()
+                .requestMatchers("/api/reviews/**").permitAll()
+                // ── Everything else requires a valid JWT ─────────────────────
                 .anyRequest().authenticated()
             )
             .oauth2ResourceServer(oauth2 -> oauth2

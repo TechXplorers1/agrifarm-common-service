@@ -23,11 +23,14 @@ public class MediaController {
     @PostMapping("/upload")
     public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file) {
         try {
-            String filename = mediaService.saveFile(file);
-            String fileUrl = "/api/media/download/" + filename;
+            // saveFile now returns the full S3 URL
+            String fileUrl = mediaService.saveFile(file);
 
             Map<String, String> response = new HashMap<>();
             response.put("url", fileUrl);
+            
+            // Extract filename from URL for legacy compatibility if needed
+            String filename = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
             response.put("filename", filename);
 
             return ResponseEntity.ok(response);

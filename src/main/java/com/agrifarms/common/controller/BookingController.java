@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import com.agrifarms.common.service.ReviewService;
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -16,10 +17,12 @@ public class BookingController {
 
     private final BookingService bookingService;
     private final DtoMapper dtoMapper;
+    private final ReviewService reviewService;
 
-    public BookingController(BookingService bookingService, DtoMapper dtoMapper) {
+    public BookingController(BookingService bookingService, DtoMapper dtoMapper, ReviewService reviewService) {
         this.bookingService = bookingService;
         this.dtoMapper = dtoMapper;
+        this.reviewService = reviewService;
     }
 
     @PostMapping
@@ -39,7 +42,11 @@ public class BookingController {
     @GetMapping("/farmer/{farmerId}")
     public List<BookingDTO> getFarmerBookings(@PathVariable("farmerId") String farmerId) {
         return bookingService.getBookingsByFarmer(farmerId).stream()
-                .map(dtoMapper::toBookingDTO)
+                .map(b -> {
+                    BookingDTO dto = dtoMapper.toBookingDTO(b);
+                    dto.setIsReviewed(reviewService.hasReviewForBooking(dto.getBookingId()));
+                    return dto;
+                })
                 .collect(Collectors.toList());
     }
 

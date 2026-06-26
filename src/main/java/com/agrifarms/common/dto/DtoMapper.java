@@ -344,7 +344,8 @@ public class DtoMapper {
                 entity.getLocationLat(),
                 entity.getLocationLng(),
                 entity.getAddressText(),
-                entity.getNotes());
+                entity.getNotes(),
+                false);
         dto.setCancelledBy(entity.getCancelledBy());
         dto.setCancellationReason(entity.getCancellationReason());
         return dto;
@@ -479,6 +480,35 @@ public class DtoMapper {
         entity.setGender(dto.getGender());
         entity.setCount(dto.getCount());
         entity.setTaskName(dto.getTaskName());
+        return entity;
+    }
+    public com.agrifarms.common.dto.ReviewDTO toReviewDTO(com.agrifarms.common.entity.Review entity) {
+        if (entity == null) {
+            return null;
+        }
+        return new com.agrifarms.common.dto.ReviewDTO(
+                entity.getId(),
+                entity.getBookingId(),
+                entity.getAssetId(),
+                entity.getReviewerId(),
+                entity.getRating(),
+                entity.getComment(),
+                entity.getCreatedAt()
+        );
+    }
+
+    public com.agrifarms.common.entity.Review toReviewEntity(com.agrifarms.common.dto.ReviewDTO dto) {
+        if (dto == null) {
+            return null;
+        }
+        com.agrifarms.common.entity.Review entity = new com.agrifarms.common.entity.Review();
+        entity.setId(dto.getId());
+        entity.setBookingId(dto.getBookingId());
+        entity.setAssetId(dto.getAssetId());
+        entity.setReviewerId(dto.getReviewerId());
+        entity.setRating(dto.getRating());
+        entity.setComment(dto.getComment());
+        entity.setCreatedAt(dto.getCreatedAt());
         return entity;
     }
 }

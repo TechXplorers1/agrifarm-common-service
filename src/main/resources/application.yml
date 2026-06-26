@@ -60,3 +60,10 @@ keycloak:
   admin-username: ${KEYCLOAK_ADMIN_USERNAME:admin}
   admin-password: ${KEYCLOAK_ADMIN_PASSWORD:zethon123$}
 
+aws:
+  s3:
+    bucket: agri-common
+    region: ap-south-1
+  credentials:
+    access-key: ${AWS_ACCESS_KEY_ID:default_access_key}
+    secret-key: ${AWS_SECRET_ACCESS_KEY:default_secret_key}
