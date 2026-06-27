@@ -28,8 +28,8 @@ locals {
 
 
 # Target group
-resource "aws_lb_target_group" "common_tg" {
-  name        = "${var.project}-${var.env}-common-tg"
+resource "aws_lb_target_group" "common_service_tg" {
+  name        = "${var.project}-${var.env}-common-service-tg"
   port        = 8081
   protocol    = "HTTP"
   vpc_id      = local.vpc_id
