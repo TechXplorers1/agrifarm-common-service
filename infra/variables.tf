@@ -23,44 +23,12 @@ variable "ssl_policy" {
   type        = string
   default     = "ELBSecurityPolicy-2016-08"
 }
+
 variable "domain_name" {
   description = "The domain name for the application (e.g., example.com)"
   type        = string
 }
-variable "db_username" {
-  description = "Database username for Keycloak"
-  type        = string
-}
-variable "db_password" {
-  description = "Database password for Keycloak"
-  type        = string
-  sensitive   = true
-}
-variable "db_name" {
-  description = "Database name for Keycloak"
-  type        = string
-}
-variable "db_url" {
-  description = "Database URL for Keycloak (without port and db name)"
-  type        = string
-}
-variable "db_port" {
-  description = "Database port for Keycloak"
-  type        = string
-}
-variable "db_schema" {
-  description = "Database schema for Keycloak"
-  type        = string
-}
-variable "admin_user_name" {
-  description = "Admin username for Keycloak"
-  type        = string
-}
-variable "admin_user_password" {
-  description = "Admin password for Keycloak"
-  type        = string
-  sensitive   = true
-}
+
 variable "image_tag" {
   type = string
 }
