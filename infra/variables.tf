@@ -18,12 +18,6 @@ variable "env" {
   type        = string
 }
 
-variable "ssl_policy" {
-  description = "SSL policy for the HTTPS listener"
-  type        = string
-  default     = "ELBSecurityPolicy-2016-08"
-}
-
 variable "domain_name" {
   description = "The domain name for the application (e.g., example.com)"
   type        = string
