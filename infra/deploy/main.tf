@@ -38,6 +38,7 @@ locals {
   aws_lb_listener = data.terraform_remote_state.infra.outputs.https_listener_arn
   ecs_task_execution_role_arn = data.terraform_remote_state.service_infra.outputs.ecs_task_execution_role_arn
   ecr_repository_url = data.terraform_remote_state.service_infra.outputs.ecr_repository_url
+  common_service_tg_arn = data.terraform_remote_state.service_infra.outputs.common_service_tg_arn
 }
 
 
@@ -86,7 +87,7 @@ resource "aws_ecs_service" "common_service" {
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.common_service_tg.arn
+    target_group_arn = local.common_service_tg_arn
     container_name   = "common-service"
     container_port   = 8081
   }
