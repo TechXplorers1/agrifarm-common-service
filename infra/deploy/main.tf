@@ -91,9 +91,4 @@ resource "aws_ecs_service" "common_service" {
     container_name   = "common-service"
     container_port   = 8081
   }
-
-    # 👇 This ensures Common Service waits until DB is marked created
-  depends_on = [
-    aws_lb_target_group.common_service_tg
-  ]
 }
