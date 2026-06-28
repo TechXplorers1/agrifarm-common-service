@@ -22,3 +22,8 @@ variable "domain_name" {
   description = "The domain name for the application (e.g., example.com)"
   type        = string
 }
+
+variable "ecr_repository_name" {
+  description = "The name of the ECR repository"
+  type        = string
+}

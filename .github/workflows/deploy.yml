@@ -11,9 +11,9 @@ env:
   AWS_REGION: ${{ vars.AWS_REGION }}
   ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
   TF_VAR_project: ${{ vars.PROJECT }}
-  TF_VAR_env: ${{ vars.AGRI_PROD_ENV }}
   TF_VAR_state_bucket_name: ${{ vars.AGRI_PROD_STATE_BUCKET_NAME }}
   TF_VAR_domain_name: ${{ vars.DOMAIN_NAME }}
+  TF_VAR_ecr_repository_name: ${{ vars.ECR_REPOSITORY }}
 
 jobs:
   deploy:
@@ -45,11 +45,8 @@ jobs:
 
       - name: Terraform Plan
         working-directory: infra/deploy
-        run: |
-          terraform plan \
-            -var="image_tag=${IMAGE_TAG}" \
-            -out=tfplan
+        run: terraform plan
 
       - name: Terraform Apply
         working-directory: infra/deploy
-        run: terraform apply -auto-approve tfplan
+        run: terraform apply -auto-approve
