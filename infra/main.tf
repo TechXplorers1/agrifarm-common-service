@@ -27,6 +27,19 @@ locals {
 }
 
 
+resource "aws_ecr_repository" "ecr" {
+  name                 = "${var.repo_name}-${var.env}-repo"
+  image_tag_mutability = "MUTABLE"
+  force_delete = true
+
+  tags = merge(
+    {
+      Name = "${var.repo_name}-${var.env}-repo"
+    },
+    var.tags
+  )
+}
+
 # Target group
 resource "aws_lb_target_group" "common_service_tg" {
   name        = "${var.project}-${var.env}-common-service-tg"
