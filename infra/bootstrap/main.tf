@@ -23,7 +23,7 @@ locals {
 
 
 resource "aws_ecr_repository" "ecr" {
-  name                 = "${var.project}-${var.env}"
+  name                 = "${var.project}-${var.env}-common-service-repo"
   image_tag_mutability = "IMMUTABLE"
   force_delete         = true
 
