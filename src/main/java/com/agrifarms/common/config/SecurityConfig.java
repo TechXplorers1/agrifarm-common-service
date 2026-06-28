@@ -49,6 +49,8 @@ public class SecurityConfig {
                 .requestMatchers("/api/bookings/**").permitAll()
                 .requestMatchers("/api/inventory/**").permitAll()
                 .requestMatchers("/api/reviews/**").permitAll()
+                .requestMatchers("/actuator/health/**").permitAll()
+                .requestMatchers("/actuator/info").permitAll()
                 // ── Everything else requires a valid JWT ─────────────────────
                 .anyRequest().authenticated()
             )
