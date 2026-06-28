@@ -67,7 +67,7 @@ resource "aws_lb_listener_rule" "common_service_path_rule" {
 
   condition {
     host_header {
-      values = ["auth-${var.env}.${var.domain_name}"] 
+      values = ["api-common-service-${var.env}.${var.domain_name}"] 
     }
   }
 }
