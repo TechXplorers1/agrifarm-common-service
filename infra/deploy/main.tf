@@ -19,7 +19,7 @@ data "terraform_remote_state" "service_infra" {
 
   config = {
     bucket = var.state_bucket_name
-    key    = "common-service/infra.tfstate"
+    key    = "infra/common-service/infra.tfstate"
     region = var.region
   }
 }
