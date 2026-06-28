@@ -15,12 +15,9 @@ data "terraform_remote_state" "infra" {
 }
 
 locals {
-  ecs_cluster_name   = data.terraform_remote_state.infra.outputs.ecs_cluster_name
-  ecs_task_execution_role_arn = data.terraform_remote_state.infra.outputs.ecs_task_execution_role_arn
-  public_subnet_ids  = data.terraform_remote_state.infra.outputs.public_subnet_ids
-  ecs_security_group_ids = [data.terraform_remote_state.infra.outputs.ecs_cluster_sg_id]
   vpc_id = data.terraform_remote_state.infra.outputs.vpc_id
-  alb_arn = data.terraform_remote_state.infra.outputs.alb_arn
+  public_subnet_ids  = data.terraform_remote_state.infra.outputs.public_subnet_ids
+  ecs_cluster_name   = data.terraform_remote_state.infra.outputs.ecs_cluster_name
   aws_lb_listener = data.terraform_remote_state.infra.outputs.https_listener_arn
 }
 
