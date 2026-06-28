@@ -35,12 +35,6 @@ resource "aws_ecr_repository" "ecr" {
     encryption_type = "AES256"
   }
 
-  tags = merge(
-    {
-      Name = "${var.project}-${var.env}"
-    },
-    var.tags
-  )
 }
 
 # Target group

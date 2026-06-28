@@ -12,10 +12,8 @@ env:
   ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
   TF_VAR_project: ${{ vars.PROJECT }}
   TF_VAR_env: ${{ vars.AGRI_PROD_ENV }}
-  TF_VAR_image_tag: ${{ vars.IMAGE_TAG }}
   TF_VAR_state_bucket_name: ${{ vars.AGRI_PROD_STATE_BUCKET_NAME }}
   TF_VAR_domain_name: ${{ vars.DOMAIN_NAME }}
-  TF_VAR_region: ${{ vars.AGRI_PROD_REGION }}
 
 jobs:
   deploy:
@@ -28,7 +26,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: ${{ vars.AGRI_PROD_REGION }}
+          aws-region: ${{ vars.AWS_REGION }}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
