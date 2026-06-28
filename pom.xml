@@ -73,6 +73,10 @@
             <artifactId>s3</artifactId>
             <version>2.20.162</version> <!-- You can use the AWS BOM instead but direct version is fine -->
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
