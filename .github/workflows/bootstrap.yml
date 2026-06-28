@@ -8,10 +8,9 @@ permissions:
   contents: read
 
 env:
-  AWS_REGION: ${{ vars.AWS_REGION }}
-  ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
   TF_VAR_project: ${{ vars.PROJECT }}
-  TF_VAR_env: ${{ vars.AGRI_PROD_ENV }}
+  TF_VAR_env: ${{ vars.ENVIRONMENT }}
+  TF_VAR_region: ${{ vars.AWS_REGION }}
   TF_VAR_state_bucket_name: ${{ vars.AGRI_PROD_STATE_BUCKET_NAME }}
   TF_VAR_domain_name: ${{ vars.DOMAIN_NAME }}
 
