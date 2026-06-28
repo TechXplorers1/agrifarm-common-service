@@ -22,7 +22,3 @@ variable "domain_name" {
   description = "The domain name for the application (e.g., example.com)"
   type        = string
 }
-
-variable "image_tag" {
-  type = string
-}

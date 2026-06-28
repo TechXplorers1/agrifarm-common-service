@@ -24,6 +24,11 @@ data "terraform_remote_state" "service_infra" {
   }
 }
 
+data "aws_ecr_image" "latest" {
+  repository_name = "${var.ecr_repository_name}"
+  most_recent     = true
+}
+
 locals {
   ecs_cluster_name   = data.terraform_remote_state.infra.outputs.ecs_cluster_name
   public_subnet_ids  = data.terraform_remote_state.infra.outputs.public_subnet_ids
@@ -32,6 +37,7 @@ locals {
   alb_arn = data.terraform_remote_state.infra.outputs.alb_arn
   aws_lb_listener = data.terraform_remote_state.infra.outputs.https_listener_arn
   ecs_task_execution_role_arn = data.terraform_remote_state.service_infra.outputs.ecs_task_execution_role_arn
+  ecr_repository_url = data.terraform_remote_state.service_infra.outputs.ecr_repository_url
 }
 
 
@@ -46,7 +52,7 @@ resource "aws_ecs_task_definition" "common_service" {
   container_definitions = jsonencode([
     {
       name  = "common-service"
-      image = "${aws_ecr_repository.ecr.repository_url}:${var.image_tag}"
+      image = "${local.ecr_repository_url}:${data.aws_ecr_image.latest.image_tags[0]}"
       portMappings = [
         {
           containerPort = 8081
