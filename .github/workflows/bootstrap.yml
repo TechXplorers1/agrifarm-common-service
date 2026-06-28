@@ -40,7 +40,7 @@ jobs:
 
       - name: Terraform Plan
         working-directory: infra/bootstrap
-        run: terraform plan -auto-approve
+        run: terraform plan
 
       - name: Terraform Apply
         working-directory: infra/bootstrap
