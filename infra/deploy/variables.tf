@@ -26,9 +26,3 @@ variable "domain_name" {
 variable "image_tag" {
   type = string
 }
-
-variable "repo_name" {
-  description = "The name of the ECR repository"
-  type        = string
-  default     = "common-service"
-}
