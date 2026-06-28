@@ -1,4 +1,4 @@
-name: Infra Setup
+name: Bootstrap
 
 on:
   workflow_dispatch:
