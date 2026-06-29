@@ -58,7 +58,7 @@ resource "aws_lb_target_group" "common_service_tg" {
 
 resource "aws_lb_listener_rule" "common_service_path_rule" {
   listener_arn = local.aws_lb_listener
-  priority     = 10
+  priority     = 11
 
   action {
     type             = "forward"
