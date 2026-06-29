@@ -46,7 +46,7 @@ resource "aws_lb_target_group" "common_service_tg" {
   target_type = "ip"
 
   health_check {
-    path                = "/health/ready"
+    path                = "/actuator/health/readiness"
     interval            = 180
     timeout             = 60
     healthy_threshold   = 2
