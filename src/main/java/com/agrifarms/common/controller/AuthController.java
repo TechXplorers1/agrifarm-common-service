@@ -443,7 +443,25 @@ public class AuthController {
             user = userRepository.save(user);
         }
 
+        // --- Keycloak Integration ---
+        String keycloakPassword = generateKeycloakPassword(cleanedPhone);
+        String keycloakUserId = keycloakService.findUserIdByUsername(cleanedPhone);
+        if (keycloakUserId == null) {
+            keycloakUserId = keycloakService.createUser(cleanedPhone, keycloakPassword, cleanedPhone, user.getFullName(), user.getRole());
+        }
+        if (keycloakUserId != null && user.getKeycloakId() == null) {
+            user.setKeycloakId(keycloakUserId);
+            user = userRepository.save(user);
+        }
+
+        Map<String, Object> tokens = keycloakService.authenticateUser(cleanedPhone, keycloakPassword);
+
         Map<String, Object> response = new HashMap<>();
+        if (tokens != null) {
+            response.put("access_token", tokens.get("access_token"));
+            response.put("refresh_token", tokens.get("refresh_token"));
+            response.put("expires_in", tokens.get("expires_in"));
+        }
         response.put("userId",      user.getUserId());
         response.put("fullName",    user.getFullName() != null ? user.getFullName() : "");
         response.put("phoneNumber", user.getPhoneNumber());
