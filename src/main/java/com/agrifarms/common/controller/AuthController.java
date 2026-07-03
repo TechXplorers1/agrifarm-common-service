@@ -5,6 +5,7 @@ import com.agrifarms.common.repository.UserRepository;
 import com.agrifarms.common.service.KeycloakService;
 import com.agrifarms.common.service.OtpService;
 import com.agrifarms.common.service.UserService;
+import com.agrifarms.common.service.Msg91Service;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
@@ -23,12 +24,14 @@ public class AuthController {
     private final UserService userService;
     private final KeycloakService keycloakService;
     private final UserRepository userRepository;
+    private final Msg91Service msg91Service;
 
-    public AuthController(OtpService otpService, UserService userService, KeycloakService keycloakService, UserRepository userRepository) {
+    public AuthController(OtpService otpService, UserService userService, KeycloakService keycloakService, UserRepository userRepository, Msg91Service msg91Service) {
         this.otpService = otpService;
         this.userService = userService;
         this.keycloakService = keycloakService;
         this.userRepository = userRepository;
+        this.msg91Service = msg91Service;
     }
 
     private static class FirebaseTokenPayload {
@@ -179,6 +182,90 @@ public class AuthController {
         } else {
             return ResponseEntity.badRequest().body(Map.of("message", "Invalid, expired, or already used OTP code entered"));
         }
+    }
+
+    /**
+     * Send OTP via MSG91.
+     * Request body: { "phoneNumber": "9876543210" }
+     */
+    @PostMapping("/msg91/send-otp")
+    public ResponseEntity<?> sendMsg91Otp(@RequestBody Map<String, String> request) {
+        String phoneNumber = request.get("phoneNumber");
+        if (phoneNumber == null || phoneNumber.trim().isEmpty()) {
+            return ResponseEntity.badRequest().body(Map.of("message", "phoneNumber is required"));
+        }
+        
+        boolean sent = msg91Service.sendOtp(phoneNumber.trim());
+        if (sent) {
+            return ResponseEntity.ok(Map.of("message", "OTP sent successfully via MSG91"));
+        } else {
+            return ResponseEntity.status(500).body(Map.of("message", "Failed to send OTP via MSG91"));
+        }
+    }
+
+    /**
+     * Verify OTP via MSG91 and login/signup.
+     * Request body: { "phoneNumber": "...", "otp": "...", "role": "...", "fullName": "...", "isLogin": true/false }
+     */
+    @PostMapping("/msg91/verify-otp")
+    public ResponseEntity<?> verifyMsg91Otp(@RequestBody Map<String, Object> request) {
+        String phoneNumber = (String) request.get("phoneNumber");
+        String otpCode     = (String) request.get("otp");
+        String role        = (String) request.get("role");
+        String fullName    = (String) request.get("fullName");
+        Boolean isLogin    = (Boolean) request.get("isLogin");
+
+        if (phoneNumber == null || phoneNumber.trim().isEmpty() || otpCode == null || otpCode.trim().isEmpty()) {
+            return ResponseEntity.badRequest().body(Map.of("message", "phoneNumber and otp are required"));
+        }
+
+        // Clean and normalize phone number (10 digits)
+        String cleanedPhone = phoneNumber.replaceAll("\\D", "");
+        if (cleanedPhone.length() > 10) {
+            cleanedPhone = cleanedPhone.substring(cleanedPhone.length() - 10);
+        }
+        if (cleanedPhone.length() != 10) {
+            return ResponseEntity.badRequest().body(Map.of("message", "Phone number must be exactly 10 digits"));
+        }
+
+        // Verify with MSG91
+        boolean verified = msg91Service.verifyOtp(cleanedPhone, otpCode.trim());
+        if (!verified) {
+            return ResponseEntity.status(401).body(Map.of("message", "Invalid or expired OTP"));
+        }
+
+        // On successful verification, perform login/signup logic
+        String normalizedRole = validateRole(role);
+        if (role != null && !role.trim().isEmpty() && !ALLOWED_ROLES.contains(role.trim().toUpperCase())) {
+            return ResponseEntity.badRequest().body(
+                Map.of("message", "Invalid role '" + role + "'. Allowed roles: ADMIN, FARMER, OWNER"));
+        }
+
+        Optional<User> existingOpt = userRepository.findByPhoneNumber(cleanedPhone);
+        User user;
+        if (existingOpt.isPresent()) {
+            user = existingOpt.get();
+        } else {
+            if (Boolean.TRUE.equals(isLogin)) {
+                return ResponseEntity.status(404).body(
+                    Map.of("message", "No account found for this phone number. Please sign up first."));
+            }
+            user = new User();
+            user.setPhoneNumber(cleanedPhone);
+            user.setRole(normalizedRole);
+            user.setFullName((fullName != null && !fullName.trim().isEmpty()) ? fullName.trim() : "User " + cleanedPhone);
+            user.setStatus("Active");
+            user = userRepository.save(user);
+        }
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("userId",      user.getUserId());
+        response.put("fullName",    user.getFullName() != null ? user.getFullName() : "");
+        response.put("phoneNumber", user.getPhoneNumber());
+        response.put("role",        user.getRole() != null ? user.getRole() : normalizedRole);
+        response.put("status",      user.getStatus() != null ? user.getStatus() : "Active");
+        response.put("email",       user.getEmail() != null ? user.getEmail() : "");
+        return ResponseEntity.ok(response);
     }
 
     /**

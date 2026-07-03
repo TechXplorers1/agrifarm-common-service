@@ -218,6 +218,9 @@ public class ServiceOffering {
     private BigDecimal latitude;
     private BigDecimal longitude;
 
+    @Column(name = "operator_price")
+    private BigDecimal operatorPrice;
+
     public String getHouseNo() { return houseNo; }
     public void setHouseNo(String houseNo) { this.houseNo = houseNo; }
 
@@ -247,4 +250,7 @@ public class ServiceOffering {
 
     public String getServiceName() { return serviceName; }
     public void setServiceName(String serviceName) { this.serviceName = serviceName; }
+
+    public BigDecimal getOperatorPrice() { return operatorPrice; }
+    public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
 }

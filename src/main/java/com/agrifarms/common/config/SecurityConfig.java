@@ -35,7 +35,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 // ── Fully public: auth & media ───────────────────────────────
                 .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/media/download/**").permitAll()
+                .requestMatchers("/api/media/**").permitAll()
 
                 // ── Public READ-ONLY: inventory listing (GET only) ───────────
                 // Allows web app & mobile to browse equipment/services/vehicles
@@ -44,11 +44,11 @@ public class SecurityConfig {
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/users/phone/**").permitAll()
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/users/email/**").permitAll()
 
-                .requestMatchers("/api/users/**").permitAll()
-                .requestMatchers("/api/notifications/**").permitAll()
-                .requestMatchers("/api/bookings/**").permitAll()
-                .requestMatchers("/api/inventory/**").permitAll()
-                .requestMatchers("/api/reviews/**").permitAll()
+                .requestMatchers("/api/users", "/api/users/**").permitAll()
+                .requestMatchers("/api/notifications", "/api/notifications/**").permitAll()
+                .requestMatchers("/api/bookings", "/api/bookings/**").permitAll()
+                .requestMatchers("/api/inventory", "/api/inventory/**").permitAll()
+                .requestMatchers("/api/reviews", "/api/reviews/**").permitAll()
                 .requestMatchers("/actuator/health/**").permitAll()
                 .requestMatchers("/actuator/info").permitAll()
                 // ── Everything else requires a valid JWT ─────────────────────

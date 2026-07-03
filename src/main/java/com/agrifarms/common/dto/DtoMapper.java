@@ -266,7 +266,7 @@ public class DtoMapper {
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
         String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
-        return new ServiceOfferingDTO(
+        ServiceOfferingDTO dto = new ServiceOfferingDTO(
                 entity.getServiceId(),
                 entity.getOwnerId(),
                 ownerName,
@@ -292,6 +292,8 @@ public class DtoMapper {
                 entity.getLongitude(),
                 ownerProfileImageUrl
         );
+        dto.setOperatorPrice(entity.getOperatorPrice());
+        return dto;
     }
 
     public ServiceOffering toServiceOfferingEntity(ServiceOfferingDTO dto) {
@@ -308,6 +310,7 @@ public class DtoMapper {
         entity.setEquipmentUsed(dto.getEquipmentUsed());
         entity.setPriceRate(dto.getPriceRate());
         entity.setOperatorIncluded(dto.getOperatorIncluded());
+        entity.setOperatorPrice(dto.getOperatorPrice());
         entity.setLocation(dto.getLocation());
         entity.setIsAvailable(dto.getIsAvailable());
         entity.setRating(dto.getRating());
