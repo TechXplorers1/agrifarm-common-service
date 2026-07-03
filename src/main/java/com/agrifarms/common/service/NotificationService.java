@@ -35,11 +35,20 @@ public class NotificationService {
                 .isRead(false)
                 .createdAt(LocalDateTime.now())
                 .build();
-        userNotificationRepository.save(userNotification);
+        UserNotification savedNotification = userNotificationRepository.save(userNotification);
 
         // 2. Send Push Notification if FCM token exists
         if (fcmToken != null && !fcmToken.isEmpty()) {
-            sendPushNotification(fcmToken, title, body, data);
+            Map<String, String> payloadData = data;
+            if (payloadData == null) {
+                payloadData = new java.util.HashMap<>();
+            } else {
+                payloadData = new java.util.HashMap<>(data); // avoid modifying original immutable map
+            }
+            payloadData.put("notificationId", savedNotification.getId());
+            payloadData.put("type", type);
+            payloadData.put("relatedId", relatedId);
+            sendPushNotification(fcmToken, title, body, payloadData);
         }
     }
 
