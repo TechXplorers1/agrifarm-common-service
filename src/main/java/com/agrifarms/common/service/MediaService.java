@@ -1,25 +1,45 @@
 package com.agrifarms.common.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
+import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.core.sync.RequestBody;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.PutObjectRequest;
+import software.amazon.awssdk.services.s3.model.S3Exception;
 
+import jakarta.annotation.PostConstruct;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.UUID;
 
 @Service
 public class MediaService {
 
-    private final String uploadDir = "agrifarm-uploads";
+    @Value("${aws.s3.bucket}")
+    private String bucketName;
 
-    public MediaService() {
-        try {
-            Files.createDirectories(Paths.get(uploadDir));
-        } catch (IOException e) {
-            throw new RuntimeException("Could not create upload directory", e);
-        }
+    @Value("${aws.s3.region}")
+    private String region;
+
+    @Value("${aws.credentials.access-key}")
+    private String accessKey;
+
+    @Value("${aws.credentials.secret-key}")
+    private String secretKey;
+
+    private S3Client s3Client;
+
+    @PostConstruct
+    public void init() {
+        s3Client = S3Client.builder()
+                .region(Region.of(region))
+                .credentialsProvider(StaticCredentialsProvider.create(
+                        AwsBasicCredentials.create(accessKey, secretKey)
+                ))
+                .build();
     }
 
     public String saveFile(MultipartFile file) throws IOException {
@@ -30,17 +50,28 @@ public class MediaService {
         }
         
         String filename = UUID.randomUUID().toString() + extension;
-        Path path = Paths.get(uploadDir, filename);
-        Files.copy(file.getInputStream(), path);
         
-        return filename;
+        try {
+            PutObjectRequest putObjectRequest = PutObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(filename)
+                    .contentType(file.getContentType())
+                    .build();
+
+            s3Client.putObject(putObjectRequest, 
+                    RequestBody.fromInputStream(file.getInputStream(), file.getSize()));
+
+            // Construct the public URL
+            return String.format("https://%s.s3.%s.amazonaws.com/%s", bucketName, region, filename);
+            
+        } catch (S3Exception e) {
+            throw new IOException("Failed to upload file to S3", e);
+        }
     }
 
     public byte[] getFile(String filename) throws IOException {
-        Path path = Paths.get(uploadDir, filename);
-        if (Files.exists(path)) {
-            return Files.readAllBytes(path);
-        }
+        // We do not need this for public S3 buckets if the client accesses the URL directly.
+        // Returning null for now. If private bucket access is needed, we would implement GetObjectRequest.
         return null;
     }
 }

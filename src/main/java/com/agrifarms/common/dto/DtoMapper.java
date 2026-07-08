@@ -165,6 +165,11 @@ public class DtoMapper {
         } else if (dto.getBrandModel() != null) {
             entity.setBrandModel(dto.getBrandModel());
         }
+        if (entity.getBrandModel() != null) {
+            entity.setName(entity.getBrandModel());
+        } else {
+            entity.setName(entity.getCategory() != null ? entity.getCategory() : "Equipment");
+        }
         return entity;
     }
 
@@ -261,7 +266,7 @@ public class DtoMapper {
         String ownerName = getOwnerNameSafely(entity.getOwnerId());
         String ownerProfileImageUrl = userService.getOwnerProfileImageWithCache(entity.getOwnerId());
 
-        return new ServiceOfferingDTO(
+        ServiceOfferingDTO dto = new ServiceOfferingDTO(
                 entity.getServiceId(),
                 entity.getOwnerId(),
                 ownerName,
@@ -287,6 +292,8 @@ public class DtoMapper {
                 entity.getLongitude(),
                 ownerProfileImageUrl
         );
+        dto.setOperatorPrice(entity.getOperatorPrice());
+        return dto;
     }
 
     public ServiceOffering toServiceOfferingEntity(ServiceOfferingDTO dto) {
@@ -297,11 +304,13 @@ public class DtoMapper {
         entity.setServiceId(dto.getServiceId());
         entity.setOwnerId(dto.getOwnerId());
         entity.setServiceType(dto.getServiceType());
+        entity.setServiceName(dto.getServiceType() != null ? dto.getServiceType() : (dto.getBusinessName() != null ? dto.getBusinessName() : "Service"));
         entity.setBusinessName(dto.getBusinessName());
         entity.setDescription(dto.getDescription());
         entity.setEquipmentUsed(dto.getEquipmentUsed());
         entity.setPriceRate(dto.getPriceRate());
         entity.setOperatorIncluded(dto.getOperatorIncluded());
+        entity.setOperatorPrice(dto.getOperatorPrice());
         entity.setLocation(dto.getLocation());
         entity.setIsAvailable(dto.getIsAvailable());
         entity.setRating(dto.getRating());
@@ -338,7 +347,8 @@ public class DtoMapper {
                 entity.getLocationLat(),
                 entity.getLocationLng(),
                 entity.getAddressText(),
-                entity.getNotes());
+                entity.getNotes(),
+                false);
         dto.setCancelledBy(entity.getCancelledBy());
         dto.setCancellationReason(entity.getCancellationReason());
         return dto;
@@ -473,6 +483,35 @@ public class DtoMapper {
         entity.setGender(dto.getGender());
         entity.setCount(dto.getCount());
         entity.setTaskName(dto.getTaskName());
+        return entity;
+    }
+    public com.agrifarms.common.dto.ReviewDTO toReviewDTO(com.agrifarms.common.entity.Review entity) {
+        if (entity == null) {
+            return null;
+        }
+        return new com.agrifarms.common.dto.ReviewDTO(
+                entity.getId(),
+                entity.getBookingId(),
+                entity.getAssetId(),
+                entity.getReviewerId(),
+                entity.getRating(),
+                entity.getComment(),
+                entity.getCreatedAt()
+        );
+    }
+
+    public com.agrifarms.common.entity.Review toReviewEntity(com.agrifarms.common.dto.ReviewDTO dto) {
+        if (dto == null) {
+            return null;
+        }
+        com.agrifarms.common.entity.Review entity = new com.agrifarms.common.entity.Review();
+        entity.setId(dto.getId());
+        entity.setBookingId(dto.getBookingId());
+        entity.setAssetId(dto.getAssetId());
+        entity.setReviewerId(dto.getReviewerId());
+        entity.setRating(dto.getRating());
+        entity.setComment(dto.getComment());
+        entity.setCreatedAt(dto.getCreatedAt());
         return entity;
     }
 }

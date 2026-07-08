@@ -12,11 +12,11 @@ import java.util.List;
 public class WorkerGroup {
 
     @Id
-    @Column(name = "group_id")
+    @Column(name = "id")
     @UuidGenerator
     private String groupId;
 
-    @Column(name = "owner_id", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private String ownerId;
 
     @Column(name = "group_name")

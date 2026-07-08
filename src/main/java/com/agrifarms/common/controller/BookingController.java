@@ -17,6 +17,14 @@ import com.agrifarms.common.dto.BookingDTO;
 import com.agrifarms.common.dto.DtoMapper;
 import com.agrifarms.common.entity.Booking;
 import com.agrifarms.common.service.BookingService;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import com.agrifarms.common.service.ReviewService;
+>>>>>>> fa3223a6cff1b8d4049d144fb586cc220be39424
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -25,10 +33,12 @@ public class BookingController {
 
     private final BookingService bookingService;
     private final DtoMapper dtoMapper;
+    private final ReviewService reviewService;
 
-    public BookingController(BookingService bookingService, DtoMapper dtoMapper) {
+    public BookingController(BookingService bookingService, DtoMapper dtoMapper, ReviewService reviewService) {
         this.bookingService = bookingService;
         this.dtoMapper = dtoMapper;
+        this.reviewService = reviewService;
     }
 
     @PostMapping
@@ -48,7 +58,11 @@ public class BookingController {
     @GetMapping("/farmer/{farmerId}")
     public List<BookingDTO> getFarmerBookings(@PathVariable("farmerId") String farmerId) {
         return bookingService.getBookingsByFarmer(farmerId).stream()
-                .map(dtoMapper::toBookingDTO)
+                .map(b -> {
+                    BookingDTO dto = dtoMapper.toBookingDTO(b);
+                    dto.setIsReviewed(reviewService.hasReviewForBooking(dto.getBookingId()));
+                    return dto;
+                })
                 .collect(Collectors.toList());
     }
 

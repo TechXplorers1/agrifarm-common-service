@@ -49,6 +49,10 @@ public class UserService {
         return userRepository.findById(userId);
     }
 
+    public Optional<User> getUserByKeycloakId(String keycloakId) {
+        return userRepository.findByKeycloakId(keycloakId);
+    }
+
     @Cacheable(value = "ownerNames", key = "#ownerId")
     public String getOwnerNameWithCache(String ownerId) {
         if (ownerId == null || ownerId.trim().isEmpty()) {
@@ -69,6 +73,9 @@ public class UserService {
                 .orElse(null);
     }
 
+    private static final java.util.Set<String> ALLOWED_ROLES =
+        java.util.Set.of("ADMIN", "FARMER", "OWNER");
+
     public User createUser(User user) {
         if (user.getPhoneNumber() != null) {
             String cleanedPhone = user.getPhoneNumber().replaceAll("\\D", "");
@@ -83,10 +90,22 @@ public class UserService {
         if (user.getEmail() != null && userRepository.existsByEmail(user.getEmail())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already registered");
         }
+
+        // Enforce role whitelist — only ADMIN, FARMER, OWNER allowed
+        if (user.getRole() != null) {
+            String upper = user.getRole().trim().toUpperCase();
+            if (!ALLOWED_ROLES.contains(upper)) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Invalid role '" + user.getRole() + "'. Allowed roles: ADMIN, FARMER, OWNER");
+            }
+            user.setRole(upper); // normalise to uppercase
+        }
+
         User savedUser = userRepository.save(user);
         notificationService.notifyAdmin("New user registered", savedUser.getFullName() + " joined as a " + savedUser.getRole(), "success", savedUser.getUserId());
         return savedUser;
     }
+
 
     public java.util.List<User> getAllUsers() {
         return userRepository.findAll();

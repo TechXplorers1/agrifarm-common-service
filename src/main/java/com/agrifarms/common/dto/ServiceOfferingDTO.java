@@ -28,6 +28,7 @@ public class ServiceOfferingDTO {
     private BigDecimal latitude;
     private BigDecimal longitude;
     private String ownerProfileImageUrl;
+    private BigDecimal operatorPrice;
 
     public ServiceOfferingDTO() {}
 
@@ -131,4 +132,7 @@ public class ServiceOfferingDTO {
 
     public String getOwnerProfileImageUrl() { return ownerProfileImageUrl; }
     public void setOwnerProfileImageUrl(String ownerProfileImageUrl) { this.ownerProfileImageUrl = ownerProfileImageUrl; }
+
+    public BigDecimal getOperatorPrice() { return operatorPrice; }
+    public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
 }

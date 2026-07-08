@@ -1,0 +1,47 @@
+name: Bootstrap
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  TF_VAR_project: ${{ vars.PROJECT }}
+  TF_VAR_env: ${{ vars.ENVIRONMENT }}
+  TF_VAR_region: ${{ vars.AWS_REGION }}
+  TF_VAR_state_bucket_name: ${{ vars.AGRI_PROD_STATE_BUCKET_NAME }}
+  TF_VAR_domain_name: ${{ vars.DOMAIN_NAME }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        working-directory: infra/bootstrap
+        run: terraform init
+
+      - name: Terraform Validate
+        working-directory: infra/bootstrap
+        run: terraform validate
+
+      - name: Terraform Plan
+        working-directory: infra/bootstrap
+        run: terraform plan
+
+      - name: Terraform Apply
+        working-directory: infra/bootstrap
+        run: terraform apply -auto-approve

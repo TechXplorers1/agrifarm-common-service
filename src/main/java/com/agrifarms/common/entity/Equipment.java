@@ -11,12 +11,15 @@ import java.time.LocalDateTime;
 public class Equipment {
 
     @Id
-    @Column(name = "equipment_id")
+    @Column(name = "id")
     @UuidGenerator
     private String equipmentId;
 
-    @Column(name = "owner_id", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private String ownerId;
+
+    @Column(name = "name", nullable = false)
+    private String name;
 
     private String category; // Tractor, Harvester, etc.
 
@@ -92,6 +95,7 @@ public class Equipment {
         this.ownerId = ownerId;
         this.category = category;
         this.brandModel = brandModel;
+        this.name = brandModel != null ? brandModel : category;
         this.conditionStatus = conditionStatus;
         this.pricePerHour = pricePerHour;
         this.operatorAvailable = operatorAvailable;
@@ -261,4 +265,6 @@ public class Equipment {
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
 
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 }

@@ -20,13 +20,14 @@ public class BookingDTO {
     private String notes;
     private String cancelledBy;
     private String cancellationReason;
+    private Boolean isReviewed;
 
     public BookingDTO() {}
 
     public BookingDTO(String bookingId, String farmerId, String providerId, String assetId, String assetType,
                       LocalDateTime bookingDate, LocalDateTime scheduledStartTime, LocalDateTime scheduledEndTime,
                       String status, BigDecimal totalAmount, BigDecimal locationLat, BigDecimal locationLng,
-                      String addressText, String notes) {
+                      String addressText, String notes, Boolean isReviewed) {
         this.bookingId = bookingId;
         this.farmerId = farmerId;
         this.providerId = providerId;
@@ -41,7 +42,11 @@ public class BookingDTO {
         this.locationLng = locationLng;
         this.addressText = addressText;
         this.notes = notes;
+        this.isReviewed = isReviewed;
     }
+
+    public Boolean getIsReviewed() { return isReviewed; }
+    public void setIsReviewed(Boolean isReviewed) { this.isReviewed = isReviewed; }
 
     public String getBookingId() { return bookingId; }
     public void setBookingId(String bookingId) { this.bookingId = bookingId; }

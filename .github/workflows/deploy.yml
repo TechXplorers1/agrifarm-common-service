@@ -1,0 +1,52 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  TF_VAR_project: ${{ vars.PROJECT }}
+  TF_VAR_state_bucket_name: ${{ vars.AGRI_PROD_STATE_BUCKET_NAME }}
+  TF_VAR_domain_name: ${{ vars.DOMAIN_NAME }}
+  TF_VAR_ecr_repository_name: ${{ vars.ECR_REPOSITORY }}
+  TF_VAR_region: ${{ vars.AWS_REGION }}
+  TF_VAR_env: ${{ vars.ENVIRONMENT }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Set Image Tag
+        run: |
+          echo "IMAGE_TAG=${GITHUB_SHA::8}" >> $GITHUB_ENV
+
+      - name: Terraform Init
+        working-directory: infra/deploy
+        run: terraform init
+
+      - name: Terraform Validate
+        working-directory: infra/deploy
+        run: terraform validate
+
+      - name: Terraform Plan
+        working-directory: infra/deploy
+        run: terraform plan
+
+      - name: Terraform Apply
+        working-directory: infra/deploy
+        run: terraform apply -auto-approve

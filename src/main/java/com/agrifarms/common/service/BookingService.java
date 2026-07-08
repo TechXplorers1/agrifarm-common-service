@@ -154,8 +154,15 @@ public class BookingService {
         Optional<User> farmerOpt = userService.getUserById(booking.getFarmerId());
         Optional<User> providerOpt = userService.getUserById(booking.getProviderId());
 
+        boolean isCancelledByFarmer = false;
         if ("CANCELLED".equalsIgnoreCase(status)) {
-            // If cancelled, notify the provider (since it was initiated by the farmer)
+            isCancelledByFarmer = (cancelledBy == null || cancelledBy.toLowerCase().contains("farmer"));
+        } else if ("REJECTED".equalsIgnoreCase(status)) {
+            isCancelledByFarmer = (cancelledBy != null && cancelledBy.toLowerCase().contains("farmer"));
+        }
+
+        if (isCancelledByFarmer) {
+            // If cancelled by farmer, notify the provider
             if (providerOpt.isPresent()) {
                 String fcmToken = providerOpt.get().getFcmToken();
                 String assetName = getAssetName(booking.getAssetType(), booking.getAssetId());

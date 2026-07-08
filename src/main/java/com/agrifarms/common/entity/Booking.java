@@ -10,11 +10,11 @@ import java.time.LocalDateTime;
 @Table(name = "bookings")
 public class Booking {
     @Id
-    @Column(name = "booking_id")
+    @Column(name = "id")
     @UuidGenerator
     private String bookingId;
 
-    @Column(name = "farmer_id", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private String farmerId;
 
     @Column(name = "provider_id", nullable = false)
