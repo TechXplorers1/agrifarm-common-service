@@ -65,7 +65,7 @@ keycloak:
   auth-server-url: ${KEYCLOAK_AUTH_SERVER_URL:https://auth-prod.agrifarms.in}
   realm: ${KEYCLOAK_REALM:agrifarms}
   client-id: ${KEYCLOAK_CLIENT_ID:agrifarms-mobile}
-  admin-realm: ${KEYCLOAK_ADMIN_REALM:agrifarms}
+  admin-realm: ${KEYCLOAK_ADMIN_REALM:master}
   admin-client-id: ${KEYCLOAK_ADMIN_CLIENT_ID:admin-cli}
   admin-client-secret: ${KEYCLOAK_ADMIN_CLIENT_SECRET:}
   admin-username: ${KEYCLOAK_ADMIN_USERNAME:admin}
