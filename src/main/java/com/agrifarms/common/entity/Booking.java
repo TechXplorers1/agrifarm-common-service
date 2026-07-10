@@ -46,9 +46,10 @@ public class Booking {
     @Column(name = "location_lng")
     private BigDecimal locationLng;
 
-    @Column(name = "address_text")
+    @Column(name = "address_text", columnDefinition = "TEXT")
     private String addressText;
 
+    @Column(name = "notes", columnDefinition = "TEXT")
     private String notes;
 
     @Column(name = "cancelled_by")
