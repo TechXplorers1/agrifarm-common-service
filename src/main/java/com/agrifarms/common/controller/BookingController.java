@@ -17,14 +17,11 @@ import com.agrifarms.common.dto.BookingDTO;
 import com.agrifarms.common.dto.DtoMapper;
 import com.agrifarms.common.entity.Booking;
 import com.agrifarms.common.service.BookingService;
-<<<<<<< HEAD
-=======
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import com.agrifarms.common.service.ReviewService;
->>>>>>> fa3223a6cff1b8d4049d144fb586cc220be39424
 
 @RestController
 @RequestMapping("/api/bookings")

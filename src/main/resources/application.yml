@@ -10,7 +10,7 @@ management:
     health:
       probes:
         enabled: true
-      show-details: never  
+      show-details: never
 
 spring:
   profiles:
@@ -64,7 +64,7 @@ spring:
 keycloak:
   auth-server-url: ${KEYCLOAK_AUTH_SERVER_URL:https://auth-prod.agrifarms.in}
   realm: ${KEYCLOAK_REALM:agrifarms}
-  client-id: ${KEYCLOAK_CLIENT_ID:agrifarms-mobile-client}
+  client-id: ${KEYCLOAK_CLIENT_ID:agrifarms-mobile}
   admin-realm: ${KEYCLOAK_ADMIN_REALM:agrifarms}
   admin-client-id: ${KEYCLOAK_ADMIN_CLIENT_ID:admin-cli}
   admin-client-secret: ${KEYCLOAK_ADMIN_CLIENT_SECRET:}
@@ -82,4 +82,3 @@ aws:
 msg91:
   authkey: ${MSG91_AUTHKEY:514970Tegopp45hc76a43b61cP1}
   template-id: ${MSG91_TEMPLATE_ID:your_default_template_id_here}
-
