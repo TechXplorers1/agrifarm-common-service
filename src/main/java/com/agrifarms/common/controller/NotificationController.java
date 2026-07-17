@@ -46,4 +46,21 @@ public class NotificationController {
         UserNotification notification = notificationService.triggerDemo(userId, title, message, type, relatedId);
         return ResponseEntity.ok(notification);
     }
+
+    @PostMapping("/support")
+    public ResponseEntity<java.util.Map<String, String>> submitSupportRequest(@RequestBody java.util.Map<String, String> body) {
+        String name = body.get("name");
+        String email = body.get("email");
+        String phone = body.get("phone");
+        String message = body.get("message");
+        
+        String title = "User Support Request";
+        String notificationMessage = "User (Name: " + name + ", Email: " + email + ", Phone: " + phone + ") submitted: " + message;
+        
+        notificationService.notifyAdmin(title, notificationMessage, "destructive", null);
+        
+        java.util.Map<String, String> response = new java.util.HashMap<>();
+        response.put("status", "success");
+        return ResponseEntity.ok(response);
+    }
 }

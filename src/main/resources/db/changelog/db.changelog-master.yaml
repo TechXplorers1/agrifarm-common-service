@@ -23,3 +23,7 @@ databaseChangeLog:
       file: db/changelog/db.changelog-reviews.sql
   - include:
       file: db/changelog/db.changelog-add-service-operator-price.sql
+  - include:
+      file: db/changelog/db.changelog-fix-booking-fields.sql
+  - include:
+      file: db/changelog/db.changelog-add-equipment-vehicle-number.sql

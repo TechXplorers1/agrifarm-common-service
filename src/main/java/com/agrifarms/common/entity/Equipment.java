@@ -36,6 +36,9 @@ public class Equipment {
     @Column(name = "description", length = 1000)
     private String description;
 
+    @Column(name = "vehicle_number")
+    private String vehicleNumber;
+
     @Column(name = "condition_status")
     private String conditionStatus;
 
@@ -267,4 +270,7 @@ public class Equipment {
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+
+    public String getVehicleNumber() { return vehicleNumber; }
+    public void setVehicleNumber(String vehicleNumber) { this.vehicleNumber = vehicleNumber; }
 }

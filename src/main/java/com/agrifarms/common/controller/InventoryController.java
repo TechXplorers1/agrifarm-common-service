@@ -91,6 +91,7 @@ public class InventoryController {
         if (equipmentDTO.getBrand() != null) existingEquipment.setBrand(equipmentDTO.getBrand());
         if (equipmentDTO.getModel() != null) existingEquipment.setModel(equipmentDTO.getModel());
         if (equipmentDTO.getDescription() != null) existingEquipment.setDescription(equipmentDTO.getDescription());
+        if (equipmentDTO.getVehicleNumber() != null) existingEquipment.setVehicleNumber(equipmentDTO.getVehicleNumber());
         if (equipmentDTO.getOwnerBusinessName() != null) existingEquipment.setOwnerBusinessName(equipmentDTO.getOwnerBusinessName());
         
         if (equipmentDTO.getBrand() != null && equipmentDTO.getModel() != null) {

@@ -31,6 +31,7 @@ public class EquipmentDTO {
     private String brand;
     private String model;
     private String description;
+    private String vehicleNumber;
 
     public EquipmentDTO() {}
 
@@ -147,4 +148,7 @@ public class EquipmentDTO {
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+
+    public String getVehicleNumber() { return vehicleNumber; }
+    public void setVehicleNumber(String vehicleNumber) { this.vehicleNumber = vehicleNumber; }
 }
