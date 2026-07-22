@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 
-@Service
+// Keycloak disabled - Removed @Service
 public class KeycloakService {
 
     @Value("${keycloak.auth-server-url}")

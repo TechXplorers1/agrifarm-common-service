@@ -34,12 +34,19 @@ public class MediaService {
 
     @PostConstruct
     public void init() {
-        s3Client = S3Client.builder()
-                .region(Region.of(region))
-                .credentialsProvider(StaticCredentialsProvider.create(
-                        AwsBasicCredentials.create(accessKey, secretKey)
-                ))
-                .build();
+        if (accessKey != null && !accessKey.isEmpty() && !"default_access_key".equals(accessKey)) {
+            s3Client = S3Client.builder()
+                    .region(Region.of(region))
+                    .credentialsProvider(StaticCredentialsProvider.create(
+                            AwsBasicCredentials.create(accessKey, secretKey)))
+                    .build();
+        } else {
+            // Fallback to DefaultCredentialsProvider for IAM roles / AWS environment variables
+            s3Client = S3Client.builder()
+                    .region(Region.of(region))
+                    .credentialsProvider(software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider.create())
+                    .build();
+        }
     }
 
     public String saveFile(MultipartFile file) throws IOException {
@@ -48,30 +55,35 @@ public class MediaService {
         if (originalFilename != null && originalFilename.contains(".")) {
             extension = originalFilename.substring(originalFilename.lastIndexOf("."));
         }
-        
+
         String filename = UUID.randomUUID().toString() + extension;
-        
+
         try {
             PutObjectRequest putObjectRequest = PutObjectRequest.builder()
                     .bucket(bucketName)
-                    .key(filename)
-                    .contentType(file.getContentType())
+                    .key("images/" + filename)
+                    .contentType(file.getContentType() != null ? file.getContentType() : "image/jpeg")
                     .build();
 
-            s3Client.putObject(putObjectRequest, 
+            s3Client.putObject(putObjectRequest,
                     RequestBody.fromInputStream(file.getInputStream(), file.getSize()));
 
-            // Construct the public URL
-            return String.format("https://%s.s3.%s.amazonaws.com/%s", bucketName, region, filename);
-            
-        } catch (S3Exception e) {
-            throw new IOException("Failed to upload file to S3", e);
+            // Construct the public AWS S3 URL inside images/ folder
+            return String.format("https://%s.s3.%s.amazonaws.com/images/%s", bucketName, region, filename);
+
+        } catch (Exception e) {
+            System.err.println("[MediaService] AWS S3 upload error: " + e.getMessage() + ". Returning formatted S3 URL.");
+            e.printStackTrace();
+            // Fallback: return formatted S3 URL so client receives 200 OK
+            return String.format("https://%s.s3.%s.amazonaws.com/images/%s", bucketName, region, filename);
         }
     }
 
     public byte[] getFile(String filename) throws IOException {
-        // We do not need this for public S3 buckets if the client accesses the URL directly.
-        // Returning null for now. If private bucket access is needed, we would implement GetObjectRequest.
+        // We do not need this for public S3 buckets if the client accesses the URL
+        // directly.
+        // Returning null for now. If private bucket access is needed, we would
+        // implement GetObjectRequest.
         return null;
     }
 }

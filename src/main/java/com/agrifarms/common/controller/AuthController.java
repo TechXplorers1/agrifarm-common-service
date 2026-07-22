@@ -6,9 +6,8 @@ import com.agrifarms.common.service.KeycloakService;
 import com.agrifarms.common.service.OtpService;
 import com.agrifarms.common.service.UserService;
 import com.agrifarms.common.service.Msg91Service;
+import com.agrifarms.common.config.JwtUtil;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.oauth2.jwt.Jwt;
-import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -22,16 +21,17 @@ public class AuthController {
 
     private final OtpService otpService;
     private final UserService userService;
-    private final KeycloakService keycloakService;
     private final UserRepository userRepository;
     private final Msg91Service msg91Service;
+    private final JwtUtil jwtUtil;
 
-    public AuthController(OtpService otpService, UserService userService, KeycloakService keycloakService, UserRepository userRepository, Msg91Service msg91Service) {
+    public AuthController(OtpService otpService, UserService userService, UserRepository userRepository,
+            Msg91Service msg91Service, JwtUtil jwtUtil) {
         this.otpService = otpService;
         this.userService = userService;
-        this.keycloakService = keycloakService;
         this.userRepository = userRepository;
         this.msg91Service = msg91Service;
+        this.jwtUtil = jwtUtil;
     }
 
     private static class FirebaseTokenPayload {
@@ -75,7 +75,8 @@ public class AuthController {
         String password = request.get("password");
         String role = request.get("role");
 
-        if (email == null || email.trim().isEmpty() || password == null || password.trim().isEmpty() || role == null || role.trim().isEmpty()) {
+        if (email == null || email.trim().isEmpty() || password == null || password.trim().isEmpty() || role == null
+                || role.trim().isEmpty()) {
             return ResponseEntity.badRequest().body(Map.of("message", "Email, password, and role are all required"));
         }
 
@@ -139,8 +140,7 @@ public class AuthController {
                 return ResponseEntity.ok(Map.of(
                         "status", "PENDING",
                         "email", email,
-                        "message", "Verification pending. A new OTP has been sent."
-                ));
+                        "message", "Verification pending. A new OTP has been sent."));
             } catch (Exception e) {
                 return ResponseEntity.status(500).body(Map.of("message", "Failed to send OTP: " + e.getMessage()));
             }
@@ -153,8 +153,7 @@ public class AuthController {
                 "email", user.getEmail(),
                 "fullName", user.getFullName() != null ? user.getFullName() : "New User",
                 "phoneNumber", user.getPhoneNumber() != null ? user.getPhoneNumber() : "",
-                "role", user.getRole() != null ? user.getRole() : ""
-        ));
+                "role", user.getRole() != null ? user.getRole() : ""));
     }
 
     /**
@@ -193,7 +192,8 @@ public class AuthController {
         if (isSuccess) {
             return ResponseEntity.ok(Map.of("message", "OTP verified and user status activated successfully"));
         } else {
-            return ResponseEntity.badRequest().body(Map.of("message", "Invalid, expired, or already used OTP code entered"));
+            return ResponseEntity.badRequest()
+                    .body(Map.of("message", "Invalid, expired, or already used OTP code entered"));
         }
     }
 
@@ -266,12 +266,18 @@ public class AuthController {
             user = new User();
             user.setPhoneNumber(cleanedPhone);
             user.setRole(normalizedRole);
-            user.setFullName((fullName != null && !fullName.trim().isEmpty()) ? fullName.trim() : "User " + cleanedPhone);
+            user.setFullName(
+                    (fullName != null && !fullName.trim().isEmpty()) ? fullName.trim() : "User " + cleanedPhone);
             user.setStatus("Active");
             user = userRepository.save(user);
         }
 
+        String accessToken = jwtUtil.generateToken(user);
+
         Map<String, Object> response = new HashMap<>();
+        response.put("access_token", accessToken);
+        response.put("token_type", "Bearer");
+        response.put("expires_in", 2592000); // 30 days in seconds
         response.put("userId", user.getUserId());
         response.put("fullName", user.getFullName() != null ? user.getFullName() : "");
         response.put("phoneNumber", user.getPhoneNumber());
@@ -305,7 +311,8 @@ public class AuthController {
             String name = (fullName != null && !fullName.trim().isEmpty()) ? fullName : payload.getName();
 
             if (phoneNumber == null || phoneNumber.trim().isEmpty()) {
-                return ResponseEntity.badRequest().body(Map.of("message", "Verified phone number not found in Firebase token"));
+                return ResponseEntity.badRequest()
+                        .body(Map.of("message", "Verified phone number not found in Firebase token"));
             }
 
             // Clean phone number to match the 10-digit DB format
@@ -319,26 +326,12 @@ public class AuthController {
                 role = "Farmer";
             }
 
-            // 2. Hash Firebase UID to use as Keycloak password
-            String keycloakPassword = generateKeycloakPassword(uid);
-
-            // 3. Sync with Keycloak
-            String keycloakUserId = keycloakService.findUserIdByUsername(cleanedPhone);
-            if (keycloakUserId == null) {
-                // User doesn't exist in Keycloak. Register them!
-                keycloakUserId = keycloakService.createUser(cleanedPhone, keycloakPassword, cleanedPhone, name, role);
-                if (keycloakUserId == null) {
-                    return ResponseEntity.status(500).body(Map.of("message", "Failed to register user in Keycloak"));
-                }
-            }
-
-            // 4. Sync with Local DB
+            // 2. Sync with Local DB
             Optional<User> localUserOpt = userRepository.findByPhoneNumber(cleanedPhone);
             User localUser;
             if (localUserOpt.isEmpty()) {
                 localUser = new User();
                 localUser.setPhoneNumber(cleanedPhone);
-                localUser.setKeycloakId(keycloakUserId);
                 localUser.setEmail(email);
                 localUser.setFullName(name != null && !name.trim().isEmpty() ? name : "Farmer " + cleanedPhone);
                 localUser.setRole(role);
@@ -347,10 +340,6 @@ public class AuthController {
             } else {
                 localUser = localUserOpt.get();
                 boolean modified = false;
-                if (localUser.getKeycloakId() == null) {
-                    localUser.setKeycloakId(keycloakUserId);
-                    modified = true;
-                }
                 if (email != null && !email.equals(localUser.getEmail())) {
                     localUser.setEmail(email);
                     modified = true;
@@ -364,17 +353,13 @@ public class AuthController {
                 }
             }
 
-            // 5. Authenticate against Keycloak via Direct Access Grant
-            Map<String, Object> tokens = keycloakService.authenticateUser(cleanedPhone, keycloakPassword);
-            if (tokens == null) {
-                return ResponseEntity.status(401).body(Map.of("message", "Keycloak Direct Grant authentication failed"));
-            }
+            // 3. Issue local JWT access token
+            String accessToken = jwtUtil.generateToken(localUser);
 
-            // 6. Return response containing token credentials & user profile
             Map<String, Object> response = new HashMap<>();
-            response.put("access_token", tokens.get("access_token"));
-            response.put("refresh_token", tokens.get("refresh_token"));
-            response.put("expires_in", tokens.get("expires_in"));
+            response.put("access_token", accessToken);
+            response.put("token_type", "Bearer");
+            response.put("expires_in", 2592000);
             response.put("userId", localUser.getUserId());
             response.put("fullName", localUser.getFullName());
             response.put("phoneNumber", localUser.getPhoneNumber());
@@ -390,8 +375,7 @@ public class AuthController {
     }
 
     // ── Allowed roles ─────────────────────────────────────────────────────────
-    private static final java.util.Set<String> ALLOWED_ROLES
-            = java.util.Set.of("ADMIN", "FARMER", "OWNER");
+    private static final java.util.Set<String> ALLOWED_ROLES = java.util.Set.of("ADMIN", "FARMER", "OWNER");
 
     private String validateRole(String role) {
         if (role == null || role.trim().isEmpty()) {
@@ -453,30 +437,19 @@ public class AuthController {
             user = new User();
             user.setPhoneNumber(cleanedPhone);
             user.setRole(normalizedRole);
-            user.setFullName((fullName != null && !fullName.trim().isEmpty()) ? fullName.trim() : "User " + cleanedPhone);
+            user.setFullName(
+                    (fullName != null && !fullName.trim().isEmpty()) ? fullName.trim() : "User " + cleanedPhone);
             user.setStatus("Active");
             user = userRepository.save(user);
         }
 
-        // --- Keycloak Integration ---
-        String keycloakPassword = generateKeycloakPassword(cleanedPhone);
-        String keycloakUserId = keycloakService.findUserIdByUsername(cleanedPhone);
-        if (keycloakUserId == null) {
-            keycloakUserId = keycloakService.createUser(cleanedPhone, keycloakPassword, cleanedPhone, user.getFullName(), user.getRole());
-        }
-        if (keycloakUserId != null && user.getKeycloakId() == null) {
-            user.setKeycloakId(keycloakUserId);
-            user = userRepository.save(user);
-        }
-
-        Map<String, Object> tokens = keycloakService.authenticateUser(cleanedPhone, keycloakPassword);
+        // --- Local JWT Token Generation ---
+        String accessToken = jwtUtil.generateToken(user);
 
         Map<String, Object> response = new HashMap<>();
-        if (tokens != null) {
-            response.put("access_token", tokens.get("access_token"));
-            response.put("refresh_token", tokens.get("refresh_token"));
-            response.put("expires_in", tokens.get("expires_in"));
-        }
+        response.put("access_token", accessToken);
+        response.put("token_type", "Bearer");
+        response.put("expires_in", 2592000); // 30 days in seconds
         response.put("userId", user.getUserId());
         response.put("fullName", user.getFullName() != null ? user.getFullName() : "");
         response.put("phoneNumber", user.getPhoneNumber());
@@ -487,46 +460,16 @@ public class AuthController {
     }
 
     private FirebaseTokenPayload verifyFirebaseToken(String idToken) throws Exception {
-        // Try Firebase Admin SDK first if initialized
         if (!com.google.firebase.FirebaseApp.getApps().isEmpty()) {
-            try {
-                com.google.firebase.auth.FirebaseToken decodedToken
-                        = com.google.firebase.auth.FirebaseAuth.getInstance().verifyIdToken(idToken);
-                return new FirebaseTokenPayload(
-                        decodedToken.getUid(),
-                        (String) decodedToken.getClaims().get("phone_number"),
-                        decodedToken.getEmail(),
-                        decodedToken.getName()
-                );
-            } catch (Exception e) {
-                System.err.println("Firebase Admin SDK verification failed, using fallback Nimbus verifier: " + e.getMessage());
-            }
+            com.google.firebase.auth.FirebaseToken decodedToken = com.google.firebase.auth.FirebaseAuth.getInstance()
+                    .verifyIdToken(idToken);
+            return new FirebaseTokenPayload(
+                    decodedToken.getUid(),
+                    (String) decodedToken.getClaims().get("phone_number"),
+                    decodedToken.getEmail(),
+                    decodedToken.getName());
         }
-
-        // Fallback: decode & verify signature using standard Nimbus JWT libraries
-        try {
-            NimbusJwtDecoder jwtDecoder = NimbusJwtDecoder.withJwkSetUri("https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com").build();
-            Jwt jwt = jwtDecoder.decode(idToken);
-
-            String projectId = "agrifarms-174f9"; // from google-services.json
-            String expectedIssuer = "https://securetoken.google.com/" + projectId;
-
-            if (!expectedIssuer.equals(jwt.getIssuer().toString())) {
-                throw new Exception("Invalid token issuer: " + jwt.getIssuer());
-            }
-            if (!jwt.getAudience().contains(projectId)) {
-                throw new Exception("Invalid token audience (project mismatch)");
-            }
-
-            String uid = jwt.getSubject();
-            String phone = jwt.getClaimAsString("phone_number");
-            String email = jwt.getClaimAsString("email");
-            String name = jwt.getClaimAsString("name");
-
-            return new FirebaseTokenPayload(uid, phone, email, name);
-        } catch (Exception e) {
-            throw new Exception("Firebase ID Token verification failed: " + e.getMessage(), e);
-        }
+        throw new Exception("Firebase Admin SDK is not initialized.");
     }
 
     private String generateKeycloakPassword(String firebaseUid) {

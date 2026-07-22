@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
 
-@Component
+// Removed @Component as Keycloak UserSyncFilter is replaced by JwtAuthenticationFilter
 public class UserSyncFilter extends OncePerRequestFilter {
 
     private final UserRepository userRepository;

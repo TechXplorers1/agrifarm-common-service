@@ -28,13 +28,15 @@ public class MediaController {
 
             Map<String, String> response = new HashMap<>();
             response.put("url", fileUrl);
-            
+
             // Extract filename from URL for legacy compatibility if needed
             String filename = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
             response.put("filename", filename);
 
             return ResponseEntity.ok(response);
-        } catch (IOException e) {
+        } catch (Exception e) {
+            System.err.println("[MediaController] Error during file upload: " + e.getMessage());
+            e.printStackTrace();
             return ResponseEntity.internalServerError().build();
         }
     }
