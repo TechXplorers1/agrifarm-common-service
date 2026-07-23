@@ -3,13 +3,10 @@ package com.agrifarms.common.service;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
-import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
-import software.amazon.awssdk.services.s3.model.S3Exception;
 
 import jakarta.annotation.PostConstruct;
 import java.io.IOException;
@@ -23,12 +20,6 @@ public class MediaService {
 
     @Value("${aws.s3.region}")
     private String region;
-
-    @Value("${aws.credentials.access-key}")
-    private String accessKey;
-
-    @Value("${aws.credentials.secret-key}")
-    private String secretKey;
 
     private S3Client s3Client;
 
