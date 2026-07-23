@@ -34,19 +34,9 @@ public class MediaService {
 
     @PostConstruct
     public void init() {
-        if (accessKey != null && !accessKey.isEmpty() && !"default_access_key".equals(accessKey)) {
-            s3Client = S3Client.builder()
-                    .region(Region.of(region))
-                    .credentialsProvider(StaticCredentialsProvider.create(
-                            AwsBasicCredentials.create(accessKey, secretKey)))
-                    .build();
-        } else {
-            // Fallback to DefaultCredentialsProvider for IAM roles / AWS environment variables
-            s3Client = S3Client.builder()
-                    .region(Region.of(region))
-                    .credentialsProvider(software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider.create())
-                    .build();
-        }
+        s3Client = S3Client.builder()
+            .region(Region.of(region))
+            .build();
     }
 
     public String saveFile(MultipartFile file) throws IOException {
