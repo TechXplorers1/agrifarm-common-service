@@ -64,9 +64,6 @@ aws:
   s3:
     bucket: ${AWS_S3_BUCKET:agri-app-storage-prod}
     region: ${AWS_REGION:ap-south-2}
-  credentials:
-    access-key: ${AWS_ACCESS_KEY_ID:default_access_key}
-    secret-key: ${AWS_SECRET_ACCESS_KEY:default_secret_key}
 
 msg91:
   authkey: ${MSG91_AUTHKEY:514970Tegopp45hc76a43b61cP1}
