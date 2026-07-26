@@ -114,6 +114,8 @@ CREATE TABLE IF NOT EXISTS bookings (
     user_id VARCHAR(50) NOT NULL,
     asset_id VARCHAR(50) NOT NULL,
     asset_type VARCHAR(50) NOT NULL,
+    notes VARCHAR(50) NOT NULL,
+    address_text VARCHAR(50) NOT NULL,
     booking_date DATE NOT NULL,
     status VARCHAR(50) DEFAULT 'PENDING',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
