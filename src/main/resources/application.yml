@@ -66,5 +66,5 @@ aws:
     region: ${AWS_REGION:ap-south-2}
 
 msg91:
-  authkey: ${MSG91_AUTHKEY:514970Tegopp45hc76a43b61cP1}
-  template-id: ${MSG91_TEMPLATE_ID:your_default_template_id_here}
+  authkey: ${MSG91_AUTHKEY:551740AvEkrLHO5I6a63711bP1}
+  template-id: ${MSG91_TEMPLATE_ID:6a68ac1cf6d1ea492d0268b3}
