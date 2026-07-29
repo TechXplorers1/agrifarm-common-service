@@ -23,15 +23,18 @@ public class MediaController {
     @PostMapping("/upload")
     public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file) {
         try {
-            // saveFile now returns the full S3 URL
+            // saveFile returns the full S3 URL
             String fileUrl = mediaService.saveFile(file);
 
             Map<String, String> response = new HashMap<>();
-            response.put("url", fileUrl);
 
-            // Extract filename from URL for legacy compatibility if needed
+            // Extract filename from S3 URL
             String filename = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+            String downloadUrl = "/api/media/download/" + filename;
+
+            response.put("url", downloadUrl);
             response.put("filename", filename);
+            response.put("s3Url", fileUrl);
 
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -49,12 +52,20 @@ public class MediaController {
                 return ResponseEntity.notFound().build();
             }
 
-            String extension = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
+            String extension = "";
+            if (filename.contains(".")) {
+                extension = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
+            }
+
             MediaType mediaType = MediaType.IMAGE_JPEG;
-            if (extension.equals("png")) {
+            if ("png".equals(extension)) {
                 mediaType = MediaType.IMAGE_PNG;
-            } else if (extension.equals("gif")) {
+            } else if ("gif".equals(extension)) {
                 mediaType = MediaType.IMAGE_GIF;
+            } else if ("webp".equals(extension)) {
+                mediaType = MediaType.parseMediaType("image/webp");
+            } else if ("svg".equals(extension)) {
+                mediaType = MediaType.parseMediaType("image/svg+xml");
             }
 
             return ResponseEntity.ok()
