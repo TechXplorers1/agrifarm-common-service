@@ -68,15 +68,3 @@ aws:
 msg91:
   authkey: ${MSG91_AUTHKEY:551740AvEkrLHO5I6a63711bP1}
   template-id: ${MSG91_TEMPLATE_ID:6a68ac1cf6d1ea492d0268b3}
-
----
-spring:
-  config:
-    activate:
-      on-profile: prod
-
-  datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://agri-prod-database.cr262csoswwh.ap-south-2.rds.amazonaws.com:5432/agri?currentSchema=%22agri-common%22}
-    username: ${SPRING_DATASOURCE_USERNAME:agri_db_admin_user}
-    password: ${SPRING_DATASOURCE_PASSWORD:zethon123$}
-
