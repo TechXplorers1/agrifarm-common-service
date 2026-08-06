@@ -118,6 +118,7 @@ public class InventoryController {
         if (equipmentDTO.getPincode() != null) existingEquipment.setPincode(equipmentDTO.getPincode());
         if (equipmentDTO.getLatitude() != null) existingEquipment.setLatitude(equipmentDTO.getLatitude());
         if (equipmentDTO.getLongitude() != null) existingEquipment.setLongitude(equipmentDTO.getLongitude());
+        if (equipmentDTO.getAttachedEquipments() != null) existingEquipment.setAttachedEquipments(equipmentDTO.getAttachedEquipments());
 
 
         Equipment savedEquipment = inventoryService.saveEquipment(existingEquipment);

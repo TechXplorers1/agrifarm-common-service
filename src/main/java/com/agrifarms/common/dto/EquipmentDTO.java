@@ -32,6 +32,7 @@ public class EquipmentDTO {
     private String model;
     private String description;
     private String vehicleNumber;
+    private String attachedEquipments;
 
     public EquipmentDTO() {}
 
@@ -63,6 +64,7 @@ public class EquipmentDTO {
         this.latitude = latitude;
         this.longitude = longitude;
         this.ownerProfileImageUrl = ownerProfileImageUrl;
+        this.attachedEquipments = null; // Will be set separately if needed, or update constructor
     }
 
     public String getEquipmentId() { return equipmentId; }
@@ -151,4 +153,7 @@ public class EquipmentDTO {
 
     public String getVehicleNumber() { return vehicleNumber; }
     public void setVehicleNumber(String vehicleNumber) { this.vehicleNumber = vehicleNumber; }
+
+    public String getAttachedEquipments() { return attachedEquipments; }
+    public void setAttachedEquipments(String attachedEquipments) { this.attachedEquipments = attachedEquipments; }
 }

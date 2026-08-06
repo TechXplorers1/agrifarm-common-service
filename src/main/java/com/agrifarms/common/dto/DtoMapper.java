@@ -127,6 +127,7 @@ public class DtoMapper {
         dto.setBrand(entity.getBrand());
         dto.setModel(entity.getModel());
         dto.setDescription(entity.getDescription());
+        dto.setAttachedEquipments(entity.getAttachedEquipments());
         dto.setVehicleNumber(entity.getVehicleNumber());
         return dto;
     }
@@ -162,6 +163,7 @@ public class DtoMapper {
         entity.setModel(dto.getModel());
         entity.setDescription(dto.getDescription());
         entity.setVehicleNumber(dto.getVehicleNumber());
+        entity.setAttachedEquipments(dto.getAttachedEquipments());
         if (dto.getBrand() != null && dto.getModel() != null) {
             entity.setBrandModel(dto.getBrand() + " " + dto.getModel());
         } else if (dto.getBrandModel() != null) {
