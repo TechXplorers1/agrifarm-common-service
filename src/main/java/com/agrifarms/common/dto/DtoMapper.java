@@ -32,6 +32,7 @@ public class DtoMapper {
                 entity.getFullName(),
                 entity.getRole(),
                 entity.getDistrict(),
+                entity.getMandal(),
                 entity.getVillage(),
                 entity.getHouseNo(),
                 entity.getStreet(),
@@ -47,8 +48,7 @@ public class DtoMapper {
                 entity.isNotificationBookingUpdates(),
                 entity.isNotificationPaymentUpdates(),
                 entity.isNotificationCommunityActivity(),
-                entity.isNotificationPromotionalOffers()
-        );
+                entity.isNotificationPromotionalOffers());
     }
 
     public User toUserEntity(UserDTO dto) {
@@ -62,6 +62,7 @@ public class DtoMapper {
         entity.setFullName(dto.getFullName());
         entity.setRole(dto.getRole());
         entity.setDistrict(dto.getDistrict());
+        entity.setMandal(dto.getMandal());
         entity.setVillage(dto.getVillage());
         entity.setHouseNo(dto.getHouseNo());
         entity.setStreet(dto.getStreet());
@@ -121,8 +122,7 @@ public class DtoMapper {
                 entity.getImageUrl(),
                 entity.getLatitude(),
                 entity.getLongitude(),
-                ownerProfileImageUrl
-        );
+                ownerProfileImageUrl);
         dto.setOwnerBusinessName(entity.getOwnerBusinessName());
         dto.setBrand(entity.getBrand());
         dto.setModel(entity.getModel());
@@ -209,8 +209,7 @@ public class DtoMapper {
                 entity.getLatitude(),
                 entity.getLongitude(),
                 ownerProfileImageUrl,
-                entity.getOperatorPrice()
-        );
+                entity.getOperatorPrice());
         dto.setOwnerBusinessName(entity.getOwnerBusinessName());
         dto.setBrand(entity.getBrand());
         dto.setModel(entity.getModel());
@@ -292,8 +291,7 @@ public class DtoMapper {
                 entity.getImageUrl(),
                 entity.getLatitude(),
                 entity.getLongitude(),
-                ownerProfileImageUrl
-        );
+                ownerProfileImageUrl);
         dto.setOperatorPrice(entity.getOperatorPrice());
         return dto;
     }
@@ -306,7 +304,8 @@ public class DtoMapper {
         entity.setServiceId(dto.getServiceId());
         entity.setOwnerId(dto.getOwnerId());
         entity.setServiceType(dto.getServiceType());
-        entity.setServiceName(dto.getServiceType() != null ? dto.getServiceType() : (dto.getBusinessName() != null ? dto.getBusinessName() : "Service"));
+        entity.setServiceName(dto.getServiceType() != null ? dto.getServiceType()
+                : (dto.getBusinessName() != null ? dto.getBusinessName() : "Service"));
         entity.setBusinessName(dto.getBusinessName());
         entity.setDescription(dto.getDescription());
         entity.setEquipmentUsed(dto.getEquipmentUsed());
@@ -414,8 +413,7 @@ public class DtoMapper {
                 ownerProfileImageUrl,
                 null,
                 entity.getLatitude(),
-                entity.getLongitude()
-        );
+                entity.getLongitude());
         if (entity.getRoles() != null) {
             dto.setRoles(entity.getRoles().stream()
                     .map(this::toWorkerGroupRoleDTO)
@@ -487,6 +485,7 @@ public class DtoMapper {
         entity.setTaskName(dto.getTaskName());
         return entity;
     }
+
     public com.agrifarms.common.dto.ReviewDTO toReviewDTO(com.agrifarms.common.entity.Review entity) {
         if (entity == null) {
             return null;
@@ -498,8 +497,7 @@ public class DtoMapper {
                 entity.getReviewerId(),
                 entity.getRating(),
                 entity.getComment(),
-                entity.getCreatedAt()
-        );
+                entity.getCreatedAt());
     }
 
     public com.agrifarms.common.entity.Review toReviewEntity(com.agrifarms.common.dto.ReviewDTO dto) {

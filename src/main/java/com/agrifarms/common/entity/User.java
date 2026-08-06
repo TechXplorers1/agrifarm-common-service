@@ -29,6 +29,7 @@ public class User {
 
     private String role; // Farmer, Provider, etc.
     private String district;
+    private String mandal;
     private String village;
 
     @Column(name = "house_no")
@@ -67,13 +68,14 @@ public class User {
     public User() {
     }
 
-    public User(String userId, String phoneNumber, String email, String fullName, String role, String district, String village, String profileImageUrl, String fcmToken) {
+    public User(String userId, String phoneNumber, String email, String fullName, String role, String district, String mandal, String village, String profileImageUrl, String fcmToken) {
         this.userId = userId;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.fullName = fullName;
         this.role = role;
         this.district = district;
+        this.mandal = mandal;
         this.village = village;
         this.profileImageUrl = profileImageUrl;
         this.fcmToken = fcmToken;
@@ -133,6 +135,14 @@ public class User {
 
     public void setDistrict(String district) {
         this.district = district;
+    }
+
+    public String getMandal() {
+        return mandal;
+    }
+
+    public void setMandal(String mandal) {
+        this.mandal = mandal;
     }
 
     public String getVillage() {

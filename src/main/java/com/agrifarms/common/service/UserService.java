@@ -43,7 +43,6 @@ public class UserService {
         return new UserStatsDTO(orders, rentals, services);
     }
 
-
     @Cacheable(value = "users", key = "#userId")
     public Optional<User> getUserById(String userId) {
         return userRepository.findById(userId);
@@ -59,7 +58,8 @@ public class UserService {
             return "Unknown Owner";
         }
         return userRepository.findById(ownerId)
-                .map(user -> user.getFullName() != null && !user.getFullName().trim().isEmpty() ? user.getFullName() : "Unknown Owner")
+                .map(user -> user.getFullName() != null && !user.getFullName().trim().isEmpty() ? user.getFullName()
+                        : "Unknown Owner")
                 .orElse("Unknown Owner");
     }
 
@@ -73,8 +73,7 @@ public class UserService {
                 .orElse(null);
     }
 
-    private static final java.util.Set<String> ALLOWED_ROLES =
-        java.util.Set.of("ADMIN", "FARMER", "OWNER");
+    private static final java.util.Set<String> ALLOWED_ROLES = java.util.Set.of("ADMIN", "FARMER", "OWNER");
 
     public User createUser(User user) {
         if (user.getPhoneNumber() != null) {
@@ -96,16 +95,16 @@ public class UserService {
             String upper = user.getRole().trim().toUpperCase();
             if (!ALLOWED_ROLES.contains(upper)) {
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
-                    "Invalid role '" + user.getRole() + "'. Allowed roles: ADMIN, FARMER, OWNER");
+                        "Invalid role '" + user.getRole() + "'. Allowed roles: ADMIN, FARMER, OWNER");
             }
             user.setRole(upper); // normalise to uppercase
         }
 
         User savedUser = userRepository.save(user);
-        notificationService.notifyAdmin("New user registered", savedUser.getFullName() + " joined as a " + savedUser.getRole(), "success", savedUser.getUserId());
+        notificationService.notifyAdmin("New user registered",
+                savedUser.getFullName() + " joined as a " + savedUser.getRole(), "success", savedUser.getUserId());
         return savedUser;
     }
-
 
     public java.util.List<User> getAllUsers() {
         return userRepository.findAll();
@@ -120,9 +119,9 @@ public class UserService {
     }
 
     @Caching(evict = {
-        @CacheEvict(value = "users", key = "#userId"),
-        @CacheEvict(value = "ownerNames", key = "#userId"),
-        @CacheEvict(value = "profileImages", key = "#userId")
+            @CacheEvict(value = "users", key = "#userId"),
+            @CacheEvict(value = "ownerNames", key = "#userId"),
+            @CacheEvict(value = "profileImages", key = "#userId")
     })
     public User updateUser(String userId, User updatedData) {
         return userRepository.findById(userId).map(existingUser -> {
@@ -135,7 +134,8 @@ public class UserService {
                     existingUser.setPhoneNumber(null);
                 } else {
                     if (cleanedPhone.length() != 10) {
-                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Phone number must be exactly 10 digits");
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                                "Phone number must be exactly 10 digits");
                     }
                     Optional<User> userWithPhone = userRepository.findByPhoneNumber(cleanedPhone);
                     if (userWithPhone.isPresent() && !userWithPhone.get().getUserId().equals(userId)) {
@@ -149,6 +149,9 @@ public class UserService {
             }
             if (updatedData.getVillage() != null) {
                 existingUser.setVillage(updatedData.getVillage());
+            }
+            if (updatedData.getMandal() != null) {
+                existingUser.setMandal(updatedData.getMandal());
             }
             if (updatedData.getDistrict() != null) {
                 existingUser.setDistrict(updatedData.getDistrict());
@@ -197,7 +200,7 @@ public class UserService {
     }
 
     @Caching(evict = {
-        @CacheEvict(value = "users", key = "#userId")
+            @CacheEvict(value = "users", key = "#userId")
     })
     public User updateUserStatus(String userId, String status) {
         User user = userRepository.findById(userId)

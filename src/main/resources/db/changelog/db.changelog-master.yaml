@@ -27,3 +27,5 @@ databaseChangeLog:
       file: db/changelog/db.changelog-fix-booking-fields.sql
   - include:
       file: db/changelog/db.changelog-add-equipment-vehicle-number.sql
+  - include:
+      file: db/changelog/db.changelog-add-user-mandal.sql

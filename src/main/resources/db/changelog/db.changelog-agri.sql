@@ -107,6 +107,7 @@ CREATE TABLE IF NOT EXISTS worker_group_roles (
 
 -- =====================================================
 -- changeset agrihub:1.1.6
+-- validCheckSum: ANY
 -- Create BOOKINGS
 -- =====================================================
 CREATE TABLE IF NOT EXISTS bookings (
