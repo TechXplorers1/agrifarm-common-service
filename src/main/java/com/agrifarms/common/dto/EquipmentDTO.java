@@ -3,6 +3,7 @@ package com.agrifarms.common.dto;
 import java.math.BigDecimal;
 
 public class EquipmentDTO {
+
     private String equipmentId;
     private String ownerId;
     private String ownerName;
@@ -34,12 +35,13 @@ public class EquipmentDTO {
     private String vehicleNumber;
     private String attachedEquipments;
 
-    public EquipmentDTO() {}
+    public EquipmentDTO() {
+    }
 
     public EquipmentDTO(String equipmentId, String ownerId, String ownerName, String category, String brandModel,
-                        String conditionStatus, BigDecimal pricePerHour, Boolean operatorAvailable, BigDecimal operatorPrice, String location,
-                        String houseNo, String street, String village, String district, String state, String country, String pincode,
-                        Boolean isAvailable, BigDecimal rating, String approvalStatus, String imageUrl, BigDecimal latitude, BigDecimal longitude, String ownerProfileImageUrl) {
+            String conditionStatus, BigDecimal pricePerHour, Boolean operatorAvailable, BigDecimal operatorPrice, String location,
+            String houseNo, String street, String village, String district, String state, String country, String pincode,
+            Boolean isAvailable, BigDecimal rating, String approvalStatus, String imageUrl, BigDecimal latitude, BigDecimal longitude, String ownerProfileImageUrl) {
         this.equipmentId = equipmentId;
         this.ownerId = ownerId;
         this.ownerName = ownerName;
@@ -67,93 +69,243 @@ public class EquipmentDTO {
         this.attachedEquipments = null; // Will be set separately if needed, or update constructor
     }
 
-    public String getEquipmentId() { return equipmentId; }
-    public void setEquipmentId(String equipmentId) { this.equipmentId = equipmentId; }
+    public String getEquipmentId() {
+        return equipmentId;
+    }
 
-    public String getOwnerId() { return ownerId; }
-    public void setOwnerId(String ownerId) { this.ownerId = ownerId; }
+    public void setEquipmentId(String equipmentId) {
+        this.equipmentId = equipmentId;
+    }
 
-    public String getOwnerName() { return ownerName; }
-    public void setOwnerName(String ownerName) { this.ownerName = ownerName; }
+    public String getOwnerId() {
+        return ownerId;
+    }
 
-    public String getCategory() { return category; }
-    public void setCategory(String category) { this.category = category; }
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
 
-    public String getBrandModel() { return brandModel; }
-    public void setBrandModel(String brandModel) { this.brandModel = brandModel; }
+    public String getOwnerName() {
+        return ownerName;
+    }
 
-    public String getConditionStatus() { return conditionStatus; }
-    public void setConditionStatus(String conditionStatus) { this.conditionStatus = conditionStatus; }
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
 
-    public BigDecimal getPricePerHour() { return pricePerHour; }
-    public void setPricePerHour(BigDecimal pricePerHour) { this.pricePerHour = pricePerHour; }
+    public String getCategory() {
+        return category;
+    }
 
-    public Boolean getOperatorAvailable() { return operatorAvailable; }
-    public void setOperatorAvailable(Boolean operatorAvailable) { this.operatorAvailable = operatorAvailable; }
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-    public BigDecimal getOperatorPrice() { return operatorPrice; }
-    public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
+    public String getBrandModel() {
+        return brandModel;
+    }
 
-    public String getLocation() { return location; }
-    public void setLocation(String location) { this.location = location; }
+    public void setBrandModel(String brandModel) {
+        this.brandModel = brandModel;
+    }
 
-    public String getHouseNo() { return houseNo; }
-    public void setHouseNo(String houseNo) { this.houseNo = houseNo; }
+    public String getConditionStatus() {
+        return conditionStatus;
+    }
 
-    public String getStreet() { return street; }
-    public void setStreet(String street) { this.street = street; }
+    public void setConditionStatus(String conditionStatus) {
+        this.conditionStatus = conditionStatus;
+    }
 
-    public String getVillage() { return village; }
-    public void setVillage(String village) { this.village = village; }
+    public BigDecimal getPricePerHour() {
+        return pricePerHour;
+    }
 
-    public String getDistrict() { return district; }
-    public void setDistrict(String district) { this.district = district; }
+    public void setPricePerHour(BigDecimal pricePerHour) {
+        this.pricePerHour = pricePerHour;
+    }
 
-    public String getState() { return state; }
-    public void setState(String state) { this.state = state; }
+    public Boolean getOperatorAvailable() {
+        return operatorAvailable;
+    }
 
-    public String getCountry() { return country; }
-    public void setCountry(String country) { this.country = country; }
+    public void setOperatorAvailable(Boolean operatorAvailable) {
+        this.operatorAvailable = operatorAvailable;
+    }
 
-    public String getPincode() { return pincode; }
-    public void setPincode(String pincode) { this.pincode = pincode; }
+    public BigDecimal getOperatorPrice() {
+        return operatorPrice;
+    }
 
-    public Boolean getIsAvailable() { return isAvailable; }
-    public void setIsAvailable(Boolean isAvailable) { this.isAvailable = isAvailable; }
+    public void setOperatorPrice(BigDecimal operatorPrice) {
+        this.operatorPrice = operatorPrice;
+    }
 
-    public BigDecimal getRating() { return rating; }
-    public void setRating(BigDecimal rating) { this.rating = rating; }
+    public String getLocation() {
+        return location;
+    }
 
-    public String getApprovalStatus() { return approvalStatus; }
-    public void setApprovalStatus(String approvalStatus) { this.approvalStatus = approvalStatus; }
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
-    public String getImageUrl() { return imageUrl; }
-    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public String getHouseNo() {
+        return houseNo;
+    }
 
-    public BigDecimal getLatitude() { return latitude; }
-    public void setLatitude(BigDecimal latitude) { this.latitude = latitude; }
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
 
-    public BigDecimal getLongitude() { return longitude; }
-    public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
+    public String getStreet() {
+        return street;
+    }
 
-    public String getOwnerProfileImageUrl() { return ownerProfileImageUrl; }
-    public void setOwnerProfileImageUrl(String ownerProfileImageUrl) { this.ownerProfileImageUrl = ownerProfileImageUrl; }
+    public void setStreet(String street) {
+        this.street = street;
+    }
 
-    public String getOwnerBusinessName() { return ownerBusinessName; }
-    public void setOwnerBusinessName(String ownerBusinessName) { this.ownerBusinessName = ownerBusinessName; }
+    public String getVillage() {
+        return village;
+    }
 
-    public String getBrand() { return brand; }
-    public void setBrand(String brand) { this.brand = brand; }
+    public void setVillage(String village) {
+        this.village = village;
+    }
 
-    public String getModel() { return model; }
-    public void setModel(String model) { this.model = model; }
+    public String getDistrict() {
+        return district;
+    }
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    public void setDistrict(String district) {
+        this.district = district;
+    }
 
-    public String getVehicleNumber() { return vehicleNumber; }
-    public void setVehicleNumber(String vehicleNumber) { this.vehicleNumber = vehicleNumber; }
+    public String getState() {
+        return state;
+    }
 
-    public String getAttachedEquipments() { return attachedEquipments; }
-    public void setAttachedEquipments(String attachedEquipments) { this.attachedEquipments = attachedEquipments; }
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public Boolean getIsAvailable() {
+        return isAvailable;
+    }
+
+    public void setIsAvailable(Boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
+
+    public BigDecimal getRating() {
+        return rating;
+    }
+
+    public void setRating(BigDecimal rating) {
+        this.rating = rating;
+    }
+
+    public String getApprovalStatus() {
+        return approvalStatus;
+    }
+
+    public void setApprovalStatus(String approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public BigDecimal getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(BigDecimal latitude) {
+        this.latitude = latitude;
+    }
+
+    public BigDecimal getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(BigDecimal longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getOwnerProfileImageUrl() {
+        return ownerProfileImageUrl;
+    }
+
+    public void setOwnerProfileImageUrl(String ownerProfileImageUrl) {
+        this.ownerProfileImageUrl = ownerProfileImageUrl;
+    }
+
+    public String getOwnerBusinessName() {
+        return ownerBusinessName;
+    }
+
+    public void setOwnerBusinessName(String ownerBusinessName) {
+        this.ownerBusinessName = ownerBusinessName;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getVehicleNumber() {
+        return vehicleNumber;
+    }
+
+    public void setVehicleNumber(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
+    }
+
+    public String getAttachedEquipments() {
+        return attachedEquipments;
+    }
+
+    public void setAttachedEquipments(String attachedEquipments) {
+        this.attachedEquipments = attachedEquipments;
+    }
 }

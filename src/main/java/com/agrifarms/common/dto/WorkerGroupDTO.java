@@ -33,6 +33,7 @@ public class WorkerGroupDTO {
     private List<WorkerGroupRoleDTO> roles;
     private BigDecimal latitude;
     private BigDecimal longitude;
+    private Integer jobsCompleted;
 
     public WorkerGroupDTO() {
     }
@@ -154,4 +155,7 @@ public class WorkerGroupDTO {
 
     public BigDecimal getLongitude() { return longitude; }
     public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
+
+    public Integer getJobsCompleted() { return jobsCompleted; }
+    public void setJobsCompleted(Integer jobsCompleted) { this.jobsCompleted = jobsCompleted; }
 }
