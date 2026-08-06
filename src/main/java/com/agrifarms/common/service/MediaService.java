@@ -27,8 +27,8 @@ public class MediaService {
     @PostConstruct
     public void init() {
         s3Client = S3Client.builder()
-            .region(Region.of(region))
-            .build();
+                .region(Region.of(region))
+                .build();
     }
 
     public String saveFile(MultipartFile file) throws IOException {
