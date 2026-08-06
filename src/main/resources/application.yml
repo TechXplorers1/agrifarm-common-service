@@ -18,14 +18,14 @@ jwt:
 
 spring:
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE:dev}
+    active: prod
   application:
     name: agri-farms-common-service
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5435/agrifarms}
-    username: ${SPRING_DATASOURCE_USERNAME:postgres}
-    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://agri-prod-database.cr262csoswwh.ap-south-2.rds.amazonaws.com:5432/agri?currentSchema=%22agri-common%22}
+    username: ${SPRING_DATASOURCE_USERNAME:agri_db_admin_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:zethon123$}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -57,8 +57,6 @@ spring:
             required: true
           ssl:
             protocols: TLSv1.2
-
-
 
 aws:
   s3:

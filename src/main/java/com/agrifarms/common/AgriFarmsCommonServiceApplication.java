@@ -59,7 +59,8 @@ public class AgriFarmsCommonServiceApplication {
             String workingDir = System.getProperty("user.dir");
             File currentDir = new File(workingDir);
             // Handle IDE running inside nested folders or build directories
-            if (currentDir.getName().equals("target") || currentDir.getName().equals("classes") || currentDir.getName().equals("bin")) {
+            if (currentDir.getName().equals("target") || currentDir.getName().equals("classes")
+                    || currentDir.getName().equals("bin")) {
                 currentDir = currentDir.getParentFile();
             }
             if (new File(currentDir, "agrifarm-common-service").exists()) {
@@ -78,8 +79,7 @@ public class AgriFarmsCommonServiceApplication {
                         initDb,
                         "-D", dataDir.getAbsolutePath(),
                         "-U", "postgres",
-                        "-A", "trust"
-                );
+                        "-A", "trust");
                 pbInit.inheritIO();
                 Process pInit = pbInit.start();
                 pInit.waitFor();
@@ -92,8 +92,7 @@ public class AgriFarmsCommonServiceApplication {
                     pgCtl,
                     "-D", dataDir.getAbsolutePath(),
                     "-o", "-p 5435",
-                    "start"
-            );
+                    "start");
             pb.inheritIO();
             Process process = pb.start();
             process.waitFor();
@@ -109,10 +108,10 @@ public class AgriFarmsCommonServiceApplication {
                                 "-h", "127.0.0.1",
                                 "-p", "5435",
                                 "-U", "postgres",
-                                "agrifarms"
-                        );
+                                "agrifarms");
                         pbCreate.start().waitFor();
-                    } catch (Exception ignored) {}
+                    } catch (Exception ignored) {
+                    }
                     return;
                 }
                 Thread.sleep(500);
