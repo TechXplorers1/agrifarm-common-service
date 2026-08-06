@@ -32,6 +32,7 @@ public class EquipmentDTO {
     private String model;
     private String description;
     private String vehicleNumber;
+    private Integer jobsCompleted;
 
     public EquipmentDTO() {}
 
@@ -151,4 +152,7 @@ public class EquipmentDTO {
 
     public String getVehicleNumber() { return vehicleNumber; }
     public void setVehicleNumber(String vehicleNumber) { this.vehicleNumber = vehicleNumber; }
+
+    public Integer getJobsCompleted() { return jobsCompleted; }
+    public void setJobsCompleted(Integer jobsCompleted) { this.jobsCompleted = jobsCompleted; }
 }

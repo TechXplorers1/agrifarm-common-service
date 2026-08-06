@@ -36,6 +36,7 @@ public class TransportVehicleDTO {
     private BigDecimal pricePerKm;
     private BigDecimal pricePerHour;
     private String vehicleCondition;
+    private Integer jobsCompleted;
 
     public TransportVehicleDTO() {}
 
@@ -164,4 +165,7 @@ public class TransportVehicleDTO {
 
     public String getVehicleCondition() { return vehicleCondition; }
     public void setVehicleCondition(String vehicleCondition) { this.vehicleCondition = vehicleCondition; }
+
+    public Integer getJobsCompleted() { return jobsCompleted; }
+    public void setJobsCompleted(Integer jobsCompleted) { this.jobsCompleted = jobsCompleted; }
 }

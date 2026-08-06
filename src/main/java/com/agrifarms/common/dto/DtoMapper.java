@@ -20,6 +20,17 @@ public class DtoMapper {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private com.agrifarms.common.repository.BookingRepository bookingRepository;
+
+    private int calculateJobsCompleted(String assetId, String ownerId) {
+        if (bookingRepository == null) return 0;
+        List<String> completedStatuses = List.of("Completed", "COMPLETED", "Finished", "FINISHED");
+        long assetCount = (assetId != null && !assetId.isEmpty()) ? bookingRepository.countByAssetIdAndStatusIn(assetId, completedStatuses) : 0;
+        long providerCount = (ownerId != null && !ownerId.isEmpty()) ? bookingRepository.countByProviderIdAndStatusIn(ownerId, completedStatuses) : 0;
+        return (int) Math.max(assetCount, providerCount);
+    }
+
     // User
     public UserDTO toUserDTO(User entity) {
         if (entity == null) {
@@ -128,6 +139,7 @@ public class DtoMapper {
         dto.setModel(entity.getModel());
         dto.setDescription(entity.getDescription());
         dto.setVehicleNumber(entity.getVehicleNumber());
+        dto.setJobsCompleted(calculateJobsCompleted(entity.getEquipmentId(), entity.getOwnerId()));
         return dto;
     }
 
@@ -217,6 +229,7 @@ public class DtoMapper {
         dto.setPricePerKm(entity.getPricePerKm());
         dto.setPricePerHour(entity.getPricePerHour());
         dto.setVehicleCondition(entity.getVehicleCondition());
+        dto.setJobsCompleted(calculateJobsCompleted(entity.getVehicleId(), entity.getOwnerId()));
         return dto;
     }
 
@@ -293,6 +306,7 @@ public class DtoMapper {
                 entity.getLongitude(),
                 ownerProfileImageUrl);
         dto.setOperatorPrice(entity.getOperatorPrice());
+        dto.setJobsCompleted(calculateJobsCompleted(entity.getServiceId(), entity.getOwnerId()));
         return dto;
     }
 
@@ -419,6 +433,7 @@ public class DtoMapper {
                     .map(this::toWorkerGroupRoleDTO)
                     .collect(Collectors.toList()));
         }
+        dto.setJobsCompleted(calculateJobsCompleted(entity.getGroupId(), entity.getOwnerId()));
         return dto;
     }
 
