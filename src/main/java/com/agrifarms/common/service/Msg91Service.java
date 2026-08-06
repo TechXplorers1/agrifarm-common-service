@@ -46,6 +46,7 @@ public class Msg91Service {
 
             if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
                 Map<String, Object> respBody = response.getBody();
+                System.out.println("[MSG91] Response: " + respBody);
                 String type = (String) respBody.get("type");
                 if ("success".equalsIgnoreCase(type)) {
                     System.out.println("[MSG91] OTP successfully sent to " + formattedPhone);

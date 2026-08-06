@@ -1,0 +1,1 @@
+C:/Program Files/PostgreSQL/16/bin/postgres.exe "-D" "D:/company-work/agrifarm project/agrifarm-common-service/pg_dev_data" "-p" "5435"

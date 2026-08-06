@@ -59,13 +59,31 @@ public class AgriFarmsCommonServiceApplication {
             String workingDir = System.getProperty("user.dir");
             File currentDir = new File(workingDir);
             // Handle IDE running inside nested folders or build directories
-            if (currentDir.getName().equals("target") || currentDir.getName().equals("classes") || currentDir.getName().equals("bin")) {
+            if (currentDir.getName().equals("target") || currentDir.getName().equals("classes")
+                    || currentDir.getName().equals("bin")) {
                 currentDir = currentDir.getParentFile();
             }
             if (new File(currentDir, "agrifarm-common-service").exists()) {
                 currentDir = new File(currentDir, "agrifarm-common-service");
             }
             File dataDir = new File(currentDir, "pg_dev_data");
+
+            if (!new File(dataDir, "PG_VERSION").exists()) {
+                System.out.println("=== Initializing PostgreSQL cluster at: " + dataDir.getAbsolutePath() + " ===");
+                if (dataDir.exists()) {
+                    deleteDirectoryRecursively(dataDir);
+                }
+                dataDir.mkdirs();
+                String initDb = new File(pgBinDir, "initdb.exe").getAbsolutePath();
+                ProcessBuilder pbInit = new ProcessBuilder(
+                        initDb,
+                        "-D", dataDir.getAbsolutePath(),
+                        "-U", "postgres",
+                        "-A", "trust");
+                pbInit.inheritIO();
+                Process pInit = pbInit.start();
+                pInit.waitFor();
+            }
 
             System.out.println("=== Starting private database cluster at: " + dataDir.getAbsolutePath() + " ===");
 
@@ -74,8 +92,7 @@ public class AgriFarmsCommonServiceApplication {
                     pgCtl,
                     "-D", dataDir.getAbsolutePath(),
                     "-o", "-p 5435",
-                    "start"
-            );
+                    "start");
             pb.inheritIO();
             Process process = pb.start();
             process.waitFor();
@@ -84,6 +101,17 @@ public class AgriFarmsCommonServiceApplication {
             for (int i = 0; i < 20; i++) {
                 if (isPortInUse("127.0.0.1", 5435)) {
                     System.out.println("=== PostgreSQL private instance is ready to accept connections! ===");
+                    try {
+                        String createDb = new File(pgBinDir, "createdb.exe").getAbsolutePath();
+                        ProcessBuilder pbCreate = new ProcessBuilder(
+                                createDb,
+                                "-h", "127.0.0.1",
+                                "-p", "5435",
+                                "-U", "postgres",
+                                "agrifarms");
+                        pbCreate.start().waitFor();
+                    } catch (Exception ignored) {
+                    }
                     return;
                 }
                 Thread.sleep(500);
@@ -93,6 +121,16 @@ public class AgriFarmsCommonServiceApplication {
             System.err.println("=== ERROR: Failed to start PostgreSQL: " + e.getMessage() + " ===");
             e.printStackTrace();
         }
+    }
+
+    private static void deleteDirectoryRecursively(File file) {
+        File[] contents = file.listFiles();
+        if (contents != null) {
+            for (File f : contents) {
+                deleteDirectoryRecursively(f);
+            }
+        }
+        file.delete();
     }
 
     private static boolean isPortInUse(String host, int port) {
