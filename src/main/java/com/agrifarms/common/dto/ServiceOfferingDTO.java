@@ -29,6 +29,7 @@ public class ServiceOfferingDTO {
     private BigDecimal longitude;
     private String ownerProfileImageUrl;
     private BigDecimal operatorPrice;
+    private Integer jobsCompleted;
 
     public ServiceOfferingDTO() {}
 
@@ -135,4 +136,7 @@ public class ServiceOfferingDTO {
 
     public BigDecimal getOperatorPrice() { return operatorPrice; }
     public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
+
+    public Integer getJobsCompleted() { return jobsCompleted; }
+    public void setJobsCompleted(Integer jobsCompleted) { this.jobsCompleted = jobsCompleted; }
 }

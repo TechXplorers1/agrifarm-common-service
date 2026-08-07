@@ -1,6 +1,8 @@
 -- liquibase formatted sql
 
 -- changeset agrifarms:alter-booking-fields-to-text
+-- validCheckSum: ANY
+-- validCheckSum: 9:1be1b1059c8802ecd3bcc30b45d2ffd1
 -- comment: Alter bookings.notes and bookings.address_text to TEXT
 -- validCheckSum: ANY
 ALTER TABLE bookings ADD COLUMN IF NOT EXISTS notes TEXT;

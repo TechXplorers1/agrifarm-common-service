@@ -188,7 +188,8 @@ public class BookingService {
                 String providerName = providerOpt.map(User::getFullName).orElse("The provider");
 
                 String title = "Booking " + status;
-                String body = providerName + " has " + status.toLowerCase() + " your request for " + assetName + ".";
+                String body = providerName + " has " + status.toLowerCase() + " your request for " + assetName +
+                        (cancellationReason != null && !cancellationReason.trim().isEmpty() ? " due to: " + cancellationReason : ".");
 
                 Map<String, String> data = new HashMap<>();
                 data.put("bookingId", updatedBooking.getBookingId());
