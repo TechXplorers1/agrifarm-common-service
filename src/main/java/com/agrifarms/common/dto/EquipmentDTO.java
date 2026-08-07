@@ -34,6 +34,7 @@ public class EquipmentDTO {
     private String description;
     private String vehicleNumber;
     private String attachedEquipments;
+    private Integer jobsCompleted;
 
     public EquipmentDTO() {
     }
@@ -307,5 +308,13 @@ public class EquipmentDTO {
 
     public void setAttachedEquipments(String attachedEquipments) {
         this.attachedEquipments = attachedEquipments;
+    }
+
+    public Integer getJobsCompleted() {
+        return jobsCompleted;
+    }
+
+    public void setJobsCompleted(Integer jobsCompleted) {
+        this.jobsCompleted = jobsCompleted;
     }
 }
