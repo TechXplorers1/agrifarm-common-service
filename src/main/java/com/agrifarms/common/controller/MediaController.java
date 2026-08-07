@@ -1,11 +1,9 @@
 package com.agrifarms.common.controller;
 
 import com.agrifarms.common.service.MediaService;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,34 +43,18 @@ public class MediaController {
     }
 
     @GetMapping("/download/{filename}")
-    public ResponseEntity<byte[]> getFile(@PathVariable String filename) {
+    public ResponseEntity<?> getFile(@PathVariable String filename) {
         try {
-            byte[] data = mediaService.getFile(filename);
-            if (data == null) {
-                return ResponseEntity.notFound().build();
-            }
-
-            String extension = "";
-            if (filename.contains(".")) {
-                extension = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
-            }
-
-            MediaType mediaType = MediaType.IMAGE_JPEG;
-            if ("png".equals(extension)) {
-                mediaType = MediaType.IMAGE_PNG;
-            } else if ("gif".equals(extension)) {
-                mediaType = MediaType.IMAGE_GIF;
-            } else if ("webp".equals(extension)) {
-                mediaType = MediaType.parseMediaType("image/webp");
-            } else if ("svg".equals(extension)) {
-                mediaType = MediaType.parseMediaType("image/svg+xml");
-            }
-
-            return ResponseEntity.ok()
-                    .contentType(mediaType)
-                    .body(data);
-        } catch (IOException e) {
-            return ResponseEntity.internalServerError().build();
+            // Build the direct S3 public URL and redirect to it
+            // This avoids proxying bytes through the backend and doesn't require AWS credentials in dev
+            String s3Url = String.format("https://%s.s3.%s.amazonaws.com/images/%s",
+                    mediaService.getBucketName(), mediaService.getRegion(), filename);
+            return ResponseEntity.status(302)
+                    .header("Location", s3Url)
+                    .build();
+        } catch (Exception e) {
+            System.err.println("[MediaController] Error building redirect URL: " + e.getMessage());
+            return ResponseEntity.notFound().build();
         }
     }
 }

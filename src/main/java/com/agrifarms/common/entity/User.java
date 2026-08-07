@@ -185,11 +185,21 @@ public class User {
         this.fcmToken = fcmToken;
     }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public String getStatus() {
+        return status;
+    }
 
-    public String getKeycloakId() { return keycloakId; }
-    public void setKeycloakId(String keycloakId) { this.keycloakId = keycloakId; }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getKeycloakId() {
+        return keycloakId;
+    }
+
+    public void setKeycloakId(String keycloakId) {
+        this.keycloakId = keycloakId;
+    }
 
     @PrePersist
     protected void onCreate() {
@@ -204,26 +214,61 @@ public class User {
     private BigDecimal latitude;
     private BigDecimal longitude;
 
-    public String getHouseNo() { return houseNo; }
-    public void setHouseNo(String houseNo) { this.houseNo = houseNo; }
+    public String getHouseNo() {
+        return houseNo;
+    }
 
-    public String getStreet() { return street; }
-    public void setStreet(String street) { this.street = street; }
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
 
-    public String getState() { return state; }
-    public void setState(String state) { this.state = state; }
+    public String getStreet() {
+        return street;
+    }
 
-    public String getCountry() { return country; }
-    public void setCountry(String country) { this.country = country; }
+    public void setStreet(String street) {
+        this.street = street;
+    }
 
-    public String getPincode() { return pincode; }
-    public void setPincode(String pincode) { this.pincode = pincode; }
+    public String getState() {
+        return state;
+    }
 
-    public BigDecimal getLatitude() { return latitude; }
-    public void setLatitude(BigDecimal latitude) { this.latitude = latitude; }
+    public void setState(String state) {
+        this.state = state;
+    }
 
-    public BigDecimal getLongitude() { return longitude; }
-    public void setLongitude(BigDecimal longitude) { this.longitude = longitude; }
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public BigDecimal getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(BigDecimal latitude) {
+        this.latitude = latitude;
+    }
+
+    public BigDecimal getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(BigDecimal longitude) {
+        this.longitude = longitude;
+    }
 
     @Column(name = "notification_order_updates")
     private Boolean notificationOrderUpdates = true;
@@ -240,18 +285,43 @@ public class User {
     @Column(name = "notification_promotional_offers")
     private Boolean notificationPromotionalOffers = false;
 
-    public boolean isNotificationOrderUpdates() { return notificationOrderUpdates != null ? notificationOrderUpdates : true; }
-    public void setNotificationOrderUpdates(Boolean notificationOrderUpdates) { this.notificationOrderUpdates = notificationOrderUpdates; }
+    public boolean isNotificationOrderUpdates() {
+        return notificationOrderUpdates != null ? notificationOrderUpdates : true;
+    }
 
-    public boolean isNotificationBookingUpdates() { return notificationBookingUpdates != null ? notificationBookingUpdates : true; }
-    public void setNotificationBookingUpdates(Boolean notificationBookingUpdates) { this.notificationBookingUpdates = notificationBookingUpdates; }
+    public void setNotificationOrderUpdates(Boolean notificationOrderUpdates) {
+        this.notificationOrderUpdates = notificationOrderUpdates;
+    }
 
-    public boolean isNotificationPaymentUpdates() { return notificationPaymentUpdates != null ? notificationPaymentUpdates : true; }
-    public void setNotificationPaymentUpdates(Boolean notificationPaymentUpdates) { this.notificationPaymentUpdates = notificationPaymentUpdates; }
+    public boolean isNotificationBookingUpdates() {
+        return notificationBookingUpdates != null ? notificationBookingUpdates : true;
+    }
 
-    public boolean isNotificationCommunityActivity() { return notificationCommunityActivity != null ? notificationCommunityActivity : false; }
-    public void setNotificationCommunityActivity(Boolean notificationCommunityActivity) { this.notificationCommunityActivity = notificationCommunityActivity; }
+    public void setNotificationBookingUpdates(Boolean notificationBookingUpdates) {
+        this.notificationBookingUpdates = notificationBookingUpdates;
+    }
 
-    public boolean isNotificationPromotionalOffers() { return notificationPromotionalOffers != null ? notificationPromotionalOffers : false; }
-    public void setNotificationPromotionalOffers(Boolean notificationPromotionalOffers) { this.notificationPromotionalOffers = notificationPromotionalOffers; }
+    public boolean isNotificationPaymentUpdates() {
+        return notificationPaymentUpdates != null ? notificationPaymentUpdates : true;
+    }
+
+    public void setNotificationPaymentUpdates(Boolean notificationPaymentUpdates) {
+        this.notificationPaymentUpdates = notificationPaymentUpdates;
+    }
+
+    public boolean isNotificationCommunityActivity() {
+        return notificationCommunityActivity != null ? notificationCommunityActivity : false;
+    }
+
+    public void setNotificationCommunityActivity(Boolean notificationCommunityActivity) {
+        this.notificationCommunityActivity = notificationCommunityActivity;
+    }
+
+    public boolean isNotificationPromotionalOffers() {
+        return notificationPromotionalOffers != null ? notificationPromotionalOffers : false;
+    }
+
+    public void setNotificationPromotionalOffers(Boolean notificationPromotionalOffers) {
+        this.notificationPromotionalOffers = notificationPromotionalOffers;
+    }
 }

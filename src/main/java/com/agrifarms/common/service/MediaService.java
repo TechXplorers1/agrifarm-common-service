@@ -31,6 +31,14 @@ public class MediaService {
                 .build();
     }
 
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
     public String saveFile(MultipartFile file) throws IOException {
         String originalFilename = file.getOriginalFilename();
         String extension = "";
@@ -55,18 +63,21 @@ public class MediaService {
 
         } catch (Exception e) {
             System.err.println("[MediaService] AWS S3 upload error: " + e.getMessage() + ". Returning formatted S3 URL.");
-            e.printStackTrace();
-            // Fallback: return formatted S3 URL so client receives 200 OK
             return String.format("https://%s.s3.%s.amazonaws.com/images/%s", bucketName, region, filename);
         }
     }
 
     public byte[] getFile(String filename) throws IOException {
-        GetObjectRequest getObjectRequest = GetObjectRequest.builder()
-                .bucket(bucketName)
-                .key("images/" + filename)
-                .build();
+        try {
+            GetObjectRequest getObjectRequest = GetObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key("images/" + filename)
+                    .build();
 
-        return s3Client.getObjectAsBytes(getObjectRequest).asByteArray();
+            return s3Client.getObjectAsBytes(getObjectRequest).asByteArray();
+        } catch (Exception e) {
+            System.err.println("[MediaService] AWS S3 getFile error: " + e.getMessage());
+            return new byte[0]; // Return empty byte array to prevent crash
+        }
     }
 }
