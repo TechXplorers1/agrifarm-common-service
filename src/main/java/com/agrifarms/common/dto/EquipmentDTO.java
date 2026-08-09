@@ -11,6 +11,7 @@ public class EquipmentDTO {
     private String brandModel;
     private String conditionStatus;
     private BigDecimal pricePerHour;
+    private BigDecimal pricePerHalfDay;
     private Boolean operatorAvailable;
     private BigDecimal operatorPrice;
     private String location;
@@ -50,6 +51,7 @@ public class EquipmentDTO {
         this.brandModel = brandModel;
         this.conditionStatus = conditionStatus;
         this.pricePerHour = pricePerHour;
+        this.pricePerHalfDay = null; // Can be set via setter or new constructor if needed, or initialized based on entity mapping
         this.operatorAvailable = operatorAvailable;
         this.operatorPrice = operatorPrice;
         this.location = location;
@@ -124,6 +126,14 @@ public class EquipmentDTO {
 
     public void setPricePerHour(BigDecimal pricePerHour) {
         this.pricePerHour = pricePerHour;
+    }
+
+    public BigDecimal getPricePerHalfDay() {
+        return pricePerHalfDay;
+    }
+
+    public void setPricePerHalfDay(BigDecimal pricePerHalfDay) {
+        this.pricePerHalfDay = pricePerHalfDay;
     }
 
     public Boolean getOperatorAvailable() {

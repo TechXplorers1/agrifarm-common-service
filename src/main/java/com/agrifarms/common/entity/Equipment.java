@@ -48,6 +48,9 @@ public class Equipment {
     @Column(name = "price_per_hour")
     private BigDecimal pricePerHour;
 
+    @Column(name = "price_per_half_day")
+    private BigDecimal pricePerHalfDay;
+
     @Column(name = "operator_available")
     private Boolean operatorAvailable;
 
@@ -95,7 +98,7 @@ public class Equipment {
     }
 
     public Equipment(String equipmentId, String ownerId, String category, String brandModel, String conditionStatus,
-            BigDecimal pricePerHour, Boolean operatorAvailable, String location, Boolean isAvailable,
+            BigDecimal pricePerHour, BigDecimal pricePerHalfDay, Boolean operatorAvailable, String location, Boolean isAvailable,
             BigDecimal rating, String approvalStatus, String imageUrl) {
         this.equipmentId = equipmentId;
         this.ownerId = ownerId;
@@ -104,12 +107,21 @@ public class Equipment {
         this.name = brandModel != null ? brandModel : category;
         this.conditionStatus = conditionStatus;
         this.pricePerHour = pricePerHour;
+        this.pricePerHalfDay = pricePerHalfDay;
         this.operatorAvailable = operatorAvailable;
         this.location = location;
         this.isAvailable = isAvailable;
         this.rating = rating;
         this.approvalStatus = approvalStatus;
         this.imageUrl = imageUrl;
+    }
+
+    public BigDecimal getPricePerHalfDay() {
+        return pricePerHalfDay;
+    }
+
+    public void setPricePerHalfDay(BigDecimal pricePerHalfDay) {
+        this.pricePerHalfDay = pricePerHalfDay;
     }
 
     public String getEquipmentId() {

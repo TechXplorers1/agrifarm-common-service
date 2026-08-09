@@ -131,6 +131,7 @@ public class DtoMapper {
         dto.setDescription(entity.getDescription());
         dto.setAttachedEquipments(entity.getAttachedEquipments());
         dto.setVehicleNumber(entity.getVehicleNumber());
+        dto.setPricePerHalfDay(entity.getPricePerHalfDay());
         dto.setJobsCompleted(0); // Populated efficiently at controller level
         return dto;
     }
@@ -145,6 +146,7 @@ public class DtoMapper {
         entity.setCategory(dto.getCategory());
         entity.setConditionStatus(dto.getConditionStatus());
         entity.setPricePerHour(dto.getPricePerHour());
+        entity.setPricePerHalfDay(dto.getPricePerHalfDay());
         entity.setOperatorAvailable(dto.getOperatorAvailable());
         entity.setOperatorPrice(dto.getOperatorPrice());
         entity.setLocation(dto.getLocation());

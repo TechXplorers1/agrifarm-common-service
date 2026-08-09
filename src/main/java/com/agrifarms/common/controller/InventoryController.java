@@ -102,6 +102,7 @@ public class InventoryController {
 
         if (equipmentDTO.getConditionStatus() != null) existingEquipment.setConditionStatus(equipmentDTO.getConditionStatus());
         if (equipmentDTO.getPricePerHour() != null) existingEquipment.setPricePerHour(equipmentDTO.getPricePerHour());
+        if (equipmentDTO.getPricePerHalfDay() != null) existingEquipment.setPricePerHalfDay(equipmentDTO.getPricePerHalfDay());
         if (equipmentDTO.getOperatorAvailable() != null) existingEquipment.setOperatorAvailable(equipmentDTO.getOperatorAvailable());
         if (equipmentDTO.getOperatorPrice() != null) existingEquipment.setOperatorPrice(equipmentDTO.getOperatorPrice());
         if (equipmentDTO.getLocation() != null) existingEquipment.setLocation(equipmentDTO.getLocation());
