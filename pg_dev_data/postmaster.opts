@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-C:/Program Files/PostgreSQL/18/bin/postgres.exe "-D" "D:/AGRIFARMS/agrifarm-common-service/pg_dev_data" "-p" "5435"
-=======
-C:/Program Files/PostgreSQL/16/bin/postgres.exe "-D" "D:/company-work/agrifarm project/agrifarm-common-service/pg_dev_data" "-p" "5435"
->>>>>>> cff64dbb139edc001198b9fffbb17b5bde2648e9
