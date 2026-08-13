@@ -332,6 +332,9 @@ public class InventoryController {
         if (serviceDTO.getOperatorIncluded() != null) {
             existingService.setOperatorIncluded(serviceDTO.getOperatorIncluded());
         }
+        if (serviceDTO.getOperatorPrice() != null) {
+            existingService.setOperatorPrice(serviceDTO.getOperatorPrice());
+        }
         if (serviceDTO.getLocation() != null) {
             existingService.setLocation(serviceDTO.getLocation());
         }
