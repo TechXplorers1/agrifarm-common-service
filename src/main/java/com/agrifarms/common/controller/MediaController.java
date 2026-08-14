@@ -42,19 +42,45 @@ public class MediaController {
         }
     }
 
+    // @GetMapping("/download/{filename}")
+    // public ResponseEntity<?> getFile(@PathVariable String filename) {
+    //     try {
+    //         // Build the direct S3 public URL and redirect to it
+    //         // This avoids proxying bytes through the backend and doesn't require AWS credentials in dev
+    //         String s3Url = String.format("https://%s.s3.%s.amazonaws.com/images/%s",
+    //                 mediaService.getBucketName(), mediaService.getRegion(), filename);
+    //         return ResponseEntity.status(302)
+    //                 .header("Location", s3Url)
+    //                 .build();
+    //     } catch (Exception e) {
+    //         System.err.println("[MediaController] Error building redirect URL: " + e.getMessage());
+    //         return ResponseEntity.notFound().build();
+    //     }
+    // }
     @GetMapping("/download/{filename}")
     public ResponseEntity<?> getFile(@PathVariable String filename) {
         try {
-            // Build the direct S3 public URL and redirect to it
-            // This avoids proxying bytes through the backend and doesn't require AWS credentials in dev
-            String s3Url = String.format("https://%s.s3.%s.amazonaws.com/images/%s",
-                    mediaService.getBucketName(), mediaService.getRegion(), filename);
-            return ResponseEntity.status(302)
-                    .header("Location", s3Url)
-                    .build();
+            byte[] fileBytes = mediaService.getFile(filename);
+            if (fileBytes == null || fileBytes.length == 0) {
+                return ResponseEntity.notFound().build();
+            }
+
+            String contentType = "application/octet-stream";
+            String lower = filename.toLowerCase();
+            if (lower.endsWith(".png")) {
+                contentType = "image/png";
+            } else if (lower.endsWith(".jpg") || lower.endsWith(".jpeg")) {
+                contentType = "image/jpeg";
+            } else if (lower.endsWith(".webp")) {
+                contentType = "image/webp";
+            }
+            return ResponseEntity.ok()
+                    .header("Content-Type", contentType)
+                    .header("Cache-Control", "public, max-age=86400")
+                    .body(fileBytes);
         } catch (Exception e) {
-            System.err.println("[MediaController] Error building redirect URL: " + e.getMessage());
-            return ResponseEntity.notFound().build();
+            System.err.println("[MediaController] Error fetching file from S3: " + e.getMessage());
+            return ResponseEntity.internalServerError().build();
         }
     }
 }
