@@ -1,6 +1,8 @@
 package com.agrifarms.common.controller;
 
 import com.agrifarms.common.service.MediaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,6 +15,7 @@ import java.util.Map;
 public class MediaController {
 
     private final MediaService mediaService;
+    private static final Logger log = LoggerFactory.getLogger(MediaController.class);
 
     public MediaController(MediaService mediaService) {
         this.mediaService = mediaService;
@@ -23,6 +26,8 @@ public class MediaController {
         try {
             // saveFile returns the full S3 URL
             String fileUrl = mediaService.saveFile(file);
+
+            log.info("Upload successful. returned S3 URL={} originalName={}", fileUrl, file.getOriginalFilename());
 
             Map<String, String> response = new HashMap<>();
 
@@ -36,8 +41,7 @@ public class MediaController {
 
             return ResponseEntity.ok(response);
         } catch (Exception e) {
-            System.err.println("[MediaController] Error during file upload: " + e.getMessage());
-            e.printStackTrace();
+            log.error("[MediaController] Error during file upload: {}", e.getMessage(), e);
             return ResponseEntity.internalServerError().build();
         }
     }
@@ -60,8 +64,10 @@ public class MediaController {
     @GetMapping("/download/{filename}")
     public ResponseEntity<?> getFile(@PathVariable String filename) {
         try {
+            log.info("Download requested for filename={}", filename);
             byte[] fileBytes = mediaService.getFile(filename);
             if (fileBytes == null || fileBytes.length == 0) {
+                log.warn("File not found or empty for filename={}", filename);
                 return ResponseEntity.notFound().build();
             }
 
@@ -79,7 +85,7 @@ public class MediaController {
                     .header("Cache-Control", "public, max-age=86400")
                     .body(fileBytes);
         } catch (Exception e) {
-            System.err.println("[MediaController] Error fetching file from S3: " + e.getMessage());
+            log.error("[MediaController] Error fetching file from S3 for filename={}: {}", filename, e.getMessage(), e);
             return ResponseEntity.internalServerError().build();
         }
     }
