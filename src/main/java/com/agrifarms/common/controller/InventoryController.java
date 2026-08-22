@@ -120,10 +120,10 @@ public class InventoryController {
         if (equipmentDTO.getLatitude() != null) existingEquipment.setLatitude(equipmentDTO.getLatitude());
         if (equipmentDTO.getLongitude() != null) existingEquipment.setLongitude(equipmentDTO.getLongitude());
         if (equipmentDTO.getAttachedEquipments() != null) existingEquipment.setAttachedEquipments(equipmentDTO.getAttachedEquipments());
-
+        if (equipmentDTO.getDeactivationReason() != null) existingEquipment.setDeactivationReason(equipmentDTO.getDeactivationReason());
 
         Equipment savedEquipment = inventoryService.saveEquipment(existingEquipment);
-        checkAndNotifyApprovalStatus(savedEquipment.getOwnerId(), oldStatus, savedEquipment.getApprovalStatus(), savedEquipment.getBrandModel(), savedEquipment.getEquipmentId(), "Equipment");
+        checkAndNotifyApprovalStatus(savedEquipment.getOwnerId(), oldStatus, savedEquipment.getApprovalStatus(), savedEquipment.getBrandModel(), savedEquipment.getEquipmentId(), "Equipment", savedEquipment.getDeactivationReason());
         return dtoMapper.toEquipmentDTO(savedEquipment);
     }
 
@@ -259,9 +259,12 @@ public class InventoryController {
         if (vehicleDTO.getVehicleCondition() != null) {
             existingVehicle.setVehicleCondition(vehicleDTO.getVehicleCondition());
         }
+        if (vehicleDTO.getDeactivationReason() != null) {
+            existingVehicle.setDeactivationReason(vehicleDTO.getDeactivationReason());
+        }
 
         TransportVehicle savedVehicle = inventoryService.saveVehicle(existingVehicle);
-        checkAndNotifyApprovalStatus(savedVehicle.getOwnerId(), oldStatus, savedVehicle.getApprovalStatus(), savedVehicle.getVehicleType(), savedVehicle.getVehicleId(), "Transport Vehicle");
+        checkAndNotifyApprovalStatus(savedVehicle.getOwnerId(), oldStatus, savedVehicle.getApprovalStatus(), savedVehicle.getVehicleType(), savedVehicle.getVehicleId(), "Transport Vehicle", savedVehicle.getDeactivationReason());
         return dtoMapper.toTransportVehicleDTO(savedVehicle);
     }
 
@@ -377,9 +380,12 @@ public class InventoryController {
         if (serviceDTO.getLongitude() != null) {
             existingService.setLongitude(serviceDTO.getLongitude());
         }
+        if (serviceDTO.getDeactivationReason() != null) {
+            existingService.setDeactivationReason(serviceDTO.getDeactivationReason());
+        }
 
         ServiceOffering savedService = inventoryService.saveService(existingService);
-        checkAndNotifyApprovalStatus(savedService.getOwnerId(), oldStatus, savedService.getApprovalStatus(), savedService.getBusinessName(), savedService.getServiceId(), "Service Offering");
+        checkAndNotifyApprovalStatus(savedService.getOwnerId(), oldStatus, savedService.getApprovalStatus(), savedService.getBusinessName(), savedService.getServiceId(), "Service Offering", savedService.getDeactivationReason());
         return dtoMapper.toServiceOfferingDTO(savedService);
     }
 
@@ -515,9 +521,13 @@ public class InventoryController {
                 existingGroup.getRoles().add(role);
             }
         }
+        
+        if (groupDTO.getDeactivationReason() != null) {
+            existingGroup.setDeactivationReason(groupDTO.getDeactivationReason());
+        }
 
         WorkerGroup savedGroup = inventoryService.saveWorkerGroup(existingGroup);
-        checkAndNotifyApprovalStatus(savedGroup.getOwnerId(), oldStatus, savedGroup.getApprovalStatus(), savedGroup.getGroupName(), savedGroup.getGroupId(), "Worker Group");
+        checkAndNotifyApprovalStatus(savedGroup.getOwnerId(), oldStatus, savedGroup.getApprovalStatus(), savedGroup.getGroupName(), savedGroup.getGroupId(), "Worker Group", savedGroup.getDeactivationReason());
         return dtoMapper.toWorkerGroupDTO(savedGroup);
     }
 
@@ -550,7 +560,7 @@ public class InventoryController {
                 .orElseGet(() -> vehicleCategoryRepository.save(vehicleCategory));
     }
 
-    private void checkAndNotifyApprovalStatus(String ownerId, String oldStatus, String newStatus, String assetName, String assetId, String assetType) {
+    private void checkAndNotifyApprovalStatus(String ownerId, String oldStatus, String newStatus, String assetName, String assetId, String assetType, String reason) {
         if (newStatus != null && !newStatus.equals(oldStatus)) {
             String title = "";
             String body = "";
@@ -560,6 +570,9 @@ public class InventoryController {
             } else if ("Rejected".equalsIgnoreCase(newStatus)) {
                 title = "Listing Rejected";
                 body = "Your " + assetType + " listing \"" + assetName + "\" was not approved by the admin.";
+                if (reason != null && !reason.trim().isEmpty()) {
+                    body += " Reason: " + reason;
+                }
             }
 
             if (!title.isEmpty()) {

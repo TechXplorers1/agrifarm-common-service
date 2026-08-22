@@ -253,4 +253,10 @@ public class ServiceOffering {
 
     public BigDecimal getOperatorPrice() { return operatorPrice; }
     public void setOperatorPrice(BigDecimal operatorPrice) { this.operatorPrice = operatorPrice; }
+
+    @jakarta.persistence.Column(name = "deactivation_reason", length = 500)
+    private String deactivationReason;
+
+    public String getDeactivationReason() { return deactivationReason; }
+    public void setDeactivationReason(String deactivationReason) { this.deactivationReason = deactivationReason; }
 }

@@ -215,4 +215,10 @@ public class TransportVehicle {
 
     public String getVehicleCondition() { return vehicleCondition; }
     public void setVehicleCondition(String vehicleCondition) { this.vehicleCondition = vehicleCondition; }
+
+    @jakarta.persistence.Column(name = "deactivation_reason", length = 500)
+    private String deactivationReason;
+
+    public String getDeactivationReason() { return deactivationReason; }
+    public void setDeactivationReason(String deactivationReason) { this.deactivationReason = deactivationReason; }
 }

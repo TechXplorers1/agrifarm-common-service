@@ -158,4 +158,9 @@ public class WorkerGroupDTO {
 
     public Integer getJobsCompleted() { return jobsCompleted; }
     public void setJobsCompleted(Integer jobsCompleted) { this.jobsCompleted = jobsCompleted; }
+
+    private String deactivationReason;
+
+    public String getDeactivationReason() { return deactivationReason; }
+    public void setDeactivationReason(String deactivationReason) { this.deactivationReason = deactivationReason; }
 }

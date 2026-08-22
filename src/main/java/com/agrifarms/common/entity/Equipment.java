@@ -291,4 +291,10 @@ public class Equipment {
 
     public String getAttachedEquipments() { return attachedEquipments; }
     public void setAttachedEquipments(String attachedEquipments) { this.attachedEquipments = attachedEquipments; }
+
+    @jakarta.persistence.Column(name = "deactivation_reason", length = 500)
+    private String deactivationReason;
+
+    public String getDeactivationReason() { return deactivationReason; }
+    public void setDeactivationReason(String deactivationReason) { this.deactivationReason = deactivationReason; }
 }
