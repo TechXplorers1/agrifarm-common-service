@@ -60,18 +60,20 @@ public class MediaController {
 
     // @GetMapping("/download/{filename}")
     // public ResponseEntity<?> getFile(@PathVariable String filename) {
-    //     try {
-    //         // Build the direct S3 public URL and redirect to it
-    //         // This avoids proxying bytes through the backend and doesn't require AWS credentials in dev
-    //         String s3Url = String.format("https://%s.s3.%s.amazonaws.com/images/%s",
-    //                 mediaService.getBucketName(), mediaService.getRegion(), filename);
-    //         return ResponseEntity.status(302)
-    //                 .header("Location", s3Url)
-    //                 .build();
-    //     } catch (Exception e) {
-    //         System.err.println("[MediaController] Error building redirect URL: " + e.getMessage());
-    //         return ResponseEntity.notFound().build();
-    //     }
+    // try {
+    // // Build the direct S3 public URL and redirect to it
+    // // This avoids proxying bytes through the backend and doesn't require AWS
+    // credentials in dev
+    // String s3Url = String.format("https://%s.s3.%s.amazonaws.com/images/%s",
+    // mediaService.getBucketName(), mediaService.getRegion(), filename);
+    // return ResponseEntity.status(302)
+    // .header("Location", s3Url)
+    // .build();
+    // } catch (Exception e) {
+    // System.err.println("[MediaController] Error building redirect URL: " +
+    // e.getMessage());
+    // return ResponseEntity.notFound().build();
+    // }
     // }
     @GetMapping("/download/{filename}")
     public ResponseEntity<?> getFile(@PathVariable String filename) {
