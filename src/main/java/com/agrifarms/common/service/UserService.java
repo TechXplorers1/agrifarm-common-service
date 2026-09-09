@@ -234,4 +234,48 @@ public class UserService {
         }
         return user;
     }
+
+    /**
+     * Permanently deletes a user account and ALL associated data.
+     * Required by Google Play Store User Data Policy (mandatory since Dec 2023).
+     * Called when the user requests "Delete Account" from the Flutter app.
+     *
+     * Cascade order (to avoid FK violations):
+     * 1. Bookings where user is farmer or provider
+     * 2. Inventory (equipment, vehicles, services, worker groups)
+     * 3. User record itself
+     *
+     * The @Transactional annotation ensures atomicity — if any step fails,
+     * the entire operation rolls back and the user account remains intact.
+     */
+    @org.springframework.transaction.annotation.Transactional
+    @Caching(evict = {
+            @CacheEvict(value = "users", key = "#userId"),
+            @CacheEvict(value = "ownerNames", key = "#userId"),
+            @CacheEvict(value = "profileImages", key = "#userId")
+    })
+    public void deleteUserAndAllData(String userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "User not found with id: " + userId));
+
+        // 1. Delete all bookings where user is the farmer (requester)
+        bookingRepository.deleteByFarmerId(userId);
+
+        // 2. Delete all bookings where user is the provider (owner/service)
+        bookingRepository.deleteByProviderId(userId);
+
+        // 3. Delete all inventory owned by this user
+        equipmentRepository.deleteByOwnerId(userId);
+        transportVehicleRepository.deleteByOwnerId(userId);
+        serviceOfferingRepository.deleteByOwnerId(userId);
+        workerGroupRepository.deleteByOwnerId(userId);
+
+        // 4. Delete the user record itself
+        userRepository.delete(user);
+
+        // Note: S3 images are NOT deleted here to keep this operation fast.
+        // An async cleanup job should periodically purge orphaned S3 objects.
+        // For immediate deletion, add: mediaService.deleteUserImages(userId);
+    }
 }

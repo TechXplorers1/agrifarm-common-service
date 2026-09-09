@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -131,5 +132,23 @@ public class UserController {
             }
         }
         return ResponseEntity.badRequest().build();
+    }
+
+    /**
+     * Permanently deletes a user account and all associated data.
+     * Required by Google Play Store User Data Policy (mandatory since Dec 2023).
+     * Called by the Flutter app's Profile → Delete Account feature.
+     * Deletes: user record, all bookings, all inventory listings from PostgreSQL.
+     */
+    @DeleteMapping("/{userId}")
+    public ResponseEntity<Void> deleteUser(@PathVariable("userId") String userId) {
+        try {
+            userService.deleteUserAndAllData(userId);
+            return ResponseEntity.noContent().build(); // 204 No Content
+        } catch (org.springframework.web.server.ResponseStatusException e) {
+            return ResponseEntity.status(e.getStatusCode()).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(500).build();
+        }
     }
 }
