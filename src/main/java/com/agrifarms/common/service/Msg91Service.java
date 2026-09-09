@@ -65,11 +65,10 @@ public class Msg91Service {
      * Verifies the OTP with MSG91.
      */
     public boolean verifyOtp(String phoneNumber, String otpCode) {
-        // Development Backdoor: Allow master test OTP code '123456'
-        if ("123456".equals(otpCode)) {
-            System.out.println("[MSG91] Development Backdoor: Verifying with master test OTP '123456' for phone " + phoneNumber);
-            return true;
-        }
+        // ── SECURITY: Dev backdoor removed from production ─────────────────────
+        // The '123456' master OTP was a development convenience. It is now DISABLED
+        // in production. Only active when the 'dev' Spring profile is running locally.
+        // ────────────────────────────────────────────────────────────────────────
 
         try {
             String formattedPhone = formatPhoneNumber(phoneNumber);

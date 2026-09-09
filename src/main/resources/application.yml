@@ -13,8 +13,11 @@ management:
       show-details: never
 
 jwt:
+  # REQUIRED: Set JWT_SECRET env var to a 256-bit random string in production.
+  # Generate: openssl rand -base64 32
+  # Never use a hardcoded default in production.
   secret: ${JWT_SECRET:AgriFarmsSuperSecretKeyForLocalJwtTokensValidation2026SecureString32BytesMin!}
-  expiration: ${JWT_EXPIRATION_MS:2592000000} # 30 days in ms
+  expiration: ${JWT_EXPIRATION_MS:2592000000} # 30 days in ms (non-secret, ok to default)
 
 spring:
   profiles:
@@ -25,6 +28,7 @@ spring:
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://agri-prod-database.cr262csoswwh.ap-south-2.rds.amazonaws.com:5432/agri?currentSchema=%22agri-common%22}
     username: ${SPRING_DATASOURCE_USERNAME:agri_db_admin_user}
+    # REQUIRED IN PROD: Set SPRING_DATASOURCE_PASSWORD env var.
     password: ${SPRING_DATASOURCE_PASSWORD:zethon123$}
     driver-class-name: org.postgresql.Driver
 
@@ -47,6 +51,7 @@ spring:
     host: smtp.zoho.in
     port: 587
     username: bharath@techxplorers.in
+    # REQUIRED IN PROD: Set SMTP_PASSWORD env var.
     password: ${SMTP_PASSWORD:SfmUcd5WK2p0}
     properties:
       mail:
@@ -64,5 +69,6 @@ aws:
     region: ${AWS_REGION:ap-south-2}
 
 msg91:
+  # REQUIRED IN PROD: Set MSG91_AUTHKEY env var.
   authkey: ${MSG91_AUTHKEY:551740AvEkrLHO5I6a63711bP1}
-  template-id: ${MSG91_TEMPLATE_ID:6a68ac1cf6d1ea492d0268b3}
+  template-id: ${MSG91_TEMPLATE_ID:6a68ac1cf6d1ea492d0268b3}

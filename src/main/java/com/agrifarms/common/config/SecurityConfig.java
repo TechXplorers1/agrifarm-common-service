@@ -31,23 +31,24 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                // ── Fully public: auth & media ───────────────────────────────
+                // ── Fully public: auth & media ──────────────────────────────────
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/media/**").permitAll()
 
-                // ── Public READ-ONLY: inventory listing (GET only) ───────────
+                // ── Public READ-ONLY: inventory listing (GET only, unauthenticated browse) ──
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/inventory/**").permitAll()
+
+                // ── Public: user lookup by phone/email (needed for login check) ──
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/users/phone/**").permitAll()
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/users/email/**").permitAll()
 
-                .requestMatchers("/api/users", "/api/users/**").permitAll()
-                .requestMatchers("/api/notifications", "/api/notifications/**").permitAll()
-                .requestMatchers("/api/bookings", "/api/bookings/**").permitAll()
-                .requestMatchers("/api/inventory", "/api/inventory/**").permitAll()
-                .requestMatchers("/api/reviews", "/api/reviews/**").permitAll()
+                // ── Public: actuator health check ───────────────────────────────
                 .requestMatchers("/actuator/health/**").permitAll()
                 .requestMatchers("/actuator/info").permitAll()
-                // ── Everything else requires a valid JWT ─────────────────────
+
+                // ── EVERYTHING ELSE REQUIRES A VALID JWT ────────────────────────
+                // This covers: /api/users (write), /api/bookings, /api/notifications,
+                // /api/reviews, /api/inventory (write), /api/users/{id}/delete, etc.
                 .anyRequest().authenticated()
             )
             // Register our local JWT authentication filter
@@ -59,7 +60,14 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(Collections.singletonList("*"));
+        // ── Whitelist specific origins — wildcard (*) with credentials is a security risk ──
+        configuration.setAllowedOriginPatterns(Arrays.asList(
+            "https://agrifarms.in",
+            "https://admin.agrifarms.in",
+            "https://www.agrifarms.in",
+            "http://localhost:3000",    // local web dev
+            "http://localhost:8080"     // local backend dev
+        ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
         configuration.setExposedHeaders(Collections.singletonList("Authorization"));

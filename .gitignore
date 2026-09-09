@@ -33,3 +33,13 @@ build/
 
 # Firebase Credentials
 agrifarms-firebase-service-account.json
+
+# Local PostgreSQL Data
+pg_dev_data/
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# Uploads
+uploads/

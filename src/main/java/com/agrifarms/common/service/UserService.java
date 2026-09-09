@@ -231,22 +231,47 @@ public class UserService {
         return user;
     }
 
+    /**
+     * Permanently deletes a user account and ALL associated data.
+     * Required by Google Play Store User Data Policy (mandatory since Dec 2023).
+     * Called when the user requests "Delete Account" from the Flutter app.
+     *
+     * Cascade order (to avoid FK violations):
+     * 1. Bookings where user is farmer or provider
+     * 2. Inventory (equipment, vehicles, services, worker groups)
+     * 3. User record itself
+     *
+     * The @Transactional annotation ensures atomicity — if any step fails,
+     * the entire operation rolls back and the user account remains intact.
+     */
+    @org.springframework.transaction.annotation.Transactional
     @Caching(evict = {
             @CacheEvict(value = "users", key = "#userId"),
             @CacheEvict(value = "ownerNames", key = "#userId"),
             @CacheEvict(value = "profileImages", key = "#userId")
     })
-    @org.springframework.transaction.annotation.Transactional
-    public void deleteUser(String userId) {
+    public void deleteUserAndAllData(String userId) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "User not found with id: " + userId));
 
-        // Remove associated listings owned by this user
+        // 1. Delete all bookings where user is the farmer (requester)
+        bookingRepository.findByFarmerId(userId).forEach(bookingRepository::delete);
+
+        // 2. Delete all bookings where user is the provider (owner/service)
+        bookingRepository.findByProviderId(userId).forEach(bookingRepository::delete);
+
+        // 3. Delete all inventory owned by this user
         equipmentRepository.findByOwnerId(userId).forEach(equipmentRepository::delete);
-        serviceOfferingRepository.findByOwnerId(userId).forEach(serviceOfferingRepository::delete);
         transportVehicleRepository.findByOwnerId(userId).forEach(transportVehicleRepository::delete);
+        serviceOfferingRepository.findByOwnerId(userId).forEach(serviceOfferingRepository::delete);
         workerGroupRepository.findByOwnerId(userId).forEach(workerGroupRepository::delete);
 
+        // 4. Delete the user record itself
         userRepository.delete(user);
+    }
+
+    public void deleteUser(String userId) {
+        deleteUserAndAllData(userId);
     }
 }
