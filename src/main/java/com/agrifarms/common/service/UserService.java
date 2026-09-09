@@ -206,14 +206,10 @@ public class UserService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
 
-        if ("Banned".equalsIgnoreCase(user.getStatus())) {
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Cannot modify a banned user");
-        }
-
         user.setStatus(status);
         user = userRepository.save(user);
 
-        if ("Suspended".equalsIgnoreCase(status) || "Banned".equalsIgnoreCase(status)) {
+        if ("Suspended".equalsIgnoreCase(status) || "Banned".equalsIgnoreCase(status) || "Deactivated".equalsIgnoreCase(status) || "Inactive".equalsIgnoreCase(status)) {
             // Deactivate all services
             equipmentRepository.findByOwnerId(userId).forEach(e -> {
                 e.setIsAvailable(false);
@@ -233,5 +229,24 @@ public class UserService {
             });
         }
         return user;
+    }
+
+    @Caching(evict = {
+            @CacheEvict(value = "users", key = "#userId"),
+            @CacheEvict(value = "ownerNames", key = "#userId"),
+            @CacheEvict(value = "profileImages", key = "#userId")
+    })
+    @org.springframework.transaction.annotation.Transactional
+    public void deleteUser(String userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        // Remove associated listings owned by this user
+        equipmentRepository.findByOwnerId(userId).forEach(equipmentRepository::delete);
+        serviceOfferingRepository.findByOwnerId(userId).forEach(serviceOfferingRepository::delete);
+        transportVehicleRepository.findByOwnerId(userId).forEach(transportVehicleRepository::delete);
+        workerGroupRepository.findByOwnerId(userId).forEach(workerGroupRepository::delete);
+
+        userRepository.delete(user);
     }
 }

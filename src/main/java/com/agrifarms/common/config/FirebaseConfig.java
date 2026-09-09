@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 import jakarta.annotation.PostConstruct;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -17,27 +19,60 @@ public class FirebaseConfig {
     public void initialize() {
         try {
             if (FirebaseApp.getApps().isEmpty()) {
-                // Read from the classpath using ClassPathResource
-                ClassPathResource resource = new ClassPathResource("agrifarms-firebase-service-account.json");
+                InputStream serviceAccount = getServiceAccountInputStream();
                 
-                // If it doesn't exist, just log it instead of crashing the whole app
-                if (!resource.exists()) {
-                    System.err.println("WARNING: agrifarms-firebase-service-account.json not found in resources. Firebase Admin SDK not initialized.");
+                if (serviceAccount == null) {
+                    System.err.println("❌ WARNING: Firebase Service Account JSON key not found!");
+                    System.err.println("👉 Action Required: Save your downloaded Firebase private key JSON file to:");
+                    System.err.println("   agrifarm-common-service/src/main/resources/agrifarms-firebase-service-account.json");
                     return;
                 }
-                
-                InputStream serviceAccount = resource.getInputStream();
 
                 FirebaseOptions options = FirebaseOptions.builder()
                         .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                         .build();
 
                 FirebaseApp.initializeApp(options);
-                System.out.println("Firebase Admin SDK initialized successfully.");
+                System.out.println("✅ Firebase Admin SDK initialized successfully.");
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
+            System.err.println("❌ Failed to initialize Firebase Admin SDK: " + e.getMessage());
             e.printStackTrace();
-            System.err.println("Failed to initialize Firebase Admin SDK: " + e.getMessage());
         }
     }
+
+    private InputStream getServiceAccountInputStream() {
+        // 1. Check classpath for agrifarms-firebase-service-account.json
+        try {
+            ClassPathResource resource = new ClassPathResource("agrifarms-firebase-service-account.json");
+            if (resource.exists()) {
+                System.out.println("🔒 Loading Firebase credentials from classpath: agrifarms-firebase-service-account.json");
+                return resource.getInputStream();
+            }
+        } catch (IOException ignored) {}
+
+        // 2. Check classpath for serviceAccountKey.json
+        try {
+            ClassPathResource resource = new ClassPathResource("serviceAccountKey.json");
+            if (resource.exists()) {
+                System.out.println("🔒 Loading Firebase credentials from classpath: serviceAccountKey.json");
+                return resource.getInputStream();
+            }
+        } catch (IOException ignored) {}
+
+        // 3. Check environment variable FIREBASE_CONFIG_PATH
+        String envPath = System.getenv("FIREBASE_CONFIG_PATH");
+        if (envPath != null && !envPath.isEmpty()) {
+            File f = new File(envPath);
+            if (f.exists()) {
+                try {
+                    System.out.println("🔒 Loading Firebase credentials from ENV path: " + envPath);
+                    return new FileInputStream(f);
+                } catch (IOException ignored) {}
+            }
+        }
+
+        return null;
+    }
 }
+
