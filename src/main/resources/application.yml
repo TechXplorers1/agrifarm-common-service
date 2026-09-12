@@ -71,4 +71,4 @@ aws:
 msg91:
   # REQUIRED IN PROD: Set MSG91_AUTHKEY env var.
   authkey: ${MSG91_AUTHKEY:551740AvEkrLHO5I6a63711bP1}
-  template-id: ${MSG91_TEMPLATE_ID:6a68ac1cf6d1ea492d0268b3}
+  template-id: ${MSG91_TEMPLATE_ID:6a68ac1cf6d1ea492d0268b3}

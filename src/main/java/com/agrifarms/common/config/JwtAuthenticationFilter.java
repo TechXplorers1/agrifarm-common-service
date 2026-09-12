@@ -1,6 +1,10 @@
 package com.agrifarms.common.config;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.UnsupportedJwtException;
+import io.jsonwebtoken.security.SignatureException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,27 +36,56 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.substring(7).trim();
-            if (jwtUtil.isTokenValid(token)) {
-                try {
-                    Claims claims = jwtUtil.validateAndExtractClaims(token);
-                    String userId = claims.getSubject();
-                    String role = claims.get("role", String.class);
-                    if (role == null) role = "Farmer";
+            try {
+                Claims claims = jwtUtil.validateAndExtractClaims(token);
 
-                    List<SimpleGrantedAuthority> authorities = Collections.singletonList(
-                            new SimpleGrantedAuthority("ROLE_" + role.toUpperCase())
-                    );
-
-                    UsernamePasswordAuthenticationToken authentication =
-                            new UsernamePasswordAuthenticationToken(userId, null, authorities);
-
-                    SecurityContextHolder.getContext().setAuthentication(authentication);
-                } catch (Exception e) {
-                    logger.error("Failed to set authentication from local JWT token", e);
+                // Check expiry explicitly
+                java.util.Date expiry = claims.getExpiration();
+                if (expiry != null && expiry.before(new java.util.Date())) {
+                    logger.warn("[JWT] Token is expired. Expiry: " + expiry);
+                    filterChain.doFilter(request, response);
+                    return;
                 }
+
+                String userId = claims.getSubject();
+                String role = claims.get("role", String.class);
+                if (role == null) role = "Farmer";
+
+                logger.info("[JWT] Token valid for userId=" + userId + " role=" + role
+                        + " | " + request.getMethod() + " " + request.getRequestURI());
+
+                List<SimpleGrantedAuthority> authorities = Collections.singletonList(
+                        new SimpleGrantedAuthority("ROLE_" + role.toUpperCase())
+                );
+
+                UsernamePasswordAuthenticationToken authentication =
+                        new UsernamePasswordAuthenticationToken(userId, null, authorities);
+
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+
+            } catch (SignatureException e) {
+                logger.error("[JWT] SIGNATURE MISMATCH — JWT_SECRET used to sign token does not match backend secret! " + e.getMessage());
+            } catch (MalformedJwtException e) {
+                logger.error("[JWT] Malformed token (bad format): " + e.getMessage());
+            } catch (ExpiredJwtException e) {
+                logger.error("[JWT] Token expired at: " + e.getClaims().getExpiration());
+            } catch (UnsupportedJwtException e) {
+                logger.error("[JWT] Unsupported JWT algorithm/type: " + e.getMessage());
+            } catch (IllegalArgumentException e) {
+                logger.error("[JWT] Token is null, empty or whitespace: " + e.getMessage());
+            } catch (Exception e) {
+                logger.error("[JWT] Unexpected validation error: " + e.getClass().getSimpleName() + " — " + e.getMessage());
+            }
+        } else {
+            String uri = request.getRequestURI();
+            if (!uri.startsWith("/api/auth") && !uri.startsWith("/api/media")
+                    && !uri.startsWith("/actuator") && !uri.contains("/phone/") && !uri.contains("/email/")) {
+                logger.debug("[JWT] No Bearer token for protected endpoint: "
+                        + request.getMethod() + " " + uri);
             }
         }
 
         filterChain.doFilter(request, response);
     }
 }
+

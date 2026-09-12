@@ -66,7 +66,8 @@ public class SecurityConfig {
             "https://admin.agrifarms.in",
             "https://www.agrifarms.in",
             "http://localhost:3000",    // local web dev
-            "http://localhost:8080"     // local backend dev
+            "http://localhost:8080",     // local backend dev
+            "http://localhost:*"        // local flutter web dev (dynamic ports)
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));

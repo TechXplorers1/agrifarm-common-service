@@ -9,9 +9,13 @@ import java.util.List;
 @Repository
 public interface EquipmentRepository extends JpaRepository<Equipment, String> {
     long countByOwnerId(String ownerId);
+
     List<Equipment> findByIsAvailableTrue();
 
     List<Equipment> findByCategory(String category);
 
     List<Equipment> findByOwnerId(String ownerId);
+
+    // Used by UserService.deleteUserAndAllData() — required for account deletion
+    void deleteByOwnerId(String ownerId);
 }
