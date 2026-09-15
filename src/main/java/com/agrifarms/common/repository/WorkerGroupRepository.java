@@ -12,4 +12,7 @@ public interface WorkerGroupRepository extends JpaRepository<WorkerGroup, String
     List<WorkerGroup> findByLocationContainingIgnoreCase(String location);
 
     List<WorkerGroup> findByOwnerId(String ownerId);
+
+    // Used by UserService.deleteUserAndAllData() — required for account deletion
+    void deleteByOwnerId(String ownerId);
 }

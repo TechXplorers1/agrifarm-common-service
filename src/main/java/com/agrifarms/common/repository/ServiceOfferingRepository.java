@@ -14,4 +14,7 @@ public interface ServiceOfferingRepository extends JpaRepository<ServiceOffering
     List<ServiceOffering> findByServiceType(String serviceType);
 
     List<ServiceOffering> findByOwnerId(String ownerId);
+
+    // Used by UserService.deleteUserAndAllData() — required for account deletion
+    void deleteByOwnerId(String ownerId);
 }

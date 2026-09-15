@@ -19,4 +19,9 @@ public interface BookingRepository extends JpaRepository<Booking, String> {
     List<Booking> findByAssetId(String assetId);
 
     long countByAssetIdAndStatusIn(String assetId, java.util.Collection<String> statuses);
+
+    // Used by UserService.deleteUserAndAllData() — required for account deletion
+    void deleteByFarmerId(String farmerId);
+
+    void deleteByProviderId(String providerId);
 }

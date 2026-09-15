@@ -53,9 +53,9 @@ public class UserController {
 
     @GetMapping("/sync")
     public ResponseEntity<UserDTO> syncUser() {
-        org.springframework.security.core.Authentication authentication = 
-            org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
-        
+        org.springframework.security.core.Authentication authentication
+                = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
+
         if (authentication instanceof org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken jwtToken) {
             String keycloakId = jwtToken.getToken().getSubject();
             return userService.getUserByKeycloakId(keycloakId)
@@ -135,10 +135,10 @@ public class UserController {
     }
 
     /**
-     * Permanently deletes a user account and all associated data.
-     * Required by Google Play Store User Data Policy (mandatory since Dec 2023).
-     * Called by the Flutter app's Profile → Delete Account feature.
-     * Deletes: user record, all bookings, all inventory listings from PostgreSQL.
+     * Permanently deletes a user account and all associated data. Required by
+     * Google Play Store User Data Policy (mandatory since Dec 2023). Called by
+     * the Flutter app's Profile → Delete Account feature. Deletes: user record,
+     * all bookings, all inventory listings from PostgreSQL.
      */
     @DeleteMapping("/{userId}")
     public ResponseEntity<Void> deleteUser(@PathVariable("userId") String userId) {

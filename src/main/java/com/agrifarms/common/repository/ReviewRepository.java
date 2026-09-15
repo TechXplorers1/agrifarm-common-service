@@ -10,5 +10,9 @@ import java.util.Optional;
 @Repository
 public interface ReviewRepository extends JpaRepository<Review, String> {
     List<Review> findByAssetId(String assetId);
+
     Optional<Review> findByBookingId(String bookingId);
+
+    // Used by UserService.deleteUserAndAllData() — required for account deletion
+    void deleteByReviewerId(String reviewerId);
 }

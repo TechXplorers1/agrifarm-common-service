@@ -4,15 +4,16 @@ import com.agrifarms.common.dto.UserStatsDTO;
 import com.agrifarms.common.entity.User;
 import com.agrifarms.common.repository.*;
 import lombok.RequiredArgsConstructor;
-import com.agrifarms.common.repository.UserRepository;
 
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,11 +26,13 @@ public class UserService {
     private final TransportVehicleRepository transportVehicleRepository;
     private final ServiceOfferingRepository serviceOfferingRepository;
     private final WorkerGroupRepository workerGroupRepository;
+    private final UserNotificationRepository userNotificationRepository;
+    private final ReviewRepository reviewRepository;
     private final NotificationService notificationService;
 
     public UserStatsDTO getUserStats(String userId) {
         // Orders: Only PENDING or CONFIRMED bookings for this provider
-        java.util.List<String> activeStatuses = java.util.Arrays.asList("PENDING", "CONFIRMED");
+        List<String> activeStatuses = Arrays.asList("PENDING", "CONFIRMED");
         long orders = bookingRepository.countByProviderIdAndStatusIn(userId, activeStatuses);
 
         // Rentals: Count of Equipment + Transport Vehicles owned by user
@@ -59,7 +62,7 @@ public class UserService {
         }
         return userRepository.findById(ownerId)
                 .map(user -> user.getFullName() != null && !user.getFullName().trim().isEmpty() ? user.getFullName()
-                        : "Unknown Owner")
+                : "Unknown Owner")
                 .orElse("Unknown Owner");
     }
 
@@ -119,9 +122,9 @@ public class UserService {
     }
 
     @Caching(evict = {
-            @CacheEvict(value = "users", key = "#userId"),
-            @CacheEvict(value = "ownerNames", key = "#userId"),
-            @CacheEvict(value = "profileImages", key = "#userId")
+        @CacheEvict(value = "users", key = "#userId"),
+        @CacheEvict(value = "ownerNames", key = "#userId"),
+        @CacheEvict(value = "profileImages", key = "#userId")
     })
     public User updateUser(String userId, User updatedData) {
         return userRepository.findById(userId).map(existingUser -> {
@@ -200,7 +203,7 @@ public class UserService {
     }
 
     @Caching(evict = {
-            @CacheEvict(value = "users", key = "#userId")
+        @CacheEvict(value = "users", key = "#userId")
     })
     public User updateUserStatus(String userId, String status) {
         User user = userRepository.findById(userId)
@@ -232,42 +235,47 @@ public class UserService {
     }
 
     /**
-     * Permanently deletes a user account and ALL associated data.
-     * Required by Google Play Store User Data Policy (mandatory since Dec 2023).
-     * Called when the user requests "Delete Account" from the Flutter app.
+     * Permanently deletes a user account and ALL associated data. Required by
+     * Google Play Store User Data Policy (mandatory since Dec 2023). Called
+     * when the user requests "Delete Account" from the Flutter app.
      *
-     * Cascade order (to avoid FK violations):
-     * 1. Bookings where user is farmer or provider
-     * 2. Inventory (equipment, vehicles, services, worker groups)
+     * Cascade order (to avoid FK violations): 1. Bookings where user is farmer
+     * or provider 2. Inventory (equipment, vehicles, services, worker groups)
      * 3. User record itself
      *
-     * The @Transactional annotation ensures atomicity — if any step fails,
-     * the entire operation rolls back and the user account remains intact.
+     * The @Transactional annotation ensures atomicity — if any step fails, the
+     * entire operation rolls back and the user account remains intact.
      */
     @org.springframework.transaction.annotation.Transactional
     @Caching(evict = {
-            @CacheEvict(value = "users", key = "#userId"),
-            @CacheEvict(value = "ownerNames", key = "#userId"),
-            @CacheEvict(value = "profileImages", key = "#userId")
+        @CacheEvict(value = "users", key = "#userId"),
+        @CacheEvict(value = "ownerNames", key = "#userId"),
+        @CacheEvict(value = "profileImages", key = "#userId")
     })
     public void deleteUserAndAllData(String userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
-                        "User not found with id: " + userId));
+                "User not found with id: " + userId));
 
-        // 1. Delete all bookings where user is the farmer (requester)
-        bookingRepository.findByFarmerId(userId).forEach(bookingRepository::delete);
+        // 1. Delete reviews written by or about this user's assets (avoids FK on bookings)
+        reviewRepository.deleteByReviewerId(userId);
 
-        // 2. Delete all bookings where user is the provider (owner/service)
-        bookingRepository.findByProviderId(userId).forEach(bookingRepository::delete);
+        // 2. Delete all bookings where user is the farmer (requester)
+        bookingRepository.deleteByFarmerId(userId);
 
-        // 3. Delete all inventory owned by this user
-        equipmentRepository.findByOwnerId(userId).forEach(equipmentRepository::delete);
-        transportVehicleRepository.findByOwnerId(userId).forEach(transportVehicleRepository::delete);
-        serviceOfferingRepository.findByOwnerId(userId).forEach(serviceOfferingRepository::delete);
-        workerGroupRepository.findByOwnerId(userId).forEach(workerGroupRepository::delete);
+        // 3. Delete all bookings where user is the provider (owner/service)
+        bookingRepository.deleteByProviderId(userId);
 
-        // 4. Delete the user record itself
+        // 4. Delete all inventory owned by this user
+        equipmentRepository.deleteByOwnerId(userId);
+        transportVehicleRepository.deleteByOwnerId(userId);
+        serviceOfferingRepository.deleteByOwnerId(userId);
+        workerGroupRepository.deleteByOwnerId(userId);
+
+        // 5. Delete all notifications for this user (FK: user_notifications.user_id → users.id)
+        userNotificationRepository.deleteByUserId(userId);
+
+        // 6. Delete the user record itself
         userRepository.delete(user);
     }
 

@@ -14,4 +14,7 @@ public interface TransportVehicleRepository extends JpaRepository<TransportVehic
     List<TransportVehicle> findByVehicleType(String vehicleType);
 
     List<TransportVehicle> findByOwnerId(String ownerId);
+
+    // Used by UserService.deleteUserAndAllData() — required for account deletion
+    void deleteByOwnerId(String ownerId);
 }

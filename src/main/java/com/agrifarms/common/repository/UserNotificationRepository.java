@@ -9,6 +9,9 @@ import java.util.List;
 @Repository
 public interface UserNotificationRepository extends JpaRepository<UserNotification, String> {
     List<UserNotification> findByUserIdOrderByCreatedAtDesc(String userId);
-    
+
     List<UserNotification> findByUserIdAndIsReadFalse(String userId);
+
+    // Used by UserService.deleteUserAndAllData() — required for account deletion
+    void deleteByUserId(String userId);
 }
