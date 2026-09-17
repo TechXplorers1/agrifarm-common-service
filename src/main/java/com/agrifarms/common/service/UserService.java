@@ -28,6 +28,7 @@ public class UserService {
     private final WorkerGroupRepository workerGroupRepository;
     private final UserNotificationRepository userNotificationRepository;
     private final ReviewRepository reviewRepository;
+    private final ReportRepository reportRepository;
     private final NotificationService notificationService;
 
     public UserStatsDTO getUserStats(String userId) {
@@ -272,8 +273,9 @@ public class UserService {
         serviceOfferingRepository.deleteByOwnerId(userId);
         workerGroupRepository.deleteByOwnerId(userId);
 
-        // 5. Delete all notifications for this user (FK: user_notifications.user_id → users.id)
+        // 5. Delete all notifications and reports for this user (FK cleanup)
         userNotificationRepository.deleteByUserId(userId);
+        reportRepository.deleteByReporterUserId(userId);
 
         // 6. Delete the user record itself
         userRepository.delete(user);
