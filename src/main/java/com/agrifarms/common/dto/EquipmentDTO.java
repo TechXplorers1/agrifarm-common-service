@@ -35,6 +35,7 @@ public class EquipmentDTO {
     private String description;
     private String vehicleNumber;
     private String attachedEquipments;
+    private Integer yearOfManufacture;
     private Integer jobsCompleted;
 
     public EquipmentDTO() {
@@ -318,6 +319,14 @@ public class EquipmentDTO {
 
     public void setAttachedEquipments(String attachedEquipments) {
         this.attachedEquipments = attachedEquipments;
+    }
+
+    public Integer getYearOfManufacture() {
+        return yearOfManufacture;
+    }
+
+    public void setYearOfManufacture(Integer yearOfManufacture) {
+        this.yearOfManufacture = yearOfManufacture;
     }
 
     public Integer getJobsCompleted() {

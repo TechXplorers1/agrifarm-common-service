@@ -130,6 +130,7 @@ public class DtoMapper {
         dto.setModel(entity.getModel());
         dto.setDescription(entity.getDescription());
         dto.setAttachedEquipments(entity.getAttachedEquipments());
+        dto.setYearOfManufacture(entity.getYearOfManufacture());
         dto.setVehicleNumber(entity.getVehicleNumber());
         dto.setPricePerHalfDay(entity.getPricePerHalfDay());
         dto.setJobsCompleted(0); // Populated efficiently at controller level
@@ -169,6 +170,7 @@ public class DtoMapper {
         entity.setDescription(dto.getDescription());
         entity.setVehicleNumber(dto.getVehicleNumber());
         entity.setAttachedEquipments(dto.getAttachedEquipments());
+        entity.setYearOfManufacture(dto.getYearOfManufacture());
         if (dto.getBrand() != null && dto.getModel() != null) {
             entity.setBrandModel(dto.getBrand() + " " + dto.getModel());
         } else if (dto.getBrandModel() != null) {

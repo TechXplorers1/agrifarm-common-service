@@ -120,6 +120,7 @@ public class InventoryController {
         if (equipmentDTO.getLatitude() != null) existingEquipment.setLatitude(equipmentDTO.getLatitude());
         if (equipmentDTO.getLongitude() != null) existingEquipment.setLongitude(equipmentDTO.getLongitude());
         if (equipmentDTO.getAttachedEquipments() != null) existingEquipment.setAttachedEquipments(equipmentDTO.getAttachedEquipments());
+        if (equipmentDTO.getYearOfManufacture() != null) existingEquipment.setYearOfManufacture(equipmentDTO.getYearOfManufacture());
         if (equipmentDTO.getDeactivationReason() != null) existingEquipment.setDeactivationReason(equipmentDTO.getDeactivationReason());
 
         Equipment savedEquipment = inventoryService.saveEquipment(existingEquipment);

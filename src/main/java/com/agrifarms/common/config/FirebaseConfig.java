@@ -20,11 +20,12 @@ public class FirebaseConfig {
         try {
             if (FirebaseApp.getApps().isEmpty()) {
                 InputStream serviceAccount = getServiceAccountInputStream();
-                
+
                 if (serviceAccount == null) {
-                    System.err.println("❌ WARNING: Firebase Service Account JSON key not found!");
-                    System.err.println("👉 Action Required: Save your downloaded Firebase private key JSON file to:");
-                    System.err.println("   agrifarm-common-service/src/main/resources/agrifarms-firebase-service-account.json");
+                    System.err.println(" WARNING: Firebase Service Account JSON key not found!");
+                    System.err.println(" Action Required: Save your downloaded Firebase private key JSON file to:");
+                    System.err.println(
+                            "   agrifarm-common-service/src/main/resources/agrifarms-firebase-service-account.json");
                     return;
                 }
 
@@ -46,10 +47,12 @@ public class FirebaseConfig {
         try {
             ClassPathResource resource = new ClassPathResource("agrifarms-firebase-service-account.json");
             if (resource.exists()) {
-                System.out.println("🔒 Loading Firebase credentials from classpath: agrifarms-firebase-service-account.json");
+                System.out.println(
+                        "🔒 Loading Firebase credentials from classpath: agrifarms-firebase-service-account.json");
                 return resource.getInputStream();
             }
-        } catch (IOException ignored) {}
+        } catch (IOException ignored) {
+        }
 
         // 2. Check classpath for serviceAccountKey.json
         try {
@@ -58,7 +61,8 @@ public class FirebaseConfig {
                 System.out.println("🔒 Loading Firebase credentials from classpath: serviceAccountKey.json");
                 return resource.getInputStream();
             }
-        } catch (IOException ignored) {}
+        } catch (IOException ignored) {
+        }
 
         // 3. Check environment variable FIREBASE_CONFIG_PATH
         String envPath = System.getenv("FIREBASE_CONFIG_PATH");
@@ -68,11 +72,11 @@ public class FirebaseConfig {
                 try {
                     System.out.println("🔒 Loading Firebase credentials from ENV path: " + envPath);
                     return new FileInputStream(f);
-                } catch (IOException ignored) {}
+                } catch (IOException ignored) {
+                }
             }
         }
 
         return null;
     }
 }
-

@@ -42,6 +42,9 @@ public class Equipment {
     @Column(name = "attached_equipments", length = 500)
     private String attachedEquipments;
 
+    @Column(name = "year_of_manufacture")
+    private Integer yearOfManufacture;
+
     @Column(name = "condition_status")
     private String conditionStatus;
 
@@ -255,6 +258,9 @@ public class Equipment {
 
     public String getDistrict() { return district; }
     public void setDistrict(String district) { this.district = district; }
+
+    public Integer getYearOfManufacture() { return yearOfManufacture; }
+    public void setYearOfManufacture(Integer yearOfManufacture) { this.yearOfManufacture = yearOfManufacture; }
 
     public String getState() { return state; }
     public void setState(String state) { this.state = state; }
