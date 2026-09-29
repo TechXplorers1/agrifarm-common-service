@@ -15,6 +15,9 @@ public class TransportVehicle {
     @UuidGenerator
     private String vehicleId;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "user_id", nullable = false)
     private String ownerId;
 
@@ -75,12 +78,13 @@ public class TransportVehicle {
 
     public TransportVehicle() {}
 
-    public TransportVehicle(String vehicleId, String ownerId, String vehicleType, String vehicleNumber,
+    public TransportVehicle(String vehicleId, String ownerId, String name, String vehicleType, String vehicleNumber,
                             String loadCapacity, BigDecimal pricePerKmOrTrip, Boolean driverIncluded,
                             String serviceArea, String location, Boolean isAvailable, BigDecimal rating,
                             String approvalStatus, String imageUrl) {
         this.vehicleId = vehicleId;
         this.ownerId = ownerId;
+        this.name = name;
         this.vehicleType = vehicleType;
         this.vehicleNumber = vehicleNumber;
         this.loadCapacity = loadCapacity;
@@ -96,6 +100,9 @@ public class TransportVehicle {
 
     public String getVehicleId() { return vehicleId; }
     public void setVehicleId(String vehicleId) { this.vehicleId = vehicleId; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
     public String getOwnerId() { return ownerId; }
     public void setOwnerId(String ownerId) { this.ownerId = ownerId; }

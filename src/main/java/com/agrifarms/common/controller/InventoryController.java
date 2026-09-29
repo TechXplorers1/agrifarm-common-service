@@ -197,6 +197,9 @@ public class InventoryController {
         if (vehicleDTO.getServiceArea() != null) {
             existingVehicle.setServiceArea(vehicleDTO.getServiceArea());
         }
+        if (vehicleDTO.getName() != null) {
+            existingVehicle.setName(vehicleDTO.getName());
+        }
         if (vehicleDTO.getLocation() != null) {
             existingVehicle.setLocation(vehicleDTO.getLocation());
         }

@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 
 public class TransportVehicleDTO {
     private String vehicleId;
+    private String name;
     private String ownerId;
     private String ownerName;
     private String vehicleType;
@@ -40,10 +41,11 @@ public class TransportVehicleDTO {
 
     public TransportVehicleDTO() {}
 
-    public TransportVehicleDTO(String vehicleId, String ownerId, String ownerName, String vehicleType, String vehicleNumber,
+    public TransportVehicleDTO(String vehicleId, String name, String ownerId, String ownerName, String vehicleType, String vehicleNumber,
                                String loadCapacity, BigDecimal pricePerKmOrTrip, Boolean driverIncluded, String serviceArea,
                                String location, String houseNo, String street, String village, String district, String state, String country, String pincode, Boolean isAvailable, BigDecimal rating, String approvalStatus, String imageUrl, BigDecimal latitude, BigDecimal longitude, String ownerProfileImageUrl, BigDecimal operatorPrice) {
         this.vehicleId = vehicleId;
+        this.name = name;
         this.ownerId = ownerId;
         this.ownerName = ownerName;
         this.vehicleType = vehicleType;
@@ -72,6 +74,9 @@ public class TransportVehicleDTO {
 
     public String getVehicleId() { return vehicleId; }
     public void setVehicleId(String vehicleId) { this.vehicleId = vehicleId; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
     public String getOwnerId() { return ownerId; }
     public void setOwnerId(String ownerId) { this.ownerId = ownerId; }

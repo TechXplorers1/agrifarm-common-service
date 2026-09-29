@@ -33,3 +33,5 @@ databaseChangeLog:
       file: db/changelog/db.changelog-add-user-mandal.sql
   - include:
       file: db/changelog/db.changelog-reports.sql
+  - include:
+      file: db/changelog/db.changelog-vehicle-name.sql

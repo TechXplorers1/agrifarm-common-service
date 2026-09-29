@@ -195,6 +195,7 @@ public class DtoMapper {
 
         TransportVehicleDTO dto = new TransportVehicleDTO(
                 entity.getVehicleId(),
+                entity.getName(),
                 entity.getOwnerId(),
                 ownerName,
                 entity.getVehicleType(),
@@ -236,6 +237,7 @@ public class DtoMapper {
         }
         TransportVehicle entity = new TransportVehicle();
         entity.setVehicleId(dto.getVehicleId());
+        entity.setName(dto.getName());
         entity.setOwnerId(dto.getOwnerId());
         entity.setVehicleType(dto.getVehicleType());
         entity.setVehicleNumber(dto.getVehicleNumber());
